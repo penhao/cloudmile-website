@@ -1,0 +1,32 @@
+{
+  "Common Questions": "Common Questions",
+  "We are already using GCP__": "We are already using GCP. Can we still collaborate with CloudMile?",
+  "Of course you can still collaborate with__": "Of course you can still collaborate with CloudMile even if you are already using GCP. CloudMile will assist Taiwan enterprises to set up billing and provide invoice, provide professional GCP technical support to help you understand more about GCP products and solutions. Evenmore, CloudMile is the best in artificial intelligence aspects to build a customized machine learning module.",
+  "What are the differences to__": "What are the differences to purchase GCP products from CloudMile than directly through GCP?",
+  "For CloudMile’s service regions__": "For CloudMile’s service regions, we offer 24/7 Golden Support and we promise to respond to your problems within one hour. For Taiwan region, CloudMile only charges for product fees and 5% Sales Tax; whereas, if you purchase directly through GCP, there will be software import custom duties fees.",
+  "What regions do CloudMile’s services cover?": "What regions do CloudMile’s services cover?",
+  "CloudMile’s services cover regions including__": "CloudMile’s services cover regions including Taiwan, Hong Kong, Macau, Singapore, China and other South-East Asia countries. We have subsidiary offices in Hong Kong and Singapore. And we are looking to expand our businesses to many more regions.",
+  "What is the process of collaborating with CloudMile?": "What is the process of collaborating with CloudMile?",
+  "Please contact CloudMile at__": "Please contact CloudMile at <a href=\"mailto:service@mile.cloud\">service@mile.cloud</a>. We will arrange personnels to contact you to discuss your needs to set up GCP projects.",
+  "Billing Account Questions": "Billing Account Questions",
+  "What is a Billing Account?": "What is a Billing Account?",
+  "Billing Account is an account when you__": "Billing Account is an account when you open a project under GCP. Google or GCP partners will charge you according to your billing account. You can use the Google Cloud Platform Console to manage your GCP billing account. From the console, you can update account settings such as payment methods and administrative contacts. Or you can use the console to set budgets and alerts, view your payment history, and to export billing data. Only the account owner, Billing Administrator and Project Owner, have the authority to move your Billing Account to GCP partners’.",
+  "Will it affect my project files__": "Will it affect my project files by moving to a new Billing Account?",
+  "Transferring your GCP Billing Account under__": "Transferring your GCP Billing Account under CloudMile only means the paying account changed. There won’t be any change to your project files on GCP. We even leave you the choice of which GCP Billing Account you would like to transfer to CloudMile.",
+  "According to our purchase procedure__": "According to our purchase procedure, we will require Quotation. Can CloudMile offers?",
+  "CloudMile will provide a detailed quotation with__": "CloudMile will provide a detailed quotation with lists of services and partnerships. Please contact CloudMile for more information: <a href=\"mailto:service@mile.cloud\">service@mile.cloud</a>.",
+  "Free Trial Questions": "Free Trial Questions",
+  "How can we register for GCP Free Trial?": "How can we register for GCP Free Trial?",
+  "You can register GCP for free here__": "You can register GCP for free here:<br><a href=\"https://cloud.google.com/free\" target=\"_blank\" rel=\"noopener\">https://cloud.google.com/free</a>",
+  "Does GCP offer free credits?": "Does GCP offer free credits?",
+  "GCP offers USD300 free credit to__": "GCP offers USD300 free credit to get started with any GCP product, and valid for 12 months.",
+  "How does “Upgraded Billing Account” work?": "How does “Upgraded Billing Account” work?",
+  "After 12 months of GCP Free Trial__": "After 12 months of GCP Free Trial, your service will be put on hold until you upgrade to a paid account. Please note that, your 0 free credits won’t be stored into your account if you upgrade to paid account before the trial ends",
+  "Does Free Trial include SLA (Service Level Agreement)?": "Does Free Trial include SLA (Service Level Agreement)?",
+  "Free Trial can access 90% of__": "Free Trial can access 90% of GCP service, but doesn’t include SLA.",
+  "What are the limitations for GCP Free Trial?": "What are the limitations for GCP Free Trial?",
+  "There are limitation for GCP Tree Trial__": "<p>There are limitation for GCP Tree Trial:</p><ul><li>VM Core total can’t exceed 8 cores in total.</li><li>There will be limitations with Quotas.</li><li>Can’t access GPU services.</li></ul><br/><p>Detail information, please contact CloudMile at <a href=\"mailto:service@mile.cloud\">service@mile.cloud</a>.</p>"
+}
+
+
+

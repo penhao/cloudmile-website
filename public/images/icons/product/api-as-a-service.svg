@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/API-as-a-service </title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/API-as-a-service-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-15" transform="translate(5.000000, 13.000000)">
+            <path d="M59.7135088,36.6311912 C67.5234971,44.4426244 67.5234971,57.1062205 59.7135088,64.9162088 C51.9020756,72.7261971 39.2399244,72.7261971 31.4284912,64.9162088 C23.6185029,57.1062205 23.6185029,44.4426244 31.4284912,36.6311912 C39.2399244,28.8212029 51.9020756,28.8212029 59.7135088,36.6311912" id="Fill-1" fill="#0B6DD7"></path>
+            <path d="M50.8219,6.3553 C50.8219,9.8653 47.9769,12.7093 44.4669,12.7093 C40.9569,12.7093 38.1119,9.8653 38.1119,6.3553 C38.1119,2.8453 40.9569,0.0003 44.4669,0.0003 C47.9769,0.0003 50.8219,2.8453 50.8219,6.3553" id="Fill-3" fill="#F2800B"></path>
+            <line x1="44.4669" y1="8.827" x2="44.4669" y2="20.159" id="Stroke-5" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <path d="M86.8941,36.7606 C83.6851,38.1806 79.9321,36.7306 78.5111,33.5206 C77.0911,30.3106 78.5411,26.5576 81.7511,25.1376 C84.9611,23.7166 88.7141,25.1676 90.1341,28.3776 C91.5551,31.5866 90.1041,35.3396 86.8941,36.7606" id="Fill-7" fill="#F2800B"></path>
+            <line x1="82.0621" y1="31.9491" x2="71.7001" y2="36.5341" id="Stroke-9" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <path d="M3.7853,36.7606 C6.9943,38.1806 10.7483,36.7306 12.1683,33.5206 C13.5883,30.3106 12.1383,26.5576 8.9283,25.1376 C5.7183,23.7166 1.9653,25.1676 0.5453,28.3776 C-0.8747,31.5866 0.5753,35.3396 3.7853,36.7606" id="Fill-11" fill="#F2800B"></path>
+            <line x1="8.6173" y1="31.9491" x2="18.9803" y2="36.5341" id="Stroke-13" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

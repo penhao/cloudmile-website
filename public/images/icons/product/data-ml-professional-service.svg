@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/data ml professional service</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 67.179 0 67.179 53.6491 0 53.6491"></polygon>
+    </defs>
+    <g id="icon/data-ml-professional-service" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M64.5003,79 C48.7610087,79 36.0003,66.2412619 36.0003,50.5 C36.0003,34.7597234 48.7610087,22 64.5003,22 C80.2405766,22 93.0003,34.7597234 93.0003,50.5 C93.0003,66.2412619 80.2405766,79 64.5003,79 Z" id="Fill-4" fill="#FFFFFF"></path>
+        <g id="Group-3" transform="translate(5.000000, 26.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Clip-2"></g>
+        </g>
+        <rect id="Rectangle" fill="#0B6DD7" x="4.50015" y="63.5" width="40" height="20"></rect>
+        <rect id="Rectangle-Copy" fill="#0B6DD7" x="4.50015" y="39.5" width="40" height="20"></rect>
+        <rect id="Rectangle-Copy-2" fill="#0B6DD7" x="4.50015" y="16.5" width="40" height="20"></rect>
+        <path d="M62.50015,84.5 C43.7234516,84.5 28.50015,69.2790493 28.50015,50.5 C28.50015,31.7221262 43.7234516,16.5 62.50015,16.5 C81.2780238,16.5 96.50015,31.7221262 96.50015,50.5 C96.50015,69.2790493 81.2780238,84.5 62.50015,84.5 Z" id="Fill-4" fill="#F2800B" style="mix-blend-mode: multiply;"></path>
+    </g>
+</svg>

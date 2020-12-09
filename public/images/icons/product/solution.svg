@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/Solution</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/Solution" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-9" transform="translate(13.000000, 7.500000)">
+            <g id="Group-7" transform="translate(0.000000, 6.500000)" fill="#0B6DD7">
+                <polygon id="Fill-1" points="0 73 33.7324096 73 33.7324096 39.7243133 0 39.7243133"></polygon>
+                <polygon id="Fill-3" points="39.6488434 73 73.381253 73 73.381253 39.7243133 39.6488434 39.7243133"></polygon>
+                <polygon id="Fill-5" points="0 33.5193133 33.7324096 33.5193133 33.7324096 0.242746988 0 0.242746988"></polygon>
+            </g>
+            <polygon id="Fill-8" fill="#F2800B" points="67.241767 0.5 36 12.2584742 47.7591153 43.5 79 31.7415258"></polygon>
+        </g>
+    </g>
+</svg>

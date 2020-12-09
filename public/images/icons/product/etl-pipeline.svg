@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/ETL Pipeline</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/ETL-Pipeline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#0B6DD7" transform="translate(69.709632, 28.709632) rotate(45.000000) translate(-69.709632, -28.709632) " cx="69.7096321" cy="28.7096321" r="22.5"></circle>
+        <circle id="Oval-Copy" fill="#0B6DD7" transform="translate(28.709632, 69.709632) rotate(45.000000) translate(-28.709632, -69.709632) " cx="28.7096321" cy="69.7096321" r="22.5"></circle>
+        <polygon id="Rectangle" fill="#F2800B" style="mix-blend-mode: multiply;" points="53.7096321 13.2096321 85.2096321 44.7096321 44.7096321 85.2096321 13.2096321 53.7096321"></polygon>
+    </g>
+</svg>

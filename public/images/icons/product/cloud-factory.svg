@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/cloud factory</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/cloud-factory" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M62.9924404,34.5967033 C62.6576185,34.5967033 62.3240321,34.6104405 61.9916812,34.6229288 C58.3259375,26.6191451 50.6559215,21.09305 41.7602845,21.09305 C29.3113347,21.09305 19.2184932,31.8879801 19.2184932,45.2030593 C19.2184932,45.5115216 19.2518518,45.8124908 19.2617359,46.1197042 C11.012268,48.7759764 5.0003,56.9570947 5.0003,66.6480547 C5.0003,78.4907574 13.9762449,88.09305 25.0500775,88.09305 L62.9924404,88.09305 C76.8041524,88.09305 88.0003,76.1167219 88.0003,61.3442522 C88.0003,46.5730314 76.8041524,34.5967033 62.9924404,34.5967033" id="Fill-1" fill="#0B6DD7"></path>
+        <polygon id="Fill-2" fill="#F2800B" style="mix-blend-mode: multiply;" points="70.0003 88.09305 91.0003 88.09305 91.0003 9.09305 70.0003 9.09305"></polygon>
+    </g>
+</svg>

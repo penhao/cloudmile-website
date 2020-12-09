@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/elasticsearch</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/elasticsearch" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#F2800B" x="12" y="31" width="12" height="53"></rect>
+        <rect id="Rectangle" fill="#F2800B" x="30" y="17" width="12" height="67"></rect>
+        <rect id="Rectangle-Copy" fill="#F2800B" x="70" y="17" width="12" height="67"></rect>
+        <rect id="Rectangle" fill="#F2800B" x="50" y="10" width="12" height="74"></rect>
+        <path d="M50.5,75 C35.8652204,75 24,63.1366119 24,48.5 C24,33.8643042 35.8652204,22 50.5,22 C65.1356958,22 77,33.8643042 77,48.5 C77,63.1366119 65.1356958,75 50.5,75 Z" id="Fill-4" fill="#0B6DD7"></path>
+        <line x1="82.3138701" y1="81.8123962" x2="65.5995844" y2="63.1457295" id="Line-6" stroke="#0B6DD7" stroke-width="10" stroke-linecap="round"></line>
+    </g>
+</svg>

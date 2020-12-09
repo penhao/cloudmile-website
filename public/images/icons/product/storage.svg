@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/storge</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/storge" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#0B6DD7" x="15" y="63" width="71" height="22"></rect>
+        <rect id="Rectangle-Copy" fill="#F2800B" x="15" y="39" width="71" height="22"></rect>
+        <rect id="Rectangle-Copy-2" fill="#0B6DD7" x="15" y="15" width="71" height="22"></rect>
+        <circle id="Oval" fill="#F2800B" cx="27" cy="26" r="6"></circle>
+        <circle id="Oval" fill="#0B6DD7" cx="27" cy="50" r="6"></circle>
+        <circle id="Oval" fill="#F2800B" cx="27" cy="74" r="6"></circle>
+    </g>
+</svg>

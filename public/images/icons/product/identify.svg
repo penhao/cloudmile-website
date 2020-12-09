@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/identify</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/identify" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M42.5,78 C23.4471737,78 8,62.5552118 8,43.5 C8,24.445981 23.4471737,9 42.5,9 C61.554019,9 77,24.445981 77,43.5 C77,62.5552118 61.554019,78 42.5,78 Z" id="Fill-4" fill="#0B6DD7"></path>
+        <line x1="83.1232784" y1="86.4561151" x2="61.7661356" y2="62.1894484" id="Line-6" stroke="#0B6DD7" stroke-width="13" stroke-linecap="round"></line>
+        <path d="M42.5,69 C28.4174762,69 17,57.5842869 17,43.5 C17,29.4165946 28.4174762,18 42.5,18 C56.5834054,18 68,29.4165946 68,43.5 C68,57.5842869 56.5834054,69 42.5,69 Z" id="Fill-4" fill="#F2800B"></path>
+    </g>
+</svg>

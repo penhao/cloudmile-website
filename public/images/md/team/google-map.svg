@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/google-map</title>
+    <desc>Created with Sketch.</desc>
+    <g id="company-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="team-desktop" transform="translate(-595.000000, -2398.000000)">
+            <g id="our-office" transform="translate(9.000000, 1546.000000)">
+                <g id="icon/google-map" transform="translate(582.000000, 848.000000)">
+                    <path d="M31.8924,7.657411 C36.2215888,11.630161 36.7720644,17.9029845 33.4779436,22.4590098 L33.4793111,22.4589611 L24.0555466,35.6 L14.2198427,23.5546095 C10.0700941,19.0773794 10.1844174,12.2596548 14.6416739,7.90912977 C19.3320416,3.33054136 27.0553898,3.21763047 31.8924,7.657411 Z" id="Combined-Shape" fill="#0B6DD7"></path>
+                    <path d="M24.6924,7.657411 C29.0215888,11.630161 29.5720644,17.9029845 26.2779436,22.4590098 L26.2793111,22.4589611 L16.8555466,35.6 L7.01984274,23.5546095 C2.87009414,19.0773794 2.98441741,12.2596548 7.4416739,7.90912977 C12.1320416,3.33054136 19.8553898,3.21763047 24.6924,7.657411 Z" id="Combined-Shape" fill="#F2800B" style="mix-blend-mode: multiply;"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

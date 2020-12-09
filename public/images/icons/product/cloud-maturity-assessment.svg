@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/Cloud Maturity Assessment</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/Cloud-Maturity-Assessment" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Fill-1" fill="#FFFFFF" points="29 80 46 80 46 65 29 65"></polygon>
+        <polygon id="Fill-5" fill="#FFFFFF" points="64 80 88 80 88 32 64 32"></polygon>
+        <polygon id="Fill-3" fill="#FFFFFF" points="46 80 64 80 64 50 46 50"></polygon>
+        <path d="M57.49831,25.0966084 C57.180865,25.0966084 56.8688004,25.1068859 56.5567359,25.1223022 C53.1132648,17.9486125 45.9034973,13 37.5476995,13 C25.8452783,13 16.3595916,22.6711202 16.3595916,34.5981501 C16.3595916,34.8705036 16.3918742,35.1377184 16.402635,35.4152107 C8.64944471,37.7944502 3,45.1171634 3,53.8016444 C3,64.4028777 11.4365041,73 21.8422432,73 L57.49831,73 C70.4758916,73 81,62.2754368 81,49.0483042 C81,35.8211716 70.4758916,25.0966084 57.49831,25.0966084" id="Fill-1" fill="#0B6DD7"></path>
+        <polygon id="Fill-1" fill="#F2800B" style="mix-blend-mode: multiply;" points="28 80 47 80 47 63 28 63"></polygon>
+        <polygon id="Fill-5" fill="#F2800B" style="mix-blend-mode: multiply;" points="67 80 93 80 93 27 67 27"></polygon>
+        <polygon id="Fill-3" fill="#F2800B" style="mix-blend-mode: multiply;" points="47 80 67 80 67 48 47 48"></polygon>
+    </g>
+</svg>

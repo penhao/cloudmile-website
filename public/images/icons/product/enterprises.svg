@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/enterprises</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/enterprises" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M20.5,69 C10.2832671,69 2,60.7180121 2,50.5 C2,40.2826275 10.2832671,32 20.5,32 C30.7173725,32 39,40.2826275 39,50.5 C39,60.7180121 30.7173725,69 20.5,69 Z" id="Fill-4-Copy" fill="#0B6DD7"></path>
+        <path d="M79.5,69 C69.2832671,69 61,60.7180121 61,50.5 C61,40.2826275 69.2832671,32 79.5,32 C89.7173725,32 98,40.2826275 98,50.5 C98,60.7180121 89.7173725,69 79.5,69 Z" id="Fill-4-Copy-2" fill="#0B6DD7"></path>
+        <path d="M49.5,75 C35.4174762,75 24,63.8081245 24,50 C24,36.1927398 35.4174762,25 49.5,25 C63.5834054,25 75,36.1927398 75,50 C75,63.8081245 63.5834054,75 49.5,75 Z" id="Fill-4" fill="#F2800B" style="mix-blend-mode: multiply;"></path>
+    </g>
+</svg>

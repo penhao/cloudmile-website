@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/Revenue Stream</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/Revenue-Stream" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-7" transform="translate(15.000000, 11.000000)">
+            <polygon id="Fill-1" fill="#FFFFFF" points="0 78 28 78 28 59 0 59"></polygon>
+            <polygon id="Fill-3" fill="#FFFFFF" points="21 78 49 78 49 43 21 43"></polygon>
+            <polygon id="Fill-1" fill="#0B6DD7" style="mix-blend-mode: multiply;" points="0 78 28 78 28 59 0 59"></polygon>
+            <polygon id="Fill-5" fill="#F2800B" points="43 78 71 78 71 0 43 0"></polygon>
+            <polygon id="Fill-3" fill="#0B6DD7" style="mix-blend-mode: multiply;" points="21 78 49 78 49 43 21 43"></polygon>
+        </g>
+    </g>
+</svg>

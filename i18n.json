@@ -1,0 +1,121 @@
+{
+  "locales": [
+    "en",
+    "zh-hant"
+  ],
+  "defaultLocale": "en",
+  "currentPagesDir": "src/pages_",
+  "finalPagesDir": "src/pages",
+  "localesPath": "locales",
+  "pages": {
+    "*": [
+      "common",
+      "form"
+    ],
+    "/": [
+      "home",
+      "case-study"
+    ],
+    "/contact": [
+      "contact",
+      "location"
+    ],
+    "/privacy": [
+      "privacy"
+    ],
+    "/cloud/solutions/digital-transformation": [
+      "digital-transformation",
+      "case-study"
+    ],
+    "/cloud/solutions/it-modernization": [
+      "it-modernization",
+      "case-study"
+    ],
+    "/cloud/solutions/data-driven-business": [
+      "data-driven-business",
+      "case-study"
+    ],
+    "/cloud/solutions/multi-cdn-platform": [
+      "multi-cdn-platform"
+    ],
+    "/cloud/solutions/business-productivity": [
+      "business-productivity"
+    ],
+    "/cloud/services/all-cloud-services": [
+      "all-cloud-services",
+      "faq",
+      "case-study"
+    ],
+    "/company/career": [
+      "career"
+    ],
+    "/company/team": [
+      "team",
+      "location"
+    ],
+    "/company/partner": [
+      "partner"
+    ],
+    "/ai/artificial-intelligence-services": [
+      "ai-services",
+      "case-study"
+    ],
+    "/resources/blog": [
+      "blog"
+    ],
+    "/resources/blog/[...slug]": [
+      "blog"
+    ],
+    "/preview/blog/[...slug]": [
+      "blog"
+    ],
+    "/resources/media-center": [
+      "media-center"
+    ],
+    "/resources/media-center/[...slug]": [
+      "media-center"
+    ],
+    "/preview/media-center/[...slug]": [
+      "media-center"
+    ],
+    "/resources/case-study": [
+      "case-study"
+    ],
+    "/resources/case-study/[...slug]": [
+      "case-study"
+    ],
+    "/preview/case-study/[...slug]": [
+      "case-study"
+    ],
+    "/resources/event": [
+      "event"
+    ],
+    "/resources/event/[...slug]": [
+      "event"
+    ],
+    "/preview/event/[...slug]": [
+      "event"
+    ],
+    "/resources/video": [
+      "video"
+    ],
+    "/resources/video/[...slug]": [
+      "video"
+    ],
+    "/resources/video/live-stream/[...slug]": [
+      "video"
+    ],
+    "/preview/video/[...slug]": [
+      "video"
+    ],
+    "/preview/video/live-stream/[...slug]": [
+      "video"
+    ],
+    "/resources/category/[...slug]": [
+      "category"
+    ],
+    "/cloud/solutions/cloud-management-platform": [
+      "cloud-management-platform"
+    ]
+  }
+}

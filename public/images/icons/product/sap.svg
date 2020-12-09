@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/sap</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/sap" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Triangle" fill="#0B6DD7" transform="translate(50.000000, 43.000000) rotate(-360.000000) translate(-50.000000, -43.000000) " points="50 22 70 64 30 64"></polygon>
+        <path d="M3.74598889,34.2568529 C0.861627518,43.9963712 6.5961067,54.1790048 16.5543973,57 L27,21.7298306 C17.0410509,18.9081913 6.63035026,24.5173346 3.74598889,34.2568529" id="Fill-1" fill="#0B6DD7" transform="translate(15.000000, 39.000000) rotate(6.000000) translate(-15.000000, -39.000000) "></path>
+        <rect id="Rectangle" fill="#F2800B" style="mix-blend-mode: multiply;" x="64" y="22" width="13" height="57"></rect>
+        <path d="M21.2296394,43 L11,78.3095 C21.0369022,81.0535283 31.463915,75.3737436 34.2894017,65.6232749 C37.1135637,55.8728062 31.2672039,45.7440283 21.2296394,43" id="Fill-4" fill="#F2800B" style="mix-blend-mode: multiply;" transform="translate(23.000000, 61.000000) rotate(6.000000) translate(-23.000000, -61.000000) "></path>
+        <path d="M79,22 C89.4934102,22 98,30.7304474 98,41.5 C98,52.2695526 89.4934102,61 79,61 L79,61 Z" id="Combined-Shape" fill="#0B6DD7"></path>
+    </g>
+</svg>

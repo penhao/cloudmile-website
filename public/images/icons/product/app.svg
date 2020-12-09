@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/app</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/app" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M50.5,11 L93,85 L70.027,85 L50.5,51 L30.972,85 L8,85 L50.5,11 Z" id="Combined-Shape" fill="#0B6DD7"></path>
+        <ellipse id="Oval" fill="#F2800B" style="mix-blend-mode: multiply;" cx="50.5" cy="62" rx="25.5" ry="26"></ellipse>
+    </g>
+</svg>

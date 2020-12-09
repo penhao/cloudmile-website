@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/domain-setting</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/domain-setting" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polyline id="Path-4" stroke="#0B6DD7" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round" points="10 28 19.8525903 59 30.5484174 28 41.9547825 59 50 28.2697813"></polyline>
+        <polyline id="Path-4" stroke="#F2800B" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round" points="50 28 59.8525903 59 70.5484174 28 81.9547825 59 90 28.2697813"></polyline>
+        <path d="M49.2881034,52 L34,85.3009117 C43.2137025,89.5540506 54.1057289,85.5473579 58.3280491,76.3516457 C62.5490972,67.1557298 58.5024419,56.2532407 49.2881034,52" id="Fill-4-Copy" fill="#A9A9A9" transform="translate(47.000000, 69.500000) scale(-1, 1) rotate(65.000000) translate(-47.000000, -69.500000) "></path>
+    </g>
+</svg>

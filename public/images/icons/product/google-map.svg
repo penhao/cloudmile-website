@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/google-map</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/google-map" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M79.731,19.1435275 C90.5540847,29.075506 91.9301897,44.7577877 83.6946019,56.14788 L83.6982777,56.1474027 L60.1388666,89 L35.5415679,58.8778469 C25.1753838,47.6846416 25.4639225,30.646327 36.6041847,19.7728244 C48.3301041,8.32635341 67.6384746,8.04407618 79.731,19.1435275 Z" id="Combined-Shape" fill="#0B6DD7"></path>
+        <path d="M61.731,19.1435275 C72.5540847,29.075506 73.9301897,44.7577877 65.6946019,56.14788 L65.6982777,56.1474027 L42.1388666,89 L17.5415679,58.8778469 C7.17538377,47.6846416 7.4639225,30.646327 18.6041847,19.7728244 C30.3301041,8.32635341 49.6384746,8.04407618 61.731,19.1435275 Z" id="Combined-Shape" fill="#F2800B" style="mix-blend-mode: multiply;"></path>
+    </g>
+</svg>

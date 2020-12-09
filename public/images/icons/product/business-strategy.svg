@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/Business Strategy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/Business-Strategy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M21.25,88.5 C14.62293,88.5 9.25,83.1278997 9.25,76.5 C9.25,69.8725151 14.62293,64.5 21.25,64.5 C27.8774849,64.5 33.25,69.8725151 33.25,76.5 C33.25,83.1278997 27.8774849,88.5 21.25,88.5 Z" id="Fill-4" fill="#F2800B" style="mix-blend-mode: multiply;"></path>
+        <path d="M78.25,34.5 C71.62293,34.5 66.25,29.1278997 66.25,22.5 C66.25,15.8725151 71.62293,10.5 78.25,10.5 C84.8774849,10.5 90.25,15.8725151 90.25,22.5 C90.25,29.1278997 84.8774849,34.5 78.25,34.5 Z" id="Fill-4-Copy" fill="#F2800B" style="mix-blend-mode: multiply;"></path>
+        <polygon id="Fill-4" fill="#0B6DD7" style="mix-blend-mode: multiply;" transform="translate(76.250000, 74.500000) rotate(90.000000) translate(-76.250000, -74.500000) " points="66.25 75.0379284 86.25 61.5 86.25 87.5"></polygon>
+        <polygon id="Fill-4-Copy-2" fill="#0B6DD7" style="mix-blend-mode: multiply;" transform="translate(19.250000, 23.500000) rotate(90.000000) translate(-19.250000, -23.500000) " points="9.25 24.0379284 29.25 10.5 29.25 36.5"></polygon>
+        <line x1="35.81" y1="61.94" x2="62.69" y2="35.06" id="Line-6" stroke="#F2800B" stroke-width="4" stroke-linecap="round"></line>
+    </g>
+</svg>

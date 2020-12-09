@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/Customer Satisfaction </title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.555537329 63.9090344 0.555537329 63.9090344 33 0 33"></polygon>
+    </defs>
+    <g id="icon/Customer-Satisfaction-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6" transform="translate(18.000000, 6.000000)">
+            <path d="M49.402459,7.05186741 C59.3154863,16.6622884 59.5599201,32.4901619 49.9473896,42.402205 C40.3371015,52.3153694 24.509447,52.5598067 14.597541,42.9482644 C4.68451375,33.3367221 4.44007987,17.5088487 14.0526104,7.59680553 C23.6640198,-2.31523763 39.490553,-2.55967489 49.402459,7.05186741" id="Fill-1" fill="#F2800B"></path>
+            <g id="Group-5" transform="translate(0.000000, 54.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-4"></g>
+                <path d="M31.961579,0.555537329 C14.3131323,0.552124138 0.00291450465,15.0721241 -0.000448385331,32.9865724 L63.9090344,33.0002276 C63.9123967,15.0857793 49.6089047,0.558951724 31.961579,0.555537329" id="Fill-3" fill="#0B6DD7" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

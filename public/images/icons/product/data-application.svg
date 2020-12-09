@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/data application</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/data-application" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M66.2433294,77.7575742 C68.5855569,80.0998017 68.5855569,83.8998971 66.2433294,86.2433294 C63.8998971,88.5855569 60.0998017,88.5855569 57.7575742,86.2433294 C55.4141419,83.8998971 55.4141419,80.0998017 57.7575742,77.7575742 C60.0998017,75.4141419 63.8998971,75.4141419 66.2433294,77.7575742" id="Fill-4" fill="#0B6DD7"></path>
+        <line x1="16" y1="82.5" x2="49" y2="82.5" id="Stroke-6" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        <line x1="74" y1="82.5" x2="87" y2="82.5" id="Stroke-8" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        <rect id="Rectangle" fill="#0B6DD7" x="12" y="55" width="77" height="18"></rect>
+        <rect id="Rectangle-Copy" fill="#F2800B" x="12" y="35" width="77" height="18"></rect>
+        <rect id="Rectangle-Copy-2" fill="#0B6DD7" x="12" y="14" width="77" height="18"></rect>
+    </g>
+</svg>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/scale</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/scale" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M50,58 C45.5819533,58 42,54.4185998 42,50 C42,45.5816768 45.5819533,42 50,42 C54.4183232,42 58,45.5816768 58,50 C58,54.4185998 54.4183232,58 50,58 Z" id="Fill-4" fill="#0B6DD7"></path>
+        <g id="Group" transform="translate(62.000000, 16.000000)" stroke="#F2800B" stroke-linecap="round" stroke-width="3.96">
+            <line x1="0" y1="21.78" x2="20.79" y2="0.99" id="Path-6"></line>
+            <line x1="20.79" y1="0.99" x2="20.79" y2="11.385" id="Path-8"></line>
+            <line x1="20.79" y1="0.99" x2="10.89" y2="0.99" id="Path-8"></line>
+        </g>
+        <g id="Group" transform="translate(27.000000, 73.000000) rotate(-180.000000) translate(-27.000000, -73.000000) translate(16.000000, 62.000000)" stroke="#F2800B" stroke-linecap="round" stroke-width="3.96">
+            <line x1="0" y1="21.78" x2="20.79" y2="0.99" id="Path-6"></line>
+            <line x1="20.79" y1="0.99" x2="20.79" y2="11.385" id="Path-8"></line>
+            <line x1="20.79" y1="0.99" x2="10.89" y2="0.99" id="Path-8"></line>
+        </g>
+        <g id="Group" transform="translate(18.000000, 49.553980) rotate(-135.000000) translate(-18.000000, -49.553980) translate(7.000000, 38.553980)" stroke="#F2800B" stroke-linecap="round" stroke-width="3.96">
+            <line x1="0" y1="21.78" x2="20.79" y2="0.99" id="Path-6"></line>
+            <line x1="20.79" y1="0.99" x2="20.79" y2="11.385" id="Path-8"></line>
+            <line x1="20.79" y1="0.99" x2="10.89" y2="0.99" id="Path-8"></line>
+        </g>
+        <g id="Group-Copy" transform="translate(49.556349, 18.000000) rotate(-46.000000) translate(-49.556349, -18.000000) translate(38.556349, 7.000000)" stroke="#F2800B" stroke-linecap="round" stroke-width="3.96">
+            <line x1="0" y1="21.78" x2="20.79" y2="0.99" id="Path-6"></line>
+            <line x1="20.79" y1="0.99" x2="20.79" y2="11.385" id="Path-8"></line>
+            <line x1="20.79" y1="0.99" x2="10.89" y2="0.99" id="Path-8"></line>
+        </g>
+        <g id="Group-Copy-2" transform="translate(82.000000, 49.553980) rotate(44.000000) translate(-82.000000, -49.553980) translate(71.000000, 38.553980)" stroke="#F2800B" stroke-linecap="round" stroke-width="3.96">
+            <line x1="0" y1="21.78" x2="20.79" y2="0.99" id="Path-6"></line>
+            <line x1="20.79" y1="0.99" x2="20.79" y2="11.385" id="Path-8"></line>
+            <line x1="20.79" y1="0.99" x2="10.89" y2="0.99" id="Path-8"></line>
+        </g>
+        <g id="Group-Copy-3" transform="translate(50.000000, 82.000000) rotate(135.000000) translate(-50.000000, -82.000000) translate(39.000000, 71.000000)" stroke="#F2800B" stroke-linecap="round" stroke-width="3.96">
+            <line x1="0" y1="21.78" x2="20.79" y2="0.99" id="Path-6"></line>
+            <line x1="20.79" y1="0.99" x2="20.79" y2="11.385" id="Path-8"></line>
+            <line x1="20.79" y1="0.99" x2="10.89" y2="0.99" id="Path-8"></line>
+        </g>
+        <g id="Group" transform="translate(27.000000, 27.000000) rotate(-90.000000) translate(-27.000000, -27.000000) translate(16.000000, 16.000000)" stroke="#F2800B" stroke-linecap="round" stroke-width="3.96">
+            <line x1="0" y1="21.78" x2="20.79" y2="0.99" id="Path-6"></line>
+            <line x1="20.79" y1="0.99" x2="20.79" y2="11.385" id="Path-8"></line>
+            <line x1="20.79" y1="0.99" x2="10.89" y2="0.99" id="Path-8"></line>
+        </g>
+        <g id="Group" transform="translate(73.000000, 73.000000) rotate(-270.000000) translate(-73.000000, -73.000000) translate(62.000000, 62.000000)" stroke="#F2800B" stroke-linecap="round" stroke-width="3.96">
+            <line x1="0" y1="21.78" x2="20.79" y2="0.99" id="Path-6"></line>
+            <line x1="20.79" y1="0.99" x2="20.79" y2="11.385" id="Path-8"></line>
+            <line x1="20.79" y1="0.99" x2="10.89" y2="0.99" id="Path-8"></line>
+        </g>
+    </g>
+</svg>

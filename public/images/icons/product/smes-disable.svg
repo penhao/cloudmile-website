@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/smes-disable</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/smes-disable" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M70.5,78 C55.3129646,78 43,65.6889369 43,50.5 C43,35.3120138 55.3129646,23 70.5,23 C85.6879862,23 98,35.3120138 98,50.5 C98,65.6889369 85.6879862,78 70.5,78 Z" id="Fill-4" fill="#D3D3D3"></path>
+        <path d="M29.5,78 C14.3129646,78 2,65.6889369 2,50.5 C2,35.3120138 14.3129646,23 29.5,23 C44.6879862,23 57,35.3120138 57,50.5 C57,65.6889369 44.6879862,78 29.5,78 Z" id="Fill-4-Copy" fill="#A9A9A9" style="mix-blend-mode: multiply;"></path>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/explore-data</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/explore-data" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#F2800B" x="13" y="63" width="74" height="22"></rect>
+        <rect id="Rectangle-Copy" fill="#F2800B" x="13" y="37" width="74" height="22"></rect>
+        <rect id="Rectangle-Copy-2" fill="#F2800B" x="13" y="12" width="74" height="22"></rect>
+        <path d="M45,68 C31.1936041,68 20,56.8081245 20,43 C20,29.1927398 31.1936041,18 45,18 C58.8072602,18 70,29.1927398 70,43 C70,56.8081245 58.8072602,68 45,68 Z" id="Fill-4" fill="#0B6DD7"></path>
+        <line x1="74.3567532" y1="73.989275" x2="57" y2="57" id="Line-6" stroke="#0B6DD7" stroke-width="8.8" stroke-linecap="round"></line>
+    </g>
+</svg>

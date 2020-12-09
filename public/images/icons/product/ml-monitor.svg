@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/ML monitor</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/ML-monitor" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-13" transform="translate(9.000000, 7.000000)">
+            <path d="M41,20.0016741 C41,31.0471248 31.8191026,40 20.4965679,40 C9.17746526,40 0,31.0471248 0,20.0016741 C0,8.95622332 9.17746526,0 20.4965679,0 C31.8191026,0 41,8.95622332 41,20.0016741" id="Fill-1" fill="#0B6DD7"></path>
+            <path d="M23,76.4993722 C23,80.6426718 19.6411351,84 15.4987443,84 C11.3576092,84 8,80.6426718 8,76.4993722 C8,72.3573282 11.3576092,69 15.4987443,69 C19.6411351,69 23,72.3573282 23,76.4993722" id="Fill-4" fill="#0B6DD7"></path>
+            <path d="M87,54.4992885 C87,59.195028 83.1932865,63 78.4985769,63 C73.8052905,63 70,59.195028 70,54.4992885 C70,49.804972 73.8052905,46 78.4985769,46 C83.1932865,46 87,49.804972 87,54.4992885" id="Fill-7" fill="#0B6DD7"></path>
+            <line x1="66.4173" y1="45.5346" x2="44" y2="33" id="Stroke-12" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <line x1="66" y1="60" x2="28" y2="74" id="Stroke-12" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

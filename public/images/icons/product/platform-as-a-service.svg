@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/Platform-as-a-service </title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.000812387543 0.713319786 90.9597837 0.713319786 90.9597837 71.9776858 0.000812387543 71.9776858"></polygon>
+    </defs>
+    <g id="icon/Platform-as-a-service-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-10" transform="translate(4.000000, 3.500000)">
+            <g id="Group-3" transform="translate(0.000000, 0.500000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M63.5538899,15.075489 C63.1869615,15.075489 62.8213871,15.0901007 62.4571667,15.1033842 C58.4399103,6.59003872 50.0344072,0.712124278 40.2857567,0.712124278 C26.6430619,0.712124278 15.5824055,12.1943147 15.5824055,26.3570997 C15.5824055,26.6852002 15.6189629,27.0053307 15.6297947,27.3321029 C6.58927536,30.1574868 0.000812387543,38.8594569 0.000812387543,49.1673927 C0.000812387543,61.7640622 9.83747156,71.9776858 21.9731875,71.9776858 L63.5538899,71.9776858 C78.6900238,71.9776858 90.9597837,59.2388836 90.9597837,43.5259232 C90.9597837,27.8142911 78.6900238,15.075489 63.5538899,15.075489" id="Fill-1" fill="#0B6DD7" mask="url(#mask-2)"></path>
+            </g>
+            <path d="M63.950551,81.5505033 C66.6831497,84.283102 66.6831497,88.7165466 63.950551,91.450551 C61.2165466,94.1831497 56.783102,94.1831497 54.0505033,91.450551 C51.3164989,88.7165466 51.3164989,84.283102 54.0505033,81.5505033 C56.783102,78.8164989 61.2165466,78.8164989 63.950551,81.5505033" id="Fill-4" fill="#0B6DD7"></path>
+            <line x1="5" y1="86" x2="44" y2="86" id="Stroke-6" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <line x1="71" y1="86" x2="86" y2="86" id="Stroke-8" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

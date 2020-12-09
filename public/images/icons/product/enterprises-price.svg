@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/enterprises-price</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/enterprises-price" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M31.5,90 C19.0742437,90 9,80.1511495 9,68 C9,55.8496111 19.0742437,46 31.5,46 C43.9265341,46 54,55.8496111 54,68 C54,80.1511495 43.9265341,90 31.5,90 Z" id="Fill-4-Copy" fill="#0B6DD7"></path>
+        <path d="M68.5,55 C56.0742437,55 46,45.1511495 46,33 C46,20.8496111 56.0742437,11 68.5,11 C80.9265341,11 91,20.8496111 91,33 C91,45.1511495 80.9265341,55 68.5,55 Z" id="Fill-4-Copy-2" fill="#0B6DD7"></path>
+        <path d="M31.5,55 C19.0742437,55 9,45.1511495 9,33 C9,20.8496111 19.0742437,11 31.5,11 C43.9265341,11 54,20.8496111 54,33 C54,45.1511495 43.9265341,55 31.5,55 Z" id="Fill-4" fill="#F2800B" style="mix-blend-mode: multiply;"></path>
+        <path d="M68.5,90 C56.0742437,90 46,80.1511495 46,68 C46,55.8496111 56.0742437,46 68.5,46 C80.9265341,46 91,55.8496111 91,68 C91,80.1511495 80.9265341,90 68.5,90 Z" id="Fill-4-Copy-3" fill="#F2800B" style="mix-blend-mode: multiply;"></path>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/billing</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/billing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Fill-5" fill="#0B6DD7" style="mix-blend-mode: multiply;" points="19 87 82 87 82 10 19 10"></polygon>
+        <path d="M65.3133317,42 L54,68.958219 C61.8741652,71.9353054 70.7904239,68.3139825 73.9150409,60.8697135 C77.0385875,53.4253366 73.1880321,44.9771404 65.3133317,42" id="Fill-4" fill="#FFFFFF"></path>
+        <path d="M49.1262253,32.0497565 C45.9548051,39.4832209 49.7105038,47.9676722 57.5149212,51 L69,24.0808773 C61.195106,21.0479887 52.2976456,24.616292 49.1262253,32.0497565" id="Fill-1" fill="#FFFFFF"></path>
+        <line x1="33" y1="41" x2="41" y2="41" id="Stroke-6-Copy-2" stroke="#F2800B" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"></line>
+        <line x1="33" y1="25" x2="38" y2="25" id="Stroke-6-Copy-3" stroke="#F2800B" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"></line>
+        <line x1="33" y1="54.5" x2="46" y2="54.5" id="Stroke-6-Copy" stroke="#F2800B" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"></line>
+        <line x1="33" y1="68.5" x2="42" y2="68.5" id="Stroke-6" stroke="#F2800B" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"></line>
+    </g>
+</svg>

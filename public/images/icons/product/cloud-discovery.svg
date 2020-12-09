@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/cloud discovery</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/cloud-discovery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M60.8957026,18.2982186 C60.570118,18.2982186 60.2500517,18.3086674 59.9299855,18.3243405 C56.3982203,11.0310894 49.0035869,6 40.433538,6 C28.4310547,6 18.7021453,15.8323056 18.7021453,27.9581192 C18.7021453,28.235012 18.7352556,28.5066804 18.7462923,28.7887975 C10.7943023,31.207691 5,38.6524495 5,47.4816718 C5,58.2595923 13.6528247,67 24.3253777,67 L60.8957026,67 C74.2060426,67 85,56.0966941 85,42.6491093 C85,29.2015245 74.2060426,18.2982186 60.8957026,18.2982186" id="Fill-1" fill="#0B6DD7"></path>
+        <path d="M65.5,83 C54.1787554,83 45,73.8226621 45,62.5 C45,51.1780467 54.1787554,42 65.5,42 C76.8219533,42 86,51.1780467 86,62.5 C86,73.8226621 76.8219533,83 65.5,83 Z" id="Fill-4" fill="#F2800B" style="mix-blend-mode: multiply;"></path>
+        <line x1="90" y1="88" x2="77" y2="74" id="Line-6" stroke="#F2800B" stroke-width="10" stroke-linecap="round"></line>
+    </g>
+</svg>

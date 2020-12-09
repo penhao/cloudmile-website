@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/DMP</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/DMP" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-7" transform="translate(11.000000, 12.500000)">
+            <path d="M0.0892623533,0.5 L0,72.5 C19.3050126,72.5250426 34.9756273,56.4278958 35,36.5459504 C35.0243159,16.6640049 19.3942749,0.52507181 0.0892623533,0.5" id="Fill-2" fill="#FFFFFF"></path>
+            <polygon id="Fill-4" fill="#FFFFFF" points="52 36.244824 79 17.5 79 53.5"></polygon>
+            <polygon id="Fill-1" fill="#F2800B" points="20 73.5 67 73.5 67 25.5 20 25.5"></polygon>
+            <g id="Group-6" transform="translate(0.000000, 0.500000)" fill="#0B6DD7">
+                <path d="M0.0902564103,0.116904286 L0,71.9927335 C19.52,72.0177329 35.3651282,55.9483471 35.3897723,36.10069 C35.414359,16.2530329 19.6102564,0.141932857 0.0902564103,0.116904286" id="Fill-2" style="mix-blend-mode: multiply;"></path>
+                <polygon id="Fill-4" style="mix-blend-mode: multiply;" points="52.1325128 35.9151657 79.5099487 17.1103657 79.5099487 53.2255514"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

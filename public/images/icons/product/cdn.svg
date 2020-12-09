@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/cdn</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/cdn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M56.9609836,42.820747 C60.9261945,46.6649154 61.0239681,52.9960647 57.1789558,56.960882 C53.3348406,60.9261478 47.0037788,61.0239227 43.0390164,57.1793058 C39.0738055,53.3346888 38.9760319,47.0035395 42.8210442,43.0387222 C46.6656079,39.0739049 52.9962212,38.97613 56.9609836,42.820747" id="Fill-1" fill="#0B6DD7"></path>
+        <path d="M86.3202253,88.6141387 C84.0485596,89.6193631 81.3917937,88.5929015 80.3858613,86.3205279 C79.3806369,84.0481542 80.4070985,81.3913884 82.6794721,80.3861639 C84.9518458,79.3802315 87.6086116,80.407401 88.6138361,82.6797747 C89.6197685,84.9514404 88.592599,87.6082063 86.3202253,88.6141387" id="Fill-7" fill="#F2800B"></path>
+        <path d="M13.9772914,19.5712652 C16.5014493,20.6881813 19.4542971,19.5476683 20.5712508,17.0228087 C21.6882044,14.4979491 20.5476531,11.5459871 18.0227086,10.429071 C15.4977642,9.31136834 12.5457029,10.4526678 11.4287492,12.9775274 C10.3117956,15.5016005 11.4523469,18.4535625 13.9772914,19.5712652" id="Fill-11" fill="#F2800B"></path>
+        <line x1="24.80865" y1="24.9744" x2="38.80865" y2="38.9744" id="Stroke-13" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        <line x1="61.80865" y1="61.9744" x2="75.80865" y2="75.9744" id="Stroke-13-Copy" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        <line x1="14.2763454" y1="50.6062163" x2="34.0753352" y2="50.6062163" id="Stroke-13" stroke="#0B6DD7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        <line x1="66.6022472" y1="50.6062163" x2="86.4012371" y2="50.6062163" id="Stroke-13-Copy" stroke="#0B6DD7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        <line x1="24.8387912" y1="76.1062163" x2="38.8387912" y2="62.1062163" id="Stroke-13" stroke="#0B6DD7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        <line x1="61.8387912" y1="39.1062163" x2="75.8387912" y2="25.1062163" id="Stroke-13-Copy" stroke="#0B6DD7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        <line x1="50.3387912" y1="86.6686622" x2="50.3387912" y2="66.8696723" id="Stroke-13" stroke="#0B6DD7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        <line x1="50.3387912" y1="34.3427604" x2="50.3387912" y2="14.5437705" id="Stroke-13-Copy" stroke="#0B6DD7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+    </g>
+</svg>

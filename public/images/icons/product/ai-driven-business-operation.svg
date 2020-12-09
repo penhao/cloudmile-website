@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/AI-Driven Business Operation</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.52326 0.865454545 8.90946 0.865454545 8.90946 9.33590909 0.52326 9.33590909"></polygon>
+        <polygon id="path-3" points="0.663818182 0.47943 9.13454545 0.47943 9.13454545 8.86563 0.663818182 8.86563"></polygon>
+    </defs>
+    <g id="icon/AI-Driven-Business-Operation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-21" transform="translate(10.000000, 9.000000)">
+            <g id="Group-3" transform="translate(71.000000, 0.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M8.90946,5.10045455 C8.90946,7.43954545 7.03206,9.33590909 4.71636,9.33590909 C2.40066,9.33590909 0.52326,7.43954545 0.52326,5.10045455 C0.52326,2.76136364 2.40066,0.865 4.71636,0.865 C7.03206,0.865 8.90946,2.76136364 8.90946,5.10045455" id="Fill-1" fill="#0B6DD7" mask="url(#mask-2)"></path>
+            </g>
+            <path d="M57.678136,23.3221285 C67.4406213,33.0849665 67.4406213,48.9150335 57.678136,58.6778715 C47.9156507,68.4407095 32.0861555,68.4407095 22.321864,58.6778715 C12.5593787,48.9150335 12.5593787,33.0849665 22.321864,23.3221285 C32.0861555,13.5592905 47.9156507,13.5592905 57.678136,23.3221285" id="Fill-4" fill="#0B6DD7"></path>
+            <line x1="61" y1="20" x2="69" y2="12" id="Stroke-6" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <g id="Group-10" transform="translate(71.000000, 72.000000)">
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="Clip-9"></g>
+                <path d="M4.89927273,8.86563 C2.56018182,8.86563 0.663818182,6.98823 0.663818182,4.67253 C0.663818182,2.35683 2.56018182,0.47943 4.89927273,0.47943 C7.23836364,0.47943 9.13472727,2.35683 9.13472727,4.67253 C9.13472727,6.98823 7.23836364,8.86563 4.89927273,8.86563" id="Fill-8" fill="#0B6DD7" mask="url(#mask-4)"></path>
+            </g>
+            <line x1="61" y1="62" x2="69" y2="70" id="Stroke-11" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <path d="M0,77 C0,74.7909423 1.79094226,73 4,73 C6.20905774,73 8,74.7909423 8,77 C8,79.2090577 6.20905774,81 4,81 C1.79094226,81 0,79.2090577 0,77" id="Fill-13" fill="#0B6DD7"></path>
+            <line x1="19" y1="62" x2="11" y2="70" id="Stroke-15" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+            <path d="M4,1 C6.20905774,1 8,2.79094226 8,5 C8,7.20905774 6.20905774,9 4,9 C1.79094226,9 0,7.20905774 0,5 C0,2.79094226 1.79094226,1 4,1" id="Fill-17" fill="#0B6DD7"></path>
+            <line x1="19" y1="20" x2="11" y2="12" id="Stroke-19" stroke="#F2800B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></line>
+        </g>
+    </g>
+</svg>

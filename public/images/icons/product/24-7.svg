@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>icon/24-7</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/24-7" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M50,93 C26.2529991,93 7,73.7499741 7,50 C7,26.2515125 26.2529991,7 50,7 C73.7484875,7 93,26.2515125 93,50 C93,73.7499741 73.7484875,93 50,93 Z" id="Fill-4" fill="#0B6DD7"></path>
+        <text id="24/7" font-family="OpenSans-Bold, Open Sans" font-size="31.68" font-weight="bold" fill="#F2800B">
+            <tspan x="16" y="62">24/7</tspan>
+        </text>
+        <polygon id="Triangle" fill="#0B6DD7" transform="translate(75.000000, 89.500000) rotate(-210.000000) translate(-75.000000, -89.500000) " points="75 84 82 95 68 95"></polygon>
+    </g>
+</svg>
