@@ -13,16 +13,14 @@ const Jobs = () => {
         fetchData().then((response: any) => {
             if (response.status) {
                 setJobJobList(response.data);
-                console.log(response);
             }
         });
-    }, []);
+    }, [lang]);
     return (
         <Fragment>
             {
                 (jobList && Object.keys(jobList).length) ?
                     Object.keys(jobList).map((key: any, index: number) => {
-                        console.log(jobList[key]);
                         return (
                             <div key={index}>
                                 {

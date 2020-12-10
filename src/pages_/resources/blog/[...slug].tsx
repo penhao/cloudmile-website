@@ -36,6 +36,7 @@ const BlogDetail = ({postData}: InferGetServerSidePropsType<typeof getServerSide
             redirectUrl: postData.download_url,
             country: postData.country
         });
+        console.log(postData);
     }, [postData]);
     return (
         <Layout metadata={{

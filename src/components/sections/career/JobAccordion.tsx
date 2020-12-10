@@ -7,6 +7,7 @@ import {Theme, makeStyles} from '@material-ui/core/styles';
 import IconMinus from "../../icons/IconMinus";
 import IconPlus from "../../icons/IconPlus";
 import JobSubAccordion from "./JobSubAccordion";
+import useTranslation from "next-translate/useTranslation";
 
 
 interface Props {
@@ -41,16 +42,17 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const JobAccordion = ({title, data}: Props) => {
     const classes = useStyles();
+    const {t} = useTranslation();
     const [expanded, setExpanded] = useState<boolean>(false);
     const [fixTitle, setFixTitle] = useState('');
 
     const getTitle = () => {
         if (title === 'sg') {
-            return 'SINGAPORE';
+            return 'Singapore';
         } else if (title === 'hk') {
-            return 'HONG KONG';
+            return 'Hong Kong';
         } else if (title === 'tw') {
-            return 'TAIWAN';
+            return 'Taiwan';
         } else {
             return '';
         }
@@ -65,7 +67,7 @@ const JobAccordion = ({title, data}: Props) => {
             <AccordionSummary expandIcon={expanded ? <IconMinus/> : <IconPlus/>}
                               className={classes.summary}>
                 <Typography variant={"h5"} color={"primary"}>
-                    {fixTitle}
+                    {t(`career:${fixTitle}`)}
                 </Typography>
             </AccordionSummary>
             <AccordionDetails className={classes.details}>
