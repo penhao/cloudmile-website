@@ -44,6 +44,9 @@ export const useFormStyles = makeStyles((theme: Theme) => ({
         }
     },
     recaptcha: {
-        padding: '20px 0 20px 44px'
+        padding: '20px 0 20px 20px',
+        [theme.breakpoints.up('sm')]:{
+            padding: '20px 0 20px 44px',
+        }
     }
 }));

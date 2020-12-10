@@ -25,25 +25,39 @@ const useStyles = makeStyles((theme: Theme) => ({
     slider: {
         position: 'relative',
         '& .swiper-container': {
-            paddingBottom: '80px',
+            paddingBottom: '60px',
+            [theme.breakpoints.up('sm')]: {
+                paddingBottom: '80px',
+            }
         },
         '& .swiper-pagination': {
             opacity: ({sliderTotal}: StyleProps) => (sliderTotal > 1) ? 1 : 0,
             position: 'absolute',
-            width: 'calc(100% - 160px)',
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            width: 'calc(100% - 120px)',
+            height: '60px',
             left: 0,
-            bottom: '28px',
-            padding: '0 20px',
+            bottom: 0,
+            padding: '0 15px',
             marginLeft: ({paginationDistance}: StyleProps) => (paginationDistance) ? 0 : '-20px',
+            [theme.breakpoints.up('sm')]: {
+                width: 'calc(100% - 160px)',
+                height: '80px',
+                padding: '0 10px'
+            },
             '& .swiper-pagination-bullet': {
                 display: 'inline-block',
-                width: '12px',
-                height: '12px',
+                width: '10px',
+                height: '10px',
                 borderRadius: '99em',
                 backgroundColor: '#d3d3d3',
-                marginRight: '20px',
-                '&:last-child': {
-                    marginRight: 0
+                margin: '5px',
+                [theme.breakpoints.up('sm')]: {
+                    width: '12px',
+                    height: '12px',
+                    margin: '10px'
                 }
             },
             '& .swiper-pagination-bullet-active': {
@@ -53,13 +67,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     prevButton: {
         position: 'absolute',
-        right: '80px',
-        bottom: 0
+        right: '60px',
+        bottom: 0,
+        [theme.breakpoints.up('sm')]: {
+            right: '80px',
+        }
     },
     nextButton: {
         position: 'absolute',
         right: 0,
-        bottom: 0
+        bottom: 0,
+        [theme.breakpoints.up('sm')]: {}
     }
 }));
 const BannerSlider = ({sliderTotal = 0, itemDistance = 0, paginationDistance = false, children}: Props) => {

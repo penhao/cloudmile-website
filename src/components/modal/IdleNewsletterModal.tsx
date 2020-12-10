@@ -33,17 +33,21 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     contentMask: {
         position: 'relative',
-        width: '100%',
         height: '100vh',
-        maxWidth: '680px',
+        width: '100%',
         padding: '40px 0',
         overflow: 'hidden',
-        overflowY: 'auto'
+        overflowY: 'auto',
+        pointerEvents: 'none'
     },
     content: {
         position: 'relative',
+        width: '100%',
+        maxWidth: '680px',
+        margin: '0 auto',
         backgroundColor: theme.palette.common.white,
         padding: theme.spacing(2, 2),
+        pointerEvents: 'all',
         [theme.breakpoints.up('sm')]: {
             padding: theme.spacing(4, 4),
         }
@@ -88,7 +92,7 @@ const IdleNewsletterModal = ({title, caption, salesforceData}: Props) => {
 
     return (
         <div>
-            <IdleTimer ref={idleTimerRef} timeout={2 * 60 * 1000} onIdle={onIdle}/>
+            <IdleTimer ref={idleTimerRef} timeout={5 * 60 * 1000} onIdle={onIdle}/>
             <Modal open={modalIsOpen}
                    onClose={handleModalClose}
                    closeAfterTransition
@@ -99,27 +103,27 @@ const IdleNewsletterModal = ({title, caption, salesforceData}: Props) => {
                        lang === 'zh' ? pageClasses.fontNotoSans : pageClasses.fontOpenSans
                    )}>
                 <Fade in={modalIsOpen}>
-                    <div className={classes.contentMask} ref={contentRef}>
-                        <div className={clsx(
-                            classes.content, (height <= windowSize.height) ? classes.contentCenter : null
+                    <div className={classes.contentMask}>
+                        <div ref={contentRef} className={clsx(
+                            classes.content, (height < windowSize.height) ? classes.contentCenter : null
                         )}>
-                        <Grid container spacing={smUp ? 4 : 2}>
-                            <Grid item xs={12}>
-                                <SectionTitleLabel color={"warning"}>
-                                    {caption}
-                                </SectionTitleLabel>
-                                <SectionTitle>
-                                    {title}
-                                </SectionTitle>
+                            <Grid container spacing={smUp ? 4 : 2}>
+                                <Grid item xs={12}>
+                                    <SectionTitleLabel color={"warning"}>
+                                        {caption}
+                                    </SectionTitleLabel>
+                                    <SectionTitle>
+                                        {title}
+                                    </SectionTitle>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <NewsLetterForm salesforceData={salesforceData}/>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={12}>
-                                <NewsLetterForm salesforceData={salesforceData}/>
-                            </Grid>
-                        </Grid>
-                        <Button onClick={handleModalClose} className={classes.close}>
-                            <IconClose/>
-                        </Button>
-                    </div>
+                            <Button onClick={handleModalClose} className={classes.close}>
+                                <IconClose/>
+                            </Button>
+                        </div>
                     </div>
                 </Fade>
             </Modal>

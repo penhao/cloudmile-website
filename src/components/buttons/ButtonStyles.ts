@@ -17,8 +17,8 @@ export const useButtonStyles = makeStyles((theme: Theme) => ({
         zIndex: 1
     },
     blackButton: {
-        width: '80px',
-        height: '80px',
+        width: '60px',
+        height: '60px',
         minWidth: 'auto',
         padding: 0,
         borderRadius: 0,
@@ -29,6 +29,10 @@ export const useButtonStyles = makeStyles((theme: Theme) => ({
         },
         '& .MuiTouchRipple-child': {
             backgroundColor: theme.palette.common.white
+        },
+        [theme.breakpoints.up('sm')]:{
+            width: '80px',
+            height: '80px',
         }
     },
     roundedButton: {

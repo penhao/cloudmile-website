@@ -34,17 +34,21 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     contentMask: {
         position: 'relative',
-        width: '100vw',
+        width: '100%',
         height: '100vh',
-        maxWidth: '680px',
         padding: '40px 0',
         overflow: 'hidden',
-        overflowY: 'auto'
+        overflowY: 'auto',
+        pointerEvents: 'none'
     },
     content: {
         position: 'relative',
+        width: '100%',
+        maxWidth: '680px',
+        margin: '0 auto',
         backgroundColor: theme.palette.common.white,
         padding: theme.spacing(2, 2),
+        pointerEvents: 'all',
         [theme.breakpoints.up('sm')]: {
             padding: theme.spacing(4, 4),
         }
@@ -92,7 +96,7 @@ const VideoRegisterModal = ({title, caption, salesforceData = null, openModel = 
                 <Fade in={openModel}>
                     <div className={classes.contentMask}>
                         <div ref={contentRef} className={clsx(
-                            classes.content, (height <= windowSize.height) ? classes.contentCenter : null
+                            classes.content, (height < windowSize.height) ? classes.contentCenter : null
                         )}>
                             <Grid container spacing={smUp ? 4 : 2}>
                                 <Grid item xs={12}>
