@@ -118,8 +118,6 @@ const VideoListItem = ({type, itemData, color = useTheme().palette.common.white}
             country: itemData.country
         })
     }, [itemData]);
-
-    console.log(itemData);
     const getContent = () => {
         return (
             <Fragment>

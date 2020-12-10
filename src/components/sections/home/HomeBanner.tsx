@@ -6,6 +6,7 @@ import BackgroundImage from "../../Images/BackgroundImage";
 import RatioContainer from "../../containers/RatioContainer";
 import useTranslation from "next-translate/useTranslation";
 import clsx from "clsx";
+import Hidden from "@material-ui/core/Hidden";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
@@ -54,15 +55,19 @@ const HomeBanner = () => {
     return (
         <div className={classes.root}>
             <RatioContainer ratio={{xs: 1, sm: 1, md: 1}}
-                            maxHeight={{xs: 'calc(100vh - 50px)', sm: 'calc(100vh - 60px)', md: 'calc(100vh - 60px)'}}>
+                            maxHeight={{md: 'calc(100vh - 60px)'}}>
                 <BackgroundImage imgUrl={'/home/cloud.jpg'}
                                  alt={t('home:alt.Making Digital Transformation Possible')}
                                  detectRetina={true}/>
             </RatioContainer>
             <div className={clsx(classes.inner, (textActive ? 'active' : null))}>
-                <span className={classes.rect}/>
+                <Hidden smDown>
+                    <span className={classes.rect}/>
+                </Hidden>
                 <WelcomeText/>
-                <span className={classes.rect}/>
+                <Hidden smDown>
+                    <span className={classes.rect}/>
+                </Hidden>
             </div>
         </div>
     );

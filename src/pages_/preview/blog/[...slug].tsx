@@ -82,10 +82,9 @@ const BlogDetail = ({postData}: InferGetServerSidePropsType<typeof getServerSide
 };
 
 export const getServerSideProps: GetServerSideProps = async ({locale, query, res}: GetServerSidePropsContext) => {
-    const lang = (locale === 'zh-hant') ? 'tw' : locale;
-    const postData = await fetchPreviewBlogArticle(lang, query.slug[0]);
+    const postData = await fetchPreviewBlogArticle(locale, query.slug[0]);
     if (postData?.error || postData?.error === 'article not found') {
-        const redirectUrl = `${(locale === 'zh-hant') ? '/zh-hant' : ''}/404`;
+        const redirectUrl = `${(locale === 'zh') ? '/zh' : ''}/404`;
         res.setHeader("location", redirectUrl);
         res.statusCode = 302;
         res.end();

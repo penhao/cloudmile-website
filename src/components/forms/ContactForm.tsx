@@ -38,8 +38,8 @@ const ContactForm = () => {
     const urlParams = useUrlParams({
         utmSource: 'officialsite',
         utmMedium: 'organic',
-        utmCampaign: `contactus_${(lang === 'zh-hant') ? 'zh' : lang}`,
-        leadSource: `Official Site_${(lang === 'zh-hant') ? 'zh' : lang}`,
+        utmCampaign: `contactus_${(lang === 'zh') ? 'zh' : lang}`,
+        leadSource: `Official Site_${(lang === 'zh') ? 'zh' : lang}`,
         campaignId: ''
     });
     useEffect(() => {

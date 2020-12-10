@@ -10,7 +10,14 @@ export const usePageStyles = makeStyles((theme: Theme) => ({
     layout: {
         backgroundColor: ({bgColor}: StyleProps) => {
             return bgColor === 'light' ? theme.palette.common.white : theme.palette.grey["800"]
-        },
+        }
+    },
+    fontNotoSans: {
+        '& *': {
+            fontFamily: '"Noto Sans TC", sans-serif !important'
+        }
+    },
+    fontOpenSans: {
         '& *': {
             fontFamily: '"Open Sans", "Arial", sans-serif !important'
         }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {makeStyles, Theme} from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -12,6 +12,10 @@ import {SalesforcePostParams} from "../useUrlParams";
 import RegisterForm from "../forms/RegisterForm";
 import {useMediaQuery} from "@material-ui/core";
 import useTheme from "@material-ui/core/styles/useTheme";
+import {usePageStyles} from "../PageStyles";
+import clsx from "clsx";
+import useTranslation from "next-translate/useTranslation";
+import useWindowResize from "../useWindowResize";
 
 interface Props {
     title: string;
@@ -24,18 +28,30 @@ interface Props {
 const useStyles = makeStyles((theme: Theme) => ({
     modal: {
         display: 'flex',
-        alignItems: 'center',
         justifyContent: 'center',
+        alignItems: 'center',
+        overflow: 'hidden'
+    },
+    contentMask: {
+        position: 'relative',
+        width: '100vw',
+        height: '100vh',
+        maxWidth: '680px',
+        padding: '40px 0',
+        overflow: 'hidden',
+        overflowY: 'auto'
     },
     content: {
         position: 'relative',
-        width: '100%',
-        maxWidth: '680px',
         backgroundColor: theme.palette.common.white,
         padding: theme.spacing(2, 2),
         [theme.breakpoints.up('sm')]: {
             padding: theme.spacing(4, 4),
         }
+    },
+    contentCenter: {
+        top: '50%',
+        transform: 'translateY(-50%)'
     },
     close: {
         position: 'absolute',
@@ -49,8 +65,18 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const VideoRegisterModal = ({title, caption, salesforceData = null, openModel = false, closeHandler}: Props) => {
 
+    const {lang} = useTranslation();
     const classes = useStyles();
+    const pageClasses = usePageStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
+
+    const windowSize = useWindowResize();
+    const [height, setHeight] = useState(0);
+    const contentRef = useCallback(node => {
+        if (node !== null) {
+            setHeight(node.getBoundingClientRect().height);
+        }
+    }, []);
 
     return (
         <div>
@@ -59,26 +85,32 @@ const VideoRegisterModal = ({title, caption, salesforceData = null, openModel = 
                    closeAfterTransition
                    BackdropComponent={Backdrop}
                    BackdropProps={{timeout: 500}}
-                   className={classes.modal}
-            >
+                   className={clsx(
+                       classes.modal,
+                       lang === 'zh' ? pageClasses.fontNotoSans : pageClasses.fontOpenSans
+                   )}>
                 <Fade in={openModel}>
-                    <div className={classes.content}>
-                        <Grid container spacing={smUp ? 4 : 2}>
-                            <Grid item xs={12}>
-                                <SectionTitleLabel color={"warning"}>
-                                    {caption}
-                                </SectionTitleLabel>
-                                <SectionTitle>
-                                    {title}
-                                </SectionTitle>
+                    <div className={classes.contentMask}>
+                        <div ref={contentRef} className={clsx(
+                            classes.content, (height <= windowSize.height) ? classes.contentCenter : null
+                        )}>
+                            <Grid container spacing={smUp ? 4 : 2}>
+                                <Grid item xs={12}>
+                                    <SectionTitleLabel color={"warning"}>
+                                        {caption}
+                                    </SectionTitleLabel>
+                                    <SectionTitle>
+                                        {title}
+                                    </SectionTitle>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <RegisterForm salesforceData={salesforceData}/>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={12}>
-                                <RegisterForm salesforceData={salesforceData}/>
-                            </Grid>
-                        </Grid>
-                        <Button onClick={closeHandler} className={classes.close}>
-                            <IconClose/>
-                        </Button>
+                            <Button onClick={closeHandler} className={classes.close}>
+                                <IconClose/>
+                            </Button>
+                        </div>
                     </div>
                 </Fade>
             </Modal>

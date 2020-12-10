@@ -20,7 +20,7 @@ interface Props {
 const PageHead = ({metadata}: Props) => {
     const {lang} = useTranslation();
     const enHref = `${metadataDomain}${metadata.href}`;
-    const zhHref = `${metadataDomain}/zh-hant${metadata.href}`;
+    const zhHref = `${metadataDomain}/zh${metadata.href}`;
     return (
         <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -35,7 +35,7 @@ const PageHead = ({metadata}: Props) => {
             <meta property="og:image:height" content="315"/>
             <meta property="og:title" content={metadata.title}/>
             <meta property="og:description" content={metadata.desc}/>
-            <meta property="og:url" content={lang === 'zh-hant' ? zhHref : enHref}/>
+            <meta property="og:url" content={lang === 'zh' ? zhHref : enHref}/>
             <meta name="twitter:card" content="summary"/>
             <meta name="twitter:title" content={metadata.title}/>
             <meta name="twitter:description" content={metadata.desc}/>
@@ -47,22 +47,22 @@ const PageHead = ({metadata}: Props) => {
 
             <link rel="canonical" href={
                 (metadata.isPostHref !== undefined && metadata.isPostHref)
-                    ? lang === 'zh-hant' ? zhHref : enHref
+                    ? lang === 'zh' ? zhHref : enHref
                     : enHref
             }/>
             <link rel="alternate" hrefLang="en-SG" href={
                 (metadata.isPostHref !== undefined && metadata.isPostHref)
-                    ? lang === 'zh-hant' ? zhHref : enHref
+                    ? lang === 'zh' ? zhHref : enHref
                     : enHref
             }/>
             <link rel="alternate" hrefLang="x-default" href={
                 (metadata.isPostHref !== undefined && metadata.isPostHref)
-                    ? lang === 'zh-hant' ? zhHref : enHref
+                    ? lang === 'zh' ? zhHref : enHref
                     : enHref
             }/>
             <link rel="alternate" hrefLang="zh-Hant" href={
                 (metadata.isPostHref !== undefined && metadata.isPostHref)
-                    ? lang === 'zh-hant' ? zhHref : enHref
+                    ? lang === 'zh' ? zhHref : enHref
                     : zhHref
             }/>
             {

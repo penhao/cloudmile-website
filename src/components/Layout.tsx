@@ -5,6 +5,8 @@ import Footer from "./footer/Footer";
 import PageHead, {MetadataProps} from "./PageHead";
 import CookieAlert from "./CookieAlert";
 import ContactAlert from "./ContactAlert";
+import useTranslation from "next-translate/useTranslation";
+import clsx from "clsx";
 
 interface Props {
     bgColor?: string;
@@ -13,14 +15,19 @@ interface Props {
 }
 
 const Layout = ({metadata = null, children, bgColor = 'light'}: Props) => {
-    const classes = usePageStyles({bgColor});
+    const {lang} = useTranslation();
+    const classes = usePageStyles({lang, bgColor});
 
     return (
         <Fragment>
             {
                 metadata ? <PageHead metadata={metadata}/> : null
             }
-            <div className={classes.layout}>
+            <div className={clsx(
+                classes.layout,
+                lang === 'zh-hant' ? classes.fontNotoSans : null,
+                lang === 'en' ? classes.fontOpenSans : null
+            )}>
                 <CookieAlert/>
                 <Header/>
                 <div role="main" className={classes.main}>

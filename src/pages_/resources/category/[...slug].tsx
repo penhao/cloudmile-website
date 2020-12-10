@@ -64,7 +64,7 @@ const CategoryPage = ({categoryData, postData}) => {
     const handleMoreClick = async (event: React.MouseEvent) => {
         event.stopPropagation();
         setIsLoading(true);
-        const updateData = await fetchListByTag(lang, getPageId(), categoryId, startCount, 10);
+        const updateData = await fetchListByTag(lang, getPageId(), categoryId, startCount + 1, 10);
         if (updateData.status) {
             const listTotal = searchData.length + updateData.data.length;
             setStartCount(listTotal);
@@ -109,7 +109,6 @@ const CategoryPage = ({categoryData, postData}) => {
 };
 
 export const getServerSideProps = async ({locale, query, res}: GetServerSidePropsContext) => {
-    const lang = locale === 'zh-hant' ? 'tw' : locale;
     // 1:blog 2:event 3:case study 5: 新聞管理
     let pageId = null;
     // 1:blog 2:event 3: 新聞管理 5:客戶案例
@@ -133,10 +132,10 @@ export const getServerSideProps = async ({locale, query, res}: GetServerSideProp
             categoryId = 3;
             break;
     }
-    const categoryData = await fetchTagList(lang, categoryId);
-    const postData = await fetchListByTag(lang, pageId, searchId, 1, 5);
+    const categoryData = await fetchTagList(locale, categoryId);
+    const postData = await fetchListByTag(locale, pageId, searchId, 1, 5);
     if (postData?.error || postData?.error === 'article not found') {
-        const redirectUrl = `${(locale === 'zh-hant') ? '/zh-hant' : ''}/404`;
+        const redirectUrl = `${(locale === 'zh') ? '/zh' : ''}/404`;
         res.setHeader("location", redirectUrl);
         res.statusCode = 302;
         res.end();

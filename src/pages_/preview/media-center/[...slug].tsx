@@ -82,10 +82,9 @@ const MediaCenterDetail = ({postData}) => {
 };
 
 export const getServerSideProps = async ({locale, query, res}: GetServerSidePropsContext) => {
-    const lang = (locale === 'zh-hant') ? 'tw' : locale;
-    const postData = await fetchPreviewMediaCenterArticle(lang, query.slug[0]);
+    const postData = await fetchPreviewMediaCenterArticle(locale, query.slug[0]);
     if (postData?.error || postData?.error === 'article not found') {
-        const redirectUrl = `${(locale === 'zh-hant') ? '/zh-hant' : ''}/404`;
+        const redirectUrl = `${(locale === 'zh') ? '/zh' : ''}/404`;
         res.setHeader("location", redirectUrl);
         res.statusCode = 302;
         res.end();

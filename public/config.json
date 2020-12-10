@@ -1,7 +1,7 @@
 {
   "apiDomain": "https://uat-backend.mile.cloud",
   "metadataDomain": "https://uat.mile.cloud",
-  "reCAPTCHAKey": "6LdLAv8ZAAAAAOna-skW7yAI9CRfGgKwpWEUUWyC",
+  "reCAPTCHAKey": "6LdaGv8ZAAAAAJyDkhGXyolVLSyCVTNXlqfA1Tvb",
   "siteRoutes": [
     {
       "title": "Home",

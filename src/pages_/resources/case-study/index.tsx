@@ -49,7 +49,7 @@ const CaseStudy = ({fetchCategory, fetchPost, fetchSlider}) => {
     const [disabledMore, setDisabledMore] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const getPostData = async (startCount: number) => {
-        return await fetchCaseList(lang, startCount, 8);
+        return await fetchCaseList(lang, startCount + 1, 8);
     };
     const handleMoreClick = async (event: React.MouseEvent) => {
         event.stopPropagation();
@@ -122,10 +122,9 @@ const CaseStudy = ({fetchCategory, fetchPost, fetchSlider}) => {
 };
 
 export const getServerSideProps = async ({locale}: GetServerSidePropsContext) => {
-    const lang = (locale === 'zh-hant') ? 'tw' : locale;
-    const fetchCategory = await fetchTagList(lang, 5);
-    const fetchSlider = await fetchHomeSliderList(lang);
-    const fetchPost = await fetchCaseList(lang, 1, 8);
+    const fetchCategory = await fetchTagList(locale, 5);
+    const fetchSlider = await fetchHomeSliderList(locale);
+    const fetchPost = await fetchCaseList(locale, 1, 8);
     return {
         props: {
             fetchCategory,

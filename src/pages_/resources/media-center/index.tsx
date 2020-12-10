@@ -20,7 +20,7 @@ const MediaCenter = ({fetchCategory, fetchPost}) => {
     const [isLoading, setIsLoading] = useState(false);
 
     const getPostData = async (startCount: number) => {
-        return await fetchMediaCenterList(lang, startCount, 10);
+        return await fetchMediaCenterList(lang, startCount + 1, 10);
     };
     const handleMoreClick = async (event: React.MouseEvent) => {
         event.stopPropagation();
@@ -69,9 +69,8 @@ const MediaCenter = ({fetchCategory, fetchPost}) => {
     );
 };
 export const getServerSideProps = async ({locale}: GetServerSidePropsContext) => {
-    const lang = (locale === 'zh-hant') ? 'tw' : locale;
-    const fetchCategory = await fetchTagList(lang, 3);
-    const fetchPost = await fetchMediaCenterList(lang, 1, 10);
+    const fetchCategory = await fetchTagList(locale, 3);
+    const fetchPost = await fetchMediaCenterList(locale, 1, 10);
     return {
         props: {
             fetchCategory,

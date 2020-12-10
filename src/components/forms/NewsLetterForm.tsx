@@ -28,7 +28,7 @@ const NewsLetterForm = ({salesforceData = null}: Props) => {
         utmSource: 'officialsite',
         utmMedium: 'Newsletter',
         utmCampaign: 'Newsletter',
-        leadSource: `Newsletter_${(lang === 'zh-hant') ? 'zh' : lang}`,
+        leadSource: `Newsletter_${(lang === 'zh') ? 'zh' : lang}`,
         campaignId: ''
     });
     useEffect(() => {

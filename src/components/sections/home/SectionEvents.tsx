@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Container from "../../containers/Container";
 import SectionContainer from "../../containers/SectionContainer";
 import Grid from "@material-ui/core/Grid";
@@ -33,6 +33,10 @@ const SectionEvents = ({sliderData}: Props) => {
     const classes = useStyles();
     const linkClasses = useLinkStyles();
     const {t} = useTranslation();
+    const [eventList, setEventList] = useState([]);
+    useEffect(() => {
+        setEventList(sliderData);
+    }, [sliderData]);
     return (
         <SectionContainer>
             <Container maxWidth={{xs: 'none', sm: 'none', md: 1280}}>
@@ -47,7 +51,7 @@ const SectionEvents = ({sliderData}: Props) => {
                                     {t('home:Read the Latest CloudMile News & Events')}
                                 </SectionTitle>
                                 <div className={classes.linkWrapper}>
-                                    <NavLink hrefPath={''} classNames={linkClasses.iconLink}>
+                                    <NavLink hrefPath={'/resources/event'} classNames={linkClasses.iconLink}>
                                         <IconLaunch/>
                                     </NavLink>
                                 </div>
@@ -57,12 +61,11 @@ const SectionEvents = ({sliderData}: Props) => {
                     <Grid item xs={12}>
                         <div className={classes.sliderContainer}>
                             {
-                                sliderData.length
+                                eventList.length
                                     ?
-                                    <BannerSlider sliderTotal={sliderData.length} itemDistance={20}>
+                                    <BannerSlider sliderTotal={eventList.length} itemDistance={20}>
                                         {
-                                            sliderData.map((data: any, index: number) => {
-                                                console.log(data);
+                                            eventList.map((data: any, index: number) => {
                                                 return (
                                                     <div key={index}>
                                                         <EventSliderItem itemData={data}/>
@@ -74,21 +77,6 @@ const SectionEvents = ({sliderData}: Props) => {
                                     :
                                     null
                             }
-                            {/*<NormalSlider itemPadding={20}>
-                                {
-                                    (list && list.length)
-                                        ?
-                                        list.map((item: IEventItem, index: number) => {
-                                            return (
-                                                <div className={classes.item} key={index}>
-                                                    <EventSliderItem itemData={item}/>
-                                                </div>
-                                            )
-                                        })
-                                        :
-                                        null
-                                }
-                            </NormalSlider>*/}
                         </div>
                     </Grid>
                 </Grid>

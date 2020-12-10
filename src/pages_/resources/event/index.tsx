@@ -19,7 +19,7 @@ const Event = ({fetchCategory, fetchPost}) => {
     const [disabledMore, setDisabledMore] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const getPostData = async (limit: number) => {
-        return await fetchEventList(lang, startCount, limit);
+        return await fetchEventList(lang, startCount + 1, limit);
     };
     const handleMoreClick = async (event: React.MouseEvent) => {
         event.stopPropagation();
@@ -76,9 +76,8 @@ const Event = ({fetchCategory, fetchPost}) => {
     );
 };
 export const getServerSideProps = async ({locale}: GetServerSidePropsContext) => {
-    const lang = (locale === 'zh-hant') ? 'tw' : locale;
-    const fetchCategory = await fetchTagList(lang, 2);
-    const fetchPost = await fetchEventList(lang, 1, 9);
+    const fetchCategory = await fetchTagList(locale, 2);
+    const fetchPost = await fetchEventList(locale, 1, 9);
     return {
         props: {
             fetchCategory,

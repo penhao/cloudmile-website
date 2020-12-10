@@ -83,9 +83,9 @@ const LanguageDropdown = () => {
                 <div className={classes.collapseInner}>
                     <div className={classes.routeList}>
                         <div>
-                            <LanguageLink locale={'zh-hant'} className={clsx(
+                            <LanguageLink locale={'zh'} className={clsx(
                                 linkClasses.styleLink,
-                                (lang === 'zh-hant') ? 'active' : null
+                                (lang === 'zh') ? 'active' : null
                             )}>
                                 <span className={linkClasses.styleEffect}>繁體中文</span>
                             </LanguageLink>

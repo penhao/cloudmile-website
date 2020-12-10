@@ -1,4 +1,4 @@
-import React, {Fragment, useRef} from 'react';
+import React, {Fragment, useEffect, useRef} from 'react';
 import Swiper, {ReactIdSwiperChildren} from 'react-id-swiper';
 import {SwiperOptions} from "swiper";
 import makeStyles from "@material-ui/core/styles/makeStyles";
@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import IconArrow from "../icons/IconArrow";
 import clsx from "clsx";
 import {useButtonStyles} from "../buttons/ButtonStyles";
+import useTranslation from "next-translate/useTranslation";
 
 interface Props {
     sliderTotal: number;
@@ -63,8 +64,9 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const BannerSlider = ({sliderTotal = 0, itemDistance = 0, paginationDistance = false, children}: Props) => {
     const classes = useStyles({sliderTotal, paginationDistance});
+    const {lang} = useTranslation();
     const buttonClasses = useButtonStyles();
-    const swiperRef = useRef<any | null>(null);
+    const swiperRef = useRef(null);
     const handleNext = () => {
         if (swiperRef.current && swiperRef.current.swiper) {
             swiperRef.current.swiper.slideNext();
@@ -76,7 +78,7 @@ const BannerSlider = ({sliderTotal = 0, itemDistance = 0, paginationDistance = f
         }
     };
     const params: SwiperOptions = {
-        loop: true,
+        loop: false,
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
@@ -84,6 +86,11 @@ const BannerSlider = ({sliderTotal = 0, itemDistance = 0, paginationDistance = f
         },
         spaceBetween: itemDistance
     };
+    useEffect(() => {
+        if (swiperRef.current && swiperRef.current.swiper) {
+            swiperRef.current.swiper.update();
+        }
+    }, [children, lang]);
     return (
         <div className={classes.slider}>
             <Swiper {...params} ref={swiperRef}>

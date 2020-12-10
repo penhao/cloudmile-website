@@ -29,8 +29,8 @@ const ProductForm = ({currentPage}: Props) => {
     const urlParams = useUrlParams({
         utmSource: 'officialsite',
         utmMedium: 'organic',
-        utmCampaign: `${currentPage}_${(lang === 'zh-hant') ? 'zh' : lang}`,
-        leadSource: `Official Site_${(lang === 'zh-hant') ? 'zh' : lang}`,
+        utmCampaign: `${currentPage}_${(lang === 'zh') ? 'zh' : lang}`,
+        leadSource: `Official Site_${(lang === 'zh') ? 'zh' : lang}`,
         campaignId: ''
     });
     useEffect(() => {

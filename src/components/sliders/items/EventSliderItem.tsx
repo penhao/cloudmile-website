@@ -12,6 +12,7 @@ import {useButtonStyles} from "../../buttons/ButtonStyles";
 import NavLink from "../../links/NavLink";
 import {Theme} from "@material-ui/core";
 import clsx from "clsx";
+import {useLinkStyles} from "../../links/LinkStyles";
 
 interface Props {
     itemData: any;
@@ -31,30 +32,53 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const EventSliderItem = ({itemData}: Props) => {
     const classes = useStyles();
+    const linkClasses = useLinkStyles();
     const buttonClasses = useButtonStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
+    const getItemStatus = () => {
+        return Number(itemData.event_type) === 2;
+    };
+    const getHrefPath = () => {
+        return getItemStatus()
+            ? itemData.event_act_url
+            : '/resources/event/[...slug]';
+    };
+    const getAsPath = () => {
+        return getItemStatus()
+            ? itemData.event_act_url
+            : `/resources/event/${itemData.id}/${encodeURIComponent(itemData.title)}`;
+    };
     return (
         <Grid container spacing={4} direction={"row-reverse"}>
             <GridItemFlexible>
-                <img src={smUp ? itemData.image_pc : itemData.image_mobile} alt={''}/>
+                <NavLink hrefPath={getHrefPath()}
+                         asPath={getAsPath()}
+                         fullWidth={true}
+                         isLaunch={getItemStatus()}
+                >
+                    <img src={smUp ? itemData.image_pc : itemData.image_mobile} alt={''}/>
+                </NavLink>
             </GridItemFlexible>
             <GridItem480>
                 <Typography variant={"body1"} component={'div'} className={classes.date}>
                     {useFormatDate(itemData.created_at.replace(' ', 'T'))}
                 </Typography>
-                <Typography variant={"h5"}>
-                    {itemData.title}
-                </Typography>
+                <NavLink hrefPath={getHrefPath()}
+                         asPath={getAsPath()}
+                         underline={true}
+                         isLaunch={getItemStatus()}
+                         classNames={linkClasses.textLink}
+                >
+                    <Typography variant={"h5"} component={'div'}>
+                        {itemData.title}
+                    </Typography>
+                </NavLink>
                 <NavLink
                     hrefPath={
-                        (itemData.event_type === 2)
-                            ? itemData.event_act_url
-                            : '/resources/event/[...slug]'
+                        (itemData.event_type === 2) ? itemData.event_act_url : '/resources/event/[...slug]'
                     }
                     asPath={
-                        (itemData.event_type === 2)
-                            ? ''
-                            : `/resources/event/${itemData.id}/${encodeURIComponent(itemData.title)}`
+                        (itemData.event_type === 2) ? '' : `/resources/event/${itemData.id}/${encodeURIComponent(itemData.title)}`
                     }
                     isLaunch={itemData.event_type === 2}
                     fullWidth={true}

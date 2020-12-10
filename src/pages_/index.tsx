@@ -26,7 +26,7 @@ const Index = () => {
     });
     const scrollToHash = () => {
         const hashId = window.location.hash;
-        if (hashId==='#newsletter') {
+        if (hashId === '#newsletter') {
             window.scrollTo({
                 behavior: "smooth",
                 top: contactRef.current.offsetTop
@@ -47,7 +47,7 @@ const Index = () => {
             scrollToHash();
             window.clearTimeout(scrollTimeout);
         }, 2000);
-    }, [lang]);
+    }, [router, lang]);
 
     return (
         <Layout metadata={{

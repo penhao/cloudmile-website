@@ -78,9 +78,9 @@ const NavListXs = ({statusData, active}: Props) => {
                     {/* Language */}
                     <Grid container justify={"center"}>
                         <Grid item>
-                            <LanguageLink locale={'zh-hant'} className={clsx(
+                            <LanguageLink locale={'zh'} className={clsx(
                                 linkClasses.textLink,
-                                (lang === 'zh-hant') ? 'active' : null
+                                (lang === 'zh') ? 'active' : null
                             )}>
                                 繁體中文
                             </LanguageLink>

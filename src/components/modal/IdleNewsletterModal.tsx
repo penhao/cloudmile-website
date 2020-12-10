@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useCallback, useRef, useState} from 'react';
 import {makeStyles, Theme} from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -13,6 +13,10 @@ import Button from "@material-ui/core/Button";
 import {SalesforceDataType} from "../forms/FormTypes";
 import {useMediaQuery} from "@material-ui/core";
 import useTheme from "@material-ui/core/styles/useTheme";
+import clsx from "clsx";
+import useWindowResize from "../useWindowResize";
+import {usePageStyles} from "../PageStyles";
+import useTranslation from "next-translate/useTranslation";
 
 interface Props {
     title: string;
@@ -21,39 +25,57 @@ interface Props {
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
-        modal: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-        },
-        content: {
-            position: 'relative',
-            width: '100%',
-            maxWidth: '680px',
-            backgroundColor: theme.palette.common.white,
-            padding: theme.spacing(2, 2),
-            [theme.breakpoints.up('sm')]: {
-                padding: theme.spacing(4, 4),
-            }
-        },
-        close: {
-            position: 'absolute',
-            width: '60px',
-            height: '60px',
-            minWidth: 'auto',
-            top: 0,
-            right: 0,
-            padding: 0
+    modal: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        overflow: 'hidden'
+    },
+    contentMask: {
+        position: 'relative',
+        width: '100%',
+        height: '100vh',
+        maxWidth: '680px',
+        padding: '40px 0',
+        overflow: 'hidden',
+        overflowY: 'auto'
+    },
+    content: {
+        position: 'relative',
+        backgroundColor: theme.palette.common.white,
+        padding: theme.spacing(2, 2),
+        [theme.breakpoints.up('sm')]: {
+            padding: theme.spacing(4, 4),
         }
-    }),
-);
+    },
+    contentCenter: {
+        top: '50%',
+        transform: 'translateY(-50%)'
+    },
+    close: {
+        position: 'absolute',
+        width: '60px',
+        height: '60px',
+        minWidth: 'auto',
+        top: 0,
+        right: 0,
+        padding: 0
+    }
+}));
 const IdleNewsletterModal = ({title, caption, salesforceData}: Props) => {
-
+    const {lang} = useTranslation();
     const classes = useStyles();
+    const pageClasses = usePageStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
     const idleTimerRef = useRef(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
-
+    const windowSize = useWindowResize();
+    const [height, setHeight] = useState(0);
+    const contentRef = useCallback(node => {
+        if (node !== null) {
+            setHeight(node.getBoundingClientRect().height);
+        }
+    }, []);
     const onIdle = () => {
         handleModalOpen();
     };
@@ -72,10 +94,15 @@ const IdleNewsletterModal = ({title, caption, salesforceData}: Props) => {
                    closeAfterTransition
                    BackdropComponent={Backdrop}
                    BackdropProps={{timeout: 500}}
-                   className={classes.modal}
-            >
+                   className={clsx(
+                       classes.modal,
+                       lang === 'zh' ? pageClasses.fontNotoSans : pageClasses.fontOpenSans
+                   )}>
                 <Fade in={modalIsOpen}>
-                    <div className={classes.content}>
+                    <div className={classes.contentMask} ref={contentRef}>
+                        <div className={clsx(
+                            classes.content, (height <= windowSize.height) ? classes.contentCenter : null
+                        )}>
                         <Grid container spacing={smUp ? 4 : 2}>
                             <Grid item xs={12}>
                                 <SectionTitleLabel color={"warning"}>
@@ -92,6 +119,7 @@ const IdleNewsletterModal = ({title, caption, salesforceData}: Props) => {
                         <Button onClick={handleModalClose} className={classes.close}>
                             <IconClose/>
                         </Button>
+                    </div>
                     </div>
                 </Fade>
             </Modal>

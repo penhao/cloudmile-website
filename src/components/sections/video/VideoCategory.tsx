@@ -1,15 +1,13 @@
-import React, {Fragment, useEffect, useRef, useState} from 'react';
-import Container from "../../containers/Container";
+import React, {useEffect, useRef, useState} from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {Theme} from "@material-ui/core";
 import Swiper from 'react-id-swiper';
 import {SwiperOptions} from "swiper";
 import Button from "@material-ui/core/Button";
 import IconArrow from "../../icons/IconArrow";
-import clsx from "clsx";
 import {isValueEmpty, removeParam} from "../../../utils/Utils";
 import NavLink from "../../links/NavLink";
-
+import Link from "next/link";
 
 interface Props {
     parentPage?: string;
@@ -124,12 +122,14 @@ const VideoCategory = ({parentPage, categoryData = [], clickHandler}: Props) => 
                                         : `?category=${item.id}`;
                                     return (
                                         <div className={classes.sliderItem} key={index}>
-                                            <NavLink hrefPath={`/resources/video${params}`} textWrap={false}>
-                                                <Button variant={"contained"} color={"primary"}
-                                                        className={classes.button}>
-                                                    {item.title}
-                                                </Button>
-                                            </NavLink>
+                                            <Link href={`/resources/video${params}`} passHref>
+                                                <a>
+                                                    <Button variant={"contained"} color={"primary"}
+                                                            className={classes.button}>
+                                                        {item.title}
+                                                    </Button>
+                                                </a>
+                                            </Link>
                                         </div>
                                     );
                                 })

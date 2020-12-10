@@ -60,7 +60,7 @@ const Video = ({fetchCategory, fetchCategoryId, fetchPost}) => {
     const handleMoreClick = async (event: React.MouseEvent) => {
         event.stopPropagation();
         setIsLoading(true);
-        const response = await getPostData(categoryId, startCount);
+        const response = await getPostData(categoryId, startCount + 1);
         if (response.status) {
             const listTotal = postData.length + response.data.length;
             setPostData([...postData, ...response.data]);
@@ -120,8 +120,7 @@ const Video = ({fetchCategory, fetchCategoryId, fetchPost}) => {
 };
 
 export const getServerSideProps = async ({locale, query}: GetServerSidePropsContext) => {
-    const lang = (locale === 'zh-hant') ? 'tw' : locale;
-    const fetchCategory = await fetchVideoCategoryList(lang);
+    const fetchCategory = await fetchVideoCategoryList(locale);
     let categoryId = -1;
     if (fetchCategory.status && fetchCategory.data.length) {
         const currentCategory = fetchCategory.data.find((category: any) => {
@@ -133,7 +132,7 @@ export const getServerSideProps = async ({locale, query}: GetServerSidePropsCont
             categoryId = Number(fetchCategory.data[0].id);
         }
     }
-    const fetchPost = await fetchVideoList(lang, 1, 12, categoryId);
+    const fetchPost = await fetchVideoList(locale, 1, 12, categoryId);
     return {
         props: {
             fetchCategory,

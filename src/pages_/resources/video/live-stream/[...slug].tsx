@@ -40,7 +40,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     desc: {
         color: theme.palette.common.white,
-        marginBottom: '20px'
+        marginBottom: '20px',
+        '& a': {
+            color: theme.palette.secondary.main,
+            textDecoration: 'underline'
+        }
     },
     date: {
         color: theme.palette.common.white,
@@ -169,10 +173,9 @@ const LiveStreamPage = ({postData}) => {
     );
 };
 export const getServerSideProps = async ({locale, query, res}: GetServerSidePropsContext) => {
-    const lang = (locale === 'zh-hant') ? 'tw' : locale;
-    const postData = await fetchVideoArticle(lang, query.slug[0]);
+    const postData = await fetchVideoArticle(locale, query.slug[0]);
     if (postData?.error || postData?.error === 'article not found') {
-        const redirectUrl = `${(locale === 'zh-hant') ? '/zh-hant' : ''}/404`;
+        const redirectUrl = `${(locale === 'zh') ? '/zh' : ''}/404`;
         res.setHeader("location", redirectUrl);
         res.statusCode = 302;
         res.end();

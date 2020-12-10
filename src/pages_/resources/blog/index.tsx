@@ -21,7 +21,7 @@ const Blog = ({fetchCategory, fetchPost}) => {
     const [isLoading, setIsLoading] = useState(false);
 
     const getPostData = async (startCount: number) => {
-        return await fetchBlogList(lang, startCount, 10);
+        return await fetchBlogList(lang, startCount + 1, 10);
     };
     const handleMoreClick = async (event: React.MouseEvent) => {
         event.stopPropagation();
@@ -70,9 +70,8 @@ const Blog = ({fetchCategory, fetchPost}) => {
     );
 };
 export const getServerSideProps = async ({locale}: GetServerSidePropsContext) => {
-    const lang = (locale === 'zh-hant') ? 'tw' : locale;
-    const fetchCategory = await fetchTagList(lang, 1);
-    const fetchPost = await fetchBlogList(lang, 1, 10);
+    const fetchCategory = await fetchTagList(locale, 1);
+    const fetchPost = await fetchBlogList(locale, 1, 10);
     return {
         props: {
             fetchCategory,

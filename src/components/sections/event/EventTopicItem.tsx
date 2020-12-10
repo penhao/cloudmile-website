@@ -35,9 +35,6 @@ const EventTopicItem = ({itemData}: Props) => {
     const linkClasses = useLinkStyles();
     const buttonClasses = useButtonStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
-
-    console.log(itemData);
-
     const getItemStatus = () => {
         return Number(itemData.event_type) === 2;
     };
