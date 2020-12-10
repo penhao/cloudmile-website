@@ -82,7 +82,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 const JobSubAccordion = ({job}: Props) => {
     const classes = useStyles();
     const [expanded, setExpanded] = useState<boolean>(false);
-    console.log(job);
     return (
         <Accordion expanded={expanded}
                    onChange={() => setExpanded((expanded) => !expanded)}

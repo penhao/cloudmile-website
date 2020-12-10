@@ -130,7 +130,7 @@ const NavDropdownXs = ({statusData, routeGroup}: Props) => {
                                                             const routeName = t(`common:${route.title}`);
                                                             const routeHref: string = (route.href !== undefined)
                                                                 ? route.href
-                                                                : (lang === 'zh-hant')
+                                                                : (lang === 'zh')
                                                                     ? route.zhLink
                                                                     : route.link;
                                                             const isLaunch: boolean = (route.link !== undefined);

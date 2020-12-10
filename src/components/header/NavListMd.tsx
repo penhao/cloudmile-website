@@ -41,7 +41,7 @@ const NavListMd = ({statusData}: Props) => {
                             return (
                                 <li key={index}>
                                     <NavDropdownMd routeGroup={group}
-                                                   statusData={group.name === 'Resources' ? statusData : null}/>
+                                                   statusData={group.title === 'Resources' ? statusData : null}/>
                                 </li>
                             );
                         })

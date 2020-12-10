@@ -132,7 +132,7 @@ const NavDropdownMd = ({statusData, routeGroup}: Props) => {
                                                             const routeName = t(`common:${route.title}`);
                                                             const routeHref: string = (route.href !== undefined)
                                                                 ? route.href
-                                                                : (lang === 'zh-hant')
+                                                                : (lang === 'zh')
                                                                     ? route.zhLink
                                                                     : route.link;
                                                             const isLaunch: boolean = (route.link !== undefined);
@@ -150,10 +150,9 @@ const NavDropdownMd = ({statusData, routeGroup}: Props) => {
                                                                                 routeName
                                                                             }
                                                                             {
-                                                                                (routeGroup.name === 'Resources' && getStatus(route.name))
+                                                                                (routeGroup.title === 'Resources' && getStatus(route.title))
                                                                                     ?
-                                                                                    <span
-                                                                                        className={linkClasses.statusLabel}>New</span>
+                                                                                    <span className={linkClasses.statusLabel}>New</span>
                                                                                     : null
                                                                             }
                                                                         </span>

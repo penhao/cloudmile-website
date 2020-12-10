@@ -138,7 +138,7 @@ const FooterNav = ({statusData}: Props) => {
                                                     const routeName = t(`common:${route.title}`);
                                                     const routeHref: string = (route.href !== undefined)
                                                         ? route.href
-                                                        : (lang === 'zh-hant')
+                                                        : (lang === 'zh')
                                                             ? route.zhLink
                                                             : route.link;
                                                     const isLaunch: boolean = (route.link !== undefined);
@@ -156,7 +156,7 @@ const FooterNav = ({statusData}: Props) => {
                                                                 <span
                                                                     className={linkClasses.styleEffect}>{routeName}</span>
                                                                 {
-                                                                    (group.title === 'Resources' && getNewLabelStatus(route.name))
+                                                                    (group.title === 'Resources' && getNewLabelStatus(route.title))
                                                                         ?
                                                                         <span
                                                                             className={clsx(classes.linkLabel, linkClasses.statusLabel)}>New</span>
