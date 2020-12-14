@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {Theme} from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
@@ -25,12 +25,16 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const PostList = ({currentPage, list}: Props) => {
     const classes = useStyles();
+    const [postData, setPostData] = useState([]);
+    useEffect(() => {
+        setPostData(list);
+    }, [list]);
     return (
         <Grid container component={'ul'} className={classes.list}>
             {
-                (list && list.length)
+                (postData && postData.length)
                     ?
-                    list.map((item: any, index: number) => {
+                    postData.map((item: any, index: number) => {
                         /*if (currentPage === 'video') {
                             console.log(item);
                         }*/

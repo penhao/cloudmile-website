@@ -157,7 +157,7 @@ const SearchPage = ({postData}: InferGetServerSidePropsType<typeof getServerSide
             setStartCount(postData.data[initFilterKey].rows.length);
             setDisabledMore(postData.data[initFilterKey].rows.length >= postData.data[initFilterKey].total);
         }
-    }, [router]);
+    }, [router, postData]);
 
     return (
         <Layout metadata={{

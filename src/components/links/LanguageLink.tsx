@@ -4,8 +4,6 @@ import clsx from "clsx";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {Theme} from "@material-ui/core";
 import {useLinkStyles} from "./LinkStyles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import useTheme from "@material-ui/core/styles/useTheme";
 import {useRouter} from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import {removeParam} from "../../utils/Utils";
@@ -34,7 +32,7 @@ const LanguageLink = ({locale, className = null, children}: Props) => {
     const classes = useStyles();
     const linkStyles = useLinkStyles();
     const [urlParams, setUrlParams] = useState('');
-    const getRedirectUrl = () => {
+    const getRedirectUrl = (isAsPath = false) => {
         const routePath = router.route.replace(`/${lang}`, '');
         if (routePath === '/resources/blog/[...slug]') {
             return `/resources/blog${urlParams}`;
@@ -65,14 +63,22 @@ const LanguageLink = ({locale, className = null, children}: Props) => {
                 return `/resources/event${urlParams}`;
             }
         }
-        return (lang === 'en') ? `${router.route}${urlParams}` : (routePath.length === 0) ? `/${urlParams}` : `${routePath}${urlParams}`;
+        if (routePath === '/search/[name]') {
+            return `/${urlParams}`;
+        }
+        if (isAsPath) {
+            return `${router.asPath}`;
+        } else {
+            return (lang === 'en') ? `${router.route}${urlParams}` : (routePath.length === 0) ? `/${urlParams}` : `${routePath}${urlParams}`;
+        }
+
     };
     useEffect(() => {
         setUrlParams(removeParam('category', window.location.search));
     }, [router]);
 
     return (
-        <Link href={getRedirectUrl()} as={getRedirectUrl()} locale={locale}>
+        <Link href={getRedirectUrl()} as={getRedirectUrl(true)} locale={locale}>
             <a className={clsx(
                 classes.languageLink, linkStyles.link, className
             )}>

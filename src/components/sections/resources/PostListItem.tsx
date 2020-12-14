@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {Theme} from "@material-ui/core";
 import NavLink from "../../links/NavLink";
@@ -99,40 +99,79 @@ const PostListItem = ({currentPage, data}: Props) => {
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
     const formatDate = useFormatDate(data.created_at.replace(' ', 'T'));
     return (
-        <NavLink hrefPath={`/resources/${currentPage}/[...slug]`}
-                 asPath={`/resources/${currentPage}/${data.id}/${encodeURIComponent(data.title)}`}
-                 fullWidth={true}
-                 classNames={clsx(classes.link, linkClasses.textLink)}>
-            <div className={classes.inner}>
-                <Typography variant={'h5'} className={classes.title}>
-                    <LinesEllipsis
-                        text={data.title}
-                        maxLine={smUp ? 1 : 3}
-                        ellipsis='...'
-                        trimRight
-                        basedOn='letters'/>
-                </Typography>
-                {
-                    (data.seo_description && !isValueEmpty(data.seo_description))
-                        ?
-                        <Typography variant={"body1"} component={'div'} className={classes.desc}>
-                            <LinesEllipsis
-                                text={data.seo_description}
-                                maxLine={1}
-                                ellipsis='...'
-                                trimRight
-                                basedOn='letters'/>
-                        </Typography>
-                        :
-                        null
-                }
-                <div className={classes.date}>
-                    <Typography variant={"body1"} component={'div'} className={classes.dateText}>
-                        {formatDate}
-                    </Typography>
-                </div>
-            </div>
-        </NavLink>
+        <Fragment>
+            {
+                (currentPage === 'event' && data.event_type === '2')
+                    ?
+                    <NavLink hrefPath={data.event_act_url}
+                             fullWidth={true} isLaunch={true} classNames={clsx(classes.link, linkClasses.textLink)}>
+                        <div className={classes.inner}>
+                            <Typography variant={'h5'} className={classes.title}>
+                                <LinesEllipsis
+                                    text={data.title}
+                                    maxLine={smUp ? 1 : 3}
+                                    ellipsis='...'
+                                    trimRight
+                                    basedOn='letters'/>
+                            </Typography>
+                            {
+                                (data.seo_description && !isValueEmpty(data.seo_description))
+                                    ?
+                                    <Typography variant={"body1"} component={'div'} className={classes.desc}>
+                                        <LinesEllipsis
+                                            text={data.seo_description}
+                                            maxLine={1}
+                                            ellipsis='...'
+                                            trimRight
+                                            basedOn='letters'/>
+                                    </Typography>
+                                    :
+                                    null
+                            }
+                            <div className={classes.date}>
+                                <Typography variant={"body1"} component={'div'} className={classes.dateText}>
+                                    {formatDate}
+                                </Typography>
+                            </div>
+                        </div>
+                    </NavLink>
+                    :
+                    <NavLink hrefPath={`/resources/${currentPage}/[...slug]`}
+                             asPath={`/resources/${currentPage}/${data.id}/${encodeURIComponent(data.title)}`}
+                             fullWidth={true}
+                             classNames={clsx(classes.link, linkClasses.textLink)}>
+                        <div className={classes.inner}>
+                            <Typography variant={'h5'} className={classes.title}>
+                                <LinesEllipsis
+                                    text={data.title}
+                                    maxLine={smUp ? 1 : 3}
+                                    ellipsis='...'
+                                    trimRight
+                                    basedOn='letters'/>
+                            </Typography>
+                            {
+                                (data.seo_description && !isValueEmpty(data.seo_description))
+                                    ?
+                                    <Typography variant={"body1"} component={'div'} className={classes.desc}>
+                                        <LinesEllipsis
+                                            text={data.seo_description}
+                                            maxLine={1}
+                                            ellipsis='...'
+                                            trimRight
+                                            basedOn='letters'/>
+                                    </Typography>
+                                    :
+                                    null
+                            }
+                            <div className={classes.date}>
+                                <Typography variant={"body1"} component={'div'} className={classes.dateText}>
+                                    {formatDate}
+                                </Typography>
+                            </div>
+                        </div>
+                    </NavLink>
+            }
+        </Fragment>
     );
 };
 export default PostListItem;
