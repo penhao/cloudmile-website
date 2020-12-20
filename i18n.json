@@ -1,8 +1,7 @@
 {
   "locales": [
     "en",
-    "zh",
-    "zh-hant"
+    "zh"
   ],
   "defaultLocale": "en",
   "currentPagesDir": "src/pages_",

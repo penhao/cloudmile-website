@@ -41,12 +41,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var next_1 = __importDefault(require("next"));
+var redirect_1 = require("./redirect");
 var dev = process.env.NODE_ENV !== "production";
 var app = next_1.default({ dev: dev });
 var handle = app.getRequestHandler();
 var port = process.env.PORT || 3000;
 (function () { return __awaiter(void 0, void 0, void 0, function () {
-    var server, e_1;
+    var server_1, e_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -54,11 +55,17 @@ var port = process.env.PORT || 3000;
                 return [4 /*yield*/, app.prepare()];
             case 1:
                 _a.sent();
-                server = express_1.default();
-                server.all("*", function (req, res) {
+                server_1 = express_1.default();
+                redirect_1.redirects.forEach(function (_a) {
+                    var from = _a.from, to = _a.to;
+                    server_1.get(from, function (req, res) {
+                        res.redirect(301, to);
+                    });
+                });
+                server_1.all("*", function (req, res) {
                     return handle(req, res);
                 });
-                server.listen(port, function (err) {
+                server_1.listen(port, function (err) {
                     if (err)
                         throw err;
                     console.log("> Ready on server:" + port + " - env " + process.env.NODE_ENV);

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!--/-->
+    <url>
+        <loc>https://www.mile.cloud/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/"/>
+    </url>
+
+
+    <!--/resources/blog-->
+    <url>
+        <loc>https://mile.cloud/resources/blog/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://mile.cloud/resources/blog/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://mile.cloud/resources/blog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://mile.cloud/zh/resources/blog/"/>
+    </url>
+    <url>
+        <loc>https://mile.cloud/zh/resources/blog/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://mile.cloud/resources/blog/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://mile.cloud/resources/blog/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://mile.cloud/zh/resources/blog/"/>
+    </url>
+
+
+    <!--/resources/case-study-->
+    <url>
+        <loc>https://mile.cloud/resources/case-study/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://mile.cloud/resources/case-study/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://mile.cloud/resources/case-study/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://mile.cloud/zh/resources/case-study/"/>
+    </url>
+    <url>
+        <loc>https://mile.cloud/zh/resources/case-study/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://mile.cloud/resources/case-study/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://mile.cloud/resources/case-study/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://mile.cloud/zh/resources/case-study/"/>
+    </url>
+
+
+    <!--/resources/media-center-->
+    <url>
+        <loc>https://mile.cloud/resources/media-center/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://mile.cloud/resources/media-center/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://mile.cloud/resources/media-center/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://mile.cloud/zh/resources/media-center/"/>
+    </url>
+    <url>
+        <loc>https://mile.cloud/zh/resources/media-center/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://mile.cloud/resources/media-center/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://mile.cloud/resources/media-center/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://mile.cloud/zh/resources/media-center/"/>
+    </url>
+
+
+    <!--/resources/event-->
+    <url>
+        <loc>https://mile.cloud/resources/event/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/resources/event/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/resources/event/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/resources/event/"/>
+    </url>
+    <url>
+        <loc>https://mile.cloud/zh/resources/event/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/resources/event/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/resources/event/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/resources/event/"/>
+    </url>
+
+
+    <!--/resources/video-->
+    <url>
+        <loc>https://mile.cloud/resources/video/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/resources/video/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/resources/video/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/resources/video/"/>
+    </url>
+    <url>
+        <loc>https://mile.cloud/zh/resources/video/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/resources/video/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/resources/video/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/resources/video/"/>
+    </url>
+
+
+    <!--/privacy-->
+    <url>
+        <loc>https://www.mile.cloud/privacy</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/privacy"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/privacy"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/privacy"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/privacy</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/privacy"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/privacy"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/privacy"/>
+    </url>
+
+
+    <!--/contact-->
+    <url>
+        <loc>https://www.mile.cloud/contact</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/contact"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/contact"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/contact"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/contact</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/contact"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/contact"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/contact"/>
+    </url>
+
+    <!--/company/team-->
+    <url>
+        <loc>https://www.mile.cloud/company/team</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/company/team"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/company/team"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/company/team"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/company/team</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/company/team"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/company/team"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/company/team"/>
+    </url>
+
+    <!--/company/partner-->
+    <url>
+        <loc>https://www.mile.cloud/company/partner</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/company/partner"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/company/partner"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/company/partner"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/company/partner</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/company/partner"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/company/partner"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/company/partner"/>
+    </url>
+
+    <!--/company/career-->
+    <url>
+        <loc>https://www.mile.cloud/company/career</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/company/career"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/company/career"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/company/career"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/company/career</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/company/career"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/company/career"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/company/career"/>
+    </url>
+
+
+    <!--/cloud/solutions/it-modernization-->
+    <url>
+        <loc>https://www.mile.cloud/cloud/solutions/it-modernization</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/solutions/it-modernization"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/solutions/it-modernization"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/solutions/it-modernization"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/cloud/solutions/it-modernization</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/solutions/it-modernization"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/solutions/it-modernization"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/solutions/it-modernization"/>
+    </url>
+
+    <!--/cloud/solutions/business-productivity-->
+    <url>
+        <loc>https://www.mile.cloud/cloud/solutions/business-productivity</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/solutions/business-productivity"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/solutions/business-productivity"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/solutions/business-productivity"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/cloud/solutions/business-productivity</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/solutions/business-productivity"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/solutions/business-productivity"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/solutions/business-productivity"/>
+    </url>
+
+    <!--/cloud/solutions/multi-cdn-platform-->
+    <url>
+        <loc>https://www.mile.cloud/cloud/solutions/multi-cdn-platform</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/solutions/multi-cdn-platform"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/solutions/multi-cdn-platform"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/solutions/multi-cdn-platform"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/cloud/solutions/multi-cdn-platform</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/solutions/multi-cdn-platform"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/solutions/multi-cdn-platform"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/solutions/multi-cdn-platform"/>
+    </url>
+
+    <!--/cloud/solutions/data-driven-business-->
+    <url>
+        <loc>https://www.mile.cloud/cloud/solutions/data-driven-business</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/solutions/data-driven-business"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/solutions/data-driven-business"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/solutions/data-driven-business"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/cloud/solutions/data-driven-business</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/solutions/data-driven-business"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/solutions/data-driven-business"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/solutions/data-driven-business"/>
+    </url>
+
+    <!--/cloud/solutions/digital-transformation-->
+    <url>
+        <loc>https://www.mile.cloud/cloud/solutions/digital-transformation</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/solutions/digital-transformation"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/solutions/digital-transformation"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/solutions/digital-transformation"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/cloud/solutions/digital-transformation</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/solutions/digital-transformation"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/solutions/digital-transformation"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/solutions/digital-transformation"/>
+    </url>
+
+    <!--/cloud/services/all-cloud-services-->
+    <url>
+        <loc>https://www.mile.cloud/cloud/services/all-cloud-services</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/services/all-cloud-services"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/services/all-cloud-services"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/services/all-cloud-services"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/cloud/services/all-cloud-services</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/cloud/services/all-cloud-services"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/cloud/services/all-cloud-services"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/cloud/services/all-cloud-services"/>
+    </url>
+
+
+    <!--/ai/artificial-intelligence-services-->
+    <url>
+        <loc>https://www.mile.cloud/ai/artificial-intelligence-services</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/ai/artificial-intelligence-services"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/ai/artificial-intelligence-services"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/ai/artificial-intelligence-services"/>
+    </url>
+    <url>
+        <loc>https://www.mile.cloud/zh/ai/artificial-intelligence-services</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mile.cloud/ai/artificial-intelligence-services"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.mile.cloud/ai/artificial-intelligence-services"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://www.mile.cloud/zh/ai/artificial-intelligence-services"/>
+    </url>
+
+
+    <!--/cloud/solutions/cloud-management-platform-->
+    <url>
+        <loc>https://mile.cloud/cloud/solutions/cloud-management-platform/</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://mile.cloud/cloud/solutions/cloud-management-platform/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://mile.cloud/cloud/solutions/cloud-management-platform/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://mile.cloud/zh/cloud/solutions/cloud-management-platform/"/>
+    </url>
+    <url>
+        <loc>https://mile.cloud/zh/cloud/solutions/cloud-management-platform/</loc>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://mile.cloud/cloud/solutions/cloud-management-platform/"/>
+        <xhtml:link rel="alternate" hreflang="en-SG" href="https://mile.cloud/cloud/solutions/cloud-management-platform/"/>
+        <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://mile.cloud/zh/cloud/solutions/cloud-management-platform/"/>
+    </url>
+
+</urlset>
