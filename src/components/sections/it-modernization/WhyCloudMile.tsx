@@ -97,7 +97,7 @@ const WhyCloudMile = () => {
                                                         className={clsx(classes.valueLabel, classes.labelTop)}>
                                                 {t('it-modernization:Over')}
                                             </Typography>
-                                            <Typography variant={'h3'} className={classes.value}>70</Typography>
+                                            <Typography variant={'h3'} className={classes.value}>120</Typography>
                                             <Typography variant={"body1"} component={'span'}
                                                         className={classes.valueLabel}>
                                                 {t('it-modernization:Certifications')}
@@ -121,7 +121,7 @@ const WhyCloudMile = () => {
                                     </Grid>
                                     <Grid item xs={12} sm={6} md={4}>
                                         <div className={classes.valueItem}>
-                                            <Typography variant={'h3'} className={classes.value}>330</Typography>
+                                            <Typography variant={'h3'} className={classes.value}>400</Typography>
                                             <Typography variant={"body1"} component={'span'}
                                                         className={classes.valueLabel}>
                                                 {t('it-modernization:Customers')}

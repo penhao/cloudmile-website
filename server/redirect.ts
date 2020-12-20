@@ -1,37 +1,34 @@
 type RedirectType = { from: string, to: string; };
 // MediaCenter
 // ========================================================================
+
 const mediaRedirects = [
     {
-        from: "/zh-hant/2020-hk-workshop-start-digital-transformation-via-cloud-ai-solutions/",
+        from: "/zh-hant/ai-adsvantage/",
         to: "/zh/resources/media-center/141/CloudMile%20AI%20%E5%8A%9B%E5%8A%A9%E4%BC%81%E6%A5%AD%E6%90%B6%E4%BD%94%E5%BE%8C%E7%96%AB%E5%85%88%E6%A9%9F%20ADsvantage%E5%85%8D%E8%B2%BB%E8%A9%A6%E7%94%A8"
     },
     {
-        from: "/zh-hant/ai-company-cloudmile-celebrates-3-years-anniversary/",
+        from: "/zh-hant/latest-news/d-biz-programme/",
         to: "/zh/resources/media-center/140/%E9%97%9C%E6%96%BC%E3%80%8C%E9%81%99%E8%B7%9D%E7%87%9F%E5%95%86%E8%A8%88%E5%8A%83%E3%80%8D"
     },
     {
-        from: "/zh-hant/ainotam-launches-ai-search-ads-management-platform-loupe/",
+        from: "/zh-hant/2020-hk-workshop-start-digital-transformation-via-cloud-ai-solutions/",
         to: "/zh/resources/media-center/139/CloudMile%20%E9%A6%99%E6%B8%AF%E6%8A%80%E8%A1%93%E8%AC%9B%E5%BA%A7%EF%BC%8C%E5%8A%A9%E4%BC%81%E6%A5%AD%E5%96%84%E7%94%A8AI%E3%80%81%E9%9B%B2%E7%AB%AF%E5%95%9F%E5%8B%95%E6%95%B8%E4%BD%8D%E8%BD%89%E5%9E%8B"
     },
     {
-        from: "/zh-hant/grow-with-google-cloudmile-ai/",
-        to: "/zh/resources/media-center/138/CloudMile%20%E4%B8%89%E6%AD%B2%E4%BA%86%EF%BC%81%E6%8E%A8%E5%A4%9A%E6%AC%BE%20AI%20%E6%87%89%E7%94%A8%EF%BC%8C%E5%8A%A9%E4%BC%81%E6%A5%AD%E5%84%AA%E5%8C%96%E7%B6%93%E7%87%9F%E6%95%88%E8%83%BD"
-    },
-    {
-        from: "/zh-hant/cloudmile-announced-the-completion-of-pre-series-b-financing/",
+        from: "/zh-hant/ainotam-launches-ai-search-ads-management-platform-loupe/",
         to: "/zh/resources/media-center/137/Ainotam%20%E8%89%BE%E8%AB%BE%E9%A0%93%E7%A7%91%E6%8A%80%E6%8E%A8%E5%87%BA%E6%A5%AD%E7%95%8C%E9%A6%96%E5%89%B5%20AI%20%E9%97%9C%E9%8D%B5%E5%AD%97%E5%BB%A3%E5%91%8A%E6%93%8D%E4%BD%9C%E5%8A%A0%E9%80%9F%E5%99%A8"
     },
     {
-        from: "/zh-hant/cloudmile%E6%94%9C%E6%89%8Bmulti-cdn%E5%B0%88%E5%AE%B6mlytics%E6%8E%A8%E5%87%BA%E4%B8%80%E7%AB%99%E5%BC%8F%E5%B9%B3%E5%8F%B0milecdn/",
+        from: "/zh-hant/cloudmile-announced-the-completion-of-pre-series-b-financing/",
         to: "/zh/resources/media-center/136/CloudMile%20%E5%AE%8C%E6%88%90600%E8%90%AC%E7%BE%8E%E5%85%83%E5%8B%9F%E8%B3%87%EF%BC%8C%E5%8A%A0%E9%80%9F%E6%8B%93%E5%B1%95%E5%B8%82%E5%A0%B4%E5%8F%8A%20AI%20%E7%94%A2%E5%93%81%E9%96%8B%E7%99%BC"
     },
     {
-        from: "/zh-hant/cloudmile-ai-application/",
+        from: "/zh-hant/cloudmile%E6%94%9C%E6%89%8Bmulti-cdn%E5%B0%88%E5%AE%B6mlytics%E6%8E%A8%E5%87%BA%E4%B8%80%E7%AB%99%E5%BC%8F%E5%B9%B3%E5%8F%B0milecdn/",
         to: "/zh/resources/media-center/135/CloudMile%E6%94%9C%E6%89%8BMulti%20CDN%E5%B0%88%E5%AE%B6mlytics%E6%8E%A8%E5%87%BA%E4%B8%80%E7%AB%99%E5%BC%8F%E5%B9%B3%E5%8F%B0MileCDN"
     },
     {
-        from: "/zh-hant/google-cloud-summit-singapore-2019/",
+        from: "/zh-hant/cloudmile-ai-application/",
         to: "/zh/resources/media-center/134/%E6%89%93%E9%80%A0%E4%BC%81%E6%A5%AD%E6%9C%89%E6%84%9F%E7%9A%84%20AI%20%E6%87%89%E7%94%A8%EF%BC%81CloudMile%20%E4%BB%A5%20AI4Biz%20%E5%8A%A9%E4%BC%81%E6%A5%AD%E8%BD%89%E5%9E%8B"
     },
     {
@@ -246,6 +243,7 @@ const caseRedirects = [
         from: "/zh-hant/cloudflare-showcase-icook/",
         to: "/zh/resources/case-study/153/iCook"
     },
+
     {
         from: "/zh-hant/milecdn-showcase-yile-technology/",
         to: "/zh/resources/case-study/158/Yile%20Technology%20%E5%BC%88%E6%A8%82%E7%A7%91%E6%8A%80"
@@ -257,6 +255,10 @@ const caseRedirects = [
     {
         from: "/zh-hant/gmaps-showcase-sinyi/",
         to: "/zh/resources/case-study/160/%E4%BF%A1%E7%BE%A9%E6%88%BF%E5%B1%8B"
+    },
+    {
+        from: "/cloudflare-showcase-icook/",
+        to: "/resources/case-study/246/iCook"
     },
     {
         from: "/gcp-showcase-boutir/",
@@ -290,6 +292,10 @@ const caseRedirects = [
 // Blog
 // ========================================================================
 const blogRedirects = [
+    {
+        from: "/zh-hant/cost-optimization-best-practices-for-bigquery",
+        to: "/zh/resources/blog/24/BigQuery%20%E6%88%90%E6%9C%AC%E5%84%AA%E5%8C%96%E4%B8%89%E5%A4%A7%E6%8C%87%E5%8D%97%EF%BC%81%20%E8%AE%93%E4%BC%81%E6%A5%AD%E8%8A%B1%E6%9B%B4%E5%B0%91%E7%94%A8%E6%9B%B4%E5%A5%BD"
+    },
     {
         from: "/zh-hant/resources/blog/gcp-ai-in-manufacturer/",
         to: "/zh/resources/blog/4/GCP%20%E5%BE%9E%E6%95%B8%E6%93%9A%E5%88%86%E6%9E%90%E5%88%B0%20AI%20%E9%A0%90%E6%B8%AC%20%E5%8D%94%E5%8A%A9%E8%A3%BD%E9%80%A0%E6%A5%AD%E7%B8%AE%E7%9F%AD%E7%94%A2%E5%93%81%E4%B8%8A%E5%B8%82%E6%99%82%E7%A8%8B%20"
@@ -380,10 +386,6 @@ const blogRedirects = [
     },
     {
         from: "/zh-hant/resources/blog/data-lake-and-data-warehouse/",
-        to: "/zh/resources/blog/26/%E8%B3%87%E6%96%99%E6%B9%96%E6%B3%8A%E8%88%87%E8%B3%87%E6%96%99%E5%80%89%E5%84%B2%E4%BB%8B%E7%B4%B9%E8%88%87%E6%AF%94%E8%BC%83%EF%BC%9A%E5%85%A9%E8%80%85%E7%9A%84%205%20%E5%A4%A7%E5%B7%AE%E7%95%B0"
-    },
-    {
-        from: "/zh-hant/cost-optimization-best-practices-for-bigquery/",
         to: "/zh/resources/blog/26/%E8%B3%87%E6%96%99%E6%B9%96%E6%B3%8A%E8%88%87%E8%B3%87%E6%96%99%E5%80%89%E5%84%B2%E4%BB%8B%E7%B4%B9%E8%88%87%E6%AF%94%E8%BC%83%EF%BC%9A%E5%85%A9%E8%80%85%E7%9A%84%205%20%E5%A4%A7%E5%B7%AE%E7%95%B0"
     },
     {
