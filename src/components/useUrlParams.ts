@@ -29,10 +29,10 @@ const useUrlParams = (defaultParams: SalesforcePostParams) => {
                 ? getUrlParam(path, 'utm_source')!
                 : defaultParams.utmSource,
             utmMedium: (getUrlParam(path, 'utm_medium'))
-                ? getUrlParam(path, 'utm_source')!
+                ? getUrlParam(path, 'utm_medium')!
                 : defaultParams.utmMedium,
             utmCampaign: (getUrlParam(path, 'utm_campaign'))
-                ? getUrlParam(path, 'utm_source')!
+                ? getUrlParam(path, 'utm_campaign')!
                 : defaultParams.utmCampaign,
             leadSource: defaultParams.leadSource,
             campaignId: defaultParams.campaignId

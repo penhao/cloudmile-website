@@ -142,8 +142,8 @@ const DownloadForm = ({salesforceData = null}: Props) => {
                 <input type="hidden" name="debugEmail" value="eileen.chen@mile.cloud"/>*/}
 
                 {/* Redirect */}
-                <input type="hidden" name="oid" value="00D7F000001xkaZ"/>
-                <input type="hidden" name="retURL" value={redirectUrl}/>
+                <input type="hidden" name="oid" defaultValue="00D7F000001xkaZ"/>
+                <input type="hidden" name="retURL" defaultValue={redirectUrl}/>
 
                 {/* Utm */}
                 <input type="hidden"
@@ -151,27 +151,29 @@ const DownloadForm = ({salesforceData = null}: Props) => {
                        name="00N7F00000STwKY"
                        size={20}
                        maxLength={50}
-                       value={
-                           (salesforceData && !isValueEmpty(salesforceData?.utmSource))
-                               ? salesforceData.utmSource : urlParams.utmSource
+                       defaultValue={
+                           (urlParams && !isValueEmpty(urlParams?.utmSource))
+                               ? urlParams.utmSource
+                               : (salesforceData?.utmSource) ? salesforceData.utmSource : urlParams.utmSource
                        }/>
                 <input type="hidden"
                        id="00N7F00000STwKd"
                        name="00N7F00000STwKd"
                        size={20}
                        maxLength={50}
-                       value={
-                           (salesforceData && !isValueEmpty(salesforceData?.utmMedium))
-                               ? salesforceData.utmMedium : urlParams.utmMedium
+                       defaultValue={
+                           (urlParams && !isValueEmpty(urlParams?.utmMedium))
+                               ? urlParams.utmMedium
+                               : (salesforceData?.utmMedium) ? salesforceData.utmMedium : urlParams.utmMedium
                        }/>
                 <input type="hidden"
                        id="00N7F00000STwKi"
                        name="00N7F00000STwKi"
                        size={20}
                        maxLength={50}
-                       value={
-                           (salesforceData && !isValueEmpty(salesforceData?.utmCampaign))
-                               ? salesforceData.utmCampaign : urlParams.utmCampaign
+                       defaultValue={
+                           (urlParams && !isValueEmpty(urlParams?.utmCampaign))
+                               ? urlParams.utmCampaign : (salesforceData?.utmCampaign) ? salesforceData.utmCampaign : urlParams.utmCampaign
                        }/>
 
                 {/* BU */}
@@ -180,7 +182,7 @@ const DownloadForm = ({salesforceData = null}: Props) => {
                        name="00N7F00000SsAIL"
                        size={20}
                        maxLength={50}
-                       value={'CloudMile'}/>
+                       defaultValue={'CloudMile'}/>
 
 
                 {/* Campaign ID */}
@@ -189,18 +191,17 @@ const DownloadForm = ({salesforceData = null}: Props) => {
                        name="Campaign_ID"
                        size={20}
                        maxLength={50}
-                       value={
+                       defaultValue={
                            (salesforceData && !isValueEmpty(salesforceData?.campaignId))
                                ? salesforceData.campaignId : urlParams.campaignId
                        }/>
-
                 {/* Lead Source */}
                 <input type="hidden"
                        id="00N7F00000RPD3a"
                        name="00N7F00000RPD3a"
                        size={20}
                        maxLength={50}
-                       value={
+                       defaultValue={
                            (salesforceData && !isValueEmpty(salesforceData?.leadSource))
                                ? salesforceData.leadSource : urlParams.leadSource
                        }/>
@@ -210,7 +211,7 @@ const DownloadForm = ({salesforceData = null}: Props) => {
                        name="00N7F00000RdAkx"
                        size={20}
                        maxLength={50}
-                       value={
+                       defaultValue={
                            (salesforceData && !isValueEmpty(salesforceData?.country))
                                ? salesforceData.country : urlParams.country
                        }/>

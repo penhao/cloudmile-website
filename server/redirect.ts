@@ -4,6 +4,10 @@ type RedirectType = { from: string, to: string; };
 
 const mediaRedirects = [
     {
+        from: "/zh-hant/ai-company-cloudmile-celebrates-3-years-anniversary/",
+        to: "/zh/resources/media-center/138/CloudMile%20%E4%B8%89%E6%AD%B2%E4%BA%86%EF%BC%81%E6%8E%A8%E5%A4%9A%E6%AC%BE%20AI%20%E6%87%89%E7%94%A8%EF%BC%8C%E5%8A%A9%E4%BC%81%E6%A5%AD%E5%84%AA%E5%8C%96%E7%B6%93%E7%87%9F%E6%95%88%E8%83%BD"
+    },
+    {
         from: "/zh-hant/ai-adsvantage/",
         to: "/zh/resources/media-center/141/CloudMile%20AI%20%E5%8A%9B%E5%8A%A9%E4%BC%81%E6%A5%AD%E6%90%B6%E4%BD%94%E5%BE%8C%E7%96%AB%E5%85%88%E6%A9%9F%20ADsvantage%E5%85%8D%E8%B2%BB%E8%A9%A6%E7%94%A8"
     },
@@ -705,7 +709,7 @@ const blogRedirects = [
         to: "/zh/resources/blog/39/%20%E8%87%89%E9%83%A8%E5%81%B5%E6%B8%AC%E6%8A%80%E8%A1%93%E7%95%B6%E9%81%93%E3%80%80%E5%B0%87%E5%BE%AE%E8%A1%A8%E6%83%85%E9%87%8F%E5%8C%96%E7%82%BA%E5%A4%A7%E6%95%B8%E6%93%9A"
     },
     {
-        from: "/zh-hant/google-cloud-香港機房上線你應該要知道的三件事/",
+        from: "/zh-hant/google-cloud-%E9%A6%99%E6%B8%AF%E6%A9%9F%E6%88%BF%E4%B8%8A%E7%B7%9A%E4%BD%A0%E6%87%89%E8%A9%B2%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%89%E4%BB%B6%E4%BA%8B",
         to: "/zh/resources/blog/38/Google%20Cloud%20%E9%A6%99%E6%B8%AF%E6%A9%9F%E6%88%BF%E4%B8%8A%E7%B7%9A%EF%BC%8C%E4%BD%A0%E6%87%89%E8%A9%B2%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%89%E4%BB%B6%E4%BA%8B%EF%BC%81"
     },
     {
