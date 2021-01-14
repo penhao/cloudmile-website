@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         padding: '4px 15px',
         fontSize: theme.typography.pxToRem(12),
         fontWeight: 700,
+        lineHeight: 'normal',
         color: theme.palette.common.white,
         backgroundColor: theme.palette.primary.main,
         borderRadius: '99em',
@@ -122,9 +123,9 @@ const VideoCategory = ({parentPage, categoryData = [], clickHandler}: Props) => 
                                         : `?category=${item.id}`;
                                     return (
                                         <div className={classes.sliderItem} key={index}>
-                                            <Link href={`/resources/video${params}`} passHref>
+                                            <Link href={`/resources/video${params}`} as={`/resources/video${params}`} passHref>
                                                 <a>
-                                                    <Button variant={"contained"} color={"primary"}
+                                                    <Button variant={"contained"} color={"primary"} component={'div'}
                                                             className={classes.button}>
                                                         {item.title}
                                                     </Button>
