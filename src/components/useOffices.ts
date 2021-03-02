@@ -8,11 +8,10 @@ export interface IOfficeProps {
     serviceEmail: string
     hrEmail: string
 }
-
 const useOffices = () => {
     const [offices, setOffices] = useState<IOfficeProps[] | null>(null);
     useEffect(() => {
-        fetch('/json/offices.json',
+        fetch('/offices.json',
             {
                 headers: {
                     'content-type': 'application/json'

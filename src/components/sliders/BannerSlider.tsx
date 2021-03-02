@@ -15,12 +15,10 @@ interface Props {
     paginationDistance?: boolean;
     children: ReactIdSwiperChildren;
 }
-
 interface StyleProps {
     sliderTotal: number;
     paginationDistance: boolean;
 }
-
 const useStyles = makeStyles((theme: Theme) => ({
     slider: {
         position: 'relative',

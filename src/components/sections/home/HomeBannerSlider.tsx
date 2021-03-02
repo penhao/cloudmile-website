@@ -12,8 +12,7 @@ const HomeBannerSlider = ({sliderData}: Props) => {
     return (
         <Fragment>
             {
-                <BannerSlider sliderTotal={sliderData.length}
-                              paginationDistance={true}
+                <BannerSlider sliderTotal={sliderData.length} paginationDistance={true}
                 >
                     {
                         sliderData.length

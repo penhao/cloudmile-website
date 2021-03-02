@@ -26,7 +26,6 @@ export const removeParam = (removeKey: string, searchParams: string) => {
         return '';
     }
 };
-
 export const getRoute = (searchValue: string, data: any[], accum = []) => {
     data.forEach((f) => {
         if (f['routes']) {
@@ -38,15 +37,3 @@ export const getRoute = (searchValue: string, data: any[], accum = []) => {
     });
     return accum;
 };
-/*
-function find(searchData, target, accum = []) {
-    target.forEach((f) => {
-        if (f['routes']) {
-            find(searchData, f['routes'], accum)
-        }
-        if (f['title'].includes(searchData)) {
-            accum.push(f);
-        }
-    });
-    return accum;
-}*/

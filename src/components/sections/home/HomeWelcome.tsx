@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         backgroundColor: theme.palette.primary.main
     }
 }));
-const HomeBanner = () => {
+const HomeWelcome = () => {
     const classes = useStyles();
     const {t} = useTranslation();
     const [textActive, setTextActive] = useState(false);
@@ -72,4 +72,4 @@ const HomeBanner = () => {
         </div>
     );
 };
-export default HomeBanner;
+export default HomeWelcome;

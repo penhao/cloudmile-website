@@ -27,7 +27,7 @@ const useStyles = makeStyles(() => ({
         marginTop: '20px'
     }
 }));
-const SectionBlog = ({sliderData}: Props) => {
+const HomeBlog = ({sliderData}: Props) => {
     const classes = useStyles();
     const linkClasses = useLinkStyles();
     const {t} = useTranslation();
@@ -79,4 +79,4 @@ const SectionBlog = ({sliderData}: Props) => {
     );
 };
 
-export default SectionBlog;
+export default HomeBlog;

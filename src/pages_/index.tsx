@@ -7,11 +7,11 @@ import HomeAITechnology from "../components/sections/home/HomeAITechnology";
 import HomeJourneyMap from "../components/sections/home/HomeJourneyMap";
 import {fetchHomeSliderList} from "../services/ApiServices";
 import HomeBannerSlider from "../components/sections/home/HomeBannerSlider";
-import SectionBlog from "../components/sections/home/SectionBlog";
+import HomeBlog from "../components/sections/home/HomeBlog";
 import SectionCases from "../components/sections/home/SectionCases";
 import SectionEvents from "../components/sections/home/SectionEvents";
 import NewsLetter from "../components/sections/NewsLetter";
-import HomeBanner from "../components/sections/home/HomeBanner";
+import HomeWelcome from "../components/sections/home/HomeWelcome";
 import {siteRoutes} from "../../public/config.json";
 import {getRoute} from "../utils/Utils";
 import {useRouter} from "next/router";
@@ -21,39 +21,37 @@ const Index = () => {
     const {t, lang} = useTranslation();
     const contactRef = useRef<HTMLDivElement>(null);
     const currentRoute = getRoute('Home', siteRoutes)[0];
-    const [sliderData, setSliderData] = useState({
-        banners: [], blog: [], case: [], event: [], news: []
-    });
-    const scrollToHash = () => {
-        const hashId = window.location.hash;
-        if (hashId === '#newsletter') {
-            window.scrollTo({
-                behavior: "smooth",
-                top: contactRef.current.offsetTop
-            });
-        }
+    const [sliderData, setSliderData] = useState({banners: [], blog: [], case: [], event: [], news: []});
+
+    const fetchSliderData = async () => {
+        return await fetchHomeSliderList(lang);
     };
     useEffect(() => {
-        const fetchData = async () => {
-            return await fetchHomeSliderList(lang);
-        };
-        fetchData()
+        fetchSliderData()
             .then((response: any) => {
                 if (response && response.status) {
                     setSliderData(response.data);
                 }
             });
         const scrollTimeout = window.setTimeout(() => {
-            scrollToHash();
-            window.clearTimeout(scrollTimeout);
+            const hashId = window.location.hash;
+            if (hashId.toLowerCase() === '#newsletter') {
+                window.scrollTo({
+                    behavior: "smooth",
+                    top: contactRef.current.offsetTop
+                });
+            }
         }, 2000);
+        return () => {
+            window.clearTimeout(scrollTimeout);
+        };
     }, [router, lang]);
 
     return (
         <Layout metadata={{
             ...currentRoute['metadata'][lang], href: currentRoute['href']
         }}>
-            <HomeBanner/>
+            <HomeWelcome/>
             <HomeBannerSlider sliderData={sliderData.banners}/>
             <HomeIntro/>
             <HomeFoundation/>
@@ -62,12 +60,11 @@ const Index = () => {
             <SectionCases title={t('case-study:No Matter What Your Business Is, We Know What You Need')}
                           label={t('case-study:Clients Case Study')}
                           sliderData={sliderData.case}/>
-            <SectionBlog sliderData={sliderData.blog}/>
+            <HomeBlog sliderData={sliderData.blog}/>
             <SectionEvents sliderData={sliderData.event}/>
             <div ref={contactRef}>
-                <NewsLetter
-                    title={t('home:Want to know more about our exclusive offers__')}
-                    caption={t('home:Join the CloudMile Newsletter')}/>
+                <NewsLetter title={t('home:Want to know more about our exclusive offers__')}
+                            caption={t('home:Join the CloudMile Newsletter')}/>
             </div>
         </Layout>
     );

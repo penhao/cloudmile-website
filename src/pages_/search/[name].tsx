@@ -214,7 +214,6 @@ const SearchPage = ({postData}: InferGetServerSidePropsType<typeof getServerSide
     );
 };
 export const getServerSideProps: GetServerSideProps = async ({locale, query}: GetServerSidePropsContext) => {
-
     const keyword = (query && query.name) ? query.name.toString() : '';
     //1:blog 2:event 3:case study 4:video 5: 新聞管理
     const postData = await fetchListByKeyword(locale, keyword, 1, 10, null);

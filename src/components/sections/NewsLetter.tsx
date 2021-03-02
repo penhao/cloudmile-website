@@ -12,7 +12,6 @@ interface Props {
     caption: string | null;
     salesforceData?: SalesforceDataType | null;
 }
-
 const NewsLetter = ({title, caption = null, salesforceData}: Props) => {
     return (
         <SectionContainer>

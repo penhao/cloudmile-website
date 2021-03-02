@@ -11,7 +11,6 @@ interface IProps {
     children?: React.ReactNode;
     changeHandler?: Function | null;
 }
-
 const useStyles = makeStyles((theme: Theme) => ({
     wrapper: {
         width: 'calc(100% + 20px)',

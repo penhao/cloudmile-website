@@ -19,7 +19,7 @@ const CloudManagementPlatform = () => {
             <MileLyncBanner/>
             <MileLyncIntro/>
             <MileLyncDailyTasks/>
-            <MileLyncPlan/>
+            {/*<MileLyncPlan/>*/}
             <ProductContact
                 title={t('cloud-management-platform:Start Working Smarter Together')}
                 caption={t('cloud-management-platform:Schedule a Demo')}

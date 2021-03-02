@@ -35,9 +35,6 @@ const PostList = ({currentPage, list}: Props) => {
                 (postData && postData.length)
                     ?
                     postData.map((item: any, index: number) => {
-                        /*if (currentPage === 'video') {
-                            console.log(item);
-                        }*/
                         return (
                             <Grid item xs={12} component={'li'} key={index}>
                                 {

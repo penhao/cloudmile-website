@@ -866,7 +866,6 @@ const otherRedirects = [
     }
 ];
 // ========================================================================
-
 export const redirects = <RedirectType[]>[
     ...mediaRedirects,
     ...eventRedirects,

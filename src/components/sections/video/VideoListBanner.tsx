@@ -69,8 +69,6 @@ const VideoListBanner = ({imgUrl, videoId}: Props) => {
     const [videoReady, setVideoReady] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
 
-    // console.log('cover:', imgUrl, 'video', videoId);
-
     const getVideo = () => {
         const opts: any = {
             width: '100%',
