@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
-    wrapper: {
+    labelWrapper: {
         width: ({position}: IProps) => (position === 'left') ? 'auto' : 'calc(100% - 20px)',
         position: 'absolute',
         [theme.breakpoints.up('sm')]: {
@@ -30,16 +30,14 @@ const useStyles = makeStyles((theme: Theme) => ({
         transformOrigin: 'right bottom',
         transform: 'rotate(-90deg)',
         zIndex: 1,
-        [theme.breakpoints.up('md')]: {
-
-        }
+        textTransform:'uppercase'
     }
 }));
 const SectionLabel = ({position = 'left', children}: IProps) => {
     const classes = useStyles({position});
     return (
         <Hidden xsDown>
-            <div className={classes.wrapper}>
+            <div className={classes.labelWrapper}>
                 <Typography variant={"body1"} component={'span'} className={classes.label}>
                     {`${children}_`}
                 </Typography>

@@ -41,6 +41,10 @@
     "/cloud/solutions/business-productivity": [
       "business-productivity"
     ],
+    "/cloud/solutions/cloud-migration": [
+      "cloud-migration",
+      "case-study"
+    ],
     "/cloud/services/all-cloud-services": [
       "all-cloud-services",
       "faq",

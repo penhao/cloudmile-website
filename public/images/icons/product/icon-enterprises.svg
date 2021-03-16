@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <path fill="#0B6DD7" d="M50 58c-4.418 0-8-3.581-8-8 0-4.418 3.582-8 8-8s8 3.582 8 8c0 4.419-3.582 8-8 8z"/>
+            <g stroke="#F2800B" stroke-linecap="round">
+                <path stroke-width="3.96" d="M0.792 22.213L20.591 2.414" transform="rotate(135 16.478 54.429)"/>
+                <path stroke-width="4" d="M22 1L22.053 10.947M22 1L12.053.947" transform="rotate(135 16.478 54.429)"/>
+            </g>
+            <g stroke="#F2800B" stroke-linecap="round">
+                <path stroke-width="3.96" d="M0.792 22.213L20.591 2.414" transform="rotate(-45 39.046 -31.91)"/>
+                <path stroke-width="4" d="M22 1L22.053 10.947M22 1L12.053.947" transform="rotate(-45 39.046 -31.91)"/>
+            </g>
+            <g stroke="#F2800B" stroke-linecap="round">
+                <path stroke-width="3.96" d="M0.792 22.213L20.591 2.414" transform="rotate(-135 23.088 29.14)"/>
+                <path stroke-width="4" d="M22 1L22.053 10.947M22 1L12.053.947" transform="rotate(-135 23.088 29.14)"/>
+            </g>
+            <g stroke="#F2800B" stroke-linecap="round">
+                <path stroke-width="3.96" d="M0.792 22.213L20.591 2.414" transform="rotate(45 .284 114.908)"/>
+                <path stroke-width="4" d="M22 1L22.053 10.947M22 1L12.053.947" transform="rotate(45 .284 114.908)"/>
+            </g>
+            <g stroke="#F2800B" stroke-linecap="round">
+                <path stroke-width="3.96" d="M0.792 22.213L20.591 2.414" transform="translate(16.497 60.736)"/>
+                <path stroke-width="4" d="M22 1L22.053 10.947M22 1L12.053.947" transform="translate(16.497 60.736)"/>
+            </g>
+            <g stroke="#F2800B" stroke-linecap="round">
+                <path stroke-width="3.96" d="M0.792 22.213L20.591 2.414" transform="rotate(-180 41.99 19.562)"/>
+                <path stroke-width="4" d="M22 1L22.053 10.947M22 1L12.053.947" transform="rotate(-180 41.99 19.562)"/>
+            </g>
+            <g stroke="#F2800B" stroke-linecap="round">
+                <path stroke-width="3.96" d="M0.792 22.213L20.591 2.414" transform="rotate(90 11.622 27.811)"/>
+                <path stroke-width="4" d="M22 1L22.053 10.947M22 1L12.053.947" transform="rotate(90 11.622 27.811)"/>
+            </g>
+            <g stroke="#F2800B" stroke-linecap="round">
+                <path stroke-width="3.96" d="M0.792 22.213L20.591 2.414" transform="rotate(-90 72.024 11.314)"/>
+                <path stroke-width="4" d="M22 1L22.053 10.947M22 1L12.053.947" transform="rotate(-90 72.024 11.314)"/>
+            </g>
+        </g>
+    </g>
+</svg>

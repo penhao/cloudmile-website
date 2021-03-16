@@ -67,7 +67,7 @@ const AdoptionProgram = () => {
     return (
         <SectionContainer>
             <Container>
-                <Grid container spacing={smUp?4:2} direction={mdUp ? "row-reverse" : "row"} alignItems={"flex-end"}>
+                <Grid container spacing={smUp ? 4 : 2} direction={mdUp ? "row-reverse" : "row"} alignItems={"flex-end"}>
                     <Grid item xs={12} md={6}>
                         <div className={classes.coverWrapper}>
                             <ShiftContainer shiftX={{xs: -20, md: -320}} growX={{xs: 40, md: 320}}>
@@ -103,7 +103,7 @@ const AdoptionProgram = () => {
                         <SectionLabel>ADOPTION PROGRAM</SectionLabel>
                     </Grid>
                     <Grid item xs={12}>
-                        <Grid container spacing={smUp?4:2}>
+                        <Grid container spacing={smUp ? 4 : 2}>
                             <Hidden smDown>
                                 <Grid item xs={12} md={6}/>
                             </Hidden>

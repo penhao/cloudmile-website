@@ -33,6 +33,12 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         [theme.breakpoints.up('sm')]: {
             lineHeight: 1.21
+        },
+        '& br': {
+            display: 'none',
+            [theme.breakpoints.up('sm')]: {
+                display: 'block'
+            }
         }
     }
 }));
@@ -41,9 +47,9 @@ const SectionTitle = ({variant = 'h2', color = 'black', className = null, childr
 
     return (
         <TextClipEffect>
-            <Typography variant={variant} className={clsx(classes.title, className)}>
-                {children}
-            </Typography>
+            <Typography variant={variant} className={clsx(classes.title, className)} dangerouslySetInnerHTML={
+                {__html: children.toString()}
+            }/>
         </TextClipEffect>
     );
 };

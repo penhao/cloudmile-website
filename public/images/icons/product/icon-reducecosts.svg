@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <path fill="#F2800B" d="M20 62c-6.627 0-12-5.372-12-12 0-6.627 5.373-12 12-12s12 5.373 12 12c0 6.628-5.373 12-12 12z" style="mix-blend-mode:multiply"/>
+            <path fill="#0B6DD7" d="M50 83c-6.627 0-12-5.372-12-12 0-6.627 5.373-12 12-12s12 5.373 12 12c0 6.628-5.373 12-12 12zM80 40c-6.627 0-12-5.372-12-12 0-6.627 5.373-12 12-12s12 5.373 12 12c0 6.628-5.373 12-12 12z" style="mix-blend-mode:multiply"/>
+            <path stroke="#F2800B" stroke-linecap="round" stroke-width="4" d="M20 32L20 4"/>
+            <path stroke="#0B6DD7" stroke-linecap="round" stroke-width="4" d="M80 12L80 4M50.5 96L50.5 88"/>
+            <path stroke="#F2800B" stroke-linecap="round" stroke-width="4" d="M20 96L20 68"/>
+            <path stroke="#0B6DD7" stroke-linecap="round" stroke-width="4" d="M80 96L80 45M50.5 54L50.5 3"/>
+        </g>
+    </g>
+</svg>
