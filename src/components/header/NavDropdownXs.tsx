@@ -115,7 +115,7 @@ const NavDropdownXs = ({statusData, routeGroup}: Props) => {
                                     return (
                                         <Grid item xs={12} key={index}>
                                             {
-                                                (subGroup.name)
+                                                (subGroup.title)
                                                     ?
                                                     <Typography component={'div'} className={classes.subTitle}>
                                                         {t(`common:${subGroup.title}`)}
