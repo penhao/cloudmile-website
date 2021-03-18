@@ -52,6 +52,20 @@
               }
             },
             {
+              "title": "Cloud Migration",
+              "href": "/cloud/solutions/cloud-migration",
+              "metadata": {
+                "en": {
+                  "title": "Cloud Migration | CloudMile",
+                  "desc": "Reduce the cost with CloudMile’s professional services consultants and our proven implementation methodology."
+                },
+                "zh": {
+                  "title": "雲端搬遷 | CloudMile",
+                  "desc": "透過 CloudMile 經認證的搬遷流程與專業工程團隊，我們能協助您降低 IT 成本和雲端搬遷風險。"
+                }
+              }
+            },
+            {
               "title": "Data Driven Business",
               "href": "/cloud/solutions/data-driven-business",
               "metadata": {
@@ -106,20 +120,6 @@
                 "zh": {
                   "title": "商業生產力 | CloudMile",
                   "desc": "透過全新的數位工作模式，我們能讓員工盡情使用雲端分享構想、線上協作、直播會議，不用面對面也能有效率地達成工作目標。"
-                }
-              }
-            },
-            {
-              "title": "Cloud Migration",
-              "href": "/cloud/solutions/cloud-migration",
-              "metadata": {
-                "en": {
-                  "title": "Cloud Migration | CloudMile",
-                  "desc": "Reduce the cost with CloudMile’s professional services consultants and our proven implementation methodology."
-                },
-                "zh": {
-                  "title": "雲端搬遷 | CloudMile",
-                  "desc": "透過 CloudMile 經認證的搬遷流程與專業工程團隊，我們能協助您降低 IT 成本和雲端搬遷風險。"
                 }
               }
             }

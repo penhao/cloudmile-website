@@ -56,8 +56,8 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const TransformationDriven = ({clickHandler}: IProps) => {
     const classes = useStyles();
-    const linkClasses = useLinkStyles();
     const {t} = useTranslation();
+    const linkClasses = useLinkStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
     const mdUp = useMediaQuery(useTheme().breakpoints.up('md'));
     return (

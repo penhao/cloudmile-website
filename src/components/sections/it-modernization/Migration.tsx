@@ -10,7 +10,7 @@ import SectionTitle from "../SectionTitle";
 import SectionLabel from "../SectionLabel";
 import useMediaQuery from "@material-ui/core/useMediaQuery/useMediaQuery";
 import useTheme from "@material-ui/core/styles/useTheme";
-import {Hidden} from "@material-ui/core";
+import {Hidden, Theme} from "@material-ui/core";
 import ShiftContainer from "../../containers/ShiftContainer";
 import SectionDescWrapper from "../SectionDescWrapper";
 import RatioContainer from "../../containers/RatioContainer";
@@ -20,9 +20,21 @@ import ImageClipEffect from "../../effects/ImageClipEffect";
 import useTranslation from "next-translate/useTranslation";
 import IconItem from "../IconItem";
 import SectionDesc from "../SectionDesc";
+import IconLaunch from "../../icons/IconLaunch";
+import NavLink from "../../links/NavLink";
+import {useLinkStyles} from "../../links/LinkStyles";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import clsx from "clsx";
 
+const useStyles = makeStyles((theme: Theme) => ({
+    link: {
+        marginTop: '20px'
+    }
+}));
 const Migration = () => {
     const {t, lang} = useTranslation();
+    const classes = useStyles();
+    const linkClasses = useLinkStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
     const mdUp = useMediaQuery(useTheme().breakpoints.up('md'));
     const [list, setList] = useState<any[] | null>(null);
@@ -112,6 +124,10 @@ const Migration = () => {
                                                                           title={item.title}
                                                                           desc={item.desc}
                                                                           color={'initial'}/>
+                                                                <NavLink hrefPath={'/cloud/solutions/cloud-migration'}
+                                                                         classNames={clsx(classes.link, linkClasses.iconLink)}>
+                                                                    <IconLaunch/>
+                                                                </NavLink>
                                                             </Grid>
                                                         )
                                                     })
