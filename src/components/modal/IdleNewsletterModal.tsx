@@ -17,11 +17,12 @@ import clsx from "clsx";
 import useWindowResize from "../useWindowResize";
 import {usePageStyles} from "../PageStyles";
 import useTranslation from "next-translate/useTranslation";
+import {SalesforcePostParams} from "../useUrlParams";
 
 interface Props {
     title: string;
     caption: string;
-    salesforceData?: SalesforceDataType | null;
+    salesforceData?: SalesforcePostParams | null;
 }
 
 const useStyles = makeStyles((theme: Theme) => ({

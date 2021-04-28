@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
                 ? theme.palette.common.black
                 : (color === 'white')
                     ? theme.palette.common.white
-                    : theme.palette.common.black;
+                    : color;
         },
         [theme.breakpoints.up('sm')]: {
             lineHeight: 1.21
@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const SectionTitle = ({variant = 'h2', color = 'black', className = null, children}: Props) => {
     const classes = useStyles({color});
-
     return (
         <TextClipEffect>
             <Typography variant={variant} className={clsx(classes.title, className)} dangerouslySetInnerHTML={

@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import NavLink from "../links/NavLink";
 import useTranslation from "next-translate/useTranslation";
-import useUrlParams from "../useUrlParams";
+import useUrlParams, {SalesforcePostParams} from "../useUrlParams";
 import usePhoneCountryCode from "./usePhoneCountryCode";
 import {SalesforceDataType} from "./FormTypes";
 import {isValueEmpty} from "../../utils/Utils";
@@ -20,7 +20,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import {reCAPTCHAKey} from "../../../public/config.json";
 
 interface Props {
-    salesforceData: SalesforceDataType | null;
+    salesforceData: SalesforcePostParams | null;
 }
 
 const DownloadForm = ({salesforceData = null}: Props) => {

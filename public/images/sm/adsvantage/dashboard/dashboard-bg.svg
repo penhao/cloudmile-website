@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1772px" height="943px" viewBox="0 0 1772 943" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>dashboard-bg</title>
+    <defs>
+        <linearGradient x1="0%" y1="100.005073%" x2="100%" y2="100.005073%" id="linearGradient-1">
+            <stop stop-color="#A78EF6" offset="0%"></stop>
+            <stop stop-color="#B364F4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M987.549096,944.399823 C1177.65223,944.399823 1739.25457,871.071479 1765.87079,608.292533 C1792.48701,345.513588 1724.4707,186.974945 1392.08712,59.1594974 C1059.70354,-68.6559507 124.061504,-16.5829904 1.04409403,594.090817 C-42.1926856,808.723597 398.4062,721.407679 668.176973,785.813989 C849.26132,829.046896 724.95424,944.399823 987.549096,944.399823 Z" id="dashboard-bg" fill="url(#linearGradient-1)" transform="translate(884.585065, 473.399823) rotate(359.000000) translate(-884.585065, -473.399823) "></path>
+    </g>
+</svg>

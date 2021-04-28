@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import Sticky from "react-sticky-el";
 import LogoCloudMile from "./LogoCloudMile";
 import MenuToggle from "./MenuToggle";
@@ -10,9 +10,9 @@ import NavListMd from "./NavListMd";
 import NavListXs from "./NavListXs";
 import SearchDropdown from "./SearchDropdown";
 import Hidden from "@material-ui/core/Hidden";
-import {fetchNavStatus} from "../../services/ApiServices";
+import { fetchNavStatus } from "../../services/ApiServices";
 import useTranslation from "next-translate/useTranslation";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme: Theme) => ({
     header: {
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const Header = () => {
     const router = useRouter();
-    const {lang} = useTranslation();
+    const { lang } = useTranslation();
     const classes = useStyles();
     const [isOpen, setIsOpen] = useState(false);
     const [statusData, setStatusData] = useState<any | null>(null);
@@ -63,16 +63,16 @@ const Header = () => {
         <header className={classes.header}>
             <Sticky>
                 <Container className={classes.headerInner}>
-                    <LogoCloudMile/>
+                    <LogoCloudMile />
                     <Hidden smDown>
-                        <NavListMd statusData={statusData}/>
-                        <SearchDropdown/>
-                        <LanguageDropdown/>
+                        <NavListMd statusData={statusData} />
+                        <SearchDropdown />
+                        <LanguageDropdown />
                     </Hidden>
                 </Container>
                 <Hidden mdUp>
-                    <MenuToggle isOpen={isOpen} clickHandler={openNavMenu}/>
-                    <NavListXs active={isOpen} statusData={statusData}/>
+                    <MenuToggle isOpen={isOpen} clickHandler={openNavMenu} />
+                    <NavListXs active={isOpen} statusData={statusData} />
                 </Hidden>
             </Sticky>
         </header>

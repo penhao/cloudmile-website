@@ -1,9 +1,9 @@
 import React from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from "@material-ui/core/Typography";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 // import {IStyleValue} from "../types/Types";
-import {StyleProps, MaxWidth} from "../types/StyleTypes";
+import { StyleProps, MaxWidth } from "../types/StyleTypes";
 
 export interface Props {
     icon?: string | null
@@ -11,21 +11,21 @@ export interface Props {
     title?: string | null
     desc?: string | null
     color?:
-        | 'initial'
-        | 'inherit'
-        | 'primary'
-        | 'secondary'
-        | 'textPrimary'
-        | 'textSecondary'
-        | 'error'
+    | 'initial'
+    | 'inherit'
+    | 'primary'
+    | 'secondary'
+    | 'textPrimary'
+    | 'textSecondary'
+    | 'error'
     descColor?:
-        | 'initial'
-        | 'inherit'
-        | 'primary'
-        | 'secondary'
-        | 'textPrimary'
-        | 'textSecondary'
-        | 'error'
+    | 'initial'
+    | 'inherit'
+    | 'primary'
+    | 'secondary'
+    | 'textPrimary'
+    | 'textSecondary'
+    | 'error'
     maxWidth?: MaxWidth | null
 }
 
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     item: {
         position: 'relative',
         width: '100%',
-        maxWidth: ({maxWidth}: Props) => {
+        maxWidth: ({ maxWidth }: Props) => {
             return (maxWidth && maxWidth.xs)
                 ?
                 Number(maxWidth.xs)
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         zIndex: 1,
         [theme.breakpoints.up('sm')]: {
-            maxWidth: ({maxWidth}: Props) => {
+            maxWidth: ({ maxWidth }: Props) => {
                 return (maxWidth && maxWidth.sm)
                     ?
                     Number(maxWidth.sm)
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme: Theme) => ({
             }
         },
         [theme.breakpoints.up('md')]: {
-            maxWidth: ({maxWidth}: Props) => {
+            maxWidth: ({ maxWidth }: Props) => {
                 return (maxWidth && maxWidth.md)
                     ?
                     Number(maxWidth.md)
@@ -78,17 +78,18 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     },
     title: {
-        marginBottom: '15px'
+        marginBottom: '15px',
+        fontWeight: 600
     }
 }));
-const IconItem = ({icon = null, iconAlt = '', color = 'primary', descColor = 'initial', title = null, desc = null, maxWidth = null}: Props) => {
-    const classes = useStyles({maxWidth});
+const IconItem = ({ icon = null, iconAlt = '', color = 'primary', descColor = 'initial', title = null, desc = null, maxWidth = null }: Props) => {
+    const classes = useStyles({ maxWidth });
     return (
         <div className={classes.item}>
             {
                 (icon)
                     ?
-                    <img src={icon} alt={(iconAlt) ? iconAlt : ''} className={classes.icon}/>
+                    <img src={icon} alt={(iconAlt) ? iconAlt : ''} className={classes.icon} />
                     :
                     null
             }

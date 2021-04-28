@@ -4,14 +4,20 @@ import Typography from "@material-ui/core/Typography";
 import useThemeColor from "../useThemeColor";
 import {Controller, Scene} from "react-scrollmagic";
 import {Theme} from "@material-ui/core";
+import clsx from "clsx";
+import {useTranslation} from "next-translate";
 
 interface Props {
-    children?: React.ReactNode;
     color: string;
+    className?: string;
+    children?: React.ReactNode;
 }
+
 interface StyleProps {
     color: string
+    lang?: string;
 }
+
 const useStyles = makeStyles((theme: Theme) => ({
     textLabel: {
         position: 'relative',
@@ -26,7 +32,12 @@ const useStyles = makeStyles((theme: Theme) => ({
             easing: theme.transitions.easing.easeOut,
             duration: '1s'
         }),
-        transitionDelay: '0.2s'
+        transitionDelay: '0.2s',
+        [theme.breakpoints.up('md')]: {
+            textIndent: ({lang}: StyleProps) => {
+                return lang === 'zh' ? '6px' : 0
+            }
+        }
     },
     graphicLabel: {
         display: 'block',
@@ -80,19 +91,25 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-
-const SectionTitleLabel = ({color, children}: Props) => {
-    const classes = useStyles({color: useThemeColor({color})});
+const SectionTitleLabel = ({color, className, children}: Props) => {
+    const {lang} = useTranslation();
+    const classes = useStyles({color: useThemeColor({color}), lang});
     const getTextLabel = () => {
         return (
-            <Typography component={'span'} variant={"body1"} className={classes.textLabel}>
+            <Typography component={'span'} variant={"body1"} className={clsx(
+                classes.textLabel,
+                className
+            )}>
                 {children}
             </Typography>
         )
     };
     const getGraphicLabel = () => {
         return (
-            <span className={classes.graphicLabel}/>
+            <span className={clsx(
+                classes.graphicLabel,
+                className
+            )}/>
         )
     };
     return (

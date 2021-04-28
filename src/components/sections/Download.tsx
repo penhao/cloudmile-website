@@ -7,12 +7,13 @@ import SectionTitle from "./SectionTitle";
 import DownloadForm from "../forms/DownloadForm";
 import useTranslation from "next-translate/useTranslation";
 import {SalesforceDataType} from "../forms/FormTypes";
+import {SalesforcePostParams} from "../useUrlParams";
 
 
 interface Props {
     parentPage: string;
     title: string;
-    salesforceData: SalesforceDataType | null;
+    salesforceData: SalesforcePostParams | null;
 }
 
 const Download = ({parentPage, title, salesforceData}: Props) => {

@@ -1,17 +1,17 @@
 import React from 'react';
 import Collapse from "@material-ui/core/Collapse";
-import {makeStyles} from "@material-ui/styles";
-import {Theme} from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+import { Theme } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import LanguageLink from "../links/LanguageLink";
 import NavDropdownXs from "./NavDropdownXs";
 import Divider from "@material-ui/core/Divider";
 import useTranslation from "next-translate/useTranslation";
 import NavContactLink from "../links/NavContactLink";
-import {useLinkStyles} from "../links/LinkStyles";
+import { useLinkStyles } from "../links/LinkStyles";
 import clsx from "clsx";
-import {siteRoutes} from "../../../public/config.json";
-import {getRoute} from "../../utils/Utils";
+import { siteRoutes } from "../../../public/config.json";
+import { getRoute } from "../../utils/Utils";
 
 
 interface Props {
@@ -35,10 +35,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     collapse: {
         width: '100%',
         left: 0,
-        top: '50px',
-        [theme.breakpoints.up('sm')]: {
-            top: '60px'
-        }
+        top: 0
+        // top: '50px',
+        // [theme.breakpoints.up('sm')]: {
+        //     top: '60px'
+        // }
     },
     collapseInner: {
         width: '100%'
@@ -64,11 +65,11 @@ const useStyles = makeStyles((theme: Theme) => ({
         backgroundColor: theme.palette.grey["300"]
     }
 }));
-const NavListXs = ({statusData, active}: Props) => {
+const NavListXs = ({ statusData, active }: Props) => {
 
     const classes = useStyles();
     const linkClasses = useLinkStyles();
-    const {t, lang} = useTranslation();
+    const { t, lang } = useTranslation();
     const contactRoute = getRoute('Contact Us', siteRoutes)[0];
 
     return (
@@ -103,15 +104,15 @@ const NavListXs = ({statusData, active}: Props) => {
                                     return (
                                         <li key={index}>
                                             <NavDropdownXs routeGroup={group}
-                                                           statusData={group.title === 'Resources' ? statusData : null}/>
-                                            <Divider className={classes.divider}/>
+                                                statusData={group.title === 'Resources' ? statusData : null} />
+                                            <Divider className={classes.divider} />
                                         </li>
                                     )
                                 })
                             }
                             <li className={classes.contact}>
                                 <NavContactLink href={contactRoute.href}
-                                                color={'black'}>
+                                    color={'black'}>
                                     {
                                         t(`common:${contactRoute.title}`)
                                     }

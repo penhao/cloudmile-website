@@ -17,6 +17,8 @@ const useThemeColor = ({color}: ColorProps) => {
                 return theme.palette.primary.main;
             case 'secondary':
                 return theme.palette.secondary.main;
+            case 'secondary.light':
+                return theme.palette.secondary.light;
             case 'warning':
                 return theme.palette.warning.main;
             case 'error':

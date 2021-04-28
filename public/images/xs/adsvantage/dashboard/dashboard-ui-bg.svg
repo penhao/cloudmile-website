@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="601px" height="456px" viewBox="0 0 601 456" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>dashboard-demo-bg</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M381.358531,422.914866 C436.743599,422.914866 542.406939,345.529206 550.161369,268.918688 C557.915798,192.30817 625.903034,-25.4523064 378.78214,-64.8366929 C131.661246,-104.221079 -33.5028162,-69.3229425 16.2668521,133.44631 C31.4998201,195.507754 159.821869,284.222631 230.356827,320.673256 C304.884848,359.187391 304.853565,422.914866 381.358531,422.914866 Z" id="dashboard-demo-bg" fill="#02D6B6" transform="translate(285.953867, 171.914866) rotate(138.000000) translate(-285.953867, -171.914866) "></path>
+    </g>
+</svg>

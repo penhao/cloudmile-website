@@ -25,7 +25,7 @@ const Layout = ({metadata = null, children, bgColor = 'light'}: Props) => {
             }
             <div className={clsx(
                 classes.layout,
-                lang === 'zh-hant' ? classes.fontNotoSans : null,
+                lang === 'zh'  ? classes.fontNotoSans : null,
                 lang === 'en' ? classes.fontOpenSans : null
             )}>
                 <CookieAlert/>

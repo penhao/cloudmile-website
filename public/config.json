@@ -1,5 +1,5 @@
 {
-  "apiDomain": "https://backend.mile.cloud",
+  "apiDomain": "https://uat-backend.mile.cloud",
   "metadataDomain": "https://mile.cloud",
   "reCAPTCHAKey": "6LdLAv8ZAAAAAOna-skW7yAI9CRfGgKwpWEUUWyC",
   "siteRoutes": [
@@ -158,9 +158,18 @@
           "title": "Solutions",
           "routes": [
             {
-              "title": "Ainotam",
-              "link": "https://www.ainotam.com/",
-              "zhLink": "https://www.ainotam.com/"
+              "title": "ADsvantage",
+              "href": "/ai/adsvantage",
+              "metadata": {
+                "en": {
+                  "title": "ADsvantage | CloudMile",
+                  "desc": "desc"
+                },
+                "zh": {
+                  "title": "ADsvantage | CloudMile",
+                  "desc": "AI 智能廣告平台"
+                }
+              }
             }
           ]
         },

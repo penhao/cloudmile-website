@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
-import {Button, Theme} from "@material-ui/core";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faGlobeAmericas} from "@fortawesome/free-solid-svg-icons";
-import {makeStyles} from "@material-ui/styles";
+import React, { useState } from 'react';
+import { Button, Theme } from "@material-ui/core";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobeAmericas } from "@fortawesome/free-solid-svg-icons";
+import { makeStyles } from "@material-ui/styles";
 import Collapse from "@material-ui/core/Collapse/Collapse";
 import LanguageLink from "../links/LanguageLink";
 import Divider from "@material-ui/core/Divider";
-import {useLinkStyles} from "../links/LinkStyles";
+import { useLinkStyles } from "../links/LinkStyles";
 import clsx from "clsx";
 import useTranslation from "next-translate/useTranslation";
 
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         width: '280px',
         right: '-20px',
         top: 0,
-        paddingTop: '60px'
+        paddingTop: '50px'
     },
     collapseInner: {
         // padding: '0 20px',
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const LanguageDropdown = () => {
 
-    const {lang} = useTranslation();
+    const { lang } = useTranslation();
     const classes = useStyles();
     const linkClasses = useLinkStyles();
     const [active, setActive] = useState(false);
@@ -77,7 +77,7 @@ const LanguageDropdown = () => {
     return (
         <div onMouseLeave={handlerLeave} className={classes.dropdown}>
             <Button onMouseEnter={handlerEnter} className={classes.toggle}>
-                <FontAwesomeIcon icon={faGlobeAmericas} className={classes.icon}/>
+                <FontAwesomeIcon icon={faGlobeAmericas} className={classes.icon} />
             </Button>
             <Collapse in={active} timeout={'auto'} className={classes.collapse}>
                 <div className={classes.collapseInner}>
@@ -90,7 +90,7 @@ const LanguageDropdown = () => {
                                 <span className={linkClasses.styleEffect}>繁體中文</span>
                             </LanguageLink>
                         </div>
-                        <Divider className={classes.divider}/>
+                        <Divider className={classes.divider} />
                         <div>
                             <LanguageLink locale={'en'} className={clsx(
                                 linkClasses.styleLink,

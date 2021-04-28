@@ -6,11 +6,12 @@ import SectionTitleLabel from "./SectionTitleLabel";
 import SectionTitle from "./SectionTitle";
 import NewsLetterForm from "../forms/NewsLetterForm";
 import {SalesforceDataType} from "../forms/FormTypes";
+import {SalesforcePostParams} from "../useUrlParams";
 
 interface Props {
     title: string;
     caption: string | null;
-    salesforceData?: SalesforceDataType | null;
+    salesforceData?: SalesforcePostParams | null;
 }
 const NewsLetter = ({title, caption = null, salesforceData}: Props) => {
     return (

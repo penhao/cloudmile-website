@@ -25,6 +25,8 @@ const CategoryPage = ({categoryData, postData}) => {
     const [disabledMore, setDisabledMore] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
 
+    console.log(postData);
+
     const getRedirectData = () => {
         switch (router.query.slug[0]) {
             case 'blog':

@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {Button, Theme} from "@material-ui/core";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faSearch} from "@fortawesome/free-solid-svg-icons";
-import {makeStyles} from "@material-ui/styles";
+import React, { useState } from 'react';
+import { Button, Theme } from "@material-ui/core";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { makeStyles } from "@material-ui/styles";
 import Collapse from "@material-ui/core/Collapse/Collapse";
 import SearchForm from "../forms/SearchForm";
 
@@ -38,9 +38,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     collapse: {
         position: 'absolute',
         width: '280px',
-        right: 0,
+        right: '-60px',
         top: 0,
-        paddingTop: '60px'
+        paddingTop: '50px'
     },
     collapseInner: {
         padding: '10px 20px',
@@ -58,11 +58,11 @@ const SearchDropdown = () => {
     return (
         <div onMouseLeave={handlerLeave} className={classes.root}>
             <Button onMouseEnter={handlerEnter} className={classes.toggle}>
-                <FontAwesomeIcon icon={faSearch} className={classes.icon}/>
+                <FontAwesomeIcon icon={faSearch} className={classes.icon} />
             </Button>
             <Collapse in={active} timeout={'auto'} className={classes.collapse}>
                 <div className={classes.collapseInner}>
-                    <SearchForm/>
+                    <SearchForm />
                 </div>
             </Collapse>
         </div>

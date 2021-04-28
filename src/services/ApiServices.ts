@@ -83,14 +83,15 @@ export const fetchBlogArticle = async (lang: string, articleId: number | string)
     const response: any = await get(`${currentDomain}/api/Blog`, requestConfig);
     return (response.status) ? response.data : response;
 };
-export const fetchListByTag = async (lang: string, pageId: number, tagId: number, startCount: number, limit: number) => {
+export const fetchListByTag = async (lang: string, pageId: number, tagId: number, startCount: number, limit: number, sort = 'desc') => {
     const requestConfig: AxiosRequestConfig = {
         params: {
             lang: getFixLanguage(lang),
             type: pageId,
             tag: tagId,
             page: startCount,
-            limit: limit
+            limit: limit,
+            sort: sort
         }
     };
     const response: any = await get(`${currentDomain}/api/SearchArticleTag`, requestConfig);

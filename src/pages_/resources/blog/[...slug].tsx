@@ -37,6 +37,9 @@ const BlogDetail = ({postData}: InferGetServerSidePropsType<typeof getServerSide
             country: postData.country
         });
     }, [postData]);
+
+    console.log(postData.related_article);
+
     return (
         <Layout metadata={{
             title: postData.seo_title,

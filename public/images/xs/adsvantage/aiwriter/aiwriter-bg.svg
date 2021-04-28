@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1337px" height="1015px" viewBox="0 0 1337 1015" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ai-bg</title>
+    <defs>
+        <linearGradient x1="0%" y1="100.00558%" x2="100.000569%" y2="100.00558%" id="linearGradient-1">
+            <stop stop-color="#0289E1" offset="0%"></stop>
+            <stop stop-color="#01D6B6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M848.332258,942.674453 C971.765252,942.674453 1207.25007,770.175344 1224.53185,599.404089 C1241.81362,428.632835 1393.33223,-56.7734862 842.590428,-144.564579 C291.848629,-232.355672 -76.2414637,-154.564805 34.6768654,297.424823 C68.6255618,435.764976 354.608325,633.517859 511.804865,714.769351 C677.900478,800.62058 677.83076,942.674453 848.332258,942.674453 Z" id="ai-bg" fill="url(#linearGradient-1)" transform="translate(635.710268, 383.174453) rotate(138.000000) translate(-635.710268, -383.174453) "></path>
+    </g>
+</svg>

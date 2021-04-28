@@ -120,6 +120,9 @@
     ],
     "/cloud/solutions/cloud-management-platform": [
       "cloud-management-platform"
+    ],
+    "/ai/adsvantage": [
+      "adsvantage"
     ]
   }
 }

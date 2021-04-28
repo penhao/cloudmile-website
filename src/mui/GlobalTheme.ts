@@ -73,6 +73,16 @@ const GlobalTheme = createMuiTheme({
         modal: 1300,
         snackbar: 1400,
         tooltip: 1500
+    },
+    overrides: {
+        MuiButton: {
+            contained: {
+                boxShadow: 'none',
+                '&:hover': {
+                    boxShadow: 'none',
+                }
+            }
+        }
     }
 });
 
