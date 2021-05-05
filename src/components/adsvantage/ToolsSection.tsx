@@ -43,19 +43,19 @@ const ToolsSection = () => {
                 icon: '/images/icons/icon-agency.svg',
                 iconAlt: '',
                 title: t('adsvantage:Advertising Agency'),
-                desc: t('adsvantage:Multiple layers of management on advertisement accounts')
+                desc: t('adsvantage:Ads account management with multiple segments helps you evaluate advertising performance')
             },
             {
                 icon: '/images/icons/icon-e-commerce.svg',
                 iconAlt: '',
-                title: t('adsvantage:EC & Retails'),
-                desc: t('adsvantage:From product copywriting, advertising and performance monitoring')
+                title: t('adsvantage:E-commerce & Retails'),
+                desc: t('adsvantage:From product copywriting, advertising to performance monitoring')
             },
             {
                 icon: '/images/icons/icon-markting.svg',
                 iconAlt: '',
                 title: t('adsvantage:Brand Ｍarketer'),
-                desc: t('adsvantage:You no longer need to spend time on miscellaneous works')
+                desc: t('adsvantage:Save your time for more important tasks')
             }
         ])
     }, [lang])
@@ -65,7 +65,7 @@ const ToolsSection = () => {
                 <Container maxWidth={{ xs: 'none', sm: 'none', md: '' }} paddingX={false} centerX={false}>
                     <SectionTitleLabel color={'primary'} />
                     <SectionTitle className={classes.title}>
-                        {t('adsvantage:You best AIadvertising tool')}
+                        {t('adsvantage:Your Best AI Advertising Tool')}
                     </SectionTitle>
                 </Container>
                 <Grid container spacing={smUp ? 4 : 2}>

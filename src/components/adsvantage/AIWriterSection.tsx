@@ -83,11 +83,11 @@ const AIWriterSection = () => {
         setValueList([
             {
                 value: `3&nbsp;<span>sec</span>`,
-                desc: t('adsvantage:It saves 80% of the time of creative thinking')
+                desc: t('adsvantage:One ads content in three seconds, 80% of time spent on content brainstorming is saved')
             },
             {
                 value: `5,000,000+`,
-                desc: t('adsvantage:There are over million of advertising copywriting in the database')
+                desc: t('adsvantage:Millions of Ads copy database across over 20 industries')
             }
         ])
     }, [lang])
@@ -98,9 +98,9 @@ const AIWriterSection = () => {
         <section className={classes.section}>
             <img src="/images/md/adsvantage/aiwriter/aiwriter-bg.svg" alt="" className={classes.bg} />
             <Container maxWidth={{ md: 1280 }}>
-                <Container maxWidth={{ xs: 'none', sm: 640, md: 600 }} paddingX={false} centerX={false}>
-                    <SectionTitleLabel color={'white'} className={classes.label}>{t('adsvantage:AI copywriter')}</SectionTitleLabel>
-                    <SectionTitle className={classes.title}>{t('adsvantage:Not just writing, but with creativity')}</SectionTitle>
+                <Container maxWidth={{ xs: 'none', sm: 'none', md: 'none' }} paddingX={false} centerX={false}>
+                    <SectionTitleLabel color={'white'} className={classes.label}>{t('adsvantage:AI Copywriter')}</SectionTitleLabel>
+                    <SectionTitle className={classes.title}>{t('adsvantage:Smart Copywriter with Amazing Creativity')}</SectionTitle>
                 </Container>
                 <Grid container spacing={smUp ? 4 : 2} className={classes.gridCon}>
                     <Grid item xs={12} md className={classes.gridItem}>

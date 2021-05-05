@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         width: '280px',
         right: '-20px',
         top: 0,
-        paddingTop: '50px'
+        paddingTop: '60px'
     },
     collapseInner: {
         // padding: '0 20px',

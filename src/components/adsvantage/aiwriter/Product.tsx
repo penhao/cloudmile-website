@@ -4,6 +4,7 @@ import {makeStyles, Theme} from "@material-ui/core/styles";
 import BackgroundImage from "../../Images/BackgroundImage";
 import TrackVisibility from "react-on-screen";
 import clsx from "clsx";
+import useTranslation from "next-translate/useTranslation";
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -13,6 +14,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         [theme.breakpoints.up('md')]: {
             maxWidth: '760px',
             padding: '0 5%',
+        },
+        '& > div': {
+            position: 'relative',
         }
     },
     productBg: {
@@ -205,12 +209,14 @@ const TrackingChild = ({isVisible}: IProps) => {
 };
 const Product = () => {
     const classes = useStyles();
+    const {lang} = useTranslation();
+    const coverUrl = lang === 'zh' ? '/adsvantage/aiwriter/aiwriter-ui-zh.png' : '/adsvantage/aiwriter/aiwriter-ui.png';
     return (
         <div className={classes.container}>
             <div>
                 <img src="/images/md/adsvantage/aiwriter/aiwriter-ui-bg.svg" alt="" className={classes.productBg}/>
                 <RatioContainer ratio={{xs: 452 / 684, sm: 452 / 684, md: 452 / 684}}>
-                    <BackgroundImage imgUrl={'/adsvantage/aiwriter/aiwriter-ui.png'} backgroundSize={"contain"}/>
+                    <BackgroundImage imgUrl={coverUrl} backgroundSize={"contain"}/>
                 </RatioContainer>
                 <TrackVisibility once={false} className={classes.animation}>
                     <TrackingChild/>

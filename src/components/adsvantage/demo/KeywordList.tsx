@@ -71,7 +71,9 @@ const KeywordList = ({active}: IProps) => {
                         }
                     </ul>
                     :
-                    <span className={classes.placeholder}>輸入關鍵字</span>
+                    <span className={classes.placeholder}>
+                        {t('adsvantage:Type in keyword')}
+                    </span>
             }
         </div>
     );

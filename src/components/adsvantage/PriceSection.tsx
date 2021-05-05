@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     },
     switchOuter: {
-        marginBottom: '55px',
+        marginBottom: '30px',
         transform: 'translateX(-20px)',
         [theme.breakpoints.up('sm')]: {
             marginBottom: '55px',
@@ -87,7 +87,7 @@ const StyleSwitch = withStyles((theme) => ({
 
 const PriceSection = ({ scrollChangeHadler }: Props) => {
     const classes = useStyles();
-    const { t } = useTranslation()
+    const { t } = useTranslation();
     const userPriceList = useUserPrice();
     const agencyPriceList = useAgencyPrice();
     const [state, setState] = useState(false);
@@ -111,11 +111,11 @@ const PriceSection = ({ scrollChangeHadler }: Props) => {
             <Container maxWidth={{ sm: 1140, md: 1140 }} paddingX={true}>
                 <Box display={'flex'} justifyContent={'center'} alignItems={'center'} className={classes.switchOuter}>
                     <Typography variant={"h6"} component="div" color={!state ? 'primary' : 'inherit'}>
-                        品牌行銷人員
+                        {t('adsvantage:Advertiser')}
                     </Typography>
                     <StyleSwitch checked={state} onChange={handleChange} name="priceSwitch" />
                     <Typography variant={"h6"} component="div" color={state ? 'secondary' : 'inherit'}>
-                        廣告代理商
+                        {t('adsvantage:Agency')}
                     </Typography>
                 </Box>
                 <div className={classes.scroller}>

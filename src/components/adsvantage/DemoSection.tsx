@@ -102,7 +102,7 @@ const DemoSection = ({ scrollChangeHadler }: Props) => {
                             <img src="/images/md/adsvantage/demo/demo-bg-right.svg" alt="" className={classes.bgRight} />
                             <div className={classes.stepPaper}>
                                 <Typography variant={"h5"} className={classes.stepTitle}>
-                                    {t('adsvantage:AI copywriter')}
+                                    {t('adsvantage:AI Copy Generator')}
                                 </Typography>
                                 {getStep()}
                             </div>

@@ -130,8 +130,8 @@ const ADSvantageForm = () => {
             {/* Hidden Value */}
             <div>
                 {/* Debug */}
-                <input type="hidden" name="debug" value="1" />
-                <input type="hidden" name="debugEmail" value="eileen.chen@mile.cloud" />
+                {/*<input type="hidden" name="debug" value="1" />
+                <input type="hidden" name="debugEmail" value="eileen.chen@mile.cloud" />*/}
 
                 {/* Redirect */}
                 <input type="hidden" name="oid" defaultValue="00D7F000001xkaZ" />

@@ -76,23 +76,23 @@ const AlertSection = () => {
         setValueList([
             {
                 value: `24&nbsp;<span>hours</span>`,
-                desc: t('adsvantage:AI smart 24/7 alert, customized and precise prediction on advertising budget')
+                desc: t('adsvantage:24/7 smart alert, customized and precise prediction on advertising budget')
             },
             {
                 value: `Score`,
-                desc: t('adsvantage:ThePrediction Score model that can maximize the advertising performance')
+                desc: t('adsvantage:Unique Performance Score model helps you maximize the advertising performance')
             }
         ])
     }, [lang])
     return (
         <section className={classes.section}>
             <Container maxWidth={{ md: 1280 }}>
-                <Container maxWidth={{ xs: 'none', sm: 640, md: 640 }} paddingX={false} centerX={false}>
+                <Container maxWidth={{ xs: 'none', sm: 'none', md: 'none' }} paddingX={false} centerX={false}>
                     <SectionTitleLabel color={'error'} className={classes.label}>
-                        {t('adsvantage:24/7 Smart Monitoring')}
+                        {t('adsvantage:24/7 Smart Alerting')}
                     </SectionTitleLabel>
                     <SectionTitle className={classes.title}>
-                        {t('adsvantage:AI will take care of the advertisement')}
+                        {t('adsvantage:Leave Ads to AI Who Does it All for You')}
                     </SectionTitle>
                 </Container>
                 <Grid container spacing={smUp ? 4 : 2}

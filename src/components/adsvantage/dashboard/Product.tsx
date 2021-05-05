@@ -5,6 +5,7 @@ import BackgroundImage from "../../Images/BackgroundImage";
 import TrackVisibility from "react-on-screen";
 import clsx from "clsx";
 import Container from "../../containers/Container";
+import useTranslation from "next-translate/useTranslation";
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -52,7 +53,9 @@ interface IProps {
 
 const TrackingChild = ({isVisible}: IProps) => {
     const classes = useStyles();
+    const {lang} = useTranslation();
     const [active, setActive] = useState(false);
+    const coverUrl = lang === 'zh' ? '/images/md/adsvantage/dashboard/dashboard-content-zh@2x.jpg' : '/images/md/adsvantage/dashboard/dashboard-content@2x.jpg';
     useEffect(() => {
         if (!isVisible) {
             setActive(false);
@@ -68,7 +71,7 @@ const TrackingChild = ({isVisible}: IProps) => {
         <div className={classes.product}>
             <img src="/images/md/adsvantage/dashboard/dashboard-ui@2x.jpg" alt=""/>
             <div className={classes.productInner}>
-                <img src="/images/md/adsvantage/dashboard/dashboard-content@2x.jpg" alt="" className={clsx(
+                <img src={coverUrl} alt="" className={clsx(
                     classes.productContent,
                     active ? 'active' : null
                 )}/>

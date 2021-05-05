@@ -101,11 +101,11 @@ const DashboardSection = () => {
         setValueList([
             {
                 value: `User friendly`,
-                desc: t('adsvantage:User dashboard simply visualizes the marketing strategy and advertising effect')
+                desc: t('adsvantage:User friendly dashboard that visualizes marketing strategy and ad performance')
             },
             {
                 value: `1&nbsp;<span>click</span>`,
-                desc: t('adsvantage:Control the advertising costs in no time, and you are one click away from releasing your product advertisement')
+                desc: t('adsvantage:Control advertising spending, and publish Google Ads with just one click')
             }
         ])
     }, [lang])
@@ -113,12 +113,12 @@ const DashboardSection = () => {
         <section className={classes.section}>
             <img src="/images/md/adsvantage/dashboard/dashboard-bg.svg" alt="" className={classes.bg} />
             <Container maxWidth={{ md: 1280 }}>
-                <Container maxWidth={{ xs: 'none', sm: 600, md: 600 }} paddingX={false} centerX={false}>
+                <Container maxWidth={{ xs: 'none', sm: 'none', md: 'none' }} paddingX={false} centerX={false}>
                     <SectionTitleLabel color={'secondary.light'} className={classes.label}>
-                        {t('adsvantage:Cross-platform charts and dashboard')}
+                        {t('adsvantage:Integrated Dashboard across all marketing channels')}
                     </SectionTitleLabel>
                     <SectionTitle className={classes.title}>
-                        {t('adsvantage:Find the information you are looking for at a glance on a clear chart')}
+                        {t('adsvantage:Bird\'s Eye View Marketing Dashboards')}
                     </SectionTitle>
                 </Container>
                 <Grid container spacing={smUp ? 4 : 2} className={classes.gridCon}>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1304px" height="1056px" viewBox="0 0 1304 1056" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>intro-bg</title>
+    <defs>
+        <linearGradient x1="0%" y1="100.005073%" x2="100%" y2="100.005073%" id="linearGradient-1">
+            <stop stop-color="#A78EF6" offset="0%"></stop>
+            <stop stop-color="#B364F4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M706.795997,1035.6302 C922.734944,889.569523 1319.95597,1098.92316 1319.95597,662.364022 C1310.84865,414.356357 1011.68348,490.090225 923.708355,285.605274 C842.871528,97.7122285 706.128309,51.9081873 574.47376,51.9081873 C335.218013,51.9081873 22.6297828,223.93521 22.6297828,626.413526 C22.6297828,1028.89184 490.857049,1181.69088 706.795997,1035.6302 Z" id="intro-bg" fill="url(#linearGradient-1)" transform="translate(671.292877, 570.908187) rotate(161.000000) translate(-671.292877, -570.908187) "></path>
+    </g>
+</svg>

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         [theme.breakpoints.up('md')]: {
             width: '1280px',
-            transform: 'translateX(-48%)',
+            transform: 'translateX(-50%)',
         }
     },
     info: {
@@ -94,13 +94,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     },
     cta: {
-        width: '180px',
+        minWidth: '180px',
         backgroundColor: theme.palette.grey["100"],
         fontSize: '20px',
         fontWeight: 600,
         lineHeight: 1,
         letterSpacing: 'normal',
-        padding: '15px 0',
+        padding: '15px 20px',
         borderRadius: '99em',
         marginBottom: '20px',
         whiteSpace: 'nowrap',
@@ -129,12 +129,12 @@ const Banner = React.memo(() => {
                     <Box display={'flex'} flexDirection={'column'} alignItems={'center'} className={classes.logo}>
                         <img src="/images/md/adsvantage/adsvantage-logo.svg" alt="" />
                         <div className={classes.caption}>
-                            {t('adsvantage:AI Smart Advertising Platform')}
+                            {t('adsvantage:AI-driven Advertising Platform')}
                         </div>
                     </Box>
                     <Typography variant={'h1'} align={'center'} className={classes.title} >
                         <span dangerouslySetInnerHTML={
-                            { __html: t('adsvantage:AI Advertising efficacy in full display') }
+                            { __html: t('adsvantage:Empower Advertising with AI') }
                         } />
                     </Typography>
                     <Button href={'https://adsvantage.ainotam.com/authorization/signup?plan=standard'}
@@ -142,12 +142,12 @@ const Banner = React.memo(() => {
                         variant={"contained"}
                         className={classes.cta}
                     >
-                        {t('adsvantage:Free trial now')}
+                        {t('adsvantage:Start Your Free Trial')}
                     </Button>
                     <Link href="https://adsvantage.ainotam.com/authorization/login"
                         target={'_blank'}
                         className={classes.link}>
-                        {t('adsvantage:Sign up/Sign in')}&nbsp;&gt;
+                        {t('adsvantage:login/sign up')}&nbsp;&gt;
                     </Link>
                 </Box>
             </div>

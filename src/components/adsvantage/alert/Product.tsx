@@ -4,6 +4,7 @@ import {makeStyles, Theme} from "@material-ui/core/styles";
 import BackgroundImage from "../../Images/BackgroundImage";
 import TrackVisibility from "react-on-screen";
 import clsx from "clsx";
+import useTranslation from "next-translate/useTranslation";
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -119,10 +120,13 @@ interface IProps {
 
 const TrackingChild = ({isVisible}: IProps) => {
     const classes = useStyles();
+    const {lang} = useTranslation();
     const [transId, setTransId] = useState(0);
     const [transitions, setTransitions] = useState([false, false]);
+    const categoryCoverUrl = lang === 'zh' ? '/adsvantage/alert/pop-category-zh.png' : '/adsvantage/alert/pop-category.png';
+    const progressCoverUrl = lang === 'zh' ? '/adsvantage/alert/pop-progress-zh.png' : '/adsvantage/alert/pop-progress.png';
     useEffect(() => {
-        if(!isVisible){
+        if (!isVisible) {
             setTransId(0);
             setTransitions([false, false]);
             return;
@@ -145,13 +149,13 @@ const TrackingChild = ({isVisible}: IProps) => {
                 classes.popCategory,
                 transitions[1] ? 'active' : null
             )}>
-                <BackgroundImage imgUrl={'/adsvantage/alert/pop-category.png'} backgroundSize={"contain"}/>
+                <BackgroundImage imgUrl={categoryCoverUrl} backgroundSize={"contain"}/>
             </RatioContainer>
             <RatioContainer ratio={{xs: 208 / 265, sm: 208 / 265, md: 208 / 265}} customClass={clsx(
                 classes.popProgress,
                 transitions[1] ? 'active' : null
             )}>
-                <BackgroundImage imgUrl={'/adsvantage/alert/pop-progress.png'} backgroundSize={"contain"}/>
+                <BackgroundImage imgUrl={progressCoverUrl} backgroundSize={"contain"}/>
             </RatioContainer>
             <img src="/images/md/adsvantage/alert/handwrite-remind.svg" alt="" className={clsx(
                 classes.handwriteRemind,
@@ -170,12 +174,14 @@ const TrackingChild = ({isVisible}: IProps) => {
 };
 const Product = () => {
     const classes = useStyles();
+    const {lang} = useTranslation();
+    const coverUrl = lang === 'zh' ? '/adsvantage/alert/alert-ui-zh.png' : '/adsvantage/alert/alert-ui.png';
     return (
         <div className={classes.container}>
             <div>
                 <img src="/images/md/adsvantage/alert/alert-ui-bg.svg" alt="" className={classes.uiBg}/>
                 <RatioContainer ratio={{xs: 362 / 741, sm: 362 / 741, md: 362 / 741}}>
-                    <BackgroundImage imgUrl={'/adsvantage/alert/alert-ui.png'} backgroundSize={"contain"}/>
+                    <BackgroundImage imgUrl={coverUrl} backgroundSize={"contain"}/>
                 </RatioContainer>
                 <TrackVisibility once={false} className={classes.animation}>
                     <TrackingChild/>

@@ -38,9 +38,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     collapse: {
         position: 'absolute',
         width: '280px',
-        right: '-60px',
+        right: 0,
         top: 0,
-        paddingTop: '50px'
+        paddingTop: '60px'
     },
     collapseInner: {
         padding: '10px 20px',

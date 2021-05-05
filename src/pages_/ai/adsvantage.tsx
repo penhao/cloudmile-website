@@ -24,16 +24,16 @@ import VisibilitySensor from 'react-visibility-sensor';
 
 
 const ADSvantagePage = ({ categoryData, postData }) => {
-
+    console.log(categoryData);
     const { t, lang } = useTranslation();
     const currentRoute = getRoute('ADsvantage', siteRoutes)[0];
     const demoRef = useRef<HTMLDivElement>(null);
     const priceRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
-    const [scrollTarget, setScrollTarget] = useState<string | null>(null)
+    const [scrollTarget, setScrollTarget] = useState<string | null>(null);
     const handleScrollChange = (target: string | null) => {
         setScrollTarget(target);
-    }
+    };
     const handleScroll = (target: string) => {
         if (target === 'demo' && demoRef.current) {
             window.scrollTo({
@@ -53,7 +53,7 @@ const ADSvantagePage = ({ categoryData, postData }) => {
                 top: contactRef.current.offsetTop
             });
         }
-    }
+    };
 
 
     return (
@@ -91,7 +91,7 @@ const ADSvantagePage = ({ categoryData, postData }) => {
 export const getServerSideProps = async ({ locale, res }: GetServerSidePropsContext) => {
     const categoryData = await fetchTagList(locale, 1);
     const currentTag = categoryData.data.find(category => {
-        return category.title.toLowerCase() === '科技新知';
+        return category.title.toLowerCase() === 'adsvantage';
         // return category.title.toLowerCase() === 'adsvantage';
     });
     let resultData = { data: [] };

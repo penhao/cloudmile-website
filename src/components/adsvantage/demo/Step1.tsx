@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { Theme, Typography } from "@material-ui/core";
-import { makeStyles, Button, Box, Grid } from "@material-ui/core";
+import React, {useState} from 'react';
+import {Theme, Typography} from "@material-ui/core";
+import {makeStyles, Button, Box, Grid} from "@material-ui/core";
 import KeywordList from "./KeywordList";
 import TypingInput from "./TypingInput";
 import clsx from "clsx";
+import useTranslation from "next-translate/useTranslation";
 
 interface IProps {
     changeStepHandler: (step: string) => void;
@@ -105,8 +106,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 
 }));
-const Step1 = ({ changeStepHandler }: IProps) => {
+const Step1 = ({changeStepHandler}: IProps) => {
     const classes = useStyles();
+    const {t} = useTranslation();
     const [active, setActive] = useState(false);
 
     const handleActive = () => setActive(true);
@@ -125,51 +127,65 @@ const Step1 = ({ changeStepHandler }: IProps) => {
     return (
         <Grid container spacing={2}>
             <Grid item className={classes.form}>
-                <Typography variant={"h6"} className={classes.title}>描述您的產品</Typography>
+                <Typography variant={"h6"} className={classes.title}>
+                    {t('adsvantage:Describe Your Product')}
+                </Typography>
                 <div className={classes.step} onClick={handleActive}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <label className={classes.label}>關鍵字 *</label>
-                            <KeywordList active={active} />
+                            <label className={classes.label}>
+                                {`${t('adsvantage:Keyword')} *`}
+                            </label>
+                            <KeywordList active={active}/>
                         </Grid>
                         <Grid item xs={12}>
-                            <label className={classes.label}>產品描述</label>
+                            <label className={classes.label}>
+                                {t('adsvantage:Product Description')}
+                            </label>
                             <TypingInput type={'textarea'}
-                                rows={4}
-                                value={'保濕面膜推薦，鎖水、補水、潤澤，全面優惠'}
-                                placeholder={'請輸入產品描述'}
-                                active={active}
+                                         rows={4}
+                                         value={'保濕面膜推薦，鎖水、補水、潤澤，全面優惠'}
+                                         placeholder={t('adsvantage:Please Type Product Description')}
+                                         active={active}
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            <label className={classes.label}>公司/品牌名稱</label>
+                            <label className={classes.label}>
+                                {t('adsvantage:Company/Brand Name')}
+                            </label>
                             <TypingInput type={'input'}
-                                value={'ADsvantage'}
-                                placeholder={'輸入公司或品牌名稱'}
-                                active={active}
+                                         value={'ADsvantage'}
+                                         placeholder={t('adsvantage:Type in company or brand name')}
+                                         active={active}
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            <label className={classes.label}>最終到達網址</label>
+                            <label className={classes.label}>
+                                {t('adsvantage:URL')}
+                            </label>
                             <TypingInput type={'input'}
-                                value={'https://www.example.com'}
-                                placeholder={'輸入URL ex: http://www.example.com'}
-                                active={active}
+                                         value={'https://www.example.com'}
+                                         placeholder={t('adsvantage:Type in URL')}
+                                         active={active}
                             />
                         </Grid>
                         <Grid item xs={12}>
                             <Grid container spacing={1} justify={"flex-end"} className={classes.actions}>
                                 <Grid item>
                                     <Button variant={"contained"}
-                                        disabled={!active}
-                                        onClick={handleCancel}
-                                        className={classes.cancel}>取消</Button>
+                                            disabled={!active}
+                                            onClick={handleCancel}
+                                            className={classes.cancel}>
+                                        {t('adsvantage:Cancel')}
+                                    </Button>
                                 </Grid>
                                 <Grid item>
                                     <Button variant={"contained"}
-                                        disabled={!active}
-                                        onClick={handleClick}
-                                        className={classes.submit}>生成</Button>
+                                            disabled={!active}
+                                            onClick={handleClick}
+                                            className={classes.submit}>
+                                        {t('adsvantage:Generate')}
+                                    </Button>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -184,8 +200,8 @@ const Step1 = ({ changeStepHandler }: IProps) => {
                     <span>
                         {
                             active
-                                ? 'Step 2: AI 產出文案！'
-                                : 'Step 1: 填寫關鍵字與描述'
+                                ? t('adsvantage:Step 2: AI Copy generate')
+                                : t('adsvantage:Step 1: Type in keyword and description')
                         }
                     </span>
                 </div>

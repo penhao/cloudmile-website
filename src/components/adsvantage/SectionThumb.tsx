@@ -1,11 +1,13 @@
 import React from 'react';
 import clsx from "clsx";
-import { makeStyles, Theme, Button } from '@material-ui/core'
+import {makeStyles, Theme, Button} from '@material-ui/core'
+import useTranslation from "next-translate/useTranslation";
 
 interface Props {
     scrollTarget: string | null;
     scrollHandler: (current: string) => void;
 }
+
 const useStyles = makeStyles((theme: Theme) => ({
     thumb: {
         display: 'flex',
@@ -14,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         position: 'fixed',
         width: '100%',
         // height: 'calc(100vh - 10%)',
-        maxWidth: '1440px',
+        maxWidth: '1920px',
         left: '50%',
         top: '50%',
         transform: 'translate(-50%,-30%)',
@@ -57,8 +59,10 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }))
-function SectionThumb({ scrollTarget, scrollHandler }: Props) {
+
+function SectionThumb({scrollTarget, scrollHandler}: Props) {
     const classes = useStyles();
+    const {t} = useTranslation();
     return (
         <div className={classes.thumb}>
             <ul>
@@ -71,23 +75,28 @@ function SectionThumb({ scrollTarget, scrollHandler }: Props) {
                             scrollTarget === 'demo' ? 'active' : null
                         )}
                     >
-                        Demo
+                        {t('adsvantage:Demo')}
                     </button>
                 </li>
                 <li>
                     <button type={'button'} onClick={() => scrollHandler('price')} className={clsx(
                         classes.dot,
                         scrollTarget === 'price' ? 'active' : null
-                    )}>定價方案</button>
+                    )}>
+                        {t('adsvantage:Price')}
+                    </button>
                 </li>
                 <li>
                     <button type={'button'} onClick={() => scrollHandler('contact')} className={clsx(
                         classes.dot,
                         scrollTarget === 'contact' ? 'active' : null
-                    )}>聯絡我們</button>
+                    )}>
+                        {t('adsvantage:Contact Us')}
+                    </button>
                 </li>
             </ul>
-        </div >
+        </div>
     )
 }
+
 export default SectionThumb

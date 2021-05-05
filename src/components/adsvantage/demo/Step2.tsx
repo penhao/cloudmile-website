@@ -4,6 +4,7 @@ import { Grid, Theme, Typography, Box, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import ResultItem, { ResultItemProps } from "./ResultItem";
+import useTranslation from "next-translate/useTranslation";
 
 const useStyles = makeStyles((theme: Theme) => ({
     form: {
@@ -70,7 +71,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginTop: '10px'
     },
     submit: {
-        width: '144px',
+        minWidth: '144px',
         border: 'solid 1px #0458c0',
         backgroundColor: '#0458c0',
         color: theme.palette.common.white,
@@ -91,6 +92,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const Step2 = () => {
     const classes = useStyles();
+    const {t} = useTranslation();
     const [active, setActive] = useState(false);
     const [infoList, setInfoList] = useState([
         {
@@ -168,7 +170,9 @@ const Step2 = () => {
     return (
         <Grid container spacing={2}>
             <Grid item xs={12}>
-                <Typography variant={"h6"} className={classes.formTitle}>描述您的產品</Typography>
+                <Typography variant={"h6"} className={classes.formTitle}>
+                    {t('adsvantage:Product Information')}
+                </Typography>
                 <div className={classes.form}>
                     <Box display={'flex'} flexWrap={'nowrap'} className={classes.infoList}>
                         {
@@ -188,7 +192,9 @@ const Step2 = () => {
                 </div>
             </Grid>
             <Grid item xs={12}>
-                <Typography variant={"h6"} className={classes.formTitle}>AI 生成結果 (廣告)</Typography>
+                <Typography variant={"h6"} className={classes.formTitle}>
+                    {t('adsvantage:AI Generated Result (Ads)')}
+                </Typography>
                 <div className={clsx(classes.form, classes.resultForm)}>
                     {
                         active
@@ -215,10 +221,12 @@ const Step2 = () => {
                 <Grid container spacing={1} justify={"flex-end"} className={classes.actions}>
                     <Grid item>
                         <Button variant={"contained"}
-                            href={'#'}
+                            href={'https://adsvantage.ainotam.com/authorization/signup?plan=standard'}
                             target={'_blank'}
                             disabled={!active}
-                            className={classes.submit}>立即試用</Button>
+                            className={classes.submit}>
+                            {t('adsvantage:Start Your Free Trial')}
+                        </Button>
                     </Grid>
                 </Grid>
             </Grid>
