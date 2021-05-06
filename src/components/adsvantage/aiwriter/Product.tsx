@@ -150,8 +150,10 @@ interface IProps {
 
 const TrackingChild = ({isVisible}: IProps) => {
     const classes = useStyles();
+    const {lang} = useTranslation();
     const [transId, setTransId] = useState(0);
     const [transitions, setTransitions] = useState([false, false, false, false]);
+    const keywordCoverUrl = lang === 'zh' ? '/adsvantage/aiwriter/pop-keyword-zh.png' : '/adsvantage/aiwriter/pop-keyword.png';
     useEffect(() => {
         if (!isVisible) {
             setTransId(0);
@@ -184,7 +186,7 @@ const TrackingChild = ({isVisible}: IProps) => {
                 classes.popKeyword,
                 transitions[1] ? 'active' : null
             )}>
-                <BackgroundImage imgUrl={'/adsvantage/aiwriter/pop-keyword.png'} backgroundSize={"contain"}/>
+                <BackgroundImage imgUrl={keywordCoverUrl} backgroundSize={"contain"}/>
             </RatioContainer>
             <img src="/images/md/adsvantage/aiwriter/arrow2.svg" alt="" className={clsx(
                 classes.arrowRight,
