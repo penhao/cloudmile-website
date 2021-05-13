@@ -1,12 +1,12 @@
 import React from 'react'
 import { useTranslation } from 'next-translate';
 import { useInView } from 'react-hook-inview';
-import ADSvantageForm from "../forms/ADSvantageForm";
 import Container from "../containers/Container";
 import Grid from "@material-ui/core/Grid";
 import SectionTitleLabel from "../sections/SectionTitleLabel";
 import SectionTitle from "../sections/SectionTitle";
 import SectionContainer from "../containers/SectionContainer";
+import ProductForm from "../../components/forms/ProductForm";
 
 interface Props {
     scrollChangeHadler: (target: string | null) => void;
@@ -36,7 +36,7 @@ function ContactSection({ scrollChangeHadler }: Props) {
                             </Container>
                         </Grid>
                         <Grid item xs={12} md={6}>
-                            <ADSvantageForm />
+                            <ProductForm currentPage={'adsvantage'} />
                         </Grid>
                     </Grid>
                 </Container>

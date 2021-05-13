@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="73" height="61" viewBox="0 0 73 61">
+    <g fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero">
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <path fill="#00832D" d="M41.25 30L48.358 38.125 57.917 44.233 59.583 30.054 57.917 16.188 48.175 21.554z" transform="translate(-362 -2681) translate(-501 2023.947) translate(0 68.053) translate(680 251.947) translate(183 338)"/>
+                            <path fill="#0066DA" d="M0 42.917V55c0 2.763 2.237 5 5 5h12.083l2.5-9.133-2.5-7.95-8.291-2.5L0 42.917z" transform="translate(-362 -2681) translate(-501 2023.947) translate(0 68.053) translate(680 251.947) translate(183 338)"/>
+                            <path fill="#E94235" d="M17.083 0L0 17.083 8.792 19.583 17.083 17.083 19.542 9.238z" transform="translate(-362 -2681) translate(-501 2023.947) translate(0 68.053) translate(680 251.947) translate(183 338)"/>
+                            <path fill="#2684FC" d="M17.083 17.083L0 17.083 0 42.917 17.083 42.917z" transform="translate(-362 -2681) translate(-501 2023.947) translate(0 68.053) translate(680 251.947) translate(183 338)"/>
+                            <path fill="#00AC47" d="M68.83 7.233l-10.913 8.954v28.046l10.958 8.988c1.642 1.283 4.042.112 4.042-1.971V9.167c0-2.113-2.454-3.271-4.088-1.934zM41.25 30v12.917H17.083V60h35.834c2.762 0 5-2.237 5-5V44.233L41.25 30z" transform="translate(-362 -2681) translate(-501 2023.947) translate(0 68.053) translate(680 251.947) translate(183 338)"/>
+                            <path fill="#FFBA00" d="M52.917 0H17.083v17.083H41.25V30l16.667-13.813V5c0-2.763-2.238-5-5-5z" transform="translate(-362 -2681) translate(-501 2023.947) translate(0 68.053) translate(680 251.947) translate(183 338)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

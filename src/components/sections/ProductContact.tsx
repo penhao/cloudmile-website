@@ -12,13 +12,13 @@ interface Props {
     currentPage: string;
 }
 
-const ProductContact = ({title, caption, currentPage}: Props) => {
+const ProductContact = ({ title, caption, currentPage }: Props) => {
     return (
         <SectionContainer>
-            <Container maxWidth={{xs: 'none', sm: 'none', md: 1280}}>
+            <Container maxWidth={{ xs: 'none', sm: 'none', md: 1280 }}>
                 <Grid container spacing={4} direction={"row-reverse"}>
                     <Grid item xs={12} md={6}>
-                        <Container maxWidth={{xs: 'none', sm: 600, md: 600}} paddingX={false} centerX={false}>
+                        <Container maxWidth={{ xs: 'none', sm: 600, md: 600 }} paddingX={false} centerX={false}>
                             <SectionTitleLabel color={'warning'}>
                                 {caption}
                             </SectionTitleLabel>
@@ -28,7 +28,7 @@ const ProductContact = ({title, caption, currentPage}: Props) => {
                         </Container>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <ProductForm currentPage={currentPage}/>
+                        <ProductForm currentPage={currentPage} />
                     </Grid>
                 </Grid>
             </Container>

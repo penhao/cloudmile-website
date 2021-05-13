@@ -41,6 +41,9 @@
     "/cloud/solutions/business-productivity": [
       "business-productivity"
     ],
+    "/cloud/solutions/google-workspace": [
+      "google-workspace"
+    ],
     "/cloud/solutions/cloud-migration": [
       "cloud-migration",
       "case-study"

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="68" height="61" viewBox="0 0 68 61">
+    <g fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero">
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <path fill="#0066DA" d="M5.077 51.423l2.961 5.115c.616 1.077 1.5 1.924 2.539 2.539l10.577-18.308H0c0 1.193.308 2.385.923 3.462l4.154 7.192z" transform="translate(-1005 -2490) translate(-501 2023.947) translate(0 68.053) translate(1480 250.947) translate(26.5 148)"/>
+                            <path fill="#00832D" d="M33.577 19.23L44.154.924C43.115.308 41.924 0 40.692 0h-14.23C25.23 0 24.038.346 23 .923l10.577 18.308z" transform="translate(-1005 -2490) translate(-501 2023.947) translate(0 68.053) translate(1480 250.947) translate(26.5 148)"/>
+                            <path fill="#2684FC" d="M46 40.77H21.154L10.577 59.076c1.038.615 2.23.923 3.461.923h39.077c1.231 0 2.423-.346 3.462-.923L46 40.769z" transform="translate(-1005 -2490) translate(-501 2023.947) translate(0 68.053) translate(1480 250.947) translate(26.5 148)"/>
+                            <path fill="#EA4335" d="M56.577 59.077c1.038-.615 1.923-1.462 2.538-2.539l1.231-2.115 5.885-10.192c.615-1.077.923-2.27.923-3.462H46.038l10.539 18.308z" transform="translate(-1005 -2490) translate(-501 2023.947) translate(0 68.053) translate(1480 250.947) translate(26.5 148)"/>
+                            <path fill="#FFBA00" d="M56.462 20.385l-9.77-16.923c-.615-1.077-1.5-1.924-2.538-2.539L33.577 19.231 46 40.769h21.115c0-1.192-.307-2.384-.923-3.461l-9.73-16.923z" transform="translate(-1005 -2490) translate(-501 2023.947) translate(0 68.053) translate(1480 250.947) translate(26.5 148)"/>
+                            <path fill="#00AC47" d="M33.577 19.23L23 .924c-1.038.615-1.923 1.462-2.538 2.539L.923 37.308C.308 38.385 0 39.577 0 40.769h21.154l12.423-21.538z" transform="translate(-1005 -2490) translate(-501 2023.947) translate(0 68.053) translate(1480 250.947) translate(26.5 148)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

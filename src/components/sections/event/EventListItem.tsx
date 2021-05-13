@@ -10,6 +10,7 @@ import useFormatDate from "../../useFormatDate";
 import useMediaQuery from "@material-ui/core/useMediaQuery/useMediaQuery";
 import useTheme from "@material-ui/core/styles/useTheme";
 import IconLaunch from "../../icons/IconLaunch";
+import LinesEllipsis from 'react-lines-ellipsis';
 
 interface Props {
     itemData: any;
@@ -109,6 +110,7 @@ const EventListItem = ({itemData}: Props) => {
                 </Typography>
                 <Typography variant={"body1"} align={"center"} className={classes.title}>
                     {itemData.title}
+                    {/*<LinesEllipsis text={itemData.title} maxLine='2' ellipsis='...' trimRight basedOn='letters'/>*/}
                 </Typography>
                 <div className={classes.cover}>
                     <RatioContainer ratio={{xs: 156 / 280, sm: 156 / 280, md: 156 / 280}}>

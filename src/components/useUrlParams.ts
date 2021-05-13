@@ -9,6 +9,7 @@ export type SalesforcePostParams = {
     leadSource: string;
     redirectUrl?: string;
     country?: string;
+    BU?: string;
 };
 
 export interface Props {
@@ -17,9 +18,8 @@ export interface Props {
 
 const useUrlParams = (defaultParams: SalesforcePostParams) => {
     const router = useRouter();
-    const [urlParams, setUrlParams] = useState<SalesforcePostParams>(
-        defaultParams
-    );
+    const [urlParams, setUrlParams] =
+        useState<SalesforcePostParams>(defaultParams);
     const getUrlParam = (url: string, key: string) => {
         return new URL(url).searchParams.get(key);
     };

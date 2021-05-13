@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import Layout from "../../components/Layout";
 import { siteRoutes } from "../../../public/config.json";
 import { getRoute } from "../../utils/Utils";
@@ -19,12 +19,9 @@ import ContactSection from "../../components/adsvantage/ContactSection";
 import { GetServerSidePropsContext } from "next";
 import { fetchListByTag, fetchTagList } from "../../services/ApiServices";
 import SectionThumb from '../../components/adsvantage/SectionThumb';
-import TrackVisibility from 'react-on-screen';
-import VisibilitySensor from 'react-visibility-sensor';
 
 
 const ADSvantagePage = ({ categoryData, postData }) => {
-    console.log(categoryData);
     const { t, lang } = useTranslation();
     const currentRoute = getRoute('ADsvantage', siteRoutes)[0];
     const demoRef = useRef<HTMLDivElement>(null);
