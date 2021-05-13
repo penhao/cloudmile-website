@@ -1,6 +1,6 @@
 import React from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import clsx from "clsx";
 import TrackVisibility from "react-on-screen";
 
@@ -23,11 +23,11 @@ const useStyles = makeStyles((theme: Theme) => ({
         zIndex: 3
     },
     active: {
-        clipPath: 'inset(0% 0% 0% 0%)',
+        clipPath: 'inset(0% 0% -10% 0%)',
         opacity: 1
     }
 }));
-const TrackingChild = ({isVisible, children}: IProps) => {
+const TrackingChild = ({ isVisible, children }: IProps) => {
     const classes = useStyles();
     return (
         <div className={clsx(classes.mask, (isVisible) ? classes.active : null)}>
@@ -35,10 +35,10 @@ const TrackingChild = ({isVisible, children}: IProps) => {
         </div>
     )
 };
-const TextClipEffect = ({children}: IProps) => {
+const TextClipEffect = ({ children }: IProps) => {
     return (
         <TrackVisibility once={true} offset={0} partialVisibility>
-            <TrackingChild children={children}/>
+            <TrackingChild children={children} />
         </TrackVisibility>
     );
 };

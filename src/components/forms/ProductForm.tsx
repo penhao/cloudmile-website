@@ -143,8 +143,8 @@ const ProductForm = ({ currentPage }: Props) => {
             {/* Hidden Value */}
             <div>
                 {/* Debug */}
-                {/* <input type="hidden" name="debug" defaultValue="1" />
-                <input type="hidden" name="debugEmail" defaultValue="eileen.chen@mile.cloud" /> */}
+                <input type="hidden" name="debug" defaultValue="1" />
+                <input type="hidden" name="debugEmail" defaultValue="eileen.chen@mile.cloud" />
 
                 {/* Redirect */}
                 <input type="hidden" name="oid" defaultValue="00D7F000001xkaZ" />

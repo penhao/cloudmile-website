@@ -1,5 +1,5 @@
 {
-    "apiDomain": "https://backend.mile.cloud",
+    "apiDomain": "https://uat-backend.mile.cloud",
     "metadataDomain": "https://mile.cloud",
     "reCAPTCHAKey": "6LdLAv8ZAAAAAOna-skW7yAI9CRfGgKwpWEUUWyC",
     "siteRoutes": [
@@ -111,7 +111,7 @@
                         },
                         {
                             "title": "Business Productivity",
-                            "href": "/cloud/solutions/business-productivity",
+                            "href": "/cloud/solutions/google-workspace",
                             "metadata": {
                                 "en": {
                                     "title": "Business Productivity by Innovative Communication | CloudMile",
