@@ -39,7 +39,7 @@ const IntroSection = () => {
                             <Container maxWidth={{ xs: 'none', sm: 600, md: 600 }} paddingX={false} centerX={false}>
                                 <SectionTitleLabel color={'warning'} />
                                 <SectionTitle>
-                                    Google Workspace
+                                    {t('google-workspace:Google Workspace')}
                                 </SectionTitle>
                             </Container>
                         </Box>
@@ -56,12 +56,7 @@ const IntroSection = () => {
                                         <SectionDescWrapper>
                                             <img src="/images/md/google-workspace/google-workspace.svg" alt="" />
                                             <Typography variant={"body1"} className={classes.desc}>
-                                                Google Workspace (formerly G Suite) is an integrated workspace tool developed by
-                                                Google Cloud. All Google Workspace plans provide a custom email for your
-                                                business and includes collaboration tools like Gmail, Calendar, Drive, Docs, and
-                                                more. Not only adding more advanced functions to collaboration and video, but
-                                                also making more layers in version and price positioning, Google Workspace
-                                                provides more diversified version options for enterprises.
+                                                {t('google-workspace:Google Workspace (formerly G Suite) is an integrated workspace tool developed by Google Cloud')}
                                             </Typography>
                                             <img src="/images/md/google-workspace/five-up.svg" alt=""
                                                 className={classes.iconsFiveUp} />
