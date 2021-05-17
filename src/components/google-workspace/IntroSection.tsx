@@ -39,7 +39,7 @@ const IntroSection = () => {
                             <Container maxWidth={{ xs: 'none', sm: 600, md: 600 }} paddingX={false} centerX={false}>
                                 <SectionTitleLabel color={'warning'} />
                                 <SectionTitle>
-                                    {t('google-workspace:Google Workspace')}
+                                    {t('google-workspace:That’s the Working Style in Digital World')}
                                 </SectionTitle>
                             </Container>
                         </Box>

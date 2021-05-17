@@ -34,12 +34,14 @@ const GoogleWorkspace = ({ blogCategory, eventCategory, blogCategoryId, blogPost
             <AdoptSection />
             <SeminarSection data={eventPosts.data} />
             <RelatedSection data={blogPosts.data} categoryId={blogCategoryId} />
-            <ProductContact title={t('google-workspace:Transforming How Enterprises Work')}
+            <ProductContact
+                title={t('google-workspace:Transforming How Enterprises Work')}
                 caption={t('google-workspace:Contact Us')}
                 currentPage={'gws'} />
         </Layout>
     );
 };
+
 export const getServerSideProps = async ({ locale, res }: GetServerSidePropsContext) => {
     const blogCategory = await fetchTagList(locale, 1);
     const eventCategory = await fetchTagList(locale, 2);

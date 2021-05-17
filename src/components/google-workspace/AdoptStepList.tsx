@@ -10,7 +10,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     stepListOuter: {
         width: '100%',
         overflowY: 'hidden',
-        overflowX: 'auto'
+        overflowX: 'auto',
+        [theme.breakpoints.up('md')]: {
+            overflowX: 'hidden',
+        }
     },
     stepList: {
         width: '100%',
