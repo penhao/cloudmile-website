@@ -1,5 +1,5 @@
 {
-    "apiDomain": "https://uat-backend.mile.cloud",
+    "apiDomain": "https://backend.mile.cloud",
     "metadataDomain": "https://mile.cloud",
     "reCAPTCHAKey": "6LdLAv8ZAAAAAOna-skW7yAI9CRfGgKwpWEUUWyC",
     "siteRoutes": [
