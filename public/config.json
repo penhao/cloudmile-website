@@ -96,20 +96,6 @@
                             }
                         },
                         {
-                            "title": "Multi-CDN Platform",
-                            "href": "/cloud/solutions/multi-cdn-platform",
-                            "metadata": {
-                                "en": {
-                                    "title": "MileCDN: Unleash Your Website's Power | CloudMile",
-                                    "desc": "Want to target the Chinese market? Our MileCDN is an ICP license-free cloud platform that allows your website to be accessed by the target Chinese audience."
-                                },
-                                "zh": {
-                                    "title": "多重 CDN 平台 | CloudMile",
-                                    "desc": "MileCDN 是一個 Multi-CDN 服務管理平臺，讓您無須煩惱申請 ICP 許可證相關事宜，便能提供位於中國的使用者穩定的體驗。"
-                                }
-                            }
-                        },
-                        {
                             "title": "Business Productivity",
                             "href": "/cloud/solutions/google-workspace",
                             "metadata": {
