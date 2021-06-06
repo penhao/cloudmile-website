@@ -6,7 +6,7 @@ Disallow: /health-check
 Disallow: /thanks
 
 # Host
-Host: https://www.mile.cloud
+Host: https://uat.mile.cloud
 
 # Sitemaps
-Sitemap: https://www.mile.cloud/sitemap.xml
+Sitemap: https://uat.mile.cloud/sitemap.xml

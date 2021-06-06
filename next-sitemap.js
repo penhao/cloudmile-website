@@ -1,13 +1,13 @@
 module.exports = {
-    siteUrl: "https://www.mile.cloud",
+    siteUrl: "https://uat.mile.cloud",
     changefreq: "daily",
     priority: 0.7,
     generateRobotsTxt: true,
     exclude: ["/404", "/health-check", "/thanks"],
     alternateRefs: [
         {
-            href: "https://example.com/zh",
-            hreflang: "zh",
+            href: `https://uat.mile.cloud/zh`,
+            hreflang: "zh-hant",
         },
     ],
     // Default transformation function
