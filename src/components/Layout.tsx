@@ -1,40 +1,46 @@
-import React, {Fragment} from 'react';
-import {usePageStyles} from "./PageStyles";
+import React, { Fragment } from 'react';
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
-import PageHead, {MetadataProps} from "./PageHead";
+import PageHead, { IMetadataProps } from "./PageHead";
 import CookieAlert from "./CookieAlert";
 import ContactAlert from "./ContactAlert";
-import useTranslation from "next-translate/useTranslation";
-import clsx from "clsx";
+import { makeStyles, Theme } from '@material-ui/core';
 
-interface Props {
+interface IProps {
     bgColor?: string;
-    metadata: MetadataProps | null;
+    metadata: IMetadataProps | any;
     children: React.ReactNode;
 }
-
-const Layout = ({metadata = null, children, bgColor = 'light'}: Props) => {
-    const {lang} = useTranslation();
-    const classes = usePageStyles({lang, bgColor});
+interface IStyleProps {
+    bgColor?: string;
+}
+const useStyles = makeStyles((theme: Theme) => ({
+    pageWrapper: {
+        backgroundColor: ({ bgColor }: IStyleProps) => {
+            return bgColor === 'light' ? theme.palette.common.white : theme.palette.grey["800"]
+        }
+    },
+    page: {
+        position: 'relative',
+        width: '100%',
+        overflow: 'hidden',
+        zIndex: 1
+    }
+}));
+const Layout = ({ metadata, bgColor = 'light', children }: IProps) => {
+    const classes = useStyles({ bgColor });
 
     return (
         <Fragment>
-            {
-                metadata ? <PageHead metadata={metadata}/> : null
-            }
-            <div className={clsx(
-                classes.layout,
-                lang === 'zh'  ? classes.fontNotoSans : null,
-                lang === 'en' ? classes.fontOpenSans : null
-            )}>
-                <CookieAlert/>
-                <Header/>
-                <div role="main" className={classes.main}>
+            <PageHead metadata={metadata} />
+            <div className={classes.pageWrapper}>
+                {/* <CookieAlert/> */}
+                <Header />
+                <div role="main" className={classes.page}>
                     {children}
                 </div>
-                <Footer/>
-                <ContactAlert/>
+                <Footer />
+                <ContactAlert />
             </div>
         </Fragment>
     );

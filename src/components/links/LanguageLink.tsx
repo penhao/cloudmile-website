@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from "next/link";
 import clsx from "clsx";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
-import {useLinkStyles} from "./LinkStyles";
-import {useRouter} from "next/router";
+import { Theme } from "@material-ui/core";
+import { useLinkStyles } from "./LinkStyles";
+import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
-import {removeParam} from "../../utils/Utils";
+import { removeParam } from "../../utils/Utils";
 
 interface Props {
     locale: string;
@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
-const LanguageLink = ({locale, className = null, children}: Props) => {
+const LanguageLink = ({ locale, className = null, children }: Props) => {
 
-    const {lang} = useTranslation();
+    const { lang } = useTranslation();
     const router = useRouter();
     const classes = useStyles();
     const linkStyles = useLinkStyles();
@@ -46,7 +46,9 @@ const LanguageLink = ({locale, className = null, children}: Props) => {
         if (routePath === '/resources/event/[...slug]') {
             return `/resources/event${urlParams}`;
         }
-        if (routePath === '/resources/video/[...slug]' || routePath === '/resources/video/live-stream/[...slug]') {
+        if (routePath === '/resources/video/[...slug]' ||
+            routePath === '/resources/video/live-stream/[...slug]' ||
+            routePath === '/resources/video/register/[categoryId]/[...slug]') {
             return `/resources/video${urlParams}`;
         }
         if (routePath === '/resources/category/[...slug]') {

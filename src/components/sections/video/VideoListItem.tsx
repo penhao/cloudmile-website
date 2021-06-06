@@ -1,7 +1,7 @@
-import React, {Fragment, useEffect, useState} from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import NavLink from "../../links/NavLink";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import RatioContainer from "../../containers/RatioContainer";
 import BackgroundImage from "../../Images/BackgroundImage";
 import Typography from "@material-ui/core/Typography";
@@ -9,20 +9,20 @@ import VideoRegisterModal from "../../modal/VideoRegisterModal";
 import useTheme from "@material-ui/core/styles/useTheme";
 import useFormatDate from "../../../components/useFormatDate";
 import LinesEllipsis from "react-lines-ellipsis";
-import {SalesforcePostParams} from "../../useUrlParams";
+import { SalesforcePostParams } from "../../useUrlParams";
 import useTranslation from "next-translate/useTranslation";
-import {removeParam} from "../../../utils/Utils";
+import { removeParam } from "../../../utils/Utils";
+import Link from 'next/link';
 
 interface Props {
     type: number;
+    category?: any;
     itemData: any;
     color?: string;
 }
-
 interface StyleProps {
     color: string;
 }
-
 const useStyles = makeStyles((theme: Theme) => ({
     item: {
         width: '100%',
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) => ({
                 textDecoration: 'underline'
             },
             '& $desc,$date': {
-                color: ({color}: StyleProps) => color,
+                color: ({ color }: StyleProps) => color,
                 textDecoration: 'none'
             },
             '& $coverOverlay': {
@@ -83,55 +83,35 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     },
     title: {
-        color: ({color}: StyleProps) => color,
+        color: theme.palette.common.white,
         marginBottom: '8px'
     },
     desc: {
-        color: ({color}: StyleProps) => color,
+        color: theme.palette.common.white,
         marginBottom: '10px',
         fontWeight: 400
     },
     date: {
-        color: ({color}: StyleProps) => color,
+        color: theme.palette.common.white,
         fontWeight: 400
     }
 }));
-const VideoListItem = ({type, itemData, color = useTheme().palette.common.white}: Props) => {
-    const {t, lang} = useTranslation();
-    const classes = useStyles({color});
-    const [activeForm, setActiveForm] = useState(false);
-    const [salesforceData, setSalesforceData] = useState<SalesforcePostParams | null>(null);
-    useEffect(() => {
-        const pathOrigin = window.location.origin;
-        const urlParams = removeParam('category', window.location.search);
-        const fixLang = lang === 'en' ? '' : ('/' + lang);
-        const redirectUrl = (type === 2)
-            ? `${pathOrigin}${fixLang}/resources/video/live-stream/${itemData.id}/${encodeURIComponent(itemData.title)}${urlParams}`
-            : `${pathOrigin}${fixLang}/resources/video/${itemData.id}/${encodeURIComponent(itemData.title)}${urlParams}`;
-        setSalesforceData({
-            utmSource: itemData.utm_source,
-            utmMedium: itemData.utm_medium,
-            utmCampaign: itemData.utm_campaign,
-            leadSource: itemData.lead_source,
-            campaignId: itemData.salesforce_id,
-            redirectUrl: redirectUrl,
-            country: itemData.country
-        })
-    }, [itemData]);
+const VideoListItem = ({ category, type, itemData }: Props) => {
+    const classes = useStyles();
     const getContent = () => {
         return (
             <Fragment>
                 <div className={classes.cover}>
-                    <RatioContainer ratio={{xs: 180 / 280, sm: 180 / 280, md: 180 / 280}}>
-                        <BackgroundImage imgUrl={itemData.image_other} detectRetina={false}/>
+                    <RatioContainer ratio={{ xs: 180 / 280, sm: 180 / 280, md: 180 / 280 }}>
+                        <BackgroundImage imgUrl={itemData.image_other} detectRetina={false} />
                     </RatioContainer>
                     <div className={classes.coverOverlay}>
                         <svg width="117px" height="18px" viewBox="0 0 117 18" version="1.1">
                             <g id="icon/go/static" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd"
-                               strokeLinecap="round">
+                                strokeLinecap="round">
                                 <polyline id="Path-2" stroke="#FFFFFF" strokeWidth="2"
-                                          points="105.5 0 116.582283 8.95351968 105.5 18"/>
-                                <line x1="0.5" y1="9" x2="116.5" y2="9" id="Path" stroke="#FFFFFF" strokeWidth="2"/>
+                                    points="105.5 0 116.582283 8.95351968 105.5 18" />
+                                <line x1="0.5" y1="9" x2="116.5" y2="9" id="Path" stroke="#FFFFFF" strokeWidth="2" />
                             </g>
                         </svg>
                     </div>
@@ -145,7 +125,7 @@ const VideoListItem = ({type, itemData, color = useTheme().palette.common.white}
                         maxLine='3'
                         ellipsis='...'
                         trimRight
-                        basedOn='letters'/>
+                        basedOn='letters' />
                 </Typography>
                 <Typography variant={"body1"} component={'div'} className={classes.date}>
                     {useFormatDate(itemData.created_at.replace(' ', 'T'))}
@@ -154,52 +134,29 @@ const VideoListItem = ({type, itemData, color = useTheme().palette.common.white}
         )
     };
     const getLinkByType = (type: number) => {
-        switch (type) {
-            case 1:
-                return (
-                    <NavLink hrefPath={'/resources/video/[...slug]'}
-                             asPath={`/resources/video/${itemData.id}/${encodeURIComponent(itemData.title)}`}
-                             underline={false}
-                             fullWidth
-                             fullHeight
-                             classNames={classes.item}>
+        if (type === 1) {
+            return (
+                <NavLink hrefPath={'/resources/video/[...slug]'}
+                    asPath={`/resources/video/${itemData.id}/${encodeURIComponent(itemData.title)}`}
+                    underline={false}
+                    fullWidth
+                    fullHeight
+                    classNames={classes.item}>
+                    {getContent()}
+                </NavLink>
+            );
+        } else {
+            return (
+                <Link
+                    href={`/resources/video/?categoryId=${category.categoryId}&postId=${itemData.id}`}
+                    as={`/resources/video/register/${category.categoryId}/${itemData.id}/${encodeURIComponent(itemData.title)}`}
+                >
+                    <a className={classes.item}>
                         {getContent()}
-                    </NavLink>
-                );
-            case 2:
-                return (
-                    <Fragment>
-                        <button onClick={() => setActiveForm(true)} className={classes.item}>
-                            {getContent()}
-                        </button>
-                        <VideoRegisterModal
-                            title={itemData.form_title}
-                            caption={t('video:Register to Watch')}
-                            openModel={activeForm}
-                            closeHandler={handleClose}
-                            salesforceData={salesforceData}/>
-                    </Fragment>
-                );
-            case 3:
-                return (
-                    <Fragment>
-                        <button onClick={() => setActiveForm(true)} className={classes.item}>
-                            {getContent()}
-                        </button>
-                        <VideoRegisterModal
-                            title={itemData.form_title}
-                            caption={t('video:Register to Watch')}
-                            openModel={activeForm}
-                            closeHandler={handleClose}
-                            salesforceData={salesforceData}/>
-                    </Fragment>
-                );
-            default:
-                return null;
+                    </a>
+                </Link>
+            );
         }
-    };
-    const handleClose = () => {
-        setActiveForm(false);
     };
     return (
         <Fragment>

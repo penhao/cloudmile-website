@@ -1,11 +1,11 @@
 import React from 'react';
-import {makeStyles} from "@material-ui/styles";
+import { makeStyles } from "@material-ui/styles";
 import NavDropdownMd from "./NavDropdownMd";
 import useTranslation from "next-translate/useTranslation";
 import NavContactLink from "../links/NavContactLink";
-import {siteRoutes} from "../../../public/config.json";
-import {getRoute} from "../../utils/Utils";
-
+import { siteRoutes } from "../../../public/config.json";
+import { getRoute } from "../../utils/Utils";
+import Routes from "../../@share/routes/Routes";
 
 interface Props {
     statusData: any;
@@ -26,9 +26,9 @@ const useStyles = makeStyles(() => ({
         }
     }
 }));
-const NavListMd = ({statusData}: Props) => {
+const NavListMd = ({ statusData }: Props) => {
     const classes = useStyles();
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const contactRoute = getRoute('Contact Us', siteRoutes)[0];
 
     return (
@@ -41,14 +41,14 @@ const NavListMd = ({statusData}: Props) => {
                             return (
                                 <li key={index}>
                                     <NavDropdownMd routeGroup={group}
-                                                   statusData={group.title === 'Resources' ? statusData : null}/>
+                                        statusData={group.title === 'Resources' ? statusData : null} />
                                 </li>
                             );
                         })
                     }
                     <li>
                         <NavContactLink href={contactRoute.href}
-                                        color={'white'}>
+                            color={'white'}>
                             {
                                 t(`common:${contactRoute.title}`)
                             }

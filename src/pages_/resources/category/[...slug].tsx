@@ -1,31 +1,33 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from "../../../components/Layout";
 import useTranslation from "next-translate/useTranslation";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import CategoryHead from "../../../components/sections/resources/CategoryHead";
-import {GetServerSidePropsContext} from "next";
-import {fetchListByTag, fetchTagList} from "../../../services/ApiServices";
+import { GetServerSidePropsContext } from "next";
+import { fetchListByTag, fetchTagList } from "../../../services/ApiServices";
 import CategoryFilterList from "../../../components/sections/resources/CategoryFilterList";
 import PostList from "../../../components/sections/resources/PostList";
 import MoreButton from "../../../components/buttons/MoreButton";
 import Container from "../../../components/containers/Container";
 import SectionContainer from "../../../components/containers/SectionContainer";
-import {siteRoutes} from "../../../../public/config.json";
-import {getRoute} from "../../../utils/Utils";
+import { siteRoutes } from "../../../../public/config.json";
+import { getRoute } from "../../../utils/Utils";
+import { getMetadada } from '../../../@share/routes/Metadata';
 
-const CategoryPage = ({categoryData, postData}) => {
+const CategoryPage = ({ categoryData, postData }) => {
     const currentRoute = getRoute('Home', siteRoutes)[0];
-    const {t, lang} = useTranslation();
+    const { t, lang } = useTranslation();
     const router = useRouter();
     const [pageName, setPageName] = useState('');
     const [categoryId, setCategoryId] = useState(-1);
-    const [redirectData, setRedirectData] = useState({title: 'Home', url: '/'});
+    const [redirectData, setRedirectData] = useState({ title: 'Home', url: '/' });
     const [searchData, setSearchData] = useState([]);
     const [startCount, setStartCount] = useState(1);
     const [disabledMore, setDisabledMore] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
 
-    console.log(postData);
+    const metadata = getMetadada("/");
+    // console.log(postData);
 
     const getRedirectData = () => {
         switch (router.query.slug[0]) {
@@ -86,21 +88,23 @@ const CategoryPage = ({categoryData, postData}) => {
 
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
             <CategoryHead title={postData.tag_title}
-                          total={postData.total}
-                          redirect={redirectData}/>
+                total={postData.total}
+                redirect={redirectData} />
             <CategoryFilterList title={t('category:Insights')}
-                                parentPage={pageName}
-                                categoryData={categoryData}/>
+                parentPage={pageName}
+                categoryData={categoryData} />
             <SectionContainer>
-                <Container maxWidth={{sm: 680, md: 680}} paddingX={false}>
-                    <PostList currentPage={pageName} list={searchData}/>
+                <Container maxWidth={{ sm: 680, md: 680 }} paddingX={false}>
+                    <PostList currentPage={pageName} list={searchData} />
                     {
                         (!disabledMore)
                             ?
-                            <MoreButton disabled={isLoading} clickHandler={handleMoreClick}/>
+                            <MoreButton disabled={isLoading} clickHandler={handleMoreClick} />
                             :
                             null
                     }
@@ -110,7 +114,7 @@ const CategoryPage = ({categoryData, postData}) => {
     );
 };
 
-export const getServerSideProps = async ({locale, query, res}: GetServerSidePropsContext) => {
+export const getServerSideProps = async ({ locale, query, res }: GetServerSidePropsContext) => {
     // 1:blog 2:event 3:case study 5: 新聞管理
     let pageId = null;
     // 1:blog 2:event 3: 新聞管理 5:客戶案例

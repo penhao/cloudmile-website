@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from "../components/Layout";
 import useTranslation from "next-translate/useTranslation";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import SectionContainer from "../components/containers/SectionContainer";
-import Container from "../components/containers/Container";
 import Typography from "@material-ui/core/Typography";
-import {siteRoutes} from "../../public/config.json";
-import {getRoute} from "../utils/Utils";
+import { useRouter } from 'next/router';
+import { getMetadada } from '../@share/routes/Metadata';
+import Container from '../components/containers/Container';
+import { getBreadcrumb } from '../@share/routes/Routes';
+import Breadcrumbs from "../components/Breadcrumb";
 
 const useStyles = makeStyles((theme: Theme) => ({
     privacy: {
-        paddingTop: '20px',
+        // paddingTop: '20px',
         '& > h6': {
             marginBottom: '20px'
         },
@@ -72,36 +74,54 @@ const useStyles = makeStyles((theme: Theme) => ({
         fontSize: theme.typography.pxToRem(60),
         fontWeight: 700,
         lineHeight: 0.8,
-        margin: '60px 0',
+        margin: '20px 0 60px 0',
         [theme.breakpoints.up('md')]: {
             fontSize: theme.typography.pxToRem(90),
-            margin: '90px 0',
+            margin: '50px 0 90px 0',
         }
     }
 }));
 const PagePrivacy = () => {
-    const {t, lang} = useTranslation();
+    const { t, lang } = useTranslation();
     const classes = useStyles();
-    const currentRoute = getRoute('Privacy', siteRoutes)[0];
+    const router = useRouter();
+    const metadata = getMetadada(router.asPath);
+    const [breadcrumbData, setBreadcrumbData] = useState([]);
+    useEffect(() => {
+        //
+        let breadcrumbs = getBreadcrumb(router.asPath);
+        breadcrumbs = breadcrumbs.map((breadcrumb) => {
+            return {
+                ...breadcrumb,
+                breadcrumbName: t(`common:${breadcrumb.breadcrumbName}`),
+            };
+        })
+        setBreadcrumbData(breadcrumbs)
+    }, [lang]);
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
+            <Container>
+                <Breadcrumbs breadcrumbData={breadcrumbData} />
+            </Container>
             <SectionContainer>
-                <Container maxWidth={{sm: 920, md: 920}} className={classes.privacy}>
+                <Container maxWidth={{ sm: 920, md: 920 }} className={classes.privacy}>
                     <Typography variant={"h1"} align={"center"} className={classes.title}>
                         {t("privacy:PRIVACY POLICY")}
                     </Typography>
                     <Typography variant={"body1"} dangerouslySetInnerHTML={
-                        {__html: t("privacy:This Privacy Policy was last updated on March 16__")}
-                    }/>
+                        { __html: t("privacy:This Privacy Policy was last updated on March 16__") }
+                    } />
                     <ol>
                         <li>
                             {t("privacy:Personal Data")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:Personal Data is information about you that is__")}
-                                }/>
+                                    { __html: t("privacy:Personal Data is information about you that is__") }
+                                } />
                             </div>
 
                         </li>
@@ -109,8 +129,8 @@ const PagePrivacy = () => {
                             {t("privacy:Non-Personal Data")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:We may collect non-personally identifiable data about__")}
-                                }/>
+                                    { __html: t("privacy:We may collect non-personally identifiable data about__") }
+                                } />
                             </div>
                         </li>
 
@@ -118,8 +138,8 @@ const PagePrivacy = () => {
                             {t("privacy:Web Browser Cookies")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:Certain information may also be collected__")}
-                                }/>
+                                    { __html: t("privacy:Certain information may also be collected__") }
+                                } />
                             </div>
                         </li>
 
@@ -127,40 +147,40 @@ const PagePrivacy = () => {
                             {t("privacy:How We Process and Use Collected Personal Data")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:Cloudmile may process and use__")}
-                                }/>
+                                    { __html: t("privacy:Cloudmile may process and use__") }
+                                } />
                                 <ol>
                                     <li>
                                         <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                            {__html: t("privacy:To Communicate with Users")}
-                                        }/>
+                                            { __html: t("privacy:To Communicate with Users") }
+                                        } />
                                         <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                            {__html: t("privacy:In the event that Users send to us__")}
-                                        }/>
+                                            { __html: t("privacy:In the event that Users send to us__") }
+                                        } />
                                     </li>
                                     <li>
                                         <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                            {__html: t("privacy:To personalize user experience")}
-                                        }/>
+                                            { __html: t("privacy:To personalize user experience") }
+                                        } />
                                         <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                            {__html: t("privacy:We may use information in the aggregate to__")}
-                                        }/>
+                                            { __html: t("privacy:We may use information in the aggregate to__") }
+                                        } />
                                     </li>
                                     <li>
                                         <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                            {__html: t("privacy:To send newsletters and marketing materials upon subscription")}
-                                        }/>
+                                            { __html: t("privacy:To send newsletters and marketing materials upon subscription") }
+                                        } />
                                         <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                            {__html: t("privacy:If User subscribes our newsletter on__")}
-                                        }/>
+                                            { __html: t("privacy:If User subscribes our newsletter on__") }
+                                        } />
                                     </li>
                                     <li>
                                         <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                            {__html: t("privacy:To administer any features on the Site")}
-                                        }/>
+                                            { __html: t("privacy:To administer any features on the Site") }
+                                        } />
                                         <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                            {__html: t("privacy:If Users enter into a sweepstak__")}
-                                        }/>
+                                            { __html: t("privacy:If Users enter into a sweepstak__") }
+                                        } />
                                     </li>
                                 </ol>
                             </div>
@@ -170,8 +190,8 @@ const PagePrivacy = () => {
                             {t("privacy:How We Protect Your Data")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:We adopt appropriate data collection__")}
-                                }/>
+                                    { __html: t("privacy:We adopt appropriate data collection__") }
+                                } />
                             </div>
                         </li>
 
@@ -192,8 +212,8 @@ const PagePrivacy = () => {
                             {t("privacy:Advertising")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:Advertisements may appear on our products__")}
-                                }/>
+                                    { __html: t("privacy:Advertisements may appear on our products__") }
+                                } />
                             </div>
                         </li>
 
@@ -201,8 +221,8 @@ const PagePrivacy = () => {
                             {t("privacy:Third-Party Sites")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:The Site may contain links to third-party websites__")}
-                                }/>
+                                    { __html: t("privacy:The Site may contain links to third-party websites__") }
+                                } />
                             </div>
                         </li>
 
@@ -210,8 +230,8 @@ const PagePrivacy = () => {
                             {t("privacy:Changes to Our Privacy Policy")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:We regularly review our Privacy Policy and__")}
-                                }/>
+                                    { __html: t("privacy:We regularly review our Privacy Policy and__") }
+                                } />
                             </div>
                         </li>
 
@@ -220,8 +240,8 @@ const PagePrivacy = () => {
                             {t("privacy:Online Privacy Policy Only")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:This online Privacy Policy applies only to__")}
-                                }/>
+                                    { __html: t("privacy:This online Privacy Policy applies only to__") }
+                                } />
                             </div>
                         </li>
 
@@ -229,8 +249,8 @@ const PagePrivacy = () => {
                             {t("privacy:Your Rights")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:With respect to your Personal Data provided__")}
-                                }/>
+                                    { __html: t("privacy:With respect to your Personal Data provided__") }
+                                } />
                                 <ol>
                                     <li>{t("privacy:to make an inquiry of and to review your personal data")}</li>
                                     <li>{t("privacy:to request a copy of your personal data")}</li>
@@ -246,8 +266,8 @@ const PagePrivacy = () => {
                             {t("privacy:Commitment to Your Privacy")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:To ensure the security of your information__")}
-                                }/>
+                                    { __html: t("privacy:To ensure the security of your information__") }
+                                } />
                             </div>
                         </li>
 
@@ -255,10 +275,10 @@ const PagePrivacy = () => {
                             {t("privacy:Contacting us")}
                             <div>
                                 <Typography variant={"body1"} dangerouslySetInnerHTML={
-                                    {__html: t("privacy:If you have any questions about this Privacy Policy__")}
-                                }/>
+                                    { __html: t("privacy:If you have any questions about this Privacy Policy__") }
+                                } />
                                 <a href={t("privacy:www")} rel="noopener noreferrer">{t("privacy:www")}</a>
-                                <br/>
+                                <br />
                                 <a href={`mailto:${t("privacy:email")}`}>{t("privacy:email")}</a>
                             </div>
                         </li>

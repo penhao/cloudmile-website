@@ -1,18 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from "../../../components/Layout";
 import Container from "../../../components/containers/Container";
 import YoutubePlayer from "../../../components/sections/YoutubePlayer";
 import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import VideoRelatedPost from "../../../components/sections/video/VideoRelatedPost";
-import {GetServerSidePropsContext} from "next";
+import { GetServerSidePropsContext } from "next";
 import useFormatDate from "../../../components/useFormatDate";
 import VideoDetailHead from "../../../components/sections/video/detail/VideoDetailHead";
 import Hidden from "@material-ui/core/Hidden";
-import useTranslation from "next-translate/useTranslation";
-import {fetchVideoArticle} from "../../../services/ApiServices";
-import {useRouter} from "next/router";
+import { fetchVideoArticle } from "../../../services/ApiServices";
+import { useRouter } from "next/router";
+import { getBreadcrumb } from '../../../@share/routes/Routes';
+import Breadcrumbs from "../../../components/Breadcrumb";
+import { useTranslation } from 'next-translate';
 
 const useStyles = makeStyles((theme: Theme) => ({
     bgColor: {
@@ -77,60 +79,82 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
-const VideoDetailPage = ({postData}) => {
+const VideoDetailPage = ({ postData }) => {
     const classes = useStyles();
     const router = useRouter();
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const [videoDesc, setVideoDesc] = useState('');
+    const [breadcrumbData, setBreadcrumbData] = useState([]);
+
     useEffect(() => {
+        //
+        let breadcrumbs = getBreadcrumb("/resources/video");
+        breadcrumbs = breadcrumbs.map((breadcrumb) => {
+            return {
+                ...breadcrumb,
+                breadcrumbName: t(`common:${breadcrumb.breadcrumbName}`),
+            };
+        })
+        breadcrumbs.push({
+            path: router.asPath,
+            breadcrumbName: postData.title
+        })
+        setBreadcrumbData(breadcrumbs)
+        //
         setVideoDesc(postData.video_body);
     }, [postData]);
     return (
         <Layout
             metadata={{
+                href: "/resources/video",
                 title: postData.seo_title,
                 desc: postData.seo_description,
                 keywords: postData.seo_keyword,
-                href: router.asPath,
-                shareImg: postData.image_social,
-                isPostHref: true
+                shareImage: postData.image_social,
+                customBreadcrumbNode: {
+                    breadcrumbName: postData.title,
+                    path: router.asPath
+                }
             }}
             bgColor={'darken'}
         >
-            <VideoDetailHead title={postData.title} tagList={postData.tags}/>
-            <Container maxWidth={{md: 1280}}>
+            <Container maxWidth={{ md: 1280 }}>
+                <Breadcrumbs breadcrumbData={breadcrumbData} color={"white"} />
+            </Container>
+            <VideoDetailHead title={postData.title} tagList={postData.tags} />
+            <Container maxWidth={{ md: 1280 }}>
                 <div className={classes.videoWrapper}>
                     <YoutubePlayer videoUrl={(postData.video_youtbue !== null) ? postData.video_youtbue : ''}
-                                   loop={false}
-                                   autoPlay={false}
-                                   mute={false}/>
+                        loop={false}
+                        autoPlay={false}
+                        mute={false} />
                 </div>
-                <Container maxWidth={{md: 760}} paddingX={false} centerX={false}>
+                <Container maxWidth={{ md: 760 }} paddingX={false} centerX={false}>
                     <Typography variant={"body1"} className={classes.desc}
-                                dangerouslySetInnerHTML={{__html: videoDesc}}/>
+                        dangerouslySetInnerHTML={{ __html: videoDesc }} />
                     <Typography variant={"body1"} component={'div'} className={classes.date}>
                         {useFormatDate(postData.created_at.replace(' ', 'T'))}
                     </Typography>
                     <Hidden mdUp>
                         <div className={classes.line}>
-                            <hr/>
+                            <hr />
                             <Typography variant={"body1"}>
                                 {t('video:line')}
                             </Typography>
                             <a href="line://ti/p/@CloudMile" target='_blank' rel='noreferrer noopener'>
-                                <img src="/images/icons/line.png" alt="@CloudMile"/>
+                                <img src="/images/icons/line.png" alt="@CloudMile" />
                             </a>
                         </div>
                     </Hidden>
                 </Container>
             </Container>
             <VideoRelatedPost list={postData.related_article}
-                              title={t('video:Related Video').toUpperCase()}/>
+                title={t('video:Related Video').toUpperCase()} />
         </Layout>
     );
 };
 
-export const getServerSideProps = async ({locale, query, res}: GetServerSidePropsContext) => {
+export const getServerSideProps = async ({ locale, query, res }: GetServerSidePropsContext) => {
     const postData = await fetchVideoArticle(locale, query.slug[0]);
     if (postData?.error || postData?.error === 'article not found') {
         const redirectUrl = `${(locale === 'zh') ? '/zh' : ''}/404`;

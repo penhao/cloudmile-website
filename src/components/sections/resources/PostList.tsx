@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import PostListItem from "./PostListItem";
 import PostListVideoItem from "./PostListVideoItem";
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-const PostList = ({currentPage, list}: Props) => {
+const PostList = ({ currentPage, list }: Props) => {
     const classes = useStyles();
     const [postData, setPostData] = useState([]);
     useEffect(() => {
@@ -39,8 +39,8 @@ const PostList = ({currentPage, list}: Props) => {
                             <Grid item xs={12} component={'li'} key={index}>
                                 {
                                     (currentPage === 'video')
-                                        ? <PostListVideoItem currentPage={currentPage} data={item}/>
-                                        : <PostListItem currentPage={currentPage} data={item}/>
+                                        ? <PostListVideoItem currentPage={currentPage} data={item} />
+                                        : <PostListItem currentPage={currentPage} data={item} />
                                 }
                             </Grid>
                         );

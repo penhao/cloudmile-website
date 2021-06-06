@@ -1,5 +1,5 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {makeStyles, Theme} from '@material-ui/core/styles';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
@@ -8,11 +8,11 @@ import SectionTitle from "../sections/SectionTitle";
 import SectionTitleLabel from "../sections/SectionTitleLabel";
 import IconClose from "../icons/IconClose";
 import Button from "@material-ui/core/Button";
-import {SalesforcePostParams} from "../useUrlParams";
+import { SalesforcePostParams } from "../useUrlParams";
 import RegisterForm from "../forms/RegisterForm";
-import {useMediaQuery} from "@material-ui/core";
+import { useMediaQuery } from "@material-ui/core";
 import useTheme from "@material-ui/core/styles/useTheme";
-import {usePageStyles} from "../PageStyles";
+// import { usePageStyles } from "../PageStyles";
 import clsx from "clsx";
 import useTranslation from "next-translate/useTranslation";
 import useWindowResize from "../useWindowResize";
@@ -67,11 +67,11 @@ const useStyles = makeStyles((theme: Theme) => ({
         padding: 0
     }
 }));
-const VideoRegisterModal = ({title, caption, salesforceData = null, openModel = false, closeHandler}: Props) => {
+const VideoRegisterModal = ({ title, caption, salesforceData = null, openModel = false, closeHandler }: Props) => {
 
-    const {lang} = useTranslation();
+    const { lang } = useTranslation();
     const classes = useStyles();
-    const pageClasses = usePageStyles();
+    // const pageClasses = usePageStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
 
     const windowSize = useWindowResize();
@@ -85,14 +85,11 @@ const VideoRegisterModal = ({title, caption, salesforceData = null, openModel = 
     return (
         <div>
             <Modal open={openModel}
-                   onClose={closeHandler}
-                   closeAfterTransition
-                   BackdropComponent={Backdrop}
-                   BackdropProps={{timeout: 500}}
-                   className={clsx(
-                       classes.modal,
-                       lang === 'zh' ? pageClasses.fontNotoSans : pageClasses.fontOpenSans
-                   )}>
+                onClose={closeHandler}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{ timeout: 500 }}
+            >
                 <Fade in={openModel}>
                     <div className={classes.contentMask}>
                         <div ref={contentRef} className={clsx(
@@ -108,11 +105,11 @@ const VideoRegisterModal = ({title, caption, salesforceData = null, openModel = 
                                     </SectionTitle>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <RegisterForm salesforceData={salesforceData}/>
+                                    <RegisterForm salesforceData={salesforceData} />
                                 </Grid>
                             </Grid>
                             <Button onClick={closeHandler} className={classes.close}>
-                                <IconClose/>
+                                <IconClose />
                             </Button>
                         </div>
                     </div>

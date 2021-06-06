@@ -1,16 +1,16 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Layout from "../../../components/Layout";
 import EventDetailHead from "../../../components/sections/event/detail/EventDetailHead";
 import EventDetailArticle from "../../../components/sections/event/detail/EventDetailArticle";
 import EventDetailContact from "../../../components/sections/event/detail/EventDetailContact";
-import {GetServerSidePropsContext} from "next";
-import {useMediaQuery} from "@material-ui/core";
+import { GetServerSidePropsContext } from "next";
+import { useMediaQuery } from "@material-ui/core";
 import useTheme from "@material-ui/core/styles/useTheme";
-import {SalesforcePostParams} from "../../../components/useUrlParams";
-import {fetchPreviewEventArticle} from "../../../services/ApiServices";
-import {useRouter} from "next/router";
+import { SalesforcePostParams } from "../../../components/useUrlParams";
+import { fetchPreviewEventArticle } from "../../../services/ApiServices";
+import { useRouter } from "next/router";
 
-const EventDetail = ({postData}) => {
+const EventDetail = ({ postData }) => {
     const router = useRouter();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
     const contactRef = useRef<HTMLDivElement>(null);
@@ -36,29 +36,32 @@ const EventDetail = ({postData}) => {
     }, []);
     return (
         <Layout metadata={{
-            title: `[Preview]${postData.seo_title}`,
+            href: "/resources/event",
+            title: `[Preview]:${postData.seo_title}`,
             desc: postData.seo_description,
             keywords: postData.seo_keyword,
-            href: router.asPath,
-            shareImg: postData.image_social,
-            isPostHref: true
+            shareImage: postData.image_social,
+            customBreadcrumbNode: {
+                breadcrumbName: postData.title,
+                path: router.asPath
+            }
         }}>
             <EventDetailHead title={postData.title}
-                             subTitle={postData.sub_title}
-                             startDate={postData.event_start_date}
-                             endDate={postData.event_over_date}
-                             categoryData={postData.tags}/>
+                subTitle={postData.sub_title}
+                startDate={postData.event_start_date}
+                endDate={postData.event_over_date}
+                categoryData={postData.tags} />
             <EventDetailArticle imgUrl={smUp ? postData.image_pc : postData.image_mobile}
-                                contents={postData.event_body}
-                                scrollHandler={handleScroll}/>
+                contents={postData.event_body}
+                scrollHandler={handleScroll} />
             <div ref={contactRef}>
-                <EventDetailContact title={postData.form_title} salesforceData={salesforceData}/>
+                <EventDetailContact title={postData.form_title} salesforceData={salesforceData} />
             </div>
         </Layout>
     );
 };
 
-export const getServerSideProps = async ({locale, query, res}: GetServerSidePropsContext) => {
+export const getServerSideProps = async ({ locale, query, res }: GetServerSidePropsContext) => {
     const postData = await fetchPreviewEventArticle(locale, query.slug[0]);
     if (postData?.error || postData?.error === 'article not found') {
         const redirectUrl = `${(locale === 'zh') ? '/zh' : ''}/404`;

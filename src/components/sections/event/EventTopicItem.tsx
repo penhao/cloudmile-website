@@ -9,9 +9,9 @@ import useTheme from "@material-ui/core/styles/useTheme";
 import useFormatDate from "../../useFormatDate";
 import Container from "../../containers/Container";
 import NavLink from "../../links/NavLink";
-import {Button} from "@material-ui/core";
-import {useButtonStyles} from "../../buttons/ButtonStyles";
-import {useLinkStyles} from "../../links/LinkStyles";
+import { Button } from "@material-ui/core";
+import { useButtonStyles } from "../../buttons/ButtonStyles";
+import { useLinkStyles } from "../../links/LinkStyles";
 
 interface Props {
     itemData: any;
@@ -20,7 +20,7 @@ interface Props {
 const useStyles = makeStyles(() => ({
     item: {
         marginTop: '-80px',
-        marginBottom: '40px'
+        marginBottom: '20px'
     },
     date: {
         textIndent: '2px',
@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
         marginTop: '20px'
     }
 }));
-const EventTopicItem = ({itemData}: Props) => {
+const EventTopicItem = ({ itemData }: Props) => {
     const classes = useStyles();
     const linkClasses = useLinkStyles();
     const buttonClasses = useButtonStyles();
@@ -50,15 +50,15 @@ const EventTopicItem = ({itemData}: Props) => {
     };
     return (
         <div className={classes.item}>
-            <Container maxWidth={{md: 1280}}>
+            <Container maxWidth={{ md: 1280 }}>
                 <Grid container spacing={4} direction={"row-reverse"}>
                     <GridItemFlexible>
                         <NavLink hrefPath={getHrefPath()}
-                                 asPath={getAsPath()}
-                                 fullWidth={true}
-                                 isLaunch={getItemStatus()}
+                            asPath={getAsPath()}
+                            fullWidth={true}
+                            isLaunch={getItemStatus()}
                         >
-                            <img src={smUp ? itemData.image_pc : itemData.image_mobile} alt={''}/>
+                            <img src={smUp ? itemData.image_pc : itemData.image_mobile} alt={''} />
                         </NavLink>
                     </GridItemFlexible>
                     <GridItem480>
@@ -66,25 +66,25 @@ const EventTopicItem = ({itemData}: Props) => {
                             {useFormatDate(itemData.created_at.replace(' ', 'T'))}
                         </Typography>
                         <NavLink hrefPath={getHrefPath()}
-                                 asPath={getAsPath()}
-                                 underline={true}
-                                 isLaunch={getItemStatus()}
-                                 classNames={linkClasses.textLink}
+                            asPath={getAsPath()}
+                            underline={true}
+                            isLaunch={getItemStatus()}
+                            classNames={linkClasses.textLink}
                         >
                             <Typography variant={"h5"} component={'div'}>
                                 {itemData.title}
                             </Typography>
                         </NavLink>
                         <NavLink hrefPath={getHrefPath()}
-                                 asPath={getAsPath()}
-                                 fullWidth={true}
-                                 isLaunch={getItemStatus()}
-                                 classNames={classes.registerButton}
+                            asPath={getAsPath()}
+                            fullWidth={true}
+                            isLaunch={getItemStatus()}
+                            classNames={classes.registerButton}
                         >
                             <Button variant={"contained"}
-                                    color={"primary"}
-                                    fullWidth
-                                    className={buttonClasses.roundedButton}>
+                                color={"primary"}
+                                fullWidth
+                                className={buttonClasses.roundedButton}>
                                 Register
                             </Button>
                         </NavLink>

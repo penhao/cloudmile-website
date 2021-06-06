@@ -1,31 +1,33 @@
-import React, {Fragment} from 'react';
-import {siteRoutes} from "../../public/config.json";
+import React, { Fragment, useEffect, useState } from 'react';
 import Layout from "../components/Layout";
 import PageBanner from "../components/banner/PageBanner";
-import {makeStyles} from "@material-ui/styles";
-import {Theme} from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+import { Theme } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import Container from "../components/containers/Container";
 import SectionContainer from "../components/containers/SectionContainer";
 import NavLink from "../components/links/NavLink";
-import {faBandcamp} from "@fortawesome/free-brands-svg-icons";
-import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
-import {faUser, faPhone} from '@fortawesome/free-solid-svg-icons';
-import useOffices, {IOfficeProps} from "../components/useOffices";
+import { faBandcamp } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faUser, faPhone } from '@fortawesome/free-solid-svg-icons';
+import useOffices, { IOfficeProps } from "../components/useOffices";
 import OfficeInfo from "../components/sections/OfficeInfo";
 import ContactForm from "../components/forms/ContactForm";
 import useTranslation from "next-translate/useTranslation";
-import {useLinkStyles} from "../components/links/LinkStyles";
-import {getRoute} from "../utils/Utils";
+import { useLinkStyles } from "../components/links/LinkStyles";
+import { useRouter } from 'next/router';
+import { getMetadada } from '../@share/routes/Metadata';
+import { getBreadcrumb } from '../@share/routes/Routes';
+import Container from '../components/containers/Container';
+import Breadcrumbs from "../components/Breadcrumb";
 
 const useStyles = makeStyles((theme: Theme) => ({
     bannerWrapper: {
         width: '100%',
-        marginBottom: '60px',
-        [theme.breakpoints.up('md')]: {
-            marginBottom: '70px'
-        }
+        // marginBottom: '60px',
+        // [theme.breakpoints.up('md')]: {
+        //     marginBottom: '70px'
+        // }
     },
     bannerTitle: {
         color: 'white'
@@ -54,37 +56,56 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const Contact = () => {
 
-    const {t, lang} = useTranslation();
+    const { t, lang } = useTranslation();
     const classes = useStyles();
     const linkClasses = useLinkStyles();
-    const currentRoute = getRoute('Contact Us', siteRoutes)[0];
     const offices = useOffices();
     const getTel = (tel: string) => {
         return tel.split('-').join('');
     };
+
+    const router = useRouter();
+    const metadata = getMetadada(router.asPath);
+    const [breadcrumbData, setBreadcrumbData] = useState([]);
+    useEffect(() => {
+        //
+        let breadcrumbs = getBreadcrumb(router.asPath);
+        breadcrumbs = breadcrumbs.map((breadcrumb) => {
+            return {
+                ...breadcrumb,
+                breadcrumbName: t(`common:${breadcrumb.breadcrumbName}`),
+            };
+        })
+        setBreadcrumbData(breadcrumbs)
+    }, [lang]);
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
             <div className={classes.bannerWrapper}>
                 <PageBanner imgUrl={'/contact/banner.jpg'} alt={''}>
                     <Fragment>
                         <Typography variant={'h5'}
-                                    align={'center'}
-                                    className={classes.bannerSubTitle}>
+                            align={'center'}
+                            className={classes.bannerSubTitle}>
                             {t('contact:Let’s discuss how we can help with your digital transformation journey')}
                         </Typography>
                         <Typography variant={'h1'}
-                                    align={'center'}
-                                    className={classes.bannerTitle}>
+                            align={'center'}
+                            className={classes.bannerTitle}>
                             {t('contact:Contact Us')}
                         </Typography>
                     </Fragment>
                 </PageBanner>
             </div>
-            <Container maxWidth={{xs: 'none', sm: 960, md: 960}}>
+            <Container>
+                <Breadcrumbs breadcrumbData={breadcrumbData} />
+            </Container>
+            <Container maxWidth={{ xs: 'none', sm: 960, md: 960 }}>
                 <SectionContainer>
-                    <ContactForm/>
+                    <ContactForm />
                 </SectionContainer>
                 {
                     (offices && offices.length)
@@ -97,16 +118,16 @@ const Contact = () => {
                                         return (
                                             <Grid item xs={12} sm={6} md={4} key={index} className={classes.office}>
                                                 <Typography variant={'h5'}
-                                                            color={"primary"}
-                                                            className={classes.officeName}>
+                                                    color={"primary"}
+                                                    className={classes.officeName}>
                                                     {t(`location:${offices.office}`)}
                                                 </Typography>
                                                 <ul>
                                                     <li>
                                                         <OfficeInfo icon={faBandcamp}>
                                                             <NavLink hrefPath={offices.addressLink}
-                                                                     isLaunch={true}
-                                                                     classNames={linkClasses.textLink}>
+                                                                isLaunch={true}
+                                                                classNames={linkClasses.textLink}>
                                                                 {t(`location:${offices.address}`)}
                                                             </NavLink>
                                                         </OfficeInfo>
@@ -114,8 +135,8 @@ const Contact = () => {
                                                     <li>
                                                         <OfficeInfo icon={faPhone}>
                                                             <NavLink hrefPath={`tel:${getTel(offices.tel)}`}
-                                                                     isLaunch={true}
-                                                                     classNames={linkClasses.textLink}>
+                                                                isLaunch={true}
+                                                                classNames={linkClasses.textLink}>
                                                                 {offices.tel}
                                                             </NavLink>
                                                         </OfficeInfo>
@@ -123,8 +144,8 @@ const Contact = () => {
                                                     <li>
                                                         <OfficeInfo icon={faEnvelope}>
                                                             <NavLink hrefPath={`mailto:${offices.serviceEmail}`}
-                                                                     isLaunch={true}
-                                                                     classNames={linkClasses.textLink}>
+                                                                isLaunch={true}
+                                                                classNames={linkClasses.textLink}>
                                                                 {offices.serviceEmail}
                                                             </NavLink>
                                                         </OfficeInfo>
@@ -132,8 +153,8 @@ const Contact = () => {
                                                     <li>
                                                         <OfficeInfo icon={faUser}>
                                                             <NavLink hrefPath={`mailto:${offices.hrEmail}`}
-                                                                     isLaunch={true}
-                                                                     classNames={linkClasses.textLink}>
+                                                                isLaunch={true}
+                                                                classNames={linkClasses.textLink}>
                                                                 {offices.hrEmail}
                                                             </NavLink>
                                                         </OfficeInfo>

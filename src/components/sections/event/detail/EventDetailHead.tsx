@@ -1,13 +1,13 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Container from "../../../containers/Container";
 import Box from "@material-ui/core/Box";
 import IconArrow from "../../../icons/IconArrow";
 import NavLink from "../../../links/NavLink";
-import {isValueEmpty} from "../../../../utils/Utils";
-import {useLinkStyles} from "../../../links/LinkStyles";
+import { isValueEmpty } from "../../../../utils/Utils";
+import { useLinkStyles } from "../../../links/LinkStyles";
 
 interface Props {
     title: string;
@@ -19,10 +19,10 @@ interface Props {
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
-        paddingTop: '40px',
+        // paddingTop: '40px',
         marginBottom: '40px',
         [theme.breakpoints.up('sm')]: {
-            paddingTop: '60px',
+            // paddingTop: '60px',
             marginBottom: '60px',
         }
     },
@@ -76,12 +76,12 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     },
 }));
-const EventDetailHead = ({title, subTitle, startDate, endDate = '', categoryData = []}: Props) => {
+const EventDetailHead = ({ title, subTitle, startDate, endDate = '', categoryData = [] }: Props) => {
     const classes = useStyles();
     const linkClasses = useLinkStyles();
     return (
-        <Container maxWidth={{md: 1280}} className={classes.container}>
-            <Container maxWidth={{md: 1080}} paddingX={false} centerX={false}>
+        <Container maxWidth={{ md: 1280 }} className={classes.container}>
+            <Container maxWidth={{ md: 1080 }} paddingX={false} centerX={false}>
                 <Box display={'flex'} flexWrap={'nowrap'} alignItems={'center'} className={classes.data}>
                     <Typography variant={'h6'} component={'div'}>
                         {startDate}
@@ -90,7 +90,7 @@ const EventDetailHead = ({title, subTitle, startDate, endDate = '', categoryData
                         (!isValueEmpty(endDate))
                             ?
                             <Fragment>
-                                <IconArrow color={'black'} isForward/>
+                                <IconArrow color={'black'} isForward />
                                 <Typography variant={'h6'} component={'div'}>
                                     {endDate}
                                 </Typography>
@@ -99,7 +99,7 @@ const EventDetailHead = ({title, subTitle, startDate, endDate = '', categoryData
                             null
                     }
                 </Box>
-                <Typography variant={"h2"} className={classes.title}>
+                <Typography variant={"h2"} component={"h1"} className={classes.title}>
                     {title}
                 </Typography>
                 <Typography variant={'h6'} className={classes.caption}>
@@ -119,8 +119,8 @@ const EventDetailHead = ({title, subTitle, startDate, endDate = '', categoryData
                                                     : null
                                             }
                                             <NavLink hrefPath={`/resources/category/event/[id]`}
-                                                     asPath={`/resources/category/event/${tag.id}`}
-                                                     classNames={linkClasses.textLink}>
+                                                asPath={`/resources/category/event/${tag.id}`}
+                                                classNames={linkClasses.textLink}>
                                                 {tag.title}
                                             </NavLink>
                                         </li>

@@ -1,15 +1,15 @@
-import React, {Fragment, useEffect, useState} from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import NavLink from "../../links/NavLink";
 import Typography from "@material-ui/core/Typography";
 import LinesEllipsis from "react-lines-ellipsis";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useTheme from "@material-ui/core/styles/useTheme";
 import useFormatDate from "../../useFormatDate";
-import {isValueEmpty, removeParam} from "../../../utils/Utils";
+import { isValueEmpty, removeParam } from "../../../utils/Utils";
 import VideoRegisterModal from "../../modal/VideoRegisterModal";
-import {SalesforcePostParams} from "../../useUrlParams";
+import { SalesforcePostParams } from "../../useUrlParams";
 import useTranslation from "next-translate/useTranslation";
 
 
@@ -96,8 +96,8 @@ const useStyles = makeStyles((theme: Theme) => ({
         transitionDelay: '0.2s'
     }
 }));
-const PostListVideoItem = ({currentPage, data}: Props) => {
-    const {lang} = useTranslation();
+const PostListVideoItem = ({ currentPage, data }: Props) => {
+    const { lang } = useTranslation();
     const classes = useStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
     const formatDate = useFormatDate(data.created_at.replace(' ', 'T'));
@@ -131,7 +131,7 @@ const PostListVideoItem = ({currentPage, data}: Props) => {
                         maxLine={smUp ? 1 : 3}
                         ellipsis='...'
                         trimRight
-                        basedOn='letters'/>
+                        basedOn='letters' />
                 </Typography>
                 {
                     (data.seo_description && !isValueEmpty(data.seo_description))
@@ -142,7 +142,7 @@ const PostListVideoItem = ({currentPage, data}: Props) => {
                                 maxLine={1}
                                 ellipsis='...'
                                 trimRight
-                                basedOn='letters'/>
+                                basedOn='letters' />
                         </Typography>
                         :
                         null
@@ -160,10 +160,10 @@ const PostListVideoItem = ({currentPage, data}: Props) => {
             case 1:
                 return (
                     <NavLink hrefPath={`/resources/${currentPage}/[...slug]`}
-                             asPath={`/resources/${currentPage}/${data.id}/${encodeURIComponent(data.title)}`}
-                             fullWidth={true}
-                             underline={false}
-                             classNames={classes.link}>
+                        asPath={`/resources/${currentPage}/${data.id}/${encodeURIComponent(data.title)}`}
+                        fullWidth={true}
+                        underline={false}
+                        classNames={classes.link}>
                         {getContent()}
                     </NavLink>
                 );
@@ -178,7 +178,7 @@ const PostListVideoItem = ({currentPage, data}: Props) => {
                             caption={'Register to Watch'}
                             openModel={activeForm}
                             closeHandler={handleClose}
-                            salesforceData={salesforceData}/>
+                            salesforceData={salesforceData} />
                     </Fragment>
                 );
             case 3:
@@ -192,7 +192,7 @@ const PostListVideoItem = ({currentPage, data}: Props) => {
                             caption={'Register to Watch'}
                             openModel={activeForm}
                             closeHandler={handleClose}
-                            salesforceData={salesforceData}/>
+                            salesforceData={salesforceData} />
                     </Fragment>
                 );
             default:

@@ -1,21 +1,25 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from "../../../components/Layout";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import VideoListBanner from "../../../components/sections/video/VideoListBanner";
 import VideoList from "../../../components/sections/video/VideoList";
 import {
     fetchVideoCategoryList,
     fetchVideoList
 } from "../../../services/ApiServices";
-import {GetServerSidePropsContext} from "next";
+import { GetServerSidePropsContext } from "next";
 import VideoFilterList from "../../../components/sections/video/VideoFilterList";
 import useTranslation from "next-translate/useTranslation";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useTheme from "@material-ui/core/styles/useTheme";
-import {siteRoutes} from "../../../../public/config.json";
-import {getRoute} from "../../../utils/Utils";
-
+import { VideoContextStore } from '../../../@share/context/VideoContext';
+import RegisterModal from "../../../components/sections/video/RegisterModal";
+import { useRouter } from 'next/router';
+import { getMetadada } from '../../../@share/routes/Metadata';
+import { getBreadcrumb } from '../../../@share/routes/Routes';
+import Container from '../../../components/containers/Container';
+import Breadcrumbs from "../../../components/Breadcrumb";
 
 const useStyles = makeStyles((theme: Theme) => ({
     bannerContainer: {
@@ -32,18 +36,24 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
-const Video = ({fetchCategory, fetchCategoryId, fetchPost}) => {
-    const currentRoute = getRoute('Video', siteRoutes)[0];
+// Modal.setAppElement("#__next");
+const Video = ({ fetchCategory, fetchCategoryId, fetchPost }) => {
     const classes = useStyles();
-    const {lang} = useTranslation();
+    const { t, lang } = useTranslation();
+    const router = useRouter();
+    const metadata = getMetadada("/resources/video");
+    const [breadcrumbData, setBreadcrumbData] = useState([]);
+
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
     const [categoryId, setCategoryId] = useState(5);
-    const [currentCategory, setCurrentCategory] = useState({image_pc: '', image_mobile: '', youtube_link: ''});
+    const [currentCategory, setCurrentCategory] = useState({ image_pc: '', image_mobile: '', youtube_link: '' });
     const [categoryData, setCategoryData] = useState([]);
     const [postData, setPostData] = useState<any[]>([]);
+    const [registerData, setRegisterData] = useState({});
     const [startCount, setStartCount] = useState(1);
     const [disabledMore, setDisabledMore] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
+
 
     const handlerCategoryClick = async (id: number) => {
         setCategoryId(id);
@@ -73,6 +83,16 @@ const Video = ({fetchCategory, fetchCategoryId, fetchPost}) => {
         return fetchVideoList(lang, startCount, 8, id);
     };
     useEffect(() => {
+        //
+        let breadcrumbs = getBreadcrumb("/resources/video");
+        breadcrumbs = breadcrumbs.map((breadcrumb) => {
+            return {
+                ...breadcrumb,
+                breadcrumbName: t(`common:${breadcrumb.breadcrumbName}`),
+            };
+        })
+        setBreadcrumbData(breadcrumbs)
+        //
         if (fetchCategory.status) {
             setCategoryId(fetchCategoryId);
             setCategoryData(fetchCategory.data);
@@ -82,7 +102,7 @@ const Video = ({fetchCategory, fetchCategoryId, fetchPost}) => {
             if (currentCategoryData !== undefined) {
                 setCurrentCategory(currentCategoryData);
             } else {
-                setCurrentCategory({image_pc: '', image_mobile: '', youtube_link: ''});
+                setCurrentCategory({ image_pc: '', image_mobile: '', youtube_link: '' });
             }
         }
         if (fetchPost.status) {
@@ -90,36 +110,50 @@ const Video = ({fetchCategory, fetchCategoryId, fetchPost}) => {
             setStartCount(fetchPost.data.length);
             setDisabledMore(fetchPost.total <= fetchPost.data.length);
         }
-    }, [lang]);
+        if (router.query.postId) {
+            setRegisterData(fetchPost.data.find((post) => {
+                return +post.id === +router.query.postId
+            }));
+        }
+    }, [lang, router]);
 
     return (
         <Layout
             metadata={{
-                ...currentRoute['metadata'][lang], href: currentRoute['href']
+                href: metadata.href,
+                title: metadata[lang].title,
+                desc: metadata[lang].desc,
             }}
             bgColor={'darken'}
         >
+            <RegisterModal isOpen={!!router.query.postId} registerData={registerData} />
             <div className={classes.bannerContainer}>
                 <VideoListBanner imgUrl={smUp ? currentCategory.image_pc : currentCategory.image_mobile}
-                                 videoId={currentCategory.youtube_link}/>
+                    videoId={currentCategory.youtube_link} />
                 <div className={classes.categoryContainer}>
+                    <Container maxWidth={{ md: 1280 }}>
+                        <Breadcrumbs breadcrumbData={breadcrumbData} color={"white"} />
+                    </Container>
                     <VideoFilterList parentPage={'video'}
-                                     activeId={categoryId}
-                                     categoryData={categoryData}
-                                     clickHandler={handlerCategoryClick}/>
+                        activeId={categoryId}
+                        categoryData={categoryData}
+                        clickHandler={handlerCategoryClick} />
                 </div>
             </div>
             <div className={classes.listContainer}>
-                <VideoList postData={postData}
-                           isLoading={isLoading}
-                           disabledMore={disabledMore}
-                           moreHandler={handleMoreClick}/>
+
+                <VideoContextStore.Provider value={{ categoryId: categoryId }}>
+                    <VideoList postData={postData}
+                        isLoading={isLoading}
+                        disabledMore={disabledMore}
+                        moreHandler={handleMoreClick} />
+                </VideoContextStore.Provider>
             </div>
         </Layout>
     );
 };
 
-export const getServerSideProps = async ({locale, query}: GetServerSidePropsContext) => {
+export const getServerSideProps = async ({ locale, query }: GetServerSidePropsContext) => {
     const fetchCategory = await fetchVideoCategoryList(locale);
     let categoryId = -1;
     if (fetchCategory.status && fetchCategory.data.length) {

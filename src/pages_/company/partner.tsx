@@ -1,29 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from "../../components/Layout";
-import PartnerBanner from "../../components/sections/partner/PartnerBanner";
-import WhyPartnerWith from "../../components/sections/partner/WhyPartnerWith";
-import PartnerNetworks from "../../components/sections/partner/PartnerNetworks";
-import BecomePartner from "../../components/sections/partner/BecomePartner";
+import PartnerBanner from "../../components/partner/PartnerBanner";
+import WhyPartnerWith from "../../components/partner/WhyPartnerWith";
+import PartnerNetworks from "../../components/partner/PartnerNetworks";
+import BecomePartner from "../../components/partner/BecomePartner";
 import CompanyCTA from "../../components/sections/CompanyCTA";
 import useTranslation from "next-translate/useTranslation";
-import { siteRoutes} from "../../../public/config.json";
-import {getRoute} from "../../utils/Utils";
+import { useRouter } from 'next/router';
+import { getMetadada } from '../../@share/routes/Metadata';
+import { getBreadcrumb } from '../../@share/routes/Routes';
+import Container from '../../components/containers/Container';
+import Breadcrumbs from "../../components/Breadcrumb";
 
 const Partner = () => {
-    const {t, lang} = useTranslation();
-    const currentRoute = getRoute('Partner', siteRoutes)[0];
+    const { t, lang } = useTranslation();
+    const router = useRouter();
+    const metadata = getMetadada(router.asPath);
+    const [breadcrumbData, setBreadcrumbData] = useState([]);
+    useEffect(() => {
+        //
+        let breadcrumbs = getBreadcrumb(router.asPath);
+        breadcrumbs = breadcrumbs.map((breadcrumb) => {
+            return {
+                ...breadcrumb,
+                breadcrumbName: t(`common:${breadcrumb.breadcrumbName}`),
+            };
+        })
+        setBreadcrumbData(breadcrumbs)
+    }, [lang]);
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
-            <PartnerBanner/>
-            <WhyPartnerWith/>
-            <PartnerNetworks/>
-            <BecomePartner/>
+            <PartnerBanner />
+            <Container>
+                <Breadcrumbs breadcrumbData={breadcrumbData} />
+            </Container>
+            <WhyPartnerWith />
+            <PartnerNetworks />
+            <BecomePartner />
             <CompanyCTA href={'/contact'}
-                        title={t('partner:Find right opportunities for you')}
-                        caption={t('partner:Explore Partnerships')}
-                        gutterBottom={false}/>
+                title={t('partner:Find right opportunities for you')}
+                caption={t('partner:Explore Partnerships')}
+                gutterBottom={false} />
         </Layout>
     );
 };

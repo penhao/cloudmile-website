@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /health-check
+Disallow: /thanks
+
+# Host
+Host: https://www.mile.cloud
+
+# Sitemaps
+Sitemap: https://www.mile.cloud/sitemap.xml

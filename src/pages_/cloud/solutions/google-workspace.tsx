@@ -1,8 +1,6 @@
+import React, { useState, useEffect } from "react";
 import useTranslation from "next-translate/useTranslation";
-import { getRoute } from "../../../utils/Utils";
-import { siteRoutes } from "../../../../public/config.json";
 import Layout from "../../../components/Layout";
-import React from "react";
 import Banner from "../../../components/google-workspace/Banner";
 import IntroSection from "../../../components/google-workspace/IntroSection";
 import OfficeSection from "../../../components/google-workspace/OfficeSection";
@@ -14,20 +12,41 @@ import { GetServerSidePropsContext } from "next";
 import { fetchListByTag, fetchTagList } from "../../../services/ApiServices";
 import ProductContact from "../../../components/sections/ProductContact";
 
+import { useRouter } from 'next/router';
+import { getMetadada } from '../../../@share/routes/Metadata';
+import { getBreadcrumb } from '../../../@share/routes/Routes';
+import Container from '../../../components/containers/Container';
+import Breadcrumbs from "../../../components/Breadcrumb";
+
 const GoogleWorkspace = ({ blogCategory, eventCategory, blogCategoryId, blogPosts, eventPosts }) => {
     const { t, lang } = useTranslation();
+    const router = useRouter();
+    const metadata = getMetadada(router.asPath);
+    console.log("metadata", metadata)
+    const [breadcrumbData, setBreadcrumbData] = useState([]);
 
-    /* console.log('blogCategory', blogCategory);
-    console.log('blogPosts', blogPosts);
-    console.log('eventCategory', eventCategory);
-    console.log('eventPosts', eventPosts); */
+    useEffect(() => {
+        //
+        let breadcrumbs = getBreadcrumb(router.asPath);
+        breadcrumbs = breadcrumbs.map((breadcrumb) => {
+            return {
+                ...breadcrumb,
+                breadcrumbName: t(`common:${breadcrumb.breadcrumbName}`),
+            };
+        })
+        setBreadcrumbData(breadcrumbs)
+    }, [lang]);
 
-    const currentRoute = getRoute('Business Productivity', siteRoutes)[0];
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
             <Banner />
+            <Container>
+                <Breadcrumbs breadcrumbData={breadcrumbData} />
+            </Container>
             <IntroSection />
             <OfficeSection />
             <RemoteSection />

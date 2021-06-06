@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Typography from "@material-ui/core/Typography";
 import NavLink from "../../../links/NavLink";
 import Container from "../../../containers/Container";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import IconFacebook from "../../../icons/IconFacebook";
 import IconTwitter from "../../../icons/IconTwitter";
 import IconLinkedin from "../../../icons/IconLinkedin";
@@ -13,7 +13,7 @@ import BackgroundImage from "../../../Images/BackgroundImage";
 import useTranslation from "next-translate/useTranslation";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useTheme from "@material-ui/core/styles/useTheme";
-import {useLinkStyles} from "../../../links/LinkStyles";
+import { useLinkStyles } from "../../../links/LinkStyles";
 
 
 interface Props {
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     desc: {
         marginBottom: '20px',
         fontWeight: 600,
-        fontStyle: ({lang}: StyleProps) => (lang === 'en') ? 'italic' : 'normal',
+        fontStyle: ({ lang }: StyleProps) => (lang === 'en') ? 'italic' : 'normal',
         [theme.breakpoints.up('sm')]: {
             marginTop: '-10px'
         }
@@ -142,9 +142,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-const CaseDetailHead = ({authorImg, desc, jobTitle, author, categoryData = null}: Props) => {
-    const {lang} = useTranslation();
-    const classes = useStyles({lang});
+const CaseDetailHead = ({ authorImg, desc, jobTitle, author, categoryData = null }: Props) => {
+    const { lang } = useTranslation();
+    const classes = useStyles({ lang });
     const linkClasses = useLinkStyles();
     const [currentUrl, setCurrentUrl] = useState('');
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
@@ -154,42 +154,42 @@ const CaseDetailHead = ({authorImg, desc, jobTitle, author, categoryData = null}
     }, []);
 
     return (
-        <Container maxWidth={{xs: 'none', sm: 'none', md: 1280}} className={classes.head}>
-            <Container maxWidth={{xs: 'none', sm: 'none', md: 1080}} paddingX={false} centerX={false}
-                       className={classes.inner}>
+        <Container maxWidth={{ xs: 'none', sm: 'none', md: 1280 }} className={classes.head}>
+            <Container maxWidth={{ xs: 'none', sm: 'none', md: 1080 }} paddingX={false} centerX={false}
+                className={classes.inner}>
                 <div className={classes.content}>
                     <ul className={classes.socials}>
                         <li>
                             <NavLink hrefPath={`http://www.facebook.com/sharer.php?u=${currentUrl}`} isLaunch={true}>
-                                <IconFacebook/>
+                                <IconFacebook />
                             </NavLink>
                         </li>
                         <li>
                             <NavLink hrefPath={`https://twitter.com/share?url=${currentUrl}`} isLaunch={true}>
-                                <IconTwitter/>
+                                <IconTwitter />
                             </NavLink>
                         </li>
                         <li>
                             <NavLink hrefPath={`https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}`}
-                                     isLaunch={true}>
-                                <IconLinkedin/>
+                                isLaunch={true}>
+                                <IconLinkedin />
                             </NavLink>
                         </li>
                     </ul>
                     <Grid container spacing={smUp ? 4 : 2} className={classes.info}>
                         <Grid item xs={12} sm={'auto'}>
-                            <RatioContainer ratio={{xs: 1, sm: 1, md: 1}} maxWidth={{xs: 120, sm: 120, md: 120}}>
-                                <BackgroundImage imgUrl={authorImg} detectRetina={false}/>
+                            <RatioContainer ratio={{ xs: 1, sm: 1, md: 1 }} maxWidth={{ xs: 120, sm: 120, md: 120 }}>
+                                <BackgroundImage imgUrl={authorImg} detectRetina={false} />
                             </RatioContainer>
                         </Grid>
                         <Grid item xs={12} sm={'auto'}>
-                            <Typography variant={'h4'} className={classes.desc} dangerouslySetInnerHTML={{
+                            <Typography variant={'h4'} component={"h1"} className={classes.desc} dangerouslySetInnerHTML={{
                                 __html: (lang === 'zh' || lang === 'zh-hant') ? `「${desc}」` : `“${desc}“`
-                            }}/>
+                            }} />
                             <Typography variant={'body1'} align={"right"} className={classes.author}
-                                        dangerouslySetInnerHTML={{
-                                            __html: `${jobTitle},<br/>${author}`
-                                        }}/>
+                                dangerouslySetInnerHTML={{
+                                    __html: `${jobTitle},<br/>${author}`
+                                }} />
                         </Grid>
                     </Grid>
                     {
@@ -206,8 +206,8 @@ const CaseDetailHead = ({authorImg, desc, jobTitle, author, categoryData = null}
                                                         : null
                                                 }
                                                 <NavLink hrefPath={`/resources/category/case-study/[id]`}
-                                                         asPath={`/resources/category/case-study/${category.id}`}
-                                                         classNames={linkClasses.textLink}>
+                                                    asPath={`/resources/category/case-study/${category.id}`}
+                                                    classNames={linkClasses.textLink}>
                                                     {category.title}
                                                 </NavLink>
                                             </li>

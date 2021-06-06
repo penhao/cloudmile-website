@@ -1,6 +1,6 @@
 import React from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Container from "../../../containers/Container";
 import VideoCategory from "../VideoCategory";
@@ -12,7 +12,7 @@ interface Props {
 
 const useStyles = makeStyles((theme: Theme) => ({
     head: {
-        paddingTop: '40px',
+        // paddingTop: '40px',
         marginBottom: '20px'
     },
     tagList: {
@@ -35,20 +35,20 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginTop: '20px'
     }
 }));
-const VideoDetailHead = ({title, tagList}: Props) => {
+const VideoDetailHead = ({ title, tagList }: Props) => {
     const classes = useStyles();
 
     return (
-        <Container maxWidth={{md: 1280}}>
+        <Container maxWidth={{ md: 1280 }}>
             <div className={classes.head}>
                 {
                     (tagList && tagList.length)
                         ?
-                        <VideoCategory categoryData={tagList}/>
+                        <VideoCategory categoryData={tagList} />
                         :
                         null
                 }
-                <Typography variant={"h5"} className={classes.title}>
+                <Typography variant={"h5"} component={"h1"} className={classes.title}>
                     {title}
                 </Typography>
             </div>

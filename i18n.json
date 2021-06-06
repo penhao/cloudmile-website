@@ -44,6 +44,7 @@
         "/preview/event/[...slug]": ["event"],
         "/resources/video": ["video"],
         "/resources/video/[...slug]": ["video"],
+        "/resources/video/register/[categoryId]/[...slug]": ["video"],
         "/resources/video/live-stream/[...slug]": ["video"],
         "/preview/video/[...slug]": ["video"],
         "/preview/video/live-stream/[...slug]": ["video"],

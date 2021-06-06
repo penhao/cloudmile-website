@@ -1,29 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from "../../../components/Layout";
 import useTranslation from "next-translate/useTranslation";
-import MileLyncBanner from "../../../components/sections/milelync/MileLyncBanner";
-import MileLyncIntro from "../../../components/sections/milelync/MileLyncIntro";
-import MileLyncDailyTasks from "../../../components/sections/milelync/MileLyncDailyTasks";
-import MileLyncPlan from "../../../components/sections/milelync/MileLyncPlan";
+import Banner from "../../../components/milelync/Banner";
+import Intro from "../../../components/milelync/Intro";
+import DailyTasks from "../../../components/milelync/DailyTasks";
 import ProductContact from "../../../components/sections/ProductContact";
-import {siteRoutes} from "../../../../public/config.json";
-import {getRoute} from "../../../utils/Utils";
-
+import { useRouter } from 'next/router';
+import { getMetadada } from '../../../@share/routes/Metadata';
+import { getBreadcrumb } from '../../../@share/routes/Routes';
+import Container from '../../../components/containers/Container';
+import Breadcrumbs from "../../../components/Breadcrumb";
 const CloudManagementPlatform = () => {
-    const {t, lang} = useTranslation();
-    const currentRoute = getRoute('Cloud Management Platform', siteRoutes)[0];
+    const { t, lang } = useTranslation();
+    const router = useRouter();
+    const metadata = getMetadada(router.asPath);
+    const [breadcrumbData, setBreadcrumbData] = useState([]);
+    useEffect(() => {
+        //
+        let breadcrumbs = getBreadcrumb(router.asPath);
+        breadcrumbs = breadcrumbs.map((breadcrumb) => {
+            return {
+                ...breadcrumb,
+                breadcrumbName: t(`common:${breadcrumb.breadcrumbName}`),
+            };
+        })
+        setBreadcrumbData(breadcrumbs)
+    }, [lang]);
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
-            <MileLyncBanner/>
-            <MileLyncIntro/>
-            <MileLyncDailyTasks/>
+            <Banner />
+            <Container maxWidth={{ md: 1280 }}>
+                <Breadcrumbs breadcrumbData={breadcrumbData} />
+            </Container>
+            <Intro />
+            <DailyTasks />
             {/*<MileLyncPlan/>*/}
             <ProductContact
                 title={t('cloud-management-platform:Start Working Smarter Together')}
                 caption={t('cloud-management-platform:Schedule a Demo')}
-                currentPage={'MileLync'}/>
+                currentPage={'MileLync'} />
         </Layout>
     );
 };

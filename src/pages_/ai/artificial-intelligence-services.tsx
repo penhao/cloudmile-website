@@ -1,24 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import Layout from "../../components/Layout";
-import Services from "../../components/sections/artificial-intelligence-services/Services";
-import Journey from "../../components/sections/artificial-intelligence-services/Journey";
-import TransformationProgram from "../../components/sections/artificial-intelligence-services/TransformationProgram";
-import PoweredEngines from "../../components/sections/artificial-intelligence-services/PoweredEngines";
-import AIExperts from "../../components/sections/artificial-intelligence-services/AIExperts";
+import Services from "../../components/artificial-intelligence-services/Services";
+import Journey from "../../components/artificial-intelligence-services/Journey";
+import TransformationProgram from "../../components/artificial-intelligence-services/TransformationProgram";
+import PoweredEngines from "../../components/artificial-intelligence-services/PoweredEngines";
+import AIExperts from "../../components/artificial-intelligence-services/AIExperts";
 import SectionCases from "../../components/sections/home/SectionCases";
 import ProductContact from "../../components/sections/ProductContact";
 import useTranslation from "next-translate/useTranslation";
-import AIServiceBanner from "../../components/sections/artificial-intelligence-services/AIServiceBanner";
-import Marquee from "../../components/sections/artificial-intelligence-services/Marquee";
+import Banner from "../../components/artificial-intelligence-services/Banner";
+import Marquee from "../../components/artificial-intelligence-services/Marquee";
 import { fetchHomeSliderList } from "../../services/ApiServices";
-import { siteRoutes } from "../../../public/config.json";
-import { getRoute } from "../../utils/Utils";
-
+import { useRouter } from 'next/router';
+import { getMetadada } from '../../@share/routes/Metadata';
+import { getBreadcrumb } from '../../@share/routes/Routes';
+import Container from '../../components/containers/Container';
+import Breadcrumbs from "../../components/Breadcrumb";
 const ArtificialIntelligenceServices = () => {
     const { t, lang } = useTranslation();
     const [sliderData, setSliderData] = useState({ case: [] });
-    const currentRoute = getRoute('AI Services', siteRoutes)[0];
+
+    const router = useRouter();
+    const metadata = getMetadada(router.asPath);
+    const [breadcrumbData, setBreadcrumbData] = useState([]);
+
     useEffect(() => {
+        //
+        let breadcrumbs = getBreadcrumb(router.asPath);
+        breadcrumbs = breadcrumbs.map((breadcrumb) => {
+            return {
+                ...breadcrumb,
+                breadcrumbName: t(`common:${breadcrumb.breadcrumbName}`),
+            };
+        })
+        setBreadcrumbData(breadcrumbs)
+        //
         const fetchData = async () => {
             return fetchHomeSliderList(lang);
         };
@@ -30,9 +46,14 @@ const ArtificialIntelligenceServices = () => {
     }, []);
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
-            <AIServiceBanner />
+            <Banner />
+            <Container>
+                <Breadcrumbs breadcrumbData={breadcrumbData} />
+            </Container>
             <Marquee />
             <Services />
             <Journey />

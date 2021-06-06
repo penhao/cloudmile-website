@@ -1,13 +1,13 @@
-import React, {Fragment, useEffect, useRef, useState} from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import Container from "../../containers/Container";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import Swiper from 'react-id-swiper';
-import {SwiperOptions} from "swiper";
+import { SwiperOptions } from "swiper";
 import Button from "@material-ui/core/Button";
 import IconArrow from "../../icons/IconArrow";
 import clsx from "clsx";
-import {removeParam} from "../../../utils/Utils";
+import { removeParam } from "../../../utils/Utils";
 import NavLink from "../../links/NavLink";
 
 
@@ -20,14 +20,14 @@ interface Props {
 
 const useStyles = makeStyles((theme: Theme) => ({
     category: {
-        marginTop: '60px'
+        // marginTop: '60px'
     },
     categoryList: {
         position: 'relative',
         width: '100%'
     },
     button: {
-        padding: '4px 15px 2px 15px',
+        padding: '4px 15px 4px 15px',
         fontSize: theme.typography.pxToRem(12),
         fontWeight: 700,
         color: theme.palette.common.white,
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }));
 
-const VideoFilterList = ({parentPage, categoryData = [], activeId, clickHandler}: Props) => {
+const VideoFilterList = ({ parentPage, categoryData = [], activeId, clickHandler }: Props) => {
     const classes = useStyles();
     const swiperRef = useRef<any | null>(null);
     const [isBeginning, setIsBeginning] = useState(false);
@@ -111,7 +111,7 @@ const VideoFilterList = ({parentPage, categoryData = [], activeId, clickHandler}
         }
     };
     return (
-        <Container maxWidth={{xs: 'none', sm: 'none', md: 1280}} className={classes.category}>
+        <Container maxWidth={{ xs: 'none', sm: 'none', md: 1280 }} className={classes.category}>
             {
                 (categoryData && categoryData.length)
                     ?
@@ -125,17 +125,17 @@ const VideoFilterList = ({parentPage, categoryData = [], activeId, clickHandler}
                                                 (parentPage === 'video')
                                                     ?
                                                     <Button variant={"contained"} color={"primary"}
-                                                            onClick={() => clickHandler(Number(item.id))}
-                                                            className={clsx(
-                                                                classes.button,
-                                                                (Number(item.id) === activeId) ? 'active' : null
-                                                            )}>
+                                                        onClick={() => clickHandler(Number(item.id))}
+                                                        className={clsx(
+                                                            classes.button,
+                                                            (Number(item.id) === activeId) ? 'active' : null
+                                                        )}>
                                                         {`${item.title}`}
                                                     </Button>
                                                     :
                                                     <NavLink hrefPath={`/resources/video${urlParams}`} textWrap={false}>
                                                         <Button variant={"contained"} color={"primary"}
-                                                                className={classes.button}>
+                                                            className={classes.button}>
                                                             {item.title}
                                                         </Button>
                                                     </NavLink>
@@ -147,14 +147,14 @@ const VideoFilterList = ({parentPage, categoryData = [], activeId, clickHandler}
                         </Swiper>
                         <div className={classes.navigation}>
                             <Button disabled={isBeginning}
-                                    onClick={handlePrev}
-                                    className={classes.prevButton}>
-                                <IconArrow color={"white"} isForward={false}/>
+                                onClick={handlePrev}
+                                className={classes.prevButton}>
+                                <IconArrow color={"white"} isForward={false} />
                             </Button>
                             <Button disabled={isEnd}
-                                    onClick={handleNext}
-                                    className={classes.nextButton}>
-                                <IconArrow color={"white"} isForward={true}/>
+                                onClick={handleNext}
+                                className={classes.nextButton}>
+                                <IconArrow color={"white"} isForward={true} />
                             </Button>
                         </div>
                     </div>

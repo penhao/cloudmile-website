@@ -1,23 +1,53 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Layout from "../../../components/Layout";
-import DigitalTransformationBanner from "../../../components/sections/digital-transformation/DigitalTransformationBanner";
-import Intro from "../../../components/sections/digital-transformation/Intro";
-import Strategy from "../../../components/sections/digital-transformation/Strategy";
-import TransformationDriven from "../../../components/sections/digital-transformation/TransformationDriven";
-import AdoptionProgram from "../../../components/sections/digital-transformation/AdoptionProgram";
-import TransformationProgram from "../../../components/sections/digital-transformation/TransformationProgram";
+import Banner from "../../../components/digital-transformation/Banner";
+import Intro from "../../../components/digital-transformation/Intro";
+import Strategy from "../../../components/digital-transformation/Strategy";
+import TransformationDriven from "../../../components/digital-transformation/TransformationDriven";
+import AdoptionProgram from "../../../components/digital-transformation/AdoptionProgram";
+import TransformationProgram from "../../../components/digital-transformation/TransformationProgram";
 import ProductContact from "../../../components/sections/ProductContact";
 import useTranslation from "next-translate/useTranslation";
 import SectionCases from "../../../components/sections/home/SectionCases";
-import {fetchHomeSliderList} from "../../../services/ApiServices";
-import {siteRoutes} from "../../../../public/config.json";
-import {getRoute} from "../../../utils/Utils";
+import { fetchHomeSliderList } from "../../../services/ApiServices";
+import Breadcrumbs from "../../../components/Breadcrumb";
+import { getMetadada } from "../../../@share/routes/Metadata";
+import { getBreadcrumb } from "../../../@share/routes/Routes";
+import { useRouter } from 'next/router';
+import Container from "../../../components/containers/Container";
 
 const DigitalTransformation = () => {
-    const {t, lang} = useTranslation();
-    const currentRoute = getRoute('Digital Transformation', siteRoutes)[0];
+    const { t, lang } = useTranslation();
     const adoptionEl = useRef<HTMLDivElement>(null);
     const transformationEl = useRef<HTMLDivElement>(null);
+    const [sliderData, setSliderData] = useState({ case: [] });
+
+
+    const router = useRouter();
+    const metadata = getMetadada(router.asPath);
+    const [breadcrumbData, setBreadcrumbData] = useState([]);
+
+    useEffect(() => {
+        //
+        let breadcrumbs = getBreadcrumb(router.asPath);
+        breadcrumbs = breadcrumbs.map((breadcrumb) => {
+            return {
+                ...breadcrumb,
+                breadcrumbName: t(`common:${breadcrumb.breadcrumbName}`),
+            };
+        })
+        setBreadcrumbData(breadcrumbs)
+        //
+        const fetchData = async () => {
+            return fetchHomeSliderList(lang);
+        };
+        fetchData().then((response: any) => {
+            if (response.status) {
+                setSliderData({ case: response.data.case });
+            }
+        });
+    }, [lang]);
+
     const scrollHandler = (target: string) => {
         if (target === 'AdoptionProgram' && adoptionEl.current) {
             window.scrollTo({
@@ -32,37 +62,32 @@ const DigitalTransformation = () => {
             });
         }
     };
-    const [sliderData, setSliderData] = useState({case: []});
-    useEffect(() => {
-        const fetchData = async () => {
-            return fetchHomeSliderList(lang);
-        };
-        fetchData().then((response: any) => {
-            if (response.status) {
-                setSliderData({case: response.data.case});
-            }
-        });
-    }, [lang]);
+
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
-            <DigitalTransformationBanner/>
-            <Intro/>
-            <Strategy clickHandler={scrollHandler}/>
-            <TransformationDriven clickHandler={scrollHandler}/>
+            <Banner />
+            <Container>
+                <Breadcrumbs breadcrumbData={breadcrumbData} />
+            </Container>
+            <Intro />
+            <Strategy clickHandler={scrollHandler} />
+            <TransformationDriven clickHandler={scrollHandler} />
             <div ref={adoptionEl}>
-                <AdoptionProgram/>
+                <AdoptionProgram />
             </div>
             <div ref={transformationEl}>
-                <TransformationProgram/>
+                <TransformationProgram />
             </div>
             <SectionCases title={t('case-study:No Matter What Your Business Is, We Know What You Need')}
-                          label={t('case-study:Clients Case Study')}
-                          sliderData={sliderData.case}/>
+                label={t('case-study:Clients Case Study')}
+                sliderData={sliderData.case} />
             <ProductContact title={t('digital-transformation:Embrace the Digital World with CloudMile')}
-                            caption={t('digital-transformation:Want To Know More?')}
-                            currentPage={'Digital Transformation'}/>
+                caption={t('digital-transformation:Want To Know More?')}
+                currentPage={'Digital Transformation'} />
         </Layout>
     );
 };

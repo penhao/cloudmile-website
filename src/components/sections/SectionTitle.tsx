@@ -1,15 +1,16 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
-import {makeStyles} from "@material-ui/styles";
-import {Theme} from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+import { Theme } from "@material-ui/core";
 import TextClipEffect from "../effects/TextClipEffect";
-import {Variant} from "@material-ui/core/styles/createTypography";
+import { Variant } from "@material-ui/core/styles/createTypography";
 import clsx from "clsx";
 
 interface Props {
     variant?: Variant;
     color?: string;
     className?: string | null;
+    innerHTML?: boolean;
     children?: React.ReactNode;
 }
 
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         letterSpacing: 'normal',
         lineHeight: 1.19,
         zIndex: 3,
-        color: ({color}: StyleProps) => {
+        color: ({ color }: StyleProps) => {
             return (color === 'black')
                 ? theme.palette.common.black
                 : (color === 'white')
@@ -42,13 +43,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-const SectionTitle = ({variant = 'h2', color = 'black', className = null, children}: Props) => {
-    const classes = useStyles({color});
+const SectionTitle = ({ variant = 'h2', color = 'black', innerHTML = true, className = null, children }: Props) => {
+    const classes = useStyles({ color });
     return (
         <TextClipEffect>
             <Typography variant={variant} className={clsx(classes.title, className)} dangerouslySetInnerHTML={
-                {__html: children.toString()}
-            }/>
+                { __html: children.toString() }
+            } />
         </TextClipEffect>
     );
 };

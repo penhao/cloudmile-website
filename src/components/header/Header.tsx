@@ -40,6 +40,7 @@ const Header = () => {
     const classes = useStyles();
     const [isOpen, setIsOpen] = useState(false);
     const [statusData, setStatusData] = useState<any | null>(null);
+
     const openNavMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();
         setIsOpen(!isOpen);

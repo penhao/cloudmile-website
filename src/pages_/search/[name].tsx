@@ -1,19 +1,18 @@
-import React, {Fragment, useEffect, useState} from 'react';
-import {useRouter} from "next/router";
+import React, { Fragment, useEffect, useState } from 'react';
+import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import Container from "../../components/containers/Container";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
-import {GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType} from "next";
+import { GetServerSideProps, GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import clsx from "clsx";
-import {fetchListByKeyword} from "../../services/ApiServices";
+import { fetchListByKeyword } from "../../services/ApiServices";
 import useTranslation from "next-translate/useTranslation";
 import SearchCategoryList from "../../components/sections/search/SearchCategoryList";
-import {siteRoutes} from "../../../public/config.json";
-import {getRoute} from "../../utils/Utils";
+import { getMetadada } from '../../@share/routes/Metadata';
 
 const useStyles = makeStyles((theme: Theme) => ({
     head: {
@@ -50,12 +49,12 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     },
 }));
-const SearchPage = ({postData}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const SearchPage = ({ postData }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
 
-    const {lang} = useTranslation();
-    const currentRoute = getRoute('Home', siteRoutes)[0];
+    const { lang } = useTranslation();
     const router = useRouter();
     const classes = useStyles();
+    const metadata = getMetadada("/");
     const [searchList, setSearchList] = useState<any | null>(null);
     const [keyword, setKeyword] = useState('');
     const [postList, setPostList] = useState([]);
@@ -132,7 +131,7 @@ const SearchPage = ({postData}: InferGetServerSidePropsType<typeof getServerSide
         setIsLoading(true);
         updatePostData().then((response: any) => {
             if (response.status) {
-                const newList = {...searchList};
+                const newList = { ...searchList };
                 newList[filterKey]['rows'] = [
                     ...newList[filterKey]['rows'],
                     ...response.data[filterKey]['rows']
@@ -161,9 +160,11 @@ const SearchPage = ({postData}: InferGetServerSidePropsType<typeof getServerSide
 
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
-            <Container maxWidth={{md: 1280}}>
+            <Container maxWidth={{ md: 1280 }}>
                 <div className={classes.head}>
                     <Typography variant={"h6"} component={'div'} className={classes.total}>
                         Search Results for
@@ -187,9 +188,9 @@ const SearchPage = ({postData}: InferGetServerSidePropsType<typeof getServerSide
                                                 ?
                                                 <Grid item>
                                                     <Button onClick={() => handleFilterChange(currentKey)}
-                                                            className={
-                                                                clsx(classes.filter, (filterKey === currentKey) ? 'active' : null)
-                                                            }>
+                                                        className={
+                                                            clsx(classes.filter, (filterKey === currentKey) ? 'active' : null)
+                                                        }>
                                                         {getFilterName(currentKey)}
                                                     </Button>
                                                 </Grid>
@@ -209,11 +210,11 @@ const SearchPage = ({postData}: InferGetServerSidePropsType<typeof getServerSide
                 list={postList}
                 disabledMore={disabledMore}
                 isLoading={isLoading}
-                moreHandler={handleMore}/>
+                moreHandler={handleMore} />
         </Layout>
     );
 };
-export const getServerSideProps: GetServerSideProps = async ({locale, query}: GetServerSidePropsContext) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale, query }: GetServerSidePropsContext) => {
     const keyword = (query && query.name) ? query.name.toString() : '';
     //1:blog 2:event 3:case study 4:video 5: 新聞管理
     const postData = await fetchListByKeyword(locale, keyword, 1, 10, null);

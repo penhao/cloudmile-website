@@ -1,7 +1,5 @@
 import React, { useRef, useState } from "react";
 import Layout from "../../components/Layout";
-import { siteRoutes } from "../../../public/config.json";
-import { getRoute } from "../../utils/Utils";
 import useTranslation from "next-translate/useTranslation";
 import Banner from "../../components/adsvantage/Banner";
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -19,11 +17,16 @@ import ContactSection from "../../components/adsvantage/ContactSection";
 import { GetServerSidePropsContext } from "next";
 import { fetchListByTag, fetchTagList } from "../../services/ApiServices";
 import SectionThumb from '../../components/adsvantage/SectionThumb';
+import { useRouter } from 'next/router';
+import { getMetadada } from '../../@share/routes/Metadata';
 
 
 const ADSvantagePage = ({ categoryData, postData }) => {
     const { t, lang } = useTranslation();
-    const currentRoute = getRoute('ADsvantage', siteRoutes)[0];
+    const router = useRouter();
+    const metadata = getMetadada(router.asPath);
+    console.log(metadata);
+    // const currentRoute = getRoute('ADsvantage', siteRoutes)[0];
     const demoRef = useRef<HTMLDivElement>(null);
     const priceRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
@@ -55,7 +58,9 @@ const ADSvantagePage = ({ categoryData, postData }) => {
 
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
             <ThemeProvider theme={SvantageTheme}>
                 <Banner />

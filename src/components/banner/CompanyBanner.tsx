@@ -1,12 +1,12 @@
 import React from 'react';
 import clsx from "clsx";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import Container from "../containers/Container";
 import Grid from "@material-ui/core/Grid";
 import BackgroundImage from "../Images/BackgroundImage";
 import Typography from "@material-ui/core/Typography";
-import {Controller, Scene} from "react-scrollmagic";
+import { Controller, Scene } from "react-scrollmagic";
 
 interface ICompanyBanner {
     title: string
@@ -23,17 +23,17 @@ const useStyles = makeStyles((theme: Theme) => ({
         width: '640px',
         left: '50%',
         marginLeft: '-320px',
-        marginBottom: '20px',
+        // marginBottom: '20px',
         [theme.breakpoints.up('sm')]: {
             width: '1200px',
             marginLeft: '-600px',
-            marginBottom: '40px',
+            // marginBottom: '40px',
         },
         [theme.breakpoints.up('md')]: {
             width: '1920px',
             left: '50%',
             marginLeft: '-960px',
-            marginBottom: '100px'
+            // marginBottom: '100px'
         },
         [theme.breakpoints.up('lg')]: {
             width: '100%',
@@ -120,28 +120,28 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-const CompanyBanner = ({title, caption, imgUrl, alt = '', customClass}: ICompanyBanner) => {
+const CompanyBanner = ({ title, caption, imgUrl, alt = '', customClass }: ICompanyBanner) => {
     const classes = useStyles();
     return (
         <div className={clsx(classes.root, customClass)}>
             <Grid container spacing={4} alignItems={"center"}>
                 <Grid item xs={12} md={6}>
                     <div className={classes.cover}>
-                        <BackgroundImage imgUrl={imgUrl} alt={alt} detectRetina={true}/>
+                        <BackgroundImage imgUrl={imgUrl} alt={alt} detectRetina={true} />
                     </div>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <Controller>
                         <Scene classToggle={classes.active} reverse={false} indicators={false} triggerHook={0.5}>
                             <div className={classes.info}>
-                                <Container maxWidth={{md: 600}} paddingX={false} centerX={false}>
+                                <Container maxWidth={{ md: 600 }} paddingX={false} centerX={false}>
                                     <Typography variant={"h4"}>
                                         {caption}
                                     </Typography>
                                     <Typography variant={"h1"} className={classes.title}>
                                         <span dangerouslySetInnerHTML={{
                                             __html: title
-                                        }}/>
+                                        }} />
                                     </Typography>
                                 </Container>
                             </div>

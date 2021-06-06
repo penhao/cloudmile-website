@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import RatioContainer from "../../containers/RatioContainer";
 import BackgroundImage from "../../Images/BackgroundImage";
 import Container from "../../containers/Container";
@@ -11,7 +11,7 @@ import YouTube from "react-youtube";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useTheme from "@material-ui/core/styles/useTheme";
 import useTranslation from "next-translate/useTranslation";
-import {isValueEmpty} from "../../../utils/Utils";
+import { isValueEmpty } from "../../../utils/Utils";
 
 interface Props {
     imgUrl: string;
@@ -20,7 +20,7 @@ interface Props {
 const useStyles = makeStyles((theme: Theme) => ({
     banner: {
         position: 'relative',
-        marginBottom: '70px'
+        // marginBottom: '70px'
     },
     info: {
         position: 'absolute',
@@ -60,9 +60,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         height: '100%'
     }
 }));
-const CaseStudyBanner = ({imgUrl, videoUrl}: Props) => {
-    const {t} = useTranslation();
-    const classes = useStyles({imgUrl});
+const CaseStudyBanner = ({ imgUrl, videoUrl }: Props) => {
+    const { t } = useTranslation();
+    const classes = useStyles({ imgUrl });
     const mdUp = useMediaQuery(useTheme().breakpoints.up('md'));
     const [videoReady, setVideoReady] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -79,35 +79,35 @@ const CaseStudyBanner = ({imgUrl, videoUrl}: Props) => {
         };
         return (
             <YouTube videoId={videoUrl}
-                     opts={opts}
-                     containerClassName={classes.video}
-                     onReady={(event: any) => {
-                         setVideoReady(true);
-                         event.target.pauseVideo();
-                     }}
-                     onStateChange={(event: any) => {
-                         if (videoReady && event.data === -1) {
-                             event.target.playVideo();
-                         }
-                         if (event.data === 1) {
-                             setIsPlaying(true);
-                         }
-                         if (event.data === 0) {
-                             event.target.seekTo(0);
-                             event.target.playVideo();
-                         }
-                     }}/>
+                opts={opts}
+                containerClassName={classes.video}
+                onReady={(event: any) => {
+                    setVideoReady(true);
+                    event.target.pauseVideo();
+                }}
+                onStateChange={(event: any) => {
+                    if (videoReady && event.data === -1) {
+                        event.target.playVideo();
+                    }
+                    if (event.data === 1) {
+                        setIsPlaying(true);
+                    }
+                    if (event.data === 0) {
+                        event.target.seekTo(0);
+                        event.target.playVideo();
+                    }
+                }} />
         );
     };
     return (
         <div className={classes.banner}>
-            <RatioContainer ratio={{xs: 300 / 320, sm: 400 / 1280, md: 400 / 1280}}
-                            maxHeight={{xs: 300, sm: 400, md: 400}}>
+            <RatioContainer ratio={{ xs: 300 / 320, sm: 400 / 1280, md: 400 / 1280 }}
+                maxHeight={{ xs: 300, sm: 400, md: 400 }}>
                 {
                     (!isValueEmpty(videoUrl) && mdUp)
                         ?
-                        <RatioContainer ratio={{xs: 9 / 16, sm: 9 / 16, md: 9 / 16}}
-                                        customClass={classes.videoContainer}>
+                        <RatioContainer ratio={{ xs: 9 / 16, sm: 9 / 16, md: 9 / 16 }}
+                            customClass={classes.videoContainer}>
                             {getVideo()}
                         </RatioContainer>
                         : null
@@ -115,16 +115,16 @@ const CaseStudyBanner = ({imgUrl, videoUrl}: Props) => {
                 {
                     (!mdUp || !isPlaying || isValueEmpty(videoUrl))
                         ?
-                        <BackgroundImage imgUrl={imgUrl} detectRetina={false}/>
+                        <BackgroundImage imgUrl={imgUrl} detectRetina={false} />
                         : null
                 }
             </RatioContainer>
-            <div className={classes.overlay}/>
+            <div className={classes.overlay} />
             <div className={classes.info}>
-                <Container maxWidth={{md: 1280}}>
+                <Container maxWidth={{ md: 1280 }}>
                     <Grid container spacing={4}>
                         <Grid item xs={12} md={6}>
-                            <Container maxWidth={{sm: 600, md: 600}} paddingX={false} centerX={false}>
+                            <Container maxWidth={{ sm: 600, md: 600 }} paddingX={false} centerX={false}>
                                 <SectionTitleLabel color={'warning'}>
                                     {t('case-study:Make Your Digital Transformation Possible')}
                                 </SectionTitleLabel>
