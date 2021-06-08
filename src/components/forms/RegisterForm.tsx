@@ -20,7 +20,6 @@ import { useFormStyles } from "./FormStyles";
 import { isValueEmpty, removeParam } from "../../utils/Utils";
 import { SalesforceDataType } from "./FormTypes";
 import ReCAPTCHA from "react-google-recaptcha";
-import { reCAPTCHAKey } from "../../../public/config.json";
 
 
 interface Props {
@@ -226,7 +225,7 @@ const RegisterForm = ({ salesforceData = null }: Props) => {
             <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <div className={formClasses.recaptcha}>
-                        <ReCAPTCHA sitekey={reCAPTCHAKey} />
+                        <ReCAPTCHA sitekey={process.env.RECAPTCHAKEY} />
                     </div>
                     <div className={formClasses.privacy}>
                         <Typography variant={"caption"}>

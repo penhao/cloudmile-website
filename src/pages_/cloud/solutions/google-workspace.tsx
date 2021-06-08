@@ -22,7 +22,6 @@ const GoogleWorkspace = ({ blogCategory, eventCategory, blogCategoryId, blogPost
     const { t, lang } = useTranslation();
     const router = useRouter();
     const metadata = getMetadada(router.asPath);
-    console.log("metadata", metadata)
     const [breadcrumbData, setBreadcrumbData] = useState([]);
 
     useEffect(() => {

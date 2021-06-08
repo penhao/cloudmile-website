@@ -14,8 +14,8 @@ import { SalesforcePostParams } from "../../../components/useUrlParams";
 import { fetchCaseArticle } from "../../../services/ApiServices";
 import { useRouter } from "next/router";
 import { getMetadada } from '../../../@share/routes/Metadata';
-import { getBreadcrumb } from '../../../@share/routes/Routes';
 import Container from '../../../components/containers/Container';
+import { getBreadcrumb } from '../../../@share/routes/Routes';
 import Breadcrumbs from "../../../components/Breadcrumb";
 
 const CaseStudyDetail = ({ postData }) => {
@@ -57,7 +57,7 @@ const CaseStudyDetail = ({ postData }) => {
             campaignId: postData.salesforce_id,
             redirectUrl: postData.download_url
         });
-    }, []);
+    }, [postData]);
     return (
         <Layout metadata={{
             href: "/resources/case-study",

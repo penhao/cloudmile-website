@@ -10,8 +10,8 @@ import Typography from "@material-ui/core/Typography";
 import NavLink from "../components/links/NavLink";
 import IconLaunch from "../components/icons/IconLaunch";
 import { useLinkStyles } from "../components/links/LinkStyles";
-import { getRoute } from "../utils/Utils";
-import { siteRoutes } from "../../public/config.json";
+import { useRouter } from 'next/router';
+import { getMetadada } from '../@share/routes/Metadata';
 
 const useStyles = makeStyles((theme: Theme) => ({
     wrapper: {
@@ -60,11 +60,15 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Page404 = () => {
     const { t, lang } = useTranslation();
     const classes = useStyles();
+    const router = useRouter();
+    const metadata = getMetadada("/");
     const linkClasses = useLinkStyles();
-    const currentRoute = getRoute('Home', siteRoutes)[0];
+
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
             <section className={classes.wrapper}>
                 <Container maxWidth={{ xs: 405, sm: 405, md: 405 }}>

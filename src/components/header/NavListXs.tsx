@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from "uuid";
 import Collapse from "@material-ui/core/Collapse";
 import { makeStyles } from "@material-ui/styles";
 import { Theme } from "@material-ui/core";
@@ -10,15 +11,12 @@ import useTranslation from "next-translate/useTranslation";
 import NavContactLink from "../links/NavContactLink";
 import { useLinkStyles } from "../links/LinkStyles";
 import clsx from "clsx";
-import { siteRoutes } from "../../../public/config.json";
-import { getRoute } from "../../utils/Utils";
-
+import Routes, { IRoute, getRoute } from "../../@share/routes/Routes";
 
 interface Props {
     statusData?: any | null;
     active: boolean
 }
-
 const useStyles = makeStyles((theme: Theme) => ({
     wrapper: {
         position: 'absolute',
@@ -70,7 +68,7 @@ const NavListXs = ({ statusData, active }: Props) => {
     const classes = useStyles();
     const linkClasses = useLinkStyles();
     const { t, lang } = useTranslation();
-    const contactRoute = getRoute('Contact Us', siteRoutes)[0];
+    const contactRoute = getRoute("/contact");
 
     return (
         <div className={classes.wrapper}>
@@ -99,23 +97,21 @@ const NavListXs = ({ statusData, active }: Props) => {
                     <nav className={classes.nav}>
                         <ul className={classes.linkList}>
                             {
-                                siteRoutes.map((group: any, index: number) => {
-                                    if (group.title === 'Home' || group.title === 'Contact Us' || group.title === 'Privacy') return;
+                                Routes.map((route: IRoute) => {
+                                    if (route.disabled) return;
                                     return (
-                                        <li key={index}>
-                                            <NavDropdownXs routeGroup={group}
-                                                statusData={group.title === 'Resources' ? statusData : null} />
+                                        <li key={uuidv4()}>
+                                            <NavDropdownXs routeGroup={route}
+                                                statusData={statusData} />
                                             <Divider className={classes.divider} />
                                         </li>
                                     )
                                 })
                             }
                             <li className={classes.contact}>
-                                <NavContactLink href={contactRoute.href}
+                                <NavContactLink href={contactRoute.path}
                                     color={'black'}>
-                                    {
-                                        t(`common:${contactRoute.title}`)
-                                    }
+                                    {t(`common:${contactRoute.breadcrumbName}`)}
                                 </NavContactLink>
                             </li>
                         </ul>

@@ -53,7 +53,7 @@ const EventDetail = ({ postData }) => {
             country: postData.country,
             redirectUrl: ''
         });
-    }, []);
+    }, [postData]);
     return (
         <Layout metadata={{
             href: "/resources/event",

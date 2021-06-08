@@ -1,5 +1,6 @@
 export interface IRoute {
     path: string;
+    link?: { en: string; zh: string };
     breadcrumbName: string;
     disabled?: boolean;
     breadcrumbDisabled?: boolean;
@@ -39,7 +40,7 @@ const Routes = <IRoute[]>[
     },
     {
         path: "/cloud",
-        disabled: true,
+        disabled: false,
         breadcrumbName: "Cloud",
         breadcrumbDisabled: true,
         routes: [
@@ -215,7 +216,7 @@ const Routes = <IRoute[]>[
     {
         path: "/contact",
         breadcrumbName: "Contact Us",
-        disabled: false,
+        disabled: true,
         breadcrumbDisabled: false,
     },
     {

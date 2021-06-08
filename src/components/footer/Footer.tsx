@@ -11,8 +11,7 @@ import { Theme } from "@material-ui/core";
 import { useLinkStyles } from "../links/LinkStyles";
 import { fetchNavStatus } from "../../services/ApiServices";
 import { useRouter } from "next/router";
-import { getRoute } from "../../utils/Utils";
-import { siteRoutes } from "../../../public/config.json";
+import { getRoute } from "../../@share/routes/Routes";
 
 
 export const useStyles = makeStyles((theme: Theme) => ({
@@ -47,12 +46,12 @@ const Footer = () => {
     const { t, lang } = useTranslation();
     const [statusData, setStatusData] = useState<any | null>(null);
     const getPrivacyLink = () => {
-        const privacyRoute = getRoute('Privacy', siteRoutes)[0];
+        const privacyRoute = getRoute("/privacy");
         return (
-            <NavLink hrefPath={privacyRoute['href']}
+            <NavLink hrefPath={privacyRoute.path}
                 underline={true}
                 classNames={clsx(linkClasses.textLink)}>
-                {t(`common:${privacyRoute['title']}`)}
+                {t(`common:${privacyRoute.breadcrumbName}`)}
             </NavLink>
         )
     };
@@ -61,7 +60,6 @@ const Footer = () => {
             return fetchNavStatus(lang);
         };
         fetchData().then((response: any) => {
-            // console.log(response);
             if (response.status) {
                 setStatusData(response.data);
             }

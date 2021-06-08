@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Breadcrumb = ({ breadcrumbData, color = "#737373" }: IProps) => {
     const classes = useStyles({ color });
     const ellipsisName = (str: string) => {
-        return str.length > 20 ? `${str.substring(0, 20)}...` : str
+        return str.length > 30 ? `${str.substring(0, 30)}...` : str
     }
     return (
         <Breadcrumbs

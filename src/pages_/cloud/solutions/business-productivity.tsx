@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import Layout from "../../../components/Layout";
 import BusinessProductivityBanner from "../../../components/sections/business-productivity/BusinessProductivityBanner";
 import WorkingStyle from "../../../components/sections/business-productivity/WorkingStyle";
@@ -7,25 +7,27 @@ import TechnologiesManaged from "../../../components/sections/business-productiv
 import WhatCanCloudMileDo from "../../../components/sections/business-productivity/WhatCanCloudMileDo";
 import ProductContact from "../../../components/sections/ProductContact";
 import useTranslation from "next-translate/useTranslation";
-import {siteRoutes} from "../../../../public/config.json";
-import {getRoute} from "../../../utils/Utils";
+import { getMetadada } from '../../../@share/routes/Metadata';
 
 
 const BusinessProductivity = () => {
-    const {t, lang} = useTranslation();
-    const currentRoute = getRoute('All Cloud Services', siteRoutes)[0];
+    const { t, lang } = useTranslation();
+    const metadata = getMetadada("/cloud/solutions/google-workspace");
+
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
-            <BusinessProductivityBanner/>
-            <WorkingStyle/>
-            <Customized/>
-            <TechnologiesManaged/>
-            <WhatCanCloudMileDo/>
+            <BusinessProductivityBanner />
+            <WorkingStyle />
+            <Customized />
+            <TechnologiesManaged />
+            <WhatCanCloudMileDo />
             <ProductContact title={t('business-productivity:Start Working Smarter Together')}
-                            caption={t('business-productivity:Schedule a Demo')}
-                            currentPage={'Business Productivity'}/>
+                caption={t('business-productivity:Schedule a Demo')}
+                currentPage={'Business Productivity'} />
         </Layout>
     );
 };

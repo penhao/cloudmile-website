@@ -10,12 +10,10 @@ import PostList from "../../../components/sections/resources/PostList";
 import MoreButton from "../../../components/buttons/MoreButton";
 import Container from "../../../components/containers/Container";
 import SectionContainer from "../../../components/containers/SectionContainer";
-import { siteRoutes } from "../../../../public/config.json";
-import { getRoute } from "../../../utils/Utils";
 import { getMetadada } from '../../../@share/routes/Metadata';
 
 const CategoryPage = ({ categoryData, postData }) => {
-    const currentRoute = getRoute('Home', siteRoutes)[0];
+
     const { t, lang } = useTranslation();
     const router = useRouter();
     const [pageName, setPageName] = useState('');

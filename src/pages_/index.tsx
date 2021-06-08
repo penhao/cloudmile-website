@@ -12,8 +12,6 @@ import SectionCases from "../components/sections/home/SectionCases";
 import SectionEvents from "../components/sections/home/SectionEvents";
 import NewsLetter from "../components/sections/NewsLetter";
 import HomeWelcome from "../components/sections/home/HomeWelcome";
-import { siteRoutes } from "../../public/config.json";
-import { getRoute } from "../utils/Utils";
 import { useRouter } from "next/router";
 import { getMetadada } from '../@share/routes/Metadata';
 

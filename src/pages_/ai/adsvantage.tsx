@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import useTranslation from "next-translate/useTranslation";
 import Banner from "../../components/adsvantage/Banner";
-import { ThemeProvider } from '@material-ui/core/styles';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { Hidden } from '@material-ui/core';
 import SvantageTheme from "../../mui/SvantageTheme";
 import DemoSection from "../../components/adsvantage/DemoSection";
@@ -19,17 +19,33 @@ import { fetchListByTag, fetchTagList } from "../../services/ApiServices";
 import SectionThumb from '../../components/adsvantage/SectionThumb';
 import { useRouter } from 'next/router';
 import { getMetadada } from '../../@share/routes/Metadata';
+import { getBreadcrumb } from '../../@share/routes/Routes';
+import Breadcrumbs from "../../components/Breadcrumb";
+import Container from "../../components/containers/Container";
+import { Theme } from "@material-ui/core";
 
 
+
+const useStyles = makeStyles((theme: Theme) => ({
+    breadcrumbWrapper: {
+        position: "absolute",
+        top: "-10px",
+        left: "50%",
+        transform: `translateX(-49%)`,
+        [theme.breakpoints.up("sm")]: {
+            top: 0,
+        }
+    }
+}))
 const ADSvantagePage = ({ categoryData, postData }) => {
+    const classes = useStyles();
     const { t, lang } = useTranslation();
     const router = useRouter();
     const metadata = getMetadada(router.asPath);
-    console.log(metadata);
-    // const currentRoute = getRoute('ADsvantage', siteRoutes)[0];
     const demoRef = useRef<HTMLDivElement>(null);
     const priceRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
+    const [breadcrumbData, setBreadcrumbData] = useState([]);
     const [scrollTarget, setScrollTarget] = useState<string | null>(null);
     const handleScrollChange = (target: string | null) => {
         setScrollTarget(target);
@@ -54,7 +70,16 @@ const ADSvantagePage = ({ categoryData, postData }) => {
             });
         }
     };
-
+    useEffect(() => {
+        //
+        let breadcrumbs = getBreadcrumb(router.asPath);
+        setBreadcrumbData(breadcrumbs.map((breadcrumb) => {
+            return {
+                ...breadcrumb,
+                breadcrumbName: t(`common:${breadcrumb.breadcrumbName}`),
+            };
+        }))
+    }, [lang]);
 
     return (
         <Layout metadata={{
@@ -64,6 +89,9 @@ const ADSvantagePage = ({ categoryData, postData }) => {
         }}>
             <ThemeProvider theme={SvantageTheme}>
                 <Banner />
+                <Container maxWidth={{ md: 1280 }} className={classes.breadcrumbWrapper}>
+                    <Breadcrumbs breadcrumbData={breadcrumbData} color={"white"} />
+                </Container>
                 {/* Demo */}
                 <div ref={demoRef}>
                     <DemoSection scrollChangeHadler={handleScrollChange} />

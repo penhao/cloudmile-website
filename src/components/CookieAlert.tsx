@@ -1,9 +1,9 @@
 import React from 'react';
 import CookieConsent from "react-cookie-consent";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import NavLink from "./links/NavLink";
-import {setCookie} from 'nookies';
+import { setCookie } from 'nookies';
 
 const useStyles = makeStyles((theme: Theme) => ({
     alert: {
@@ -52,19 +52,21 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 const CookieAlert = () => {
     const classes = useStyles();
+    const handleAccept = () => {
+    };
     return (
         <div>
             <CookieConsent
-                containerClasses={classes.alert}
+                cookieName="AllowCookie"
                 location="top"
+                overlay={false}
+                expires={150}
                 disableStyles={true}
-                cookieName="AcceptCookie"
                 buttonText="ALLOW COOKIES"
                 buttonClasses={classes.link}
-                expires={150}
-                onAccept={() => {
-                    setCookie(null, 'AcceptCookie', 'true', {});
-                }}>
+                onAccept={handleAccept}
+                containerClasses={classes.alert}
+            >
                 <p>
                     This website uses cookies to ensure you get the best experience on our website.
                     &nbsp;&nbsp;&nbsp;&nbsp;

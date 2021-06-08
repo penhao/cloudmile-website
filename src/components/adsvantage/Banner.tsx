@@ -3,6 +3,7 @@ import { Theme, makeStyles, Typography, Box, Button, Link } from "@material-ui/c
 import Container from "../containers/Container";
 import { useTranslation } from "next-translate";
 
+
 interface StyleProps {
     lang: string
 }
@@ -121,6 +122,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Banner = React.memo(() => {
     const { t, lang } = useTranslation();
     const classes = useStyles({ lang });
+
     return (
         <Container maxWidth={{ md: 1280 }}>
             <div className={classes.banner}>

@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from "../components/Layout";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import Container from "../components/containers/Container";
 import RatioContainer from "../components/containers/RatioContainer";
 import BackgroundImage from "../components/Images/BackgroundImage";
@@ -9,10 +9,10 @@ import Typography from "@material-ui/core/Typography";
 import NavLink from "../components/links/NavLink";
 import IconLaunch from "../components/icons/IconLaunch";
 import useTranslation from "next-translate/useTranslation";
-import {useLinkStyles} from "../components/links/LinkStyles";
-import {useRouter} from "next/router";
-import {getRoute, isValueEmpty} from "../utils/Utils";
-import {siteRoutes} from "../../public/config.json";
+import { useLinkStyles } from "../components/links/LinkStyles";
+import { useRouter } from "next/router";
+import { isValueEmpty } from "../utils/Utils";
+import { getMetadada } from '../@share/routes/Metadata';
 
 const useStyles = makeStyles((theme: Theme) => ({
     wrapper: {
@@ -65,9 +65,9 @@ const useStyles = makeStyles((theme: Theme) => ({
 const ThanksPage = () => {
     const classes = useStyles();
     const router = useRouter();
-    const currentRoute = getRoute('Home', siteRoutes)[0];
+    const { t, lang } = useTranslation();
+    const metadata = getMetadada("/");
     const linkClasses = useLinkStyles();
-    const {t, lang} = useTranslation();
     const getDownloadUrl = () => {
         if (router.query.hasOwnProperty('url') && !isValueEmpty(router.query.url.toString())) {
             return router.query.url.toString();
@@ -76,12 +76,14 @@ const ThanksPage = () => {
     };
     return (
         <Layout metadata={{
-            ...currentRoute['metadata'][lang], href: currentRoute['href']
+            href: metadata.href,
+            title: metadata[lang].title,
+            desc: metadata[lang].desc,
         }}>
             <section className={classes.wrapper}>
-                <Container maxWidth={{xs: 405, sm: 405, md: 405}}>
-                    <RatioContainer ratio={{xs: 384 / 405, sm: 384 / 405, md: 384 / 405}}>
-                        <BackgroundImage imgUrl={'/images/redirect/redirect-bg.png'} detectRetina={false}/>
+                <Container maxWidth={{ xs: 405, sm: 405, md: 405 }}>
+                    <RatioContainer ratio={{ xs: 384 / 405, sm: 384 / 405, md: 384 / 405 }}>
+                        <BackgroundImage imgUrl={'/images/redirect/redirect-bg.png'} detectRetina={false} />
                         <div className={classes.info}>
                             <Typography component={'div'} align={"center"} className={classes.title}>
                                 {
@@ -105,18 +107,18 @@ const ThanksPage = () => {
                                 ?
                                 <NavLink hrefPath={'/'} classNames={linkClasses.iconLink}>
                                     <Typography variant={"body1"} component={'div'} align={"center"}
-                                                className={classes.label}>
+                                        className={classes.label}>
                                         {t('common:Back to home')}
                                     </Typography>
-                                    <IconLaunch/>
+                                    <IconLaunch />
                                 </NavLink>
                                 :
                                 <NavLink hrefPath={getDownloadUrl()} isLaunch={true} classNames={classes.downloadLink}>
                                     <Typography variant={"body1"} component={'div'} align={"center"}
-                                                className={classes.label}>
+                                        className={classes.label}>
                                         {t('common:Download file')}
                                     </Typography>
-                                    <img src="/images/icons/icon_download.svg" alt=""/>
+                                    <img src="/images/icons/icon_download.svg" alt="" />
                                 </NavLink>
                         }
                     </div>

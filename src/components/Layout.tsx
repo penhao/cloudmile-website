@@ -34,7 +34,7 @@ const Layout = ({ metadata, bgColor = 'light', children }: IProps) => {
         <Fragment>
             <PageHead metadata={metadata} />
             <div className={classes.pageWrapper}>
-                {/* <CookieAlert/> */}
+                <CookieAlert />
                 <Header />
                 <div role="main" className={classes.page}>
                     {children}

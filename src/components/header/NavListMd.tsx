@@ -1,11 +1,10 @@
 import React from 'react';
+import { v4 as uuidv4 } from "uuid";
 import { makeStyles } from "@material-ui/styles";
 import NavDropdownMd from "./NavDropdownMd";
 import useTranslation from "next-translate/useTranslation";
 import NavContactLink from "../links/NavContactLink";
-import { siteRoutes } from "../../../public/config.json";
-import { getRoute } from "../../utils/Utils";
-import Routes from "../../@share/routes/Routes";
+import Routes, { IRoute, getRoute } from "../../@share/routes/Routes";
 
 interface Props {
     statusData: any;
@@ -29,29 +28,28 @@ const useStyles = makeStyles(() => ({
 const NavListMd = ({ statusData }: Props) => {
     const classes = useStyles();
     const { t } = useTranslation();
-    const contactRoute = getRoute('Contact Us', siteRoutes)[0];
+    const contactRoute = getRoute("/contact");
 
     return (
         <nav className={classes.nav}>
             {
                 <ul className={classes.list}>
                     {
-                        siteRoutes.map((group: any, index: number) => {
-                            if (group.title === 'Home' || group.title === 'Contact Us' || group.title === 'Privacy') return;
+                        Routes.map((route: IRoute) => {
+                            if (route.disabled) return;
                             return (
-                                <li key={index}>
-                                    <NavDropdownMd routeGroup={group}
-                                        statusData={group.title === 'Resources' ? statusData : null} />
+                                <li key={uuidv4()}>
+                                    <NavDropdownMd
+                                        routeGroup={route}
+                                        statusData={statusData} />
                                 </li>
-                            );
+                            )
                         })
                     }
                     <li>
-                        <NavContactLink href={contactRoute.href}
+                        <NavContactLink href={contactRoute.path}
                             color={'white'}>
-                            {
-                                t(`common:${contactRoute.title}`)
-                            }
+                            {t(`common:${contactRoute.breadcrumbName}`)}
                         </NavContactLink>
                     </li>
                 </ul>

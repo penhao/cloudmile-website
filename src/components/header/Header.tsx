@@ -51,8 +51,7 @@ const Header = () => {
         };
         fetchData()
             .then((response: any) => {
-                // console.log(response);
-                if (response.status) {
+                if (response?.status) {
                     setStatusData(response.data);
                 }
             })

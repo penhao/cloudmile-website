@@ -13,7 +13,6 @@ import useUrlParams from "../useUrlParams";
 import usePhoneCountryCode from "./usePhoneCountryCode";
 import { useFormStyles } from "./FormStyles";
 import ReCAPTCHA from "react-google-recaptcha";
-import { reCAPTCHAKey } from "../../../public/config.json";
 
 interface Props {
     currentPage: string;
@@ -189,7 +188,7 @@ const ProductForm = ({ currentPage }: Props) => {
             <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <div className={formClasses.recaptcha}>
-                        <ReCAPTCHA sitekey={reCAPTCHAKey} />
+                        <ReCAPTCHA sitekey={process.env.RECAPTCHAKEY} />
                     </div>
                     <div className={formClasses.privacy}>
                         <Typography variant={"caption"}>
