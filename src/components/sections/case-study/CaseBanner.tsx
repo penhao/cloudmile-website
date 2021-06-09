@@ -128,7 +128,7 @@ const CaseStudyBanner = ({ imgUrl, videoUrl }: Props) => {
                                 <SectionTitleLabel color={'warning'}>
                                     {t('case-study:Make Your Digital Transformation Possible')}
                                 </SectionTitleLabel>
-                                <SectionTitle color={'white'}>
+                                <SectionTitle color={'white'} variant={"h2"} component={"h1"}>
                                     {t('case-study:No Matter What Your Business Is, We Know What You Need')}
                                 </SectionTitle>
                             </Container>

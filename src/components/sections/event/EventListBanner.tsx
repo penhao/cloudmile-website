@@ -5,7 +5,7 @@ import SectionTitleLabel from "../SectionTitleLabel";
 import SectionTitle from "../SectionTitle";
 import useTranslation from "next-translate/useTranslation";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => ({
     banner: {
@@ -28,17 +28,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 const EventListBanner = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const classes = useStyles();
     return (
-        <Container maxWidth={{md: 1280}}>
+        <Container maxWidth={{ md: 1280 }}>
             <Grid container spacing={4}>
                 <Grid item xs={12} md={6} className={classes.banner}>
                     <div className={classes.bannerInner}>
                         <SectionTitleLabel color={'warning'}>
                             {t('event:Read the Latest CloudMile News & Events')}
                         </SectionTitleLabel>
-                        <SectionTitle color={'black'}>
+                        <SectionTitle color={'black'} variant={"h2"} component={"h1"}>
                             {t('event:CloudMile Event')}
                         </SectionTitle>
                     </div>

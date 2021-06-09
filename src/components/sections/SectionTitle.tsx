@@ -8,6 +8,7 @@ import clsx from "clsx";
 
 interface Props {
     variant?: Variant;
+    component?: Variant;
     color?: string;
     className?: string | null;
     innerHTML?: boolean;
@@ -43,11 +44,11 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-const SectionTitle = ({ variant = 'h2', color = 'black', innerHTML = true, className = null, children }: Props) => {
+const SectionTitle = ({ variant = 'h2', component, color = 'black', innerHTML = true, className = null, children }: Props) => {
     const classes = useStyles({ color });
     return (
         <TextClipEffect>
-            <Typography variant={variant} className={clsx(classes.title, className)} dangerouslySetInnerHTML={
+            <Typography variant={variant} component={!component ? variant : component} className={clsx(classes.title, className)} dangerouslySetInnerHTML={
                 { __html: children.toString() }
             } />
         </TextClipEffect>
