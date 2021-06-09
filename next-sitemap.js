@@ -3,13 +3,9 @@ module.exports = {
     changefreq: "daily",
     priority: 0.7,
     generateRobotsTxt: true,
+    sitemapSize: 7000,
     exclude: ["/404", "/health-check", "/thanks"],
-    alternateRefs: [
-        {
-            href: `https://mile.cloud/zh`,
-            hreflang: "zh-hant",
-        },
-    ],
+
     // Default transformation function
     transform: async (config, path) => {
         return {

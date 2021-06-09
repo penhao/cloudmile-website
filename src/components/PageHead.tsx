@@ -43,13 +43,13 @@ const PageHead = ({ metadata }: IProps) => {
             itemListElement: itemList,
         })
     }
-
-
     return (
         <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
             {/* Facebook */}
-            <meta name="facebook-domain-verification" content="hwkm0f494ifbg1116ihpgn3amd83hz" />
+            {
+                metadata.href === "/" ? <meta name="facebook-domain-verification" content="hwkm0f494ifbg1116ihpgn3amd83hz" /> : null
+            }
             <meta property="og:site_name" content="CloudMile" />
             <meta property="og:type" content="website" />
             <meta property="og:image:width" content="600" />
