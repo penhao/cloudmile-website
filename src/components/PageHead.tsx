@@ -49,6 +49,7 @@ const PageHead = ({ metadata }: IProps) => {
         <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
             {/* Facebook */}
+            <meta name="facebook-domain-verification" content="hwkm0f494ifbg1116ihpgn3amd83hz" />
             <meta property="og:site_name" content="CloudMile" />
             <meta property="og:type" content="website" />
             <meta property="og:image:width" content="600" />
