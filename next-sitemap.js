@@ -1,12 +1,12 @@
 module.exports = {
-    siteUrl: "https://uat.mile.cloud",
+    siteUrl: "https://mile.cloud",
     changefreq: "daily",
     priority: 0.7,
     generateRobotsTxt: true,
     exclude: ["/404", "/health-check", "/thanks"],
     alternateRefs: [
         {
-            href: `https://uat.mile.cloud/zh`,
+            href: `https://mile.cloud/zh`,
             hreflang: "zh-hant",
         },
     ],

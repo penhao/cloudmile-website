@@ -106,7 +106,7 @@ const NavDropdownMd = ({ statusData, routeGroup }: Props) => {
                         const isLaunch: boolean = (route.path === undefined);
                         return (
                             <li key={uuidv4()}>
-                                <NavLink hrefPath={route.path}
+                                <NavLink hrefPath={routeHref}
                                     isLaunch={isLaunch}
                                     textWrap={false}
                                     classNames={clsx(
