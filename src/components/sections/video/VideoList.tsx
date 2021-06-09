@@ -11,15 +11,17 @@ interface Props {
     postData: any[];
     isLoading: boolean;
     disabledMore: boolean;
+    categoryId: number;
     moreHandler: React.MouseEventHandler;
 }
 
-const VideoList = ({ postData, isLoading, disabledMore, moreHandler }: Props) => {
-    const categoryId = useContext(VideoContextStore);
-    console.log("postData", postData);
+const VideoList = ({ postData, isLoading, disabledMore, categoryId, moreHandler }: Props) => {
+    // const categoryId = useContext(VideoContextStore);
+    // console.log("postData", postData);
     return (
         <SectionContainer>
             <Container maxWidth={{ md: 1280 }}>
+                <div>{categoryId}</div>
                 <Grid container spacing={4}>
                     {
                         postData.map((item: any, index: number) => {

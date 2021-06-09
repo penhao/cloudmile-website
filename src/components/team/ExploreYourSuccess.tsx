@@ -15,7 +15,7 @@ import ParallaxEffect from "../effects/ParallaxEffect";
 import ResponseImage from "../Images/ResponseImage";
 import ShiftContainer from "../containers/ShiftContainer";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import useOffices, { IOfficeProps } from "../useOffices";
+import Offices, { IOffice } from "../../@share/Offices";
 import useTranslation from "next-translate/useTranslation";
 import OfficeInfo from "../sections/OfficeInfo";
 import NavLink from "../links/NavLink";
@@ -66,7 +66,6 @@ const ExploreYourSuccess = () => {
     const linkClasses = useLinkStyles();
     const { t } = useTranslation();
     const mdUp = useMediaQuery(useTheme().breakpoints.up('md'));
-    const offices = useOffices();
     const getTel = (tel: string) => {
         return tel.split('-').join('');
     };
@@ -125,9 +124,9 @@ const ExploreYourSuccess = () => {
                                                 </Typography>
                                             </Grid>
                                             {
-                                                (offices && offices.length)
+                                                (Offices && Offices.length)
                                                     ?
-                                                    offices.map((offices: IOfficeProps, index: number) => {
+                                                    Offices.map((offices: IOffice, index: number) => {
                                                         return (
                                                             <Grid item xs={12} key={index}
                                                                 className={classes.office}>

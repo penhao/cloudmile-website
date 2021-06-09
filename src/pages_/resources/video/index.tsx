@@ -65,6 +65,9 @@ const Video = ({ fetchCategory, fetchCategoryId, fetchPost }) => {
             setPostData(response.data);
             setStartCount(response.data.length);
             setDisabledMore(response.total <= response.data.length);
+            setRegisterData(fetchPost.data.find((post) => {
+                return +post.id === +router.query.postId
+            }));
         }
     };
     const handleMoreClick = async (event: React.MouseEvent) => {
@@ -115,7 +118,15 @@ const Video = ({ fetchCategory, fetchCategoryId, fetchPost }) => {
                 return +post.id === +router.query.postId
             }));
         }
-    }, [lang, router]);
+    }, [lang]);
+
+    useEffect(() => {
+        if (router.query.postId) {
+            setRegisterData(postData.find((post) => {
+                return +post.id === +router.query.postId
+            }));
+        }
+    }, [router])
 
     return (
         <Layout
@@ -141,13 +152,11 @@ const Video = ({ fetchCategory, fetchCategoryId, fetchPost }) => {
                 </div>
             </div>
             <div className={classes.listContainer}>
-
-                <VideoContextStore.Provider value={{ categoryId: categoryId }}>
-                    <VideoList postData={postData}
-                        isLoading={isLoading}
-                        disabledMore={disabledMore}
-                        moreHandler={handleMoreClick} />
-                </VideoContextStore.Provider>
+                <VideoList postData={postData}
+                    categoryId={categoryId}
+                    isLoading={isLoading}
+                    disabledMore={disabledMore}
+                    moreHandler={handleMoreClick} />
             </div>
         </Layout>
     );

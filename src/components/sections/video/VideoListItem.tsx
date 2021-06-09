@@ -148,8 +148,8 @@ const VideoListItem = ({ category, type, itemData }: Props) => {
         } else {
             return (
                 <Link
-                    href={`/resources/video/?categoryId=${category.categoryId}&postId=${itemData.id}`}
-                    as={`/resources/video/register/${category.categoryId}/${itemData.id}/${encodeURIComponent(itemData.title)}`}
+                    href={`/resources/video/?categoryId=${category}&postId=${itemData.id}`}
+                    as={`/resources/video/register/${category}/${itemData.id}/${encodeURIComponent(itemData.title)}`}
                 >
                     <a className={classes.item}>
                         {getContent()}

@@ -10,7 +10,8 @@ import NavLink from "../components/links/NavLink";
 import { faBandcamp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faUser, faPhone } from '@fortawesome/free-solid-svg-icons';
-import useOffices, { IOfficeProps } from "../components/useOffices";
+
+import Offices, { IOffice } from "../@share/Offices";
 import OfficeInfo from "../components/sections/OfficeInfo";
 import ContactForm from "../components/forms/ContactForm";
 import useTranslation from "next-translate/useTranslation";
@@ -59,7 +60,6 @@ const Contact = () => {
     const { t, lang } = useTranslation();
     const classes = useStyles();
     const linkClasses = useLinkStyles();
-    const offices = useOffices();
     const getTel = (tel: string) => {
         return tel.split('-').join('');
     };
@@ -108,13 +108,13 @@ const Contact = () => {
                     <ContactForm />
                 </SectionContainer>
                 {
-                    (offices && offices.length)
+                    (Offices && Offices.length)
                         ?
                         <SectionContainer>
                             <Typography variant={'h3'} className={classes.locationTitle}>Our Office</Typography>
                             <Grid container spacing={4}>
                                 {
-                                    offices.map((offices: IOfficeProps, index: number) => {
+                                    Offices.map((offices: IOffice, index: number) => {
                                         return (
                                             <Grid item xs={12} sm={6} md={4} key={index} className={classes.office}>
                                                 <Typography variant={'h5'}
