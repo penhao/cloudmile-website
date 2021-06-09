@@ -7,3 +7,6 @@ Disallow: /thanks
 
 # Host
 Host: https://mile.cloud
+
+# Sitemaps
+Sitemap: https://mile.cloud/sitemap.xml
