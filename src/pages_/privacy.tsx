@@ -12,7 +12,7 @@ import { getBreadcrumb } from '../@share/routes/Routes';
 import Breadcrumbs from "../components/Breadcrumb";
 
 const useStyles = makeStyles((theme: Theme) => ({
-    privacy: {
+    article: {
         // paddingTop: '20px',
         '& > h6': {
             marginBottom: '20px'
@@ -71,17 +71,24 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     },
     title: {
-        fontSize: theme.typography.pxToRem(60),
+        display: "inline-block",
+        position: "relative",
+        fontSize: "2.75rem",
         fontWeight: 700,
         lineHeight: 0.8,
-        margin: '20px 0 60px 0',
+        margin: '20px 0 40px 0',
+        left: "50%",
+        transform: "translateX(-50%)",
+        [theme.breakpoints.up('sm')]: {
+            margin: '20px 0 60px 0',
+        },
         [theme.breakpoints.up('md')]: {
             fontSize: theme.typography.pxToRem(90),
             margin: '50px 0 90px 0',
-        }
+        },
     }
 }));
-const PagePrivacy = () => {
+const PrivacyPage = () => {
     const { t, lang } = useTranslation();
     const classes = useStyles();
     const router = useRouter();
@@ -108,7 +115,7 @@ const PagePrivacy = () => {
                 <Breadcrumbs breadcrumbData={breadcrumbData} />
             </Container>
             <SectionContainer>
-                <Container maxWidth={{ sm: 920, md: 920 }} className={classes.privacy}>
+                <Container maxWidth={{ sm: 920, md: 920 }} className={classes.article}>
                     <Typography variant={"h1"} align={"center"} className={classes.title}>
                         {t("privacy:PRIVACY POLICY")}
                     </Typography>
@@ -288,4 +295,4 @@ const PagePrivacy = () => {
         </Layout>
     );
 };
-export default PagePrivacy;
+export default PrivacyPage;

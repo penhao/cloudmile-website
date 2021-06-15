@@ -113,6 +113,13 @@
         <xhtml:link rel="alternate" hreflang="zh-hant" href="https://mile.cloud/zh/privacy" />
     </url>
     <url>
+        <loc>https://mile.cloud/terms</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+        <lastmod>2021-06-06T16:13:23.042Z</lastmod>
+        <xhtml:link rel="alternate" hreflang="zh-hant" href="https://mile.cloud/zh/terms" />
+    </url>
+    <url>
         <loc>https://mile.cloud/resources/blog</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>

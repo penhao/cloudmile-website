@@ -225,6 +225,12 @@ const Routes = <IRoute[]>[
         disabled: true,
         breadcrumbDisabled: false,
     },
+    {
+        path: "/terms",
+        breadcrumbName: "Terms",
+        disabled: true,
+        breadcrumbDisabled: false,
+    },
 ];
 
 export default Routes;

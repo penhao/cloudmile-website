@@ -30,10 +30,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
             }
         }
     },
-    privacy: {
-        paddingLeft: '18px',
-        [theme.breakpoints.up('sm')]: {
-            paddingLeft: '20px',
+    privacyLinks: {
+        display: "flex",
+        '& li': {
+            padding: "0 20px",
             borderLeft: `1px solid ${theme.palette.common.black}`
         }
     }
@@ -45,16 +45,8 @@ const Footer = () => {
     const linkClasses = useLinkStyles();
     const { t, lang } = useTranslation();
     const [statusData, setStatusData] = useState<any | null>(null);
-    const getPrivacyLink = () => {
-        const privacyRoute = getRoute("/privacy");
-        return (
-            <NavLink hrefPath={privacyRoute.path}
-                underline={true}
-                classNames={clsx(linkClasses.textLink)}>
-                {t(`common:${privacyRoute.breadcrumbName}`)}
-            </NavLink>
-        )
-    };
+    const privacyRoute = getRoute("/privacy");
+    const termsRoute = getRoute("/terms");
     useEffect(() => {
         const fetchData = async () => {
             return fetchNavStatus(lang);
@@ -74,9 +66,28 @@ const Footer = () => {
                         <Copyright />
                     </Grid>
                     <Grid item xs={12} sm>
-                        <div className={classes.privacy}>
-                            {getPrivacyLink()}
-                        </div>
+                        <ul className={classes.privacyLinks}>
+                            <li>
+                                <NavLink hrefPath={privacyRoute.path}
+                                    underline={true}
+                                    classNames={clsx(linkClasses.textLink)}>
+                                    {t(`common:${privacyRoute.breadcrumbName}`)}
+                                </NavLink>
+                            </li>
+                            {
+                                lang === "zh" ?
+                                    <li>
+                                        <NavLink hrefPath={termsRoute.path}
+                                            underline={true}
+                                            classNames={clsx(linkClasses.textLink)}>
+                                            {t(`common:${termsRoute.breadcrumbName}`)}
+                                        </NavLink>
+                                    </li>
+                                    :
+                                    null
+                            }
+
+                        </ul>
                     </Grid>
                 </Grid>
             </Container>

@@ -43,9 +43,17 @@ const useStyles = makeStyles((theme: Theme) => ({
             width: '100%',
         }
     },
+    msp: {
+        position: 'relative',
+        width: '100%',
+        margin: '0 auto',
+        [theme.breakpoints.up('sm')]: {
+            margin: 0,
+        }
+    },
     badgeRadius: {
         borderRadius: '99em',
-        border: `1px solid ${theme.palette.grey["200"]}`,
+        // border: `1px solid ${theme.palette.grey["200"]}`,
     },
     badges: {
         marginTop: '60px'
@@ -140,29 +148,34 @@ const PartnerNetworks = () => {
                                 </Typography>
                                 <ShiftContainer shiftX={{ sm: -160, md: -160 }} growX={{ sm: 160, md: 160 }}>
                                     <Grid container spacing={4} alignItems={"center"} className={classes.badges}>
-                                        <Grid item xs={6} sm={3}>
+                                        <Grid item xs={12} sm={12}>
                                             <ResponseImage imageUrl={'/partner/msp-badge.png'}
                                                 alt={''}
-                                                maxWidth={{ xs: 168, sm: 168, md: 168 }}
-                                                customClass={classes.badge} />
-                                        </Grid>
-                                        <Grid item xs={6} sm={3}>
-                                            <ResponseImage imageUrl={'/partner/data-analytic-badge.png'}
-                                                alt={t('partner:alt.Certification of Google Cloud Partner with the Specialization in Data Analytics')}
-                                                maxWidth={{ xs: 168, sm: 168, md: 168 }}
-                                                customClass={clsx(classes.badge, classes.badgeRadius)} />
-                                        </Grid>
-                                        <Grid item xs={6} sm={3}>
-                                            <ResponseImage imageUrl={'/partner/machine-learning-badge.png'}
-                                                alt={t('partner:alt.Certification of Google Cloud Partner with the Specialization in Machine Learning')}
-                                                maxWidth={{ xs: 168, sm: 168, md: 168 }}
-                                                customClass={clsx(classes.badge, classes.badgeRadius)} />
+                                                maxWidth={{ xs: 190, sm: 190, md: 190 }} customClass={clsx(classes.msp)} />
                                         </Grid>
                                         <Grid item xs={6} sm={3}>
                                             <ResponseImage imageUrl={'/partner/infrastructure-badge.png'}
                                                 alt={t('partner:alt.Certification of Google Cloud Partner with the Specialization in Infrastructure')}
                                                 maxWidth={{ xs: 168, sm: 168, md: 168 }}
-                                                customClass={clsx(classes.badge, classes.badgeRadius)} />
+                                                customClass={clsx(classes.badge)} />
+                                        </Grid>
+                                        <Grid item xs={6} sm={3}>
+                                            <ResponseImage imageUrl={'/partner/data-analytics-badge.png'}
+                                                alt={t('partner:alt.Certification of Google Cloud Partner with the Specialization in Data Analytics')}
+                                                maxWidth={{ xs: 168, sm: 168, md: 168 }}
+                                                customClass={clsx(classes.badge)} />
+                                        </Grid>
+                                        <Grid item xs={6} sm={3}>
+                                            <ResponseImage imageUrl={'/partner/machine-learning-badge.png'}
+                                                alt={t('partner:alt.Certification of Google Cloud Partner with the Specialization in Machine Learning')}
+                                                maxWidth={{ xs: 168, sm: 168, md: 168 }}
+                                                customClass={clsx(classes.badge)} />
+                                        </Grid>
+                                        <Grid item xs={6} sm={3}>
+                                            <ResponseImage imageUrl={'/partner/cloud-migration-badge.png'}
+                                                alt={""}
+                                                maxWidth={{ xs: 168, sm: 168, md: 168 }}
+                                                customClass={clsx(classes.badge)} />
                                         </Grid>
                                     </Grid>
                                 </ShiftContainer>

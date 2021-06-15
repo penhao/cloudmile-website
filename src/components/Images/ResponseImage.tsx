@@ -1,6 +1,6 @@
 import React from 'react';
-import {Theme, useTheme} from "@material-ui/core";
-import {makeStyles} from "@material-ui/styles";
+import { Theme, useTheme } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
 import clsx from "clsx";
 
 // import {IStyleValue} from "../types/Types";
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     image: {
         display: 'block',
         width: '100%',
-        maxWidth: ({maxWidth}: IResponseImage) => {
+        maxWidth: ({ maxWidth }: IResponseImage) => {
             return (maxWidth && maxWidth.xs)
                 ?
                 Number(maxWidth.xs)
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
         height: 'auto',
         [theme.breakpoints.up('sm')]: {
-            maxWidth: ({maxWidth}: IResponseImage) => {
+            maxWidth: ({ maxWidth }: IResponseImage) => {
                 return (maxWidth && maxWidth.sm)
                     ?
                     Number(maxWidth.sm)
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme: Theme) => ({
             }
         },
         [theme.breakpoints.up('md')]: {
-            maxWidth: ({maxWidth}: IResponseImage) => {
+            maxWidth: ({ maxWidth }: IResponseImage) => {
                 return (maxWidth && maxWidth.md)
                     ?
                     Number(maxWidth.md)
@@ -59,14 +59,14 @@ const useStyles = makeStyles((theme: Theme) => ({
 const ResponseImage = (
     {
         imageUrl,
-        maxWidth = {xs: 'none', sm: 'none', md: 'none'},
+        maxWidth = { xs: 'none', sm: 'none', md: 'none' },
         alt = '',
         customClass = null
     }: IResponseImage
 ) => {
 
     const theme = useTheme();
-    const classes = useStyles({imageUrl, maxWidth});
+    const classes = useStyles({ imageUrl, maxWidth });
 
     const getPrefixUrl = (url: string, query: string) => {
         const split = url.split('.');
@@ -77,15 +77,15 @@ const ResponseImage = (
         <figure className={classes.root}>
             <picture>
                 <source media={`(min-width: ${theme.breakpoints.values['md']}px)`}
-                        srcSet={getPrefixUrl(imageUrl, 'md')}/>
+                    srcSet={getPrefixUrl(imageUrl, 'md')} />
                 <source media={`(min-width: ${theme.breakpoints.values['sm']}px)`}
-                        srcSet={getPrefixUrl(imageUrl, 'sm')}/>
+                    srcSet={getPrefixUrl(imageUrl, 'sm')} />
                 <img src={`/images/xs${imageUrl}`}
-                     srcSet={getPrefixUrl(imageUrl, 'xs')}
-                     alt={alt}
-                     className={
-                         clsx(classes.image, customClass)
-                     }/>
+                    srcSet={getPrefixUrl(imageUrl, 'xs')}
+                    alt={alt}
+                    className={
+                        clsx(classes.image, customClass)
+                    } />
             </picture>
         </figure>
     );

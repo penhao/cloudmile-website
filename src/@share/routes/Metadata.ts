@@ -251,6 +251,17 @@ const Metadata: IMetadata[] = [
             desc: "歡迎了解我們如何運用您的個人資訊以及注重您資料保密的企業責任。",
         },
     },
+    {
+        href: "/terms",
+        en: {
+            title: "Terms And Conditions | CloudMile",
+            desc: "Check out here to find out more about the purpose of collecting personal data and how we use and keep them confidential.",
+        },
+        zh: {
+            title: "資訊安全政策 | CloudMile",
+            desc: "歡迎了解我們如何運用您的個人資訊以及注重您資料保密的企業責任。",
+        },
+    },
 ];
 
 export default Metadata;
