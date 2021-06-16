@@ -52,7 +52,7 @@ const CaseStudy = ({ fetchCategory, fetchPost, fetchSlider }) => {
     const [disabledMore, setDisabledMore] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const router = useRouter();
-    const metadata = getMetadada(router.asPath);
+    const metadata = getMetadada(router.route);
     const [breadcrumbData, setBreadcrumbData] = useState([]);
 
     const getPostData = async (startCount: number) => {
@@ -73,7 +73,7 @@ const CaseStudy = ({ fetchCategory, fetchPost, fetchSlider }) => {
     };
     useEffect(() => {
         //
-        let breadcrumbs = getBreadcrumb(router.asPath);
+        let breadcrumbs = getBreadcrumb(router.route);
         breadcrumbs = breadcrumbs.map((breadcrumb) => {
             return {
                 ...breadcrumb,

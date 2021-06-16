@@ -41,7 +41,7 @@ const ADSvantagePage = ({ categoryData, postData }) => {
     const classes = useStyles();
     const { t, lang } = useTranslation();
     const router = useRouter();
-    const metadata = getMetadada(router.asPath);
+    const metadata = getMetadada(router.route);
     const demoRef = useRef<HTMLDivElement>(null);
     const priceRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
@@ -72,7 +72,7 @@ const ADSvantagePage = ({ categoryData, postData }) => {
     };
     useEffect(() => {
         //
-        let breadcrumbs = getBreadcrumb(router.asPath);
+        let breadcrumbs = getBreadcrumb(router.route);
         setBreadcrumbData(breadcrumbs.map((breadcrumb) => {
             return {
                 ...breadcrumb,

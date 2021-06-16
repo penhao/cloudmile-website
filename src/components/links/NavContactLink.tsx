@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from "next/link";
-import {makeStyles} from "@material-ui/styles";
-import {Theme} from "@material-ui/core";
-import {useRouter} from "next/router";
+import { makeStyles } from "@material-ui/styles";
+import { Theme } from "@material-ui/core";
+import { useRouter } from "next/router";
 import clsx from "clsx";
-import {removeParam} from "../../utils/Utils";
+import { removeParam } from "../../utils/Utils";
 import useTranslation from "next-translate/useTranslation";
-import {useLinkStyles} from "./LinkStyles";
+import { useLinkStyles } from "./LinkStyles";
 
 interface Props {
     href: string
@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme: Theme) => ({
         borderRadius: '99em',
         borderWidth: '1px',
         borderStyle: 'solid',
-        borderColor: ({color}: Props) => (color === 'white') ? theme.palette.common.white : theme.palette.common.black,
-        color: ({color}: Props) => (color === 'white') ? theme.palette.common.white : theme.palette.common.black,
+        borderColor: ({ color }: Props) => (color === 'white') ? theme.palette.common.white : theme.palette.common.black,
+        color: ({ color }: Props) => (color === 'white') ? theme.palette.common.white : theme.palette.common.black,
         transition: theme.transitions.create('color', {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.standard
@@ -38,11 +38,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-const NavContactLink = ({href, color, children}: Props) => {
-    const {lang} = useTranslation();
-    const classes = useStyles({href, color, children});
+const NavContactLink = ({ href, color, children }: Props) => {
+    const classes = useStyles({ href, color, children });
     const linkClasses = useLinkStyles();
-
     const router = useRouter();
     const [hrefLink, setHrefLink] = useState('');
     const getLinkActive = (path: string) => {
@@ -50,9 +48,9 @@ const NavContactLink = ({href, color, children}: Props) => {
     };
     useEffect(() => {
         setHrefLink(`${href}${removeParam('category', window.location.search)}`);
-    }, []);
+    }, [href]);
     return (
-        <Link href={href} passHref>
+        <Link href={hrefLink} passHref>
             <a className={clsx(
                 classes.link,
                 linkClasses.link,

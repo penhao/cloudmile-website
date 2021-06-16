@@ -227,7 +227,7 @@ const Routes = <IRoute[]>[
     },
     {
         path: "/terms",
-        breadcrumbName: "Terms",
+        breadcrumbName: "Policy Terms",
         disabled: true,
         breadcrumbDisabled: false,
     },

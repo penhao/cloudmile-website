@@ -9,29 +9,30 @@ import RegisterForm from "../../forms/RegisterForm";
 import LinesEllipsis from 'react-lines-ellipsis';
 
 interface IProps {
-    data: any;
+    postData: any;
 }
-const RegisterItem = ({ data }: IProps) => {
+const RegisterItem = ({ postData }: IProps) => {
     const { t, lang } = useTranslation();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
     const [salesforceData, setSalesforceData] = useState<SalesforcePostParams | null>(null);
 
+
     useEffect(() => {
         const urlParams = removeParam('category', window.location.search);
         const domainPath = `${process.env.DOMAIN_PATH}${lang === "en" ? "" : "/" + lang}`
-        const redirectUrl = (data.type === 2)
-            ? `${domainPath}/resources/video/live-stream/${data.id}/${encodeURIComponent(data.title)}${urlParams}`
-            : `${domainPath}/resources/video/${data.id}/${encodeURIComponent(data.title)}${urlParams}`;
+        const redirectUrl = (postData.type === 2)
+            ? `${domainPath}/resources/video/live-stream/${postData.id}/${encodeURIComponent(postData.title)}${urlParams}`
+            : `${domainPath}/resources/video/${postData.id}/${encodeURIComponent(postData.title)}${urlParams}`;
         setSalesforceData({
-            utmSource: data.utm_source,
-            utmMedium: data.utm_medium,
-            utmCampaign: data.utm_campaign,
-            leadSource: data.lead_source,
-            campaignId: data.salesforce_id,
+            utmSource: postData.utm_source,
+            utmMedium: postData.utm_medium,
+            utmCampaign: postData.utm_campaign,
+            leadSource: postData.lead_source,
+            campaignId: postData.salesforce_id,
             redirectUrl: redirectUrl,
-            country: data.country
-        })
-    }, []);
+            country: postData.country
+        });
+    }, [postData]);
     return (
         <Grid container spacing={smUp ? 4 : 2}>
             <Grid item xs={12}>
@@ -39,7 +40,7 @@ const RegisterItem = ({ data }: IProps) => {
                     {t('video:Register to Watch')}
                 </SectionTitleLabel>
                 <SectionTitle>
-                    {data.title}
+                    {postData.title}
                 </SectionTitle>
             </Grid>
             <Grid item xs={12}>

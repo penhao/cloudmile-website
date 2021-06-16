@@ -77,10 +77,10 @@ const Footer = () => {
                             {
                                 lang === "zh" ?
                                     <li>
-                                        <NavLink hrefPath={termsRoute.path}
+                                        <NavLink hrefPath={"/terms"}
                                             underline={true}
                                             classNames={clsx(linkClasses.textLink)}>
-                                            {t(`common:${termsRoute.breadcrumbName}`)}
+                                            資訊安全政策
                                         </NavLink>
                                     </li>
                                     :

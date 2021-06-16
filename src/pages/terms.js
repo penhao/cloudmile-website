@@ -17,21 +17,28 @@ export default function Page({ _ns, _lang, ...p }){
 
 Page = Object.assign(Page, { ...C })
 
-Page.getInitialProps = async ctx => {
-      const _lang = ctx.locale || ctx.router?.locale || 'en'
+
+
+
+export const getStaticProps = async ctx => {
+    const _lang = ctx.locale || ctx.router?.locale || 'en'
   const ns0 = await import(`../../locales/${_lang}/common`).then(m => m.default)
 const ns1 = await import(`../../locales/${_lang}/form`).then(m => m.default)
-  const _ns = { 'common': ns0, 'form': ns1 }
+const ns2 = await import(`../../locales/${_lang}/terms`).then(m => m.default)
+  const _ns = { 'common': ns0, 'form': ns1, 'terms': ns2 }
   
-      let res = typeof C.getInitialProps === 'function' ? C.getInitialProps(ctx) : {}
-      if(typeof res.then === 'function') res = await res
-      console.warn('[next-translate] In Next 10.0.0 there is an issue related to i18n and getInitialProps. We recommend that you change getInitialProps to getServerSideProps. Issue: https://github.com/vercel/next.js/issues/18396')
-    
-      return { ...res,  _ns, _lang }
+    let res = {}
+    if(typeof res.then === 'function') res = await res
+  
+    return { 
+      ...res, 
+      props: {
+        ...(res.props || {}),
+        _ns,
+        _lang,
+      }
     }
-
-
-
+  }
 
 
 

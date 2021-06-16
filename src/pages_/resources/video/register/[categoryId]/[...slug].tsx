@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const VideoRegisterPage = ({ postData }) => {
     const classes = useStyles();
     const router = useRouter();
+    console.log(router);
     return (
         <Layout metadata={{
             href: "/resources/video",
@@ -39,7 +40,7 @@ const VideoRegisterPage = ({ postData }) => {
         }}>
             <div className={classes.contentWrapper}>
                 <Container maxWidth={{ xs: "none", sm: "640", md: "640" }}>
-                    <RegisterItem data={postData} />
+                    <RegisterItem postData={postData} />
                 </Container>
             </div>
         </Layout>

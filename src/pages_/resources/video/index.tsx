@@ -41,7 +41,7 @@ const Video = ({ fetchCategory, fetchCategoryId, fetchPost }) => {
     const classes = useStyles();
     const { t, lang } = useTranslation();
     const router = useRouter();
-    const metadata = getMetadada("/resources/video");
+    const metadata = getMetadada(router.route);
     const [breadcrumbData, setBreadcrumbData] = useState([]);
 
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
@@ -87,7 +87,7 @@ const Video = ({ fetchCategory, fetchCategoryId, fetchPost }) => {
     };
     useEffect(() => {
         //
-        let breadcrumbs = getBreadcrumb("/resources/video");
+        let breadcrumbs = getBreadcrumb(router.route);
         breadcrumbs = breadcrumbs.map((breadcrumb) => {
             return {
                 ...breadcrumb,
@@ -137,7 +137,7 @@ const Video = ({ fetchCategory, fetchCategoryId, fetchPost }) => {
             }}
             bgColor={'darken'}
         >
-            <RegisterModal isOpen={!!router.query.postId} registerData={registerData} />
+            <RegisterModal isOpen={!!router.query.postId} postData={registerData} />
             <div className={classes.bannerContainer}>
                 <VideoListBanner imgUrl={smUp ? currentCategory.image_pc : currentCategory.image_mobile}
                     videoId={currentCategory.youtube_link} />

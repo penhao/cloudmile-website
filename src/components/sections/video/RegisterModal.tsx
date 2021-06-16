@@ -5,10 +5,11 @@ import { useRouter } from "next/router";
 import useWindowResize from "../../useWindowResize";
 import RegisterItem from "../video/RegisterItem";
 import IconClose from "../../icons/IconClose";
+import { removeParam } from "../../../utils/Utils";
 
 interface IProps {
     isOpen: boolean;
-    registerData: any;
+    postData: any;
 }
 const useStyles = makeStyles((theme: Theme) => ({
     modal: {
@@ -51,7 +52,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         padding: 0
     }
 }));
-const RegisterModal = ({ isOpen, registerData = {} }: IProps) => {
+const RegisterModal = ({ isOpen, postData = {} }: IProps) => {
     const classes = useStyles();
     const router = useRouter();
     const [height, setHeight] = useState(0);
@@ -62,7 +63,7 @@ const RegisterModal = ({ isOpen, registerData = {} }: IProps) => {
         }
     }, []);
     const handleClose = () => {
-        router.push("/resources/video");
+        router.push(`/resources/video${removeParam('category', window.location.search)}`);
     };
 
     return (
@@ -78,7 +79,7 @@ const RegisterModal = ({ isOpen, registerData = {} }: IProps) => {
                     <div ref={contentRef} className={clsx(
                         classes.content, (height < windowSize.height) ? classes.contentCenter : null
                     )}>
-                        <RegisterItem data={registerData} />
+                        <RegisterItem postData={postData} />
                         <Button onClick={handleClose} className={classes.close}>
                             <IconClose />
                         </Button>

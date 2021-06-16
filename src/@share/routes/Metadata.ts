@@ -254,7 +254,7 @@ const Metadata: IMetadata[] = [
     {
         href: "/terms",
         en: {
-            title: "Terms And Conditions | CloudMile",
+            title: "Policy Terms | CloudMile",
             desc: "Check out here to find out more about the purpose of collecting personal data and how we use and keep them confidential.",
         },
         zh: {

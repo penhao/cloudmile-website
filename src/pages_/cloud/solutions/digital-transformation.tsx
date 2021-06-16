@@ -24,12 +24,12 @@ const DigitalTransformation = () => {
 
 
     const router = useRouter();
-    const metadata = getMetadada(router.asPath);
+    const metadata = getMetadada(router.route);
     const [breadcrumbData, setBreadcrumbData] = useState([]);
 
     useEffect(() => {
         //
-        let breadcrumbs = getBreadcrumb(router.asPath);
+        let breadcrumbs = getBreadcrumb(router.route);
         breadcrumbs = breadcrumbs.map((breadcrumb) => {
             return {
                 ...breadcrumb,

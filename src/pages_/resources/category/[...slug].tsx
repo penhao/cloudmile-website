@@ -23,9 +23,7 @@ const CategoryPage = ({ categoryData, postData }) => {
     const [startCount, setStartCount] = useState(1);
     const [disabledMore, setDisabledMore] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
-
     const metadata = getMetadada("/");
-    // console.log(postData);
 
     const getRedirectData = () => {
         switch (router.query.slug[0]) {

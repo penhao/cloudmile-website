@@ -147,14 +147,14 @@ const VideoListItem = ({ category, type, itemData }: Props) => {
             );
         } else {
             return (
-                <Link
-                    href={`/resources/video/?categoryId=${category}&postId=${itemData.id}`}
-                    as={`/resources/video/register/${category}/${itemData.id}/${encodeURIComponent(itemData.title)}`}
-                >
-                    <a className={classes.item}>
-                        {getContent()}
-                    </a>
-                </Link>
+                <NavLink hrefPath={`/resources/video/?categoryId=${category}&postId=${itemData.id}`}
+                    asPath={`/resources/video/register/${category}/${itemData.id}/${encodeURIComponent(itemData.title)}`}
+                    underline={false}
+                    fullWidth
+                    fullHeight
+                    classNames={classes.item}>
+                    {getContent()}
+                </NavLink>
             );
         }
     };
