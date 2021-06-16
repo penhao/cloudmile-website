@@ -281,9 +281,6 @@ const PolicyTerms = () => {
                         <li>
                             {t("terms:list7.title")}
                             <div>
-                                <Typography variant={"body1"} dangerouslySetInnerHTML={{
-                                    __html: t("terms:list7.desc")
-                                }} />
                                 <ul>
                                     <li>
                                         <Typography variant={"body1"}>
