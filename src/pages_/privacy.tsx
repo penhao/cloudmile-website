@@ -56,18 +56,17 @@ const useStyles = makeStyles((theme: Theme) => ({
                 },
                 '& div': {
                     marginTop: '20px'
-                },
-                '& a': {
-                    fontSize: theme.typography.pxToRem(14),
-                    lineHeight: 1.63,
-                    color: theme.palette.secondary.main,
-                    textDecoration: 'underline',
-                    [theme.breakpoints.up('md')]: {
-                        fontSize: theme.typography.pxToRem(16)
-                    }
                 }
             }
-
+        },
+        '& a': {
+            fontSize: theme.typography.pxToRem(14),
+            lineHeight: 1.63,
+            color: theme.palette.secondary.main,
+            textDecoration: 'underline',
+            [theme.breakpoints.up('md')]: {
+                fontSize: theme.typography.pxToRem(16)
+            }
         }
     },
     title: {
