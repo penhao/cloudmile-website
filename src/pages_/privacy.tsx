@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Layout from "../components/Layout";
 import useTranslation from "next-translate/useTranslation";
 import makeStyles from "@material-ui/core/styles/makeStyles";
@@ -65,7 +65,9 @@ const useStyles = makeStyles((theme: Theme) => ({
             color: theme.palette.secondary.main,
             textDecoration: 'underline',
             [theme.breakpoints.up('md')]: {
-                fontSize: theme.typography.pxToRem(16)
+                display: "inline",
+                fontSize: theme.typography.pxToRem(16),
+                lineBreak: "anywhere"
             }
         }
     },
@@ -84,6 +86,17 @@ const useStyles = makeStyles((theme: Theme) => ({
         [theme.breakpoints.up('md')]: {
             fontSize: theme.typography.pxToRem(90),
             margin: '50px 0 90px 0',
+        },
+        '& span': {
+            display: "block",
+            position: "relative",
+            marginTop: "10px",
+            fontWeight: "normal",
+            textAlign: "left",
+            textIndent: "5px",
+            [theme.breakpoints.up('sm')]: {
+                marginTop: "20px",
+            }
         },
     }
 }));
@@ -117,6 +130,10 @@ const PrivacyPage = () => {
                 <Container maxWidth={{ sm: 920, md: 920 }} className={classes.article}>
                     <Typography variant={"h1"} align={"center"} className={classes.title}>
                         {t("privacy:PRIVACY POLICY")}
+                        <br />
+                        <Typography variant={"body1"} component={"span"}>
+                            {t("privacy:version")}
+                        </Typography>
                     </Typography>
                     <Typography variant={"body1"} dangerouslySetInnerHTML={
                         { __html: t("privacy:This Privacy Policy was last updated on March 16__") }
@@ -156,6 +173,27 @@ const PrivacyPage = () => {
                                     { __html: t("privacy:Cloudmile may process and use__") }
                                 } />
                                 <ol>
+                                    {
+                                        lang === "zh"
+                                            ? <Fragment>
+                                                <li>
+                                                    <Typography variant={"body1"} dangerouslySetInnerHTML={
+                                                        { __html: t("privacy:period") }
+                                                    } />
+                                                </li>
+                                                <li>
+                                                    <Typography variant={"body1"} dangerouslySetInnerHTML={
+                                                        { __html: t("privacy:region") }
+                                                    } />
+                                                </li>
+                                                <li>
+                                                    <Typography variant={"body1"} dangerouslySetInnerHTML={
+                                                        { __html: t("privacy:target") }
+                                                    } />
+                                                </li>
+                                            </Fragment>
+                                            : null
+                                    }
                                     <li>
                                         <Typography variant={"body1"} dangerouslySetInnerHTML={
                                             { __html: t("privacy:To Communicate with Users") }
