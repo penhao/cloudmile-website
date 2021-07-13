@@ -1,6 +1,6 @@
 import React from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import NavLink from "../../links/NavLink";
 import RatioContainer from "../../containers/RatioContainer";
 import Box from "@material-ui/core/Box";
@@ -11,7 +11,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useTheme from "@material-ui/core/styles/useTheme";
 import LinesEllipsis from 'react-lines-ellipsis';
 import useFormatDate from "../../useFormatDate";
-import {useLinkStyles} from "../../links/LinkStyles";
+import { useLinkStyles } from "../../links/LinkStyles";
 import IconLaunch from "../../icons/IconLaunch";
 
 interface Props {
@@ -70,6 +70,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         lineHeight: 1.5,
         marginTop: '10px',
         pointerEvents: 'none',
+        fontWeight: "bold",
         '& span': {
             display: 'inline',
             position: 'relative'
@@ -127,24 +128,24 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
-const BlogTopicItem = ({parentPage, itemData, isTopic = false}: Props) => {
+const BlogTopicItem = ({ parentPage, itemData, isTopic = false }: Props) => {
     const classes = useStyles();
     const linkClasses = useLinkStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
-    const formatDate = useFormatDate(itemData.created_at.replace(' ', 'T'));
+    const formatDate = useFormatDate(itemData.start_date.replace(' ', 'T'));
 
     return (
         <NavLink hrefPath={`/resources/${parentPage}/[...slug]`}
-                 asPath={`/resources/${parentPage}/${itemData.id}/${encodeURIComponent(itemData.title)}`}
-                 fullWidth={true} underline={true} textWrap={true}
-                 classNames={clsx(
-                     classes.item,
-                     (isTopic) ? linkClasses.iconLink : linkClasses.textLink
-                 )}>
+            asPath={`/resources/${parentPage}/${itemData.id}/${encodeURIComponent(itemData.title)}`}
+            fullWidth={true} underline={true} textWrap={true}
+            classNames={clsx(
+                classes.item,
+                (isTopic) ? linkClasses.iconLink : linkClasses.textLink
+            )}>
             <Box display={'flex'} justifyContent={'flex-end'} className={classes.itemInner}>
-                <RatioContainer ratio={{xs: 400 / 565, sm: 400 / 565, md: 400 / 565}}>
+                <RatioContainer ratio={{ xs: 400 / 565, sm: 400 / 565, md: 400 / 565 }}>
                     <BackgroundImage imgUrl={smUp ? itemData.image_pc : itemData.image_mobile}
-                                     detectRetina={false} customClass={classes.cover}/>
+                        detectRetina={false} customClass={classes.cover} />
                 </RatioContainer>
                 <div className={classes.dateContainer}>
                     <Typography variant={"body1"} component={'div'} className={classes.date}>
@@ -152,17 +153,17 @@ const BlogTopicItem = ({parentPage, itemData, isTopic = false}: Props) => {
                     </Typography>
                 </div>
             </Box>
-            <Typography variant={'h5'} className={clsx(
+            <Typography variant={'h5'} component={"div"} className={clsx(
                 classes.title, isTopic ? classes.topic : null
             )}>
-                <LinesEllipsis text={itemData.title} maxLine='3' ellipsis='...' trimRight basedOn='letters'/>
+                <LinesEllipsis text={itemData.title} maxLine='3' ellipsis='...' trimRight basedOn='letters' />
             </Typography>
             {
                 (isTopic)
                     ?
                     <Box display={'flex'} justifyContent={'flex-end'}>
-                        <div  className={classes.icon}>
-                            <IconLaunch/>
+                        <div className={classes.icon}>
+                            <IconLaunch />
                         </div>
                     </Box>
                     :

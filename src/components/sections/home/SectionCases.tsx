@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import useTheme from "@material-ui/core/styles/useTheme";
 import SectionContainer from "../../containers/SectionContainer";
 import makeStyles from "@material-ui/core/styles/makeStyles";
@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import SectionTitleLabel from "../SectionTitleLabel";
 import SectionTitle from "../SectionTitle";
 import CaseSliderItem from "../../sliders/items/CaseSliderItem";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import VariableWidthSlider from "../../sliders/VariableWidthSlider";
 
 interface Props {
@@ -24,8 +24,8 @@ interface StyleProps {
 const useStyles = makeStyles((theme: Theme) => ({
     sectionInner: {
         width: '100%',
-        paddingTop: ({onlySlider}: StyleProps) => onlySlider ? '40px' : '40px',
-        paddingBottom: ({onlySlider}: StyleProps) => onlySlider ? '20px' : '40px',
+        paddingTop: ({ onlySlider }: StyleProps) => onlySlider ? '40px' : '40px',
+        paddingBottom: ({ onlySlider }: StyleProps) => onlySlider ? '20px' : '40px',
     },
     sectionInfo: {
         marginBottom: '40px',
@@ -36,13 +36,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     sliderContainer: {
         marginTop: 0,
         [theme.breakpoints.up('sm')]: {
-            marginTop: ({onlySlider}: StyleProps) => onlySlider ? 0 : '-40px'
+            marginTop: ({ onlySlider }: StyleProps) => onlySlider ? 0 : '-40px'
         }
     }
 }));
-const SectionCases = ({title, label, sliderData, onlySlider = false}: Props) => {
+const SectionCases = ({ title, label, sliderData, onlySlider = false }: Props) => {
     const theme = useTheme();
-    const classes = useStyles({onlySlider});
+    const classes = useStyles({ onlySlider });
     const [sliderId, setSliderId] = useState(0);
     const [postData, setPostData] = useState([]);
     const handleChange = (id: number) => {
@@ -59,7 +59,7 @@ const SectionCases = ({title, label, sliderData, onlySlider = false}: Props) => 
                         !onlySlider
                             ?
                             <Grid item xs={12} md={6}>
-                                <Container maxWidth={{xs: 'none', sm: 600, md: 600}} paddingX={false} centerX={false}>
+                                <Container maxWidth={{ xs: 'none', sm: 600, md: 600 }} paddingX={false} centerX={false}>
                                     <SectionTitleLabel color={'warning'}>
                                         {label}
                                     </SectionTitleLabel>
@@ -77,12 +77,12 @@ const SectionCases = ({title, label, sliderData, onlySlider = false}: Props) => 
                             <Grid item xs={12}>
                                 <div className={classes.sliderContainer}>
                                     <VariableWidthSlider changePoint={theme.breakpoints.values.md}
-                                                         changeHandler={handleChange}>
+                                        changeHandler={handleChange}>
                                         {
                                             postData.map((item: any, index: number) => {
                                                 return (
                                                     <div key={index}>
-                                                        <CaseSliderItem itemData={item} active={index === sliderId}/>
+                                                        <CaseSliderItem itemData={item} active={index === sliderId} />
                                                     </div>
                                                 )
                                             })

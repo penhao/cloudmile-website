@@ -1,12 +1,12 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import Container from "../../containers/Container";
-import {makeStyles, Theme} from "@material-ui/core/styles";
+import { makeStyles, Theme } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import BackgroundImage from "../../Images/BackgroundImage";
 import ShiftContainer from "../../containers/ShiftContainer";
-import {useButtonStyles} from "../../buttons/ButtonStyles";
-import {isValueEmpty} from "../../../utils/Utils";
+import { useButtonStyles } from "../../buttons/ButtonStyles";
+import { isValueEmpty } from "../../../utils/Utils";
 
 interface Props {
     imageUrl?: string;
@@ -77,29 +77,29 @@ const DetailCTA = (
         return (
             (isValueEmpty(launchUrl))
                 ? <Button variant="contained"
-                          color={"primary"}
-                          disableElevation
-                          onClick={clickHandler}
-                          className={buttonClasses.roundedButton}>
+                    color={"primary"}
+                    disableElevation
+                    onClick={clickHandler}
+                    className={buttonClasses.roundedButton}>
                     {buttonText}
                 </Button>
                 :
                 <Button href={launchUrl} target={'_blank'}
-                        variant="contained"
-                        color={"primary"}
-                        disableElevation
-                        className={buttonClasses.roundedButton}>
+                    variant="contained"
+                    color={"primary"}
+                    disableElevation
+                    className={buttonClasses.roundedButton}>
                     {buttonText}
                 </Button>
         )
     };
     const getGrid = () => {
         return (
-            <ShiftContainer shiftX={{xs: -20, sm: -20, md: 0}} growX={{xs: 40, sm: 40, md: 0}}>
-                <BackgroundImage imgUrl={imageUrl} detectRetina={false} customClass={classes.cover}/>
-                <Container maxWidth={{xs: 'none', sm: '65%', md: '50%'}} paddingX={false} centerX={false}
-                           className={classes.container}>
-                    <Typography variant={"h5"} color={"primary"} className={classes.title}>
+            <ShiftContainer shiftX={{ xs: -20, sm: -20, md: 0 }} growX={{ xs: 40, sm: 40, md: 0 }}>
+                <BackgroundImage imgUrl={imageUrl} detectRetina={false} customClass={classes.cover} />
+                <Container maxWidth={{ xs: 'none', sm: '65%', md: '50%' }} paddingX={false} centerX={false}
+                    className={classes.container}>
+                    <Typography variant={"h4"} color={"primary"} className={classes.title}>
                         {title}
                     </Typography>
                     <Typography variant={"body1"} className={classes.desc}>
@@ -113,8 +113,8 @@ const DetailCTA = (
         );
     };
     return (
-        <Container maxWidth={{xs: 'none', sm: 'none', md: 1280}}>
-            <Container maxWidth={{xs: 'none', sm: 'none', md: 1080}} paddingX={false} centerX={false}>
+        <Container maxWidth={{ xs: 'none', sm: 'none', md: 1280 }}>
+            <Container maxWidth={{ xs: 'none', sm: 'none', md: 1080 }} paddingX={false} centerX={false}>
                 <div className={classes.root}>
                     {
                         (onlyButton) ? getButton() : getGrid()

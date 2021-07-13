@@ -1,10 +1,10 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import SectionContainer from "../../containers/SectionContainer";
 import Container from "../../containers/Container";
 import Grid from "@material-ui/core/Grid";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from "@material-ui/core/Typography";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import VideoListItem from "./VideoListItem";
 
 // import VideoListItem from "./VideoListItem";
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginBottom: '20px'
     }
 }));
-const VideoRelatedPost = ({list, title}: Props) => {
+const VideoRelatedPost = ({ list, title }: Props) => {
     const classes = useStyles();
 
     return (
@@ -34,8 +34,8 @@ const VideoRelatedPost = ({list, title}: Props) => {
                 (list && list.length)
                     ?
                     <SectionContainer backgroundColor={'#737373'} margin={false}>
-                        <Container maxWidth={{md: 1280}} className={classes.container}>
-                            <Typography variant={"body1"} color={"secondary"} className={classes.title}>
+                        <Container maxWidth={{ md: 1280 }} className={classes.container}>
+                            <Typography variant={"body1"} component={"div"} color={"secondary"} className={classes.title}>
                                 {title}
                             </Typography>
                             <Grid container spacing={4}>
@@ -44,7 +44,7 @@ const VideoRelatedPost = ({list, title}: Props) => {
                                         if (index >= 4) return;
                                         return (
                                             <Grid item xs={12} sm={6} md={3} key={index}>
-                                                <VideoListItem type={Number(item.video_type)} itemData={item}/>
+                                                <VideoListItem type={Number(item.video_type)} itemData={item} />
                                             </Grid>
                                         )
                                     })

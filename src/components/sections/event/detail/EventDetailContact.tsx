@@ -2,10 +2,10 @@ import React from 'react';
 import SectionContainer from "../../../containers/SectionContainer";
 import Container from "../../../containers/Container";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import RegisterForm from "../../../forms/RegisterForm";
-import {SalesforcePostParams} from "../../../useUrlParams";
+import { SalesforcePostParams } from "../../../useUrlParams";
 
 interface Props {
     title: string;
@@ -23,16 +23,16 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-const EventDetailContact = ({title, salesforceData = null}: Props) => {
+const EventDetailContact = ({ title, salesforceData = null }: Props) => {
     const classes = useStyles();
     return (
         <SectionContainer>
-            <Container maxWidth={{md: 1280}}>
-                <Typography variant={"h3"} color={"primary"} className={classes.title}>
+            <Container maxWidth={{ md: 1280 }}>
+                <Typography variant={"h3"} component={"h2"} color={"primary"} className={classes.title}>
                     {title}
                 </Typography>
-                <Container maxWidth={{sm: 600, md: 600}} paddingX={false}>
-                    <RegisterForm salesforceData={salesforceData}/>
+                <Container maxWidth={{ sm: 600, md: 600 }} paddingX={false}>
+                    <RegisterForm salesforceData={salesforceData} />
                 </Container>
             </Container>
         </SectionContainer>

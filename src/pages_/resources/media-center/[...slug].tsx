@@ -31,6 +31,7 @@ const MediaCenterDetail = ({ postData }) => {
     const metadata = getMetadada("/resources/media-center");
     const [breadcrumbData, setBreadcrumbData] = useState([]);
 
+    console.log(postData);
 
     const handleScroll = () => {
         window.scrollTo({ behavior: "smooth", top: contactRef.current.offsetTop });

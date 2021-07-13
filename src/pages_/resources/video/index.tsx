@@ -54,6 +54,7 @@ const Video = ({ fetchCategory, fetchCategoryId, fetchPost }) => {
     const [disabledMore, setDisabledMore] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
 
+    console.log(fetchPost)
 
     const handlerCategoryClick = async (id: number) => {
         setCategoryId(id);

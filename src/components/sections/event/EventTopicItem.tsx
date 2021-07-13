@@ -12,6 +12,7 @@ import NavLink from "../../links/NavLink";
 import { Button } from "@material-ui/core";
 import { useButtonStyles } from "../../buttons/ButtonStyles";
 import { useLinkStyles } from "../../links/LinkStyles";
+import { useTranslation } from 'next-translate';
 
 interface Props {
     itemData: any;
@@ -31,6 +32,8 @@ const useStyles = makeStyles(() => ({
     }
 }));
 const EventTopicItem = ({ itemData }: Props) => {
+    const { t } = useTranslation();
+
     const classes = useStyles();
     const linkClasses = useLinkStyles();
     const buttonClasses = useButtonStyles();
@@ -63,7 +66,7 @@ const EventTopicItem = ({ itemData }: Props) => {
                     </GridItemFlexible>
                     <GridItem480>
                         <Typography variant={"h6"} component={'div'} className={classes.date}>
-                            {useFormatDate(itemData.created_at.replace(' ', 'T'))}
+                            {useFormatDate(itemData.start_date.replace(' ', 'T'))}
                         </Typography>
                         <NavLink hrefPath={getHrefPath()}
                             asPath={getAsPath()}
@@ -85,7 +88,7 @@ const EventTopicItem = ({ itemData }: Props) => {
                                 color={"primary"}
                                 fullWidth
                                 className={buttonClasses.roundedButton}>
-                                Register
+                                {t("common:Register")}
                             </Button>
                         </NavLink>
                     </GridItem480>

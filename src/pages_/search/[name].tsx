@@ -69,6 +69,8 @@ const SearchPage = ({ postData }: InferGetServerSidePropsType<typeof getServerSi
         });
         return total;
     };
+
+    console.log(postData)
     const getApiTypeByFilter = () => {
         switch (filterKey) {
             case 'blog':

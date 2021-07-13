@@ -2,10 +2,11 @@ import React from 'react';
 import SectionContainer from "../../../containers/SectionContainer";
 import HtmlEditor from "../../resources/HtmlEditor";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Button, Theme} from "@material-ui/core";
+import { Button, Theme } from "@material-ui/core";
 import Container from "../../../containers/Container";
-import {useButtonStyles} from "../../../buttons/ButtonStyles";
+import { useButtonStyles } from "../../../buttons/ButtonStyles";
 import clsx from "clsx";
+import { useTranslation } from 'next-translate';
 
 interface Props {
     imgUrl: string;
@@ -30,20 +31,20 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-const EventDetailArticle = ({imgUrl, contents, scrollHandler}: Props) => {
-
+const EventDetailArticle = ({ imgUrl, contents, scrollHandler }: Props) => {
+    const { t } = useTranslation()
     const classes = useStyles();
     const buttonClasses = useButtonStyles();
     return (
         <SectionContainer className={classes.section}>
-            <Container maxWidth={{md: 1280}}>
-                <img src={imgUrl} alt="" className={classes.cover}/>
+            <Container maxWidth={{ md: 1280 }}>
+                <img src={imgUrl} alt="" className={classes.cover} />
                 <Button variant={"contained"} color={"primary"} fullWidth onClick={scrollHandler}
-                        className={clsx(classes.registerButton, buttonClasses.roundedButton)}>
-                    Register
+                    className={clsx(classes.registerButton, buttonClasses.roundedButton)}>
+                    {t("common:Register")}
                 </Button>
             </Container>
-            <HtmlEditor content={contents}/>
+            <HtmlEditor content={contents} />
         </SectionContainer>
     );
 };

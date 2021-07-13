@@ -43,6 +43,9 @@ const Event = ({ fetchCategory, fetchPost }) => {
             setIsLoading(false);
         });
     };
+
+    console.log(fetchPost)
+
     useEffect(() => {
         //
         let breadcrumbs = getBreadcrumb(router.route);

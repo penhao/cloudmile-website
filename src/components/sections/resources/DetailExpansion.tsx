@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
-import {Theme, makeStyles} from '@material-ui/core/styles';
+import { Theme, makeStyles } from '@material-ui/core/styles';
 import Container from "../../containers/Container";
 import IconMinus from "../../icons/IconMinus";
 import IconPlus from "../../icons/IconPlus";
@@ -102,24 +102,24 @@ const useStyles = makeStyles((theme: Theme) => ({
         },
     }
 }));
-const DetailExpansion = ({title, desc}: Props) => {
+const DetailExpansion = ({ title, desc }: Props) => {
     const classes = useStyles();
     const [expanded, setExpanded] = useState<boolean>(false);
     return (
-        <Container maxWidth={{md: 1280}}>
-            <Container maxWidth={{sm: 920, md: 920}} paddingX={false} centerX={false}>
+        <Container maxWidth={{ md: 1280 }}>
+            <Container maxWidth={{ sm: 920, md: 920 }} paddingX={false} centerX={false}>
                 <div className={classes.container}>
                     <Accordion expanded={expanded}
-                               onChange={() => setExpanded((expanded) => !expanded)}
-                               className={classes.expansion}>
-                        <AccordionSummary expandIcon={expanded ? <IconMinus/> : <IconPlus/>}
-                                          className={classes.summary}>
-                            <Typography variant={"h5"} color={"primary"}>
+                        onChange={() => setExpanded((expanded) => !expanded)}
+                        className={classes.expansion}>
+                        <AccordionSummary expandIcon={expanded ? <IconMinus /> : <IconPlus />}
+                            className={classes.summary}>
+                            <Typography variant={"h4"} color={"primary"}>
                                 {title}
                             </Typography>
                         </AccordionSummary>
                         <AccordionDetails className={classes.details}>
-                            <div dangerouslySetInnerHTML={{__html: desc}} className={classes.desc}/>
+                            <div dangerouslySetInnerHTML={{ __html: desc }} className={classes.desc} />
                         </AccordionDetails>
                     </Accordion>
                 </div>

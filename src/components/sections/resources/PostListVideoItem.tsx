@@ -56,6 +56,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     title: {
         fontSize: theme.typography.pxToRem(20),
+
+        fontWeight: "bold",
         marginBottom: '5px'
     },
     desc: {
@@ -100,7 +102,7 @@ const PostListVideoItem = ({ currentPage, data }: Props) => {
     const { lang } = useTranslation();
     const classes = useStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
-    const formatDate = useFormatDate(data.created_at.replace(' ', 'T'));
+    const formatDate = useFormatDate(data.start_date.replace(' ', 'T'));
     const [salesforceData, setSalesforceData] = useState<SalesforcePostParams | null>(null);
 
     // console.log(data);
@@ -125,7 +127,7 @@ const PostListVideoItem = ({ currentPage, data }: Props) => {
     const getContent = () => {
         return (
             <div className={classes.inner}>
-                <Typography variant={'h5'} className={classes.title}>
+                <Typography variant={'h5'} component={"div"} className={classes.title}>
                     <LinesEllipsis
                         text={data.title}
                         maxLine={smUp ? 1 : 3}

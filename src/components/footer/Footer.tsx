@@ -18,12 +18,18 @@ export const useStyles = makeStyles((theme: Theme) => ({
     footer: {
         position: 'relative',
         width: '100%',
-        padding: '40px 0 25px 0',
+        padding: '40px 0 100px 0',
         backgroundColor: theme.palette.grey["200"],
-        zIndex: 2
+        zIndex: 2,
+        [theme.breakpoints.up("sm")]: {
+            padding: '40px 0 25px 0',
+        }
     },
     legal: {
-        marginTop: '50px',
+        marginTop: '20px',
+        [theme.breakpoints.up("sm")]: {
+            marginTop: '50px',
+        },
         '& .MuiGrid-item': {
             [theme.breakpoints.up('sm')]: {
                 flex: '0 1 auto'

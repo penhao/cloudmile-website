@@ -142,15 +142,15 @@ const LiveStreamPage = ({ postData }) => {
                                     frameBorder="0"
                                     allowFullScreen />
                             </RatioContainer>
-                            <Typography variant={"body1"} className={classes.desc}
+                            <Typography variant={"body1"} component={'div'} className={classes.desc}
                                 dangerouslySetInnerHTML={{ __html: videoDesc }} />
                             <Typography variant={"body1"} component={'div'} className={classes.date}>
-                                {useFormatDate(postData.created_at.replace(' ', 'T'))}
+                                {useFormatDate(postData.start_date.replace(' ', 'T'))}
                             </Typography>
                             <Hidden mdUp>
                                 <div className={classes.line}>
                                     <hr />
-                                    <Typography variant={"body1"}>
+                                    <Typography variant={"body1"} component={'div'}>
                                         {t('video:line')}
                                     </Typography>
                                     <a href="line://ti/p/@CloudMile" target='_blank'

@@ -31,6 +31,7 @@ const BlogDetail = ({ postData }: InferGetServerSidePropsType<typeof getServerSi
         window.scrollTo({ behavior: "smooth", top: contactRef.current.offsetTop });
     };
 
+    console.log(postData)
 
     useEffect(() => {
         //
@@ -77,7 +78,7 @@ const BlogDetail = ({ postData }: InferGetServerSidePropsType<typeof getServerSi
                 <Breadcrumbs breadcrumbData={breadcrumbData} />
             </Container>
             <BlogDetailHead title={postData.title}
-                date={postData.created_at}
+                date={postData.start_date}
                 tagData={postData.tags}
                 parentPage={'blog'} />
             <BlogDetailArticle contents={postData.content} scrollHandler={handleScroll} />
@@ -90,6 +91,7 @@ const BlogDetail = ({ postData }: InferGetServerSidePropsType<typeof getServerSi
                     :
                     null
             }
+            {/* 推薦文章沒有start_date */}
             <RelatedPost parentPage={'blog'}
                 postData={postData.related_article}
                 title={t('blog:Related Articles').toUpperCase()} />

@@ -83,6 +83,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     },
     title: {
+        fontWeight: "bold",
         color: theme.palette.common.white,
         marginBottom: '8px'
     },
@@ -116,19 +117,24 @@ const VideoListItem = ({ category, type, itemData }: Props) => {
                         </svg>
                     </div>
                 </div>
-                <Typography variant={"h6"} className={classes.title}>
+                <Typography variant={"h6"} component={"div"} className={classes.title}>
                     {itemData.title}
                 </Typography>
-                <Typography variant={"body1"} component={'div'} className={classes.desc}>
-                    <LinesEllipsis
-                        text={itemData.seo_description}
-                        maxLine='3'
-                        ellipsis='...'
-                        trimRight
-                        basedOn='letters' />
-                </Typography>
+                {
+                    itemData.seo_description?.length
+                        ? <Typography variant={"body1"} component={'div'} className={classes.desc}>
+                            <LinesEllipsis
+                                text={itemData.seo_description}
+                                maxLine='3'
+                                ellipsis='...'
+                                trimRight
+                                basedOn='letters' />
+                        </Typography>
+                        : null
+                }
+
                 <Typography variant={"body1"} component={'div'} className={classes.date}>
-                    {useFormatDate(itemData.created_at.replace(' ', 'T'))}
+                    {useFormatDate(itemData.start_date.replace(' ', 'T'))}
                 </Typography>
             </Fragment>
         )

@@ -25,6 +25,8 @@ const CategoryPage = ({ categoryData, postData }) => {
     const [isLoading, setIsLoading] = useState(false);
     const metadata = getMetadada("/");
 
+    console.log(postData)
+
     const getRedirectData = () => {
         switch (router.query.slug[0]) {
             case 'blog':

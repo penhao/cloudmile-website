@@ -1,6 +1,6 @@
 import React from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import Container from "../../containers/Container";
 
 interface Props {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) => ({
             color: theme.palette.secondary.main,
             textDecoration: 'underline'
         },
-        '& h3': {
+        '& h2': {
             fontSize: theme.typography.pxToRem(20),
             color: theme.palette.primary.main,
             textAlign: 'left !important',
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) => ({
                 marginLeft: '-160px',
             }
         },
-        '& h4': {
+        '& h3': {
             fontSize: theme.typography.pxToRem(15),
             color: theme.palette.common.black,
             textAlign: 'left !important',
@@ -144,18 +144,18 @@ const useStyles = makeStyles((theme: Theme) => ({
         overflowX: 'auto'
     }
 }));
-const HtmlEditor = ({content}: Props) => {
+const HtmlEditor = ({ content }: Props) => {
     const classes = useStyles();
     const replaceTable = (content: string) => {
         return content.replace('<table', `<div class=${classes.tableContainer}><table`)
             .replace('</table>', '</table></div>')
     };
     return (
-        <Container maxWidth={{xs: 'none', sm: 'none', md: 1280}}>
-            <Container maxWidth={{xs: 'none', sm: 'none', md: 920}} paddingX={false} centerX={false}>
+        <Container maxWidth={{ xs: 'none', sm: 'none', md: 1280 }}>
+            <Container maxWidth={{ xs: 'none', sm: 'none', md: 920 }} paddingX={false} centerX={false}>
                 <article className={classes.htmlEditor} dangerouslySetInnerHTML={{
                     __html: replaceTable(content)
-                }}/>
+                }} />
             </Container>
         </Container>
     );

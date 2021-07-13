@@ -1,7 +1,7 @@
 import React from 'react';
 import NavLink from "../../links/NavLink";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import BackgroundImage from "../../Images/BackgroundImage";
 import RatioContainer from "../../containers/RatioContainer";
 import Typography from "@material-ui/core/Typography";
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     desc: {
         fontSize: theme.typography.pxToRem(20),
         fontWeight: 600,
-        fontStyle: ({lang}: StyleProps) => (lang === 'en') ? 'italic' : 'normal',
+        fontStyle: ({ lang }: StyleProps) => (lang === 'en') ? 'italic' : 'normal',
         marginBottom: '20px'
     },
     author: {
@@ -58,23 +58,23 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
-const CaseStudyListItem = ({data}: Props) => {
-    const {lang} = useTranslation();
+const CaseStudyListItem = ({ data }: Props) => {
+    const { lang } = useTranslation();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
-    const classes = useStyles({lang});
+    const classes = useStyles({ lang });
     return (
         <NavLink hrefPath={'/resources/case-study/[...slug]'}
-                 asPath={`/resources/case-study/${data.id}/${encodeURIComponent(data.title)}`}
-                 fullWidth={true}
-                 underline={false}
-                 classNames={classes.link}>
+            asPath={`/resources/case-study/${data.id}/${encodeURIComponent(data.title)}`}
+            fullWidth={true}
+            underline={false}
+            classNames={classes.link}>
 
-            <RatioContainer ratio={{xs: 1, sm: 1, md: 1}} customClass={classes.cover}>
+            <RatioContainer ratio={{ xs: 1, sm: 1, md: 1 }} customClass={classes.cover}>
                 <BackgroundImage imgUrl={data.image_icon}
-                                 detectRetina={false}
-                                 customClass={classes.image}/>
+                    detectRetina={false}
+                    customClass={classes.image} />
             </RatioContainer>
-            <Typography variant={'h6'} className={classes.desc}>
+            <Typography variant={'h6'} component={'div'} className={classes.desc}>
                 {
                     (lang === 'zh' || lang === 'zh-hant')
                         ? `「${data.recomm_text}」`
@@ -82,8 +82,8 @@ const CaseStudyListItem = ({data}: Props) => {
                 }
             </Typography>
             <Typography variant={"body1"} component={'div'} align={"right"} className={classes.author} dangerouslySetInnerHTML={{
-                __html:`${data.recomm_job}, ${data.recomm_user}`
-            }}/>
+                __html: `${data.recomm_job}, ${data.recomm_user}`
+            }} />
 
         </NavLink>
     );

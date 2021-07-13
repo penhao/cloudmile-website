@@ -1,14 +1,14 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import NavLink from "../../links/NavLink";
 import Typography from "@material-ui/core/Typography";
 import LinesEllipsis from "react-lines-ellipsis";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useTheme from "@material-ui/core/styles/useTheme";
 import useFormatDate from "../../useFormatDate";
-import {isValueEmpty} from "../../../utils/Utils";
-import {useLinkStyles} from "../../links/LinkStyles";
+import { isValueEmpty } from "../../../utils/Utils";
+import { useLinkStyles } from "../../links/LinkStyles";
 import clsx from "clsx";
 
 
@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     title: {
         fontSize: theme.typography.pxToRem(20),
+        fontWeight: "bold",
         marginBottom: '5px'
     },
     desc: {
@@ -93,26 +94,26 @@ const useStyles = makeStyles((theme: Theme) => ({
         transitionDelay: '0.2s'
     }
 }));
-const PostListItem = ({currentPage, data}: Props) => {
+const PostListItem = ({ currentPage, data }: Props) => {
     const classes = useStyles();
     const linkClasses = useLinkStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
-    const formatDate = useFormatDate(data.created_at.replace(' ', 'T'));
+    const formatDate = useFormatDate(data.start_date.replace(' ', 'T'));
     return (
         <Fragment>
             {
                 (currentPage === 'event' && data.event_type === '2')
                     ?
                     <NavLink hrefPath={data.event_act_url}
-                             fullWidth={true} isLaunch={true} classNames={clsx(classes.link, linkClasses.textLink)}>
+                        fullWidth={true} isLaunch={true} classNames={clsx(classes.link, linkClasses.textLink)}>
                         <div className={classes.inner}>
-                            <Typography variant={'h5'} className={classes.title}>
+                            <Typography variant={'h5'} component={"div"} className={classes.title}>
                                 <LinesEllipsis
                                     text={data.title}
                                     maxLine={smUp ? 1 : 3}
                                     ellipsis='...'
                                     trimRight
-                                    basedOn='letters'/>
+                                    basedOn='letters' />
                             </Typography>
                             {
                                 (data.seo_description && !isValueEmpty(data.seo_description))
@@ -123,7 +124,7 @@ const PostListItem = ({currentPage, data}: Props) => {
                                             maxLine={1}
                                             ellipsis='...'
                                             trimRight
-                                            basedOn='letters'/>
+                                            basedOn='letters' />
                                     </Typography>
                                     :
                                     null
@@ -137,17 +138,17 @@ const PostListItem = ({currentPage, data}: Props) => {
                     </NavLink>
                     :
                     <NavLink hrefPath={`/resources/${currentPage}/[...slug]`}
-                             asPath={`/resources/${currentPage}/${data.id}/${encodeURIComponent(data.title)}`}
-                             fullWidth={true}
-                             classNames={clsx(classes.link, linkClasses.textLink)}>
+                        asPath={`/resources/${currentPage}/${data.id}/${encodeURIComponent(data.title)}`}
+                        fullWidth={true}
+                        classNames={clsx(classes.link, linkClasses.textLink)}>
                         <div className={classes.inner}>
-                            <Typography variant={'h5'} className={classes.title}>
+                            <Typography variant={'h5'} component={"div"} className={classes.title}>
                                 <LinesEllipsis
                                     text={data.title}
                                     maxLine={smUp ? 1 : 3}
                                     ellipsis='...'
                                     trimRight
-                                    basedOn='letters'/>
+                                    basedOn='letters' />
                             </Typography>
                             {
                                 (data.seo_description && !isValueEmpty(data.seo_description))
@@ -158,7 +159,7 @@ const PostListItem = ({currentPage, data}: Props) => {
                                             maxLine={1}
                                             ellipsis='...'
                                             trimRight
-                                            basedOn='letters'/>
+                                            basedOn='letters' />
                                     </Typography>
                                     :
                                     null

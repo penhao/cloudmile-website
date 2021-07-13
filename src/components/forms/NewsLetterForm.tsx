@@ -190,8 +190,10 @@ const NewsLetterForm = ({ salesforceData = null }: Props) => {
                         endIcon={
                             <FontAwesomeIcon icon={faPaperPlane} />
                         }
-                        className={formClasses.submit}>
-                        Send
+                        className={formClasses.submit}
+
+                    >
+                        {t("common:Send")}
                     </Button>
                 </Grid>
             </Grid>

@@ -3,7 +3,7 @@ import Container from "../../containers/Container";
 import IconQuote from "../../icons/IconQuote";
 import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import useTranslation from "next-translate/useTranslation";
 
 interface Props {
@@ -29,21 +29,21 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     desc: {
         fontWeight: 600,
-        fontStyle: ({lang}: StyleProps) => (lang === 'en') ? 'italic' : 'normal'
+        fontStyle: ({ lang }: StyleProps) => (lang === 'en') ? 'italic' : 'normal'
     },
     author: {
         marginTop: '30px'
     }
 }));
-const DetailQuote = ({desc, author}: Props) => {
-    const {lang} = useTranslation();
-    const classes = useStyles({lang});
+const DetailQuote = ({ desc, author }: Props) => {
+    const { lang } = useTranslation();
+    const classes = useStyles({ lang });
     return (
         <div className={classes.container}>
-            <Container maxWidth={{md: 1280}}>
-                <Container maxWidth={{md: 1080}} paddingX={false} centerX={false}>
+            <Container maxWidth={{ md: 1280 }}>
+                <Container maxWidth={{ md: 1080 }} paddingX={false} centerX={false}>
                     <div className={classes.containerInner}>
-                        <IconQuote lang={lang}/>
+                        <IconQuote lang={lang} />
                         <Typography variant={"h4"} component={'p'} className={classes.desc}>
                             {desc}
                         </Typography>

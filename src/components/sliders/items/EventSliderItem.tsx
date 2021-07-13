@@ -8,11 +8,12 @@ import useTheme from "@material-ui/core/styles/useTheme";
 import useFormatDate from "../../useFormatDate";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Button from "@material-ui/core/Button";
-import {useButtonStyles} from "../../buttons/ButtonStyles";
+import { useButtonStyles } from "../../buttons/ButtonStyles";
 import NavLink from "../../links/NavLink";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import clsx from "clsx";
-import {useLinkStyles} from "../../links/LinkStyles";
+import { useLinkStyles } from "../../links/LinkStyles";
+import { useTranslation } from 'next-translate';
 
 interface Props {
     itemData: any;
@@ -30,7 +31,8 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-const EventSliderItem = ({itemData}: Props) => {
+const EventSliderItem = ({ itemData }: Props) => {
+    const { t } = useTranslation()
     const classes = useStyles();
     const linkClasses = useLinkStyles();
     const buttonClasses = useButtonStyles();
@@ -52,11 +54,11 @@ const EventSliderItem = ({itemData}: Props) => {
         <Grid container spacing={4} direction={"row-reverse"}>
             <GridItemFlexible>
                 <NavLink hrefPath={getHrefPath()}
-                         asPath={getAsPath()}
-                         fullWidth={true}
-                         isLaunch={getItemStatus()}
+                    asPath={getAsPath()}
+                    fullWidth={true}
+                    isLaunch={getItemStatus()}
                 >
-                    <img src={smUp ? itemData.image_pc : itemData.image_mobile} alt={''}/>
+                    <img src={smUp ? itemData.image_pc : itemData.image_mobile} alt={''} />
                 </NavLink>
             </GridItemFlexible>
             <GridItem480>
@@ -64,10 +66,10 @@ const EventSliderItem = ({itemData}: Props) => {
                     {useFormatDate(itemData.created_at.replace(' ', 'T'))}
                 </Typography>
                 <NavLink hrefPath={getHrefPath()}
-                         asPath={getAsPath()}
-                         underline={true}
-                         isLaunch={getItemStatus()}
-                         classNames={linkClasses.textLink}
+                    asPath={getAsPath()}
+                    underline={true}
+                    isLaunch={getItemStatus()}
+                    classNames={linkClasses.textLink}
                 >
                     <Typography variant={"h5"} component={'div'}>
                         {itemData.title}
@@ -84,14 +86,14 @@ const EventSliderItem = ({itemData}: Props) => {
                     fullWidth={true}
                 >
                     <Button variant={"contained"}
-                            component={'div'}
-                            color={"primary"}
-                            fullWidth
-                            className={clsx(
-                                classes.link,
-                                buttonClasses.roundedButton
-                            )}>
-                        Register
+                        component={'div'}
+                        color={"primary"}
+                        fullWidth
+                        className={clsx(
+                            classes.link,
+                            buttonClasses.roundedButton
+                        )}>
+                        {t("common:Register")}
                     </Button>
                 </NavLink>
             </GridItem480>

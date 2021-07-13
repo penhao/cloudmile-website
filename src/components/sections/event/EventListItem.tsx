@@ -1,7 +1,7 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import NavLink from "../../links/NavLink";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import RatioContainer from "../../containers/RatioContainer";
@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-const EventListItem = ({itemData}: Props) => {
+const EventListItem = ({ itemData }: Props) => {
     const classes = useStyles();
     const smUp = useMediaQuery(useTheme().breakpoints.up('sm'));
 
@@ -97,28 +97,28 @@ const EventListItem = ({itemData}: Props) => {
     };
     return (
         <NavLink hrefPath={getHrefPath()}
-                 asPath={getAsPath()}
-                 fullWidth={true}
-                 fullHeight={true}
-                 isLaunch={getItemStatus()}
-                 underline={false}
-                 classNames={classes.item}
+            asPath={getAsPath()}
+            fullWidth={true}
+            fullHeight={true}
+            isLaunch={getItemStatus()}
+            underline={false}
+            classNames={classes.item}
         >
             <Box display={'flex'} flexDirection={'column'} className={classes.itemInner}>
                 <Typography variant={"body1"} component={'div'} align={"center"} className={classes.date}>
-                    {useFormatDate(itemData.created_at.replace(' ', 'T'))}
+                    {useFormatDate(itemData.start_date.replace(' ', 'T'))}
                 </Typography>
-                <Typography variant={"body1"} align={"center"} className={classes.title}>
+                <Typography variant={"body1"} component={'div'} align={"center"} className={classes.title}>
                     {itemData.title}
                     {/*<LinesEllipsis text={itemData.title} maxLine='2' ellipsis='...' trimRight basedOn='letters'/>*/}
                 </Typography>
                 <div className={classes.cover}>
-                    <RatioContainer ratio={{xs: 156 / 280, sm: 156 / 280, md: 156 / 280}}>
+                    <RatioContainer ratio={{ xs: 156 / 280, sm: 156 / 280, md: 156 / 280 }}>
                         <BackgroundImage imgUrl={smUp ? itemData.image_pc : itemData.image_mobile}
-                                         detectRetina={false}/>
+                            detectRetina={false} />
                     </RatioContainer>
                     <div className={classes.coverOverlay}>
-                        <IconLaunch color={'white'}/>
+                        <IconLaunch color={'white'} />
                     </div>
                 </div>
             </Box>

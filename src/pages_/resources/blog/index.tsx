@@ -42,6 +42,8 @@ const Blog = ({ fetchCategory, fetchPost }) => {
         });
     };
 
+    console.log(fetchPost)
+
     useEffect(() => {
         //
         let breadcrumbs = getBreadcrumb(router.route);

@@ -237,7 +237,7 @@ const DownloadForm = ({ salesforceData = null }: Props) => {
                             <FontAwesomeIcon icon={faPaperPlane} />
                         }
                         className={formClasses.submit}>
-                        Send
+                        {t("common:Send")}
                     </Button>
                 </Grid>
             </Grid>

@@ -247,7 +247,7 @@ const ContactForm = () => {
                         color={"primary"}
                         endIcon={<FontAwesomeIcon icon={faPaperPlane} />}
                         className={formClasses.submit}>
-                        Send
+                        {t("common:Send")}
                     </Button>
                 </Grid>
             </Grid>

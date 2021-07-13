@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import SectionContainer from "../../containers/SectionContainer";
 import Container from "../../containers/Container";
 import Grid from "@material-ui/core/Grid";
@@ -6,7 +6,7 @@ import useTheme from "@material-ui/core/styles/useTheme";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import BlogTopicItem from "./BlogTopicItem";
 import Typography from "@material-ui/core/Typography";
-import {Theme} from "@material-ui/core";
+import { Theme } from "@material-ui/core";
 
 interface Props {
     title: string;
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginBottom: '20px'
     }
 }));
-const RelatedPost = ({postData, title, parentPage}: Props) => {
+const RelatedPost = ({ postData, title, parentPage }: Props) => {
     const classes = useStyles();
     return (
         <Fragment>
@@ -33,8 +33,8 @@ const RelatedPost = ({postData, title, parentPage}: Props) => {
                 (postData?.length)
                     ?
                     <SectionContainer backgroundColor={useTheme().palette.grey["300"]}>
-                        <Container maxWidth={{md: 1280}} className={classes.container}>
-                            <Typography variant={"body1"} color={"secondary"} className={classes.title}>
+                        <Container maxWidth={{ md: 1280 }} className={classes.container}>
+                            <Typography variant={"body1"} component={"div"} color={"secondary"} className={classes.title}>
                                 {title}
                             </Typography>
                             <Grid container spacing={4}>
@@ -42,7 +42,7 @@ const RelatedPost = ({postData, title, parentPage}: Props) => {
                                     postData.map((item: any, index: number) => {
                                         return (
                                             <Grid item xs={12} sm={6} md={3} key={index}>
-                                                <BlogTopicItem parentPage={parentPage} itemData={item}/>
+                                                <BlogTopicItem parentPage={parentPage} itemData={item} />
                                             </Grid>
                                         )
                                     })
